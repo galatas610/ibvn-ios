@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		83386E552BB24E2E00E6BDE4 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83386E542BB24E2E00E6BDE4 /* Home.swift */; };
+		83386E582BB24EA900E6BDE4 /* YouTubeiOSPlayerHelper in Frameworks */ = {isa = PBXBuildFile; productRef = 83386E572BB24EA900E6BDE4 /* YouTubeiOSPlayerHelper */; };
 		83D1F4472BB1C30400A611A5 /* ibvnApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D1F4462BB1C30400A611A5 /* ibvnApp.swift */; };
-		83D1F4492BB1C30400A611A5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D1F4482BB1C30400A611A5 /* ContentView.swift */; };
 		83D1F44B2BB1C30600A611A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83D1F44A2BB1C30600A611A5 /* Assets.xcassets */; };
 		83D1F44E2BB1C30600A611A5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83D1F44D2BB1C30600A611A5 /* Preview Assets.xcassets */; };
 		83D1F4582BB1C30700A611A5 /* ibvnTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D1F4572BB1C30700A611A5 /* ibvnTests.swift */; };
@@ -34,9 +35,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		83386E542BB24E2E00E6BDE4 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		83D1F4432BB1C30400A611A5 /* ibvn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ibvn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83D1F4462BB1C30400A611A5 /* ibvnApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ibvnApp.swift; sourceTree = "<group>"; };
-		83D1F4482BB1C30400A611A5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		83D1F44A2BB1C30600A611A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		83D1F44D2BB1C30600A611A5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		83D1F4532BB1C30700A611A5 /* ibvnTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ibvnTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83386E582BB24EA900E6BDE4 /* YouTubeiOSPlayerHelper in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,9 +97,9 @@
 			isa = PBXGroup;
 			children = (
 				83D1F4462BB1C30400A611A5 /* ibvnApp.swift */,
-				83D1F4482BB1C30400A611A5 /* ContentView.swift */,
 				83D1F44A2BB1C30600A611A5 /* Assets.xcassets */,
 				83D1F44C2BB1C30600A611A5 /* Preview Content */,
+				83386E542BB24E2E00E6BDE4 /* Home.swift */,
 			);
 			path = ibvn;
 			sourceTree = "<group>";
@@ -143,6 +145,9 @@
 			dependencies = (
 			);
 			name = ibvn;
+			packageProductDependencies = (
+				83386E572BB24EA900E6BDE4 /* YouTubeiOSPlayerHelper */,
+			);
 			productName = ibvn;
 			productReference = 83D1F4432BB1C30400A611A5 /* ibvn.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +220,9 @@
 				Base,
 			);
 			mainGroup = 83D1F43A2BB1C30400A611A5;
+			packageReferences = (
+				83386E562BB24EA900E6BDE4 /* XCRemoteSwiftPackageReference "youtube-ios-player-helper" */,
+			);
 			productRefGroup = 83D1F4442BB1C30400A611A5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -257,7 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				83D1F4492BB1C30400A611A5 /* ContentView.swift in Sources */,
+				83386E552BB24E2E00E6BDE4 /* Home.swift in Sources */,
 				83D1F4472BB1C30400A611A5 /* ibvnApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -582,6 +590,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		83386E562BB24EA900E6BDE4 /* XCRemoteSwiftPackageReference "youtube-ios-player-helper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/youtube/youtube-ios-player-helper";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		83386E572BB24EA900E6BDE4 /* YouTubeiOSPlayerHelper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 83386E562BB24EA900E6BDE4 /* XCRemoteSwiftPackageReference "youtube-ios-player-helper" */;
+			productName = YouTubeiOSPlayerHelper;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 83D1F43B2BB1C30400A611A5 /* Project object */;
 }

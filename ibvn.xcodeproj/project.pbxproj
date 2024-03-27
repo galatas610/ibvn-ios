@@ -7,14 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		83386E552BB24E2E00E6BDE4 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83386E542BB24E2E00E6BDE4 /* Home.swift */; };
+		83386E552BB24E2E00E6BDE4 /* SundayPreachesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83386E542BB24E2E00E6BDE4 /* SundayPreachesView.swift */; };
 		83386E582BB24EA900E6BDE4 /* YouTubeiOSPlayerHelper in Frameworks */ = {isa = PBXBuildFile; productRef = 83386E572BB24EA900E6BDE4 /* YouTubeiOSPlayerHelper */; };
+		839DBA572BB3C71800E2B77F /* SundayPreaches.json in Resources */ = {isa = PBXBuildFile; fileRef = 839DBA562BB3C71800E2B77F /* SundayPreaches.json */; };
+		839DBA5A2BB3D4DB00E2B77F /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839DBA592BB3D4DB00E2B77F /* String+Extensions.swift */; };
 		83D1F4472BB1C30400A611A5 /* ibvnApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D1F4462BB1C30400A611A5 /* ibvnApp.swift */; };
 		83D1F44B2BB1C30600A611A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83D1F44A2BB1C30600A611A5 /* Assets.xcassets */; };
 		83D1F44E2BB1C30600A611A5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83D1F44D2BB1C30600A611A5 /* Preview Assets.xcassets */; };
 		83D1F4582BB1C30700A611A5 /* ibvnTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D1F4572BB1C30700A611A5 /* ibvnTests.swift */; };
 		83D1F4622BB1C30700A611A5 /* ibvnUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D1F4612BB1C30700A611A5 /* ibvnUITests.swift */; };
 		83D1F4642BB1C30700A611A5 /* ibvnUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D1F4632BB1C30700A611A5 /* ibvnUITestsLaunchTests.swift */; };
+		83FF6A262BB3083A00E3B4DF /* SundayPreachesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FF6A252BB3083900E3B4DF /* SundayPreachesViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		83386E542BB24E2E00E6BDE4 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		83386E542BB24E2E00E6BDE4 /* SundayPreachesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SundayPreachesView.swift; sourceTree = "<group>"; };
+		839DBA562BB3C71800E2B77F /* SundayPreaches.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SundayPreaches.json; sourceTree = "<group>"; };
+		839DBA592BB3D4DB00E2B77F /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		83D1F4432BB1C30400A611A5 /* ibvn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ibvn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83D1F4462BB1C30400A611A5 /* ibvnApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ibvnApp.swift; sourceTree = "<group>"; };
 		83D1F44A2BB1C30600A611A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -45,6 +50,7 @@
 		83D1F45D2BB1C30700A611A5 /* ibvnUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ibvnUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		83D1F4612BB1C30700A611A5 /* ibvnUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ibvnUITests.swift; sourceTree = "<group>"; };
 		83D1F4632BB1C30700A611A5 /* ibvnUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ibvnUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		83FF6A252BB3083900E3B4DF /* SundayPreachesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SundayPreachesViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +79,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		839DBA552BB3C6E900E2B77F /* LocalData */ = {
+			isa = PBXGroup;
+			children = (
+				839DBA562BB3C71800E2B77F /* SundayPreaches.json */,
+			);
+			path = LocalData;
+			sourceTree = "<group>";
+		};
+		839DBA582BB3D4C600E2B77F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				839DBA592BB3D4DB00E2B77F /* String+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		83D1F43A2BB1C30400A611A5 = {
 			isa = PBXGroup;
 			children = (
@@ -96,10 +118,12 @@
 		83D1F4452BB1C30400A611A5 /* ibvn */ = {
 			isa = PBXGroup;
 			children = (
+				839DBA582BB3D4C600E2B77F /* Extensions */,
+				839DBA552BB3C6E900E2B77F /* LocalData */,
+				83FF6A242BB3080D00E3B4DF /* SundayPreaches */,
 				83D1F4462BB1C30400A611A5 /* ibvnApp.swift */,
 				83D1F44A2BB1C30600A611A5 /* Assets.xcassets */,
 				83D1F44C2BB1C30600A611A5 /* Preview Content */,
-				83386E542BB24E2E00E6BDE4 /* Home.swift */,
 			);
 			path = ibvn;
 			sourceTree = "<group>";
@@ -127,6 +151,15 @@
 				83D1F4632BB1C30700A611A5 /* ibvnUITestsLaunchTests.swift */,
 			);
 			path = ibvnUITests;
+			sourceTree = "<group>";
+		};
+		83FF6A242BB3080D00E3B4DF /* SundayPreaches */ = {
+			isa = PBXGroup;
+			children = (
+				83FF6A252BB3083900E3B4DF /* SundayPreachesViewModel.swift */,
+				83386E542BB24E2E00E6BDE4 /* SundayPreachesView.swift */,
+			);
+			path = SundayPreaches;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,6 +273,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				83D1F44E2BB1C30600A611A5 /* Preview Assets.xcassets in Resources */,
+				839DBA572BB3C71800E2B77F /* SundayPreaches.json in Resources */,
 				83D1F44B2BB1C30600A611A5 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -265,7 +299,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				83386E552BB24E2E00E6BDE4 /* Home.swift in Sources */,
+				839DBA5A2BB3D4DB00E2B77F /* String+Extensions.swift in Sources */,
+				83386E552BB24E2E00E6BDE4 /* SundayPreachesView.swift in Sources */,
+				83FF6A262BB3083A00E3B4DF /* SundayPreachesViewModel.swift in Sources */,
 				83D1F4472BB1C30400A611A5 /* ibvnApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

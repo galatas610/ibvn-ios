@@ -21,6 +21,16 @@ struct TabBarView: View {
                     Label("ERDH", systemImage: "bell")
                 }
                 .tag("1")
+            NDVView(viewModel: NDVViewModel())
+                .tabItem {
+                    Label("NDV", systemImage: "book")
+                }
+                .tag("2")
+            KoinoniaView(viewModel: KoinoniaViewModel())
+                .tabItem {
+                    Label("Koinonia", systemImage: "figure.2.and.child.holdinghands")
+                }
+                .tag("3")
         }
     }
 }

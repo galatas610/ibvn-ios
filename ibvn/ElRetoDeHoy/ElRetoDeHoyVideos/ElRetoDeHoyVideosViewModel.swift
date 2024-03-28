@@ -23,7 +23,6 @@ final class ElRetoDeHoyVideosViewModel: ObservableObject {
     
     // MARK: Functions
     func fetchElRetoDeHoyPlaylistsVideos() async {
-        
         guard let url = URL(string: "https://www.googleapis.com/youtube/v3/playlistItems?key=AIzaSyCTkfyhNMgKcDTlZsNZ2IT57ztfXySdl5c&channelId=UCoNq7HF7vnqalfg-lTaxrDQ&playlistId="+listId+"&part=snippet") else {
             print("🚩 Fail ElRetoDeHoy playlistVideos URL")
             

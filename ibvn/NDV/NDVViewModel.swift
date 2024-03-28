@@ -1,41 +1,39 @@
 //
-//  SundayPreachesViewModel.swift
+//  NDVViewModel.swift
 //  ibvn
 //
-//  Created by Jose Letona on 26/3/24.
+//  Created by Jose Letona on 28/3/24.
 //
 
 import Foundation
 
-class SundayPreachesViewModel: ObservableObject {
-    @Published var youtubeSearch: YoutubeSearch = .init()
-    @Published var elRetoDeHoyLists: YouTubeList = .init()
+class NDVViewModel: ObservableObject {
+    @Published var ndvVideos: YoutubeSearch = .init()
     // MARK: Initialization
     init(){
-        localFetchSundayPreaches()
+        localFetchNocheDeViernesVideos()
     }
     
-    
     // MARK: Functions
-    func localFetchSundayPreaches() {
-        guard let url = Bundle.main.url(forResource: "SundayPreaches", withExtension: "json") else {
-            print("json file not found")
+    func localFetchNocheDeViernesVideos() {
+        guard let url = Bundle.main.url(forResource: "NocheDeViernes", withExtension: "json") else {
+            print("NDV json file not found")
             
             return
         }
         
         guard let data = try? Data(contentsOf: url) else {
-            print("error getting Data from json")
+            print("NDV error getting Data from json")
             
             return
         }
         
         DispatchQueue.main.async {
             do {
-                let youtubeSearch = try JSONDecoder().decode(YoutubeSearch.self, from: data)
-                self.youtubeSearch = youtubeSearch
+                let ndvVideos = try JSONDecoder().decode(YoutubeSearch.self, from: data)
+                self.ndvVideos = ndvVideos
             } catch(let error) {
-                print("🚩 error decoding #Preaches: \(String(describing: error))")
+                print("🚩 NDV error decoding #Preaches: \(String(describing: error))")
             }
         }
     }
@@ -44,7 +42,7 @@ class SundayPreachesViewModel: ObservableObject {
         let _ = "AIzaSyCTkfyhNMgKcDTlZsNZ2IT57ztfXySdl5c"
         let _ = "AIzaSyDxL4ZavnYUE0_cMWOVt_ibWoPqcfMfLSQ"
         
-        guard let url = URL(string: "https://www.googleapis.com/youtube/v3/search?key=AIzaSyDxL4ZavnYUE0_cMWOVt_ibWoPqcfMfLSQ&channelId=UCoNq7HF7vnqalfg-lTaxrDQ&type=video&eventType=completed&part=snippet&order=date&maxResults=50") else {
+        guard let url = URL(string: "https://www.googleapis.com/youtube/v3/search?key=AIzaSyDxL4ZavnYUE0_cMWOVt_ibWoPqcfMfLSQ&channelId=UCoNq7HF7vnqalfg-lTaxrDQ&type=video&order=date&part=snippet&maxResults=50&q=%23NDV") else {
             return
         }
         
@@ -75,8 +73,8 @@ class SundayPreachesViewModel: ObservableObject {
                 
                 DispatchQueue.main.async {
                     do {
-                        self.youtubeSearch = try JSONDecoder().decode(YoutubeSearch.self, from: data)
-                        print("🚩 sundayPreaches: \(String(describing: self.youtubeSearch))")
+                        self.ndvVideos = try JSONDecoder().decode(YoutubeSearch.self, from: data)
+                        print("🚩 sundayPreaches: \(String(describing: self.ndvVideos))")
                     } catch(let error) {
                         print("🚩 error: \(String(describing: error))")
                     }

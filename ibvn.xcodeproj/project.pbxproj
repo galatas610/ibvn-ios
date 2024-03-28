@@ -11,12 +11,23 @@
 		83386E582BB24EA900E6BDE4 /* YouTubeiOSPlayerHelper in Frameworks */ = {isa = PBXBuildFile; productRef = 83386E572BB24EA900E6BDE4 /* YouTubeiOSPlayerHelper */; };
 		839DBA572BB3C71800E2B77F /* SundayPreaches.json in Resources */ = {isa = PBXBuildFile; fileRef = 839DBA562BB3C71800E2B77F /* SundayPreaches.json */; };
 		839DBA5A2BB3D4DB00E2B77F /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839DBA592BB3D4DB00E2B77F /* String+Extensions.swift */; };
+		83D182BF2BB552D00097A4D9 /* ElRetoDeHoyVideosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D182BE2BB552D00097A4D9 /* ElRetoDeHoyVideosView.swift */; };
+		83D182C12BB552E00097A4D9 /* ElRetoDeHoyVideosViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D182C02BB552E00097A4D9 /* ElRetoDeHoyVideosViewModel.swift */; };
+		83D182C52BB5554A0097A4D9 /* ElRetoDeHoyVideos.json in Resources */ = {isa = PBXBuildFile; fileRef = 83D182C42BB5554A0097A4D9 /* ElRetoDeHoyVideos.json */; };
+		83D182C72BB5576F0097A4D9 /* YoutubeListVideos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D182C62BB5576F0097A4D9 /* YoutubeListVideos.swift */; };
+		83D182CA2BB55EA90097A4D9 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D182C92BB55EA90097A4D9 /* TabBarView.swift */; };
 		83D1F4472BB1C30400A611A5 /* ibvnApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D1F4462BB1C30400A611A5 /* ibvnApp.swift */; };
 		83D1F44B2BB1C30600A611A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83D1F44A2BB1C30600A611A5 /* Assets.xcassets */; };
 		83D1F44E2BB1C30600A611A5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83D1F44D2BB1C30600A611A5 /* Preview Assets.xcassets */; };
 		83D1F4582BB1C30700A611A5 /* ibvnTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D1F4572BB1C30700A611A5 /* ibvnTests.swift */; };
 		83D1F4622BB1C30700A611A5 /* ibvnUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D1F4612BB1C30700A611A5 /* ibvnUITests.swift */; };
 		83D1F4642BB1C30700A611A5 /* ibvnUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D1F4632BB1C30700A611A5 /* ibvnUITestsLaunchTests.swift */; };
+		83E980852BB533BF00BF0094 /* YouTubeSeach.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E980842BB533BF00BF0094 /* YouTubeSeach.swift */; };
+		83E980872BB5388000BF0094 /* ElRetoDeHoyLists.json in Resources */ = {isa = PBXBuildFile; fileRef = 83E980862BB5388000BF0094 /* ElRetoDeHoyLists.json */; };
+		83E980892BB53AE000BF0094 /* YouTubeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E980882BB53AE000BF0094 /* YouTubeList.swift */; };
+		83E9808C2BB5414200BF0094 /* ElRetoDeHoyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E9808B2BB5414200BF0094 /* ElRetoDeHoyListView.swift */; };
+		83E9808E2BB5415400BF0094 /* ElRetoDeHoyListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E9808D2BB5415400BF0094 /* ElRetoDeHoyListViewModel.swift */; };
+		83E980902BB54F8000BF0094 /* Image+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E9808F2BB54F8000BF0094 /* Image+Extensions.swift */; };
 		83FF6A262BB3083A00E3B4DF /* SundayPreachesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FF6A252BB3083900E3B4DF /* SundayPreachesViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +52,11 @@
 		83386E542BB24E2E00E6BDE4 /* SundayPreachesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SundayPreachesView.swift; sourceTree = "<group>"; };
 		839DBA562BB3C71800E2B77F /* SundayPreaches.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SundayPreaches.json; sourceTree = "<group>"; };
 		839DBA592BB3D4DB00E2B77F /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		83D182BE2BB552D00097A4D9 /* ElRetoDeHoyVideosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElRetoDeHoyVideosView.swift; sourceTree = "<group>"; };
+		83D182C02BB552E00097A4D9 /* ElRetoDeHoyVideosViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElRetoDeHoyVideosViewModel.swift; sourceTree = "<group>"; };
+		83D182C42BB5554A0097A4D9 /* ElRetoDeHoyVideos.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ElRetoDeHoyVideos.json; sourceTree = "<group>"; };
+		83D182C62BB5576F0097A4D9 /* YoutubeListVideos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeListVideos.swift; sourceTree = "<group>"; };
+		83D182C92BB55EA90097A4D9 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		83D1F4432BB1C30400A611A5 /* ibvn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ibvn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83D1F4462BB1C30400A611A5 /* ibvnApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ibvnApp.swift; sourceTree = "<group>"; };
 		83D1F44A2BB1C30600A611A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -50,6 +66,12 @@
 		83D1F45D2BB1C30700A611A5 /* ibvnUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ibvnUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		83D1F4612BB1C30700A611A5 /* ibvnUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ibvnUITests.swift; sourceTree = "<group>"; };
 		83D1F4632BB1C30700A611A5 /* ibvnUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ibvnUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		83E980842BB533BF00BF0094 /* YouTubeSeach.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouTubeSeach.swift; sourceTree = "<group>"; };
+		83E980862BB5388000BF0094 /* ElRetoDeHoyLists.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ElRetoDeHoyLists.json; sourceTree = "<group>"; };
+		83E980882BB53AE000BF0094 /* YouTubeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouTubeList.swift; sourceTree = "<group>"; };
+		83E9808B2BB5414200BF0094 /* ElRetoDeHoyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElRetoDeHoyListView.swift; sourceTree = "<group>"; };
+		83E9808D2BB5415400BF0094 /* ElRetoDeHoyListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElRetoDeHoyListViewModel.swift; sourceTree = "<group>"; };
+		83E9808F2BB54F8000BF0094 /* Image+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Extensions.swift"; sourceTree = "<group>"; };
 		83FF6A252BB3083900E3B4DF /* SundayPreachesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SundayPreachesViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -91,8 +113,53 @@
 			isa = PBXGroup;
 			children = (
 				839DBA592BB3D4DB00E2B77F /* String+Extensions.swift */,
+				83E9808F2BB54F8000BF0094 /* Image+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		83D182BC2BB552770097A4D9 /* ElRetoDeHoyList */ = {
+			isa = PBXGroup;
+			children = (
+				83E9808B2BB5414200BF0094 /* ElRetoDeHoyListView.swift */,
+				83E9808D2BB5415400BF0094 /* ElRetoDeHoyListViewModel.swift */,
+			);
+			path = ElRetoDeHoyList;
+			sourceTree = "<group>";
+		};
+		83D182BD2BB552A00097A4D9 /* ElRetoDeHoyVideos */ = {
+			isa = PBXGroup;
+			children = (
+				83D182BE2BB552D00097A4D9 /* ElRetoDeHoyVideosView.swift */,
+				83D182C02BB552E00097A4D9 /* ElRetoDeHoyVideosViewModel.swift */,
+			);
+			path = ElRetoDeHoyVideos;
+			sourceTree = "<group>";
+		};
+		83D182C22BB553F40097A4D9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				83E980882BB53AE000BF0094 /* YouTubeList.swift */,
+				83D182C62BB5576F0097A4D9 /* YoutubeListVideos.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		83D182C32BB5549A0097A4D9 /* LocalData */ = {
+			isa = PBXGroup;
+			children = (
+				83E980862BB5388000BF0094 /* ElRetoDeHoyLists.json */,
+				83D182C42BB5554A0097A4D9 /* ElRetoDeHoyVideos.json */,
+			);
+			path = LocalData;
+			sourceTree = "<group>";
+		};
+		83D182C82BB55E110097A4D9 /* Tab */ = {
+			isa = PBXGroup;
+			children = (
+				83D182C92BB55EA90097A4D9 /* TabBarView.swift */,
+			);
+			path = Tab;
 			sourceTree = "<group>";
 		};
 		83D1F43A2BB1C30400A611A5 = {
@@ -118,9 +185,10 @@
 		83D1F4452BB1C30400A611A5 /* ibvn */ = {
 			isa = PBXGroup;
 			children = (
+				83D182C82BB55E110097A4D9 /* Tab */,
 				839DBA582BB3D4C600E2B77F /* Extensions */,
-				839DBA552BB3C6E900E2B77F /* LocalData */,
 				83FF6A242BB3080D00E3B4DF /* SundayPreaches */,
+				83E9808A2BB5412100BF0094 /* ElRetoDeHoy */,
 				83D1F4462BB1C30400A611A5 /* ibvnApp.swift */,
 				83D1F44A2BB1C30600A611A5 /* Assets.xcassets */,
 				83D1F44C2BB1C30600A611A5 /* Preview Content */,
@@ -153,9 +221,30 @@
 			path = ibvnUITests;
 			sourceTree = "<group>";
 		};
+		83E980832BB533A200BF0094 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				83E980842BB533BF00BF0094 /* YouTubeSeach.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		83E9808A2BB5412100BF0094 /* ElRetoDeHoy */ = {
+			isa = PBXGroup;
+			children = (
+				83D182C32BB5549A0097A4D9 /* LocalData */,
+				83D182C22BB553F40097A4D9 /* Model */,
+				83D182BC2BB552770097A4D9 /* ElRetoDeHoyList */,
+				83D182BD2BB552A00097A4D9 /* ElRetoDeHoyVideos */,
+			);
+			path = ElRetoDeHoy;
+			sourceTree = "<group>";
+		};
 		83FF6A242BB3080D00E3B4DF /* SundayPreaches */ = {
 			isa = PBXGroup;
 			children = (
+				839DBA552BB3C6E900E2B77F /* LocalData */,
+				83E980832BB533A200BF0094 /* Model */,
 				83FF6A252BB3083900E3B4DF /* SundayPreachesViewModel.swift */,
 				83386E542BB24E2E00E6BDE4 /* SundayPreachesView.swift */,
 			);
@@ -275,6 +364,8 @@
 				83D1F44E2BB1C30600A611A5 /* Preview Assets.xcassets in Resources */,
 				839DBA572BB3C71800E2B77F /* SundayPreaches.json in Resources */,
 				83D1F44B2BB1C30600A611A5 /* Assets.xcassets in Resources */,
+				83E980872BB5388000BF0094 /* ElRetoDeHoyLists.json in Resources */,
+				83D182C52BB5554A0097A4D9 /* ElRetoDeHoyVideos.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,8 +390,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83E980902BB54F8000BF0094 /* Image+Extensions.swift in Sources */,
+				83D182BF2BB552D00097A4D9 /* ElRetoDeHoyVideosView.swift in Sources */,
+				83D182CA2BB55EA90097A4D9 /* TabBarView.swift in Sources */,
+				83E980852BB533BF00BF0094 /* YouTubeSeach.swift in Sources */,
+				83E980892BB53AE000BF0094 /* YouTubeList.swift in Sources */,
+				83D182C72BB5576F0097A4D9 /* YoutubeListVideos.swift in Sources */,
 				839DBA5A2BB3D4DB00E2B77F /* String+Extensions.swift in Sources */,
+				83E9808C2BB5414200BF0094 /* ElRetoDeHoyListView.swift in Sources */,
+				83D182C12BB552E00097A4D9 /* ElRetoDeHoyVideosViewModel.swift in Sources */,
 				83386E552BB24E2E00E6BDE4 /* SundayPreachesView.swift in Sources */,
+				83E9808E2BB5415400BF0094 /* ElRetoDeHoyListViewModel.swift in Sources */,
 				83FF6A262BB3083A00E3B4DF /* SundayPreachesViewModel.swift in Sources */,
 				83D1F4472BB1C30400A611A5 /* ibvnApp.swift in Sources */,
 			);
@@ -391,7 +491,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -448,7 +548,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -466,13 +566,16 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ibvn/Preview Content\"";
+				DEVELOPMENT_TEAM = PPMH8RM668;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -494,13 +597,16 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ibvn/Preview Content\"";
+				DEVELOPMENT_TEAM = PPMH8RM668;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

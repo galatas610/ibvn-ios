@@ -1,24 +1,24 @@
 //
-//  SundayPreachesView.swift
+//  ElRetoDeHoyVideosView.swift
 //  ibvn
 //
-//  Created by Jose Letona on 25/3/24.
+//  Created by Jose Letona on 28/3/24.
 //
 
 import SwiftUI
 
-struct SundayPreachesView: View {
-    @StateObject private var viewModel: SundayPreachesViewModel
+struct ElRetoDeHoyVideosView: View {
+    // MARK: Propery Wrappers
+    @StateObject private var viewModel: ElRetoDeHoyVideosViewModel
     
-    init(viewModel: SundayPreachesViewModel) {
+    init(viewModel: ElRetoDeHoyVideosViewModel) {
         self._viewModel = StateObject(wrappedValue: viewModel)
     }
     
     var body: some View {
-        NavigationView{
             ScrollView {
-                ForEach(viewModel.youtubeSearch.items, id: \.id.videoId) { item in
-                    YouTubePlayer(videoId: item.id.videoId)
+                ForEach(viewModel.elRetoDeHoyListVideos.items, id: \.id) { item in
+                    YouTubePlayer(videoId: item.snippet.resourceID.videoID)
                         .cornerRadius(16)
                         .frame(height: 200)
                         .padding(.horizontal, 8)
@@ -49,26 +49,17 @@ struct SundayPreachesView: View {
                     }
                 }
             }
+            .navigationTitle(viewModel.snippet.title)
+            .navigationBarTitleDisplayMode(.inline)
+        
+        .onAppear {
+            Task {
+                await viewModel.fetchElRetoDeHoyPlaylistsVideos()
+            }
         }
     }
 }
 
 #Preview {
-    SundayPreachesView(viewModel: SundayPreachesViewModel())
-}
-
-import YouTubeiOSPlayerHelper
-
-struct YouTubePlayer : UIViewRepresentable {
-    var videoId : String
-    
-    func makeUIView(context: Context) -> YTPlayerView {
-        let playerView = YTPlayerView()
-        playerView.load(withVideoId: videoId)
-        return playerView
-    }
-    
-    func updateUIView(_ uiView: YTPlayerView, context: Context) {
-        //
-    }
+    ElRetoDeHoyVideosView(viewModel: ElRetoDeHoyVideosViewModel(listId: "PL0MA6QqbTGP68oH-8pef_-0w5kGOLN4Eb", snippet: Snippet()))
 }

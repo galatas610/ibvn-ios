@@ -1,0 +1,217 @@
+{
+    "kind": "youtube#playlistItemListResponse",
+    "etag": "m0Sb6i-hxLB_lWp9c01lR-B82Zk",
+    "items": [
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "3HKXPWsZ1X-bTXY8Nx3pt3LeK58",
+            "id": "UEwwTUE2UXFiVEdQNjhvSC04cGVmXy0wdzVrR09MTjRFYi4wOTA3OTZBNzVEMTUzOTMy",
+            "snippet": {
+                "publishedAt": "2024-03-28T05:14:49Z",
+                "channelId": "UCoNq7HF7vnqalfg-lTaxrDQ",
+                "title": "Private video",
+                "description": "This video is private.",
+                "thumbnails": {},
+                "channelTitle": "Iglesia Bautista Vida Nueva",
+                "playlistId": "PL0MA6QqbTGP68oH-8pef_-0w5kGOLN4Eb",
+                "position": 0,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "NT18nZ4VAB8"
+                }
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "h5mA1FiY4a2WswpWELbA3er1Ii8",
+            "id": "UEwwTUE2UXFiVEdQNjhvSC04cGVmXy0wdzVrR09MTjRFYi4xMkVGQjNCMUM1N0RFNEUx",
+            "snippet": {
+                "publishedAt": "2024-03-28T05:15:04Z",
+                "channelId": "UCoNq7HF7vnqalfg-lTaxrDQ",
+                "title": "7 Dichos de la Cruz - Parte 3 - El Reto de Hoy - #ElRetodeHoy",
+                "description": "“Mujer, he ahí tu hijo... He ahí tu madre” \nJesús, incluso en medio del sufrimiento de la cruz, no dejó de cuidar de su mamá, y le pide a Juan que le adopte. Julio e Iván te explicarán que Dios está interesado en que tratemos el problema de la soledad y en que a pesar de los problemas, sigamos ayudando a otros.",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/HiLoFGr-zrg/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/HiLoFGr-zrg/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/HiLoFGr-zrg/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/HiLoFGr-zrg/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    },
+                    "maxres": {
+                        "url": "https://i.ytimg.com/vi/HiLoFGr-zrg/maxresdefault.jpg",
+                        "width": 1280,
+                        "height": 720
+                    }
+                },
+                "channelTitle": "Iglesia Bautista Vida Nueva",
+                "playlistId": "PL0MA6QqbTGP68oH-8pef_-0w5kGOLN4Eb",
+                "position": 1,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "HiLoFGr-zrg"
+                },
+                "videoOwnerChannelTitle": "Iglesia Bautista Vida Nueva",
+                "videoOwnerChannelId": "UCoNq7HF7vnqalfg-lTaxrDQ"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "G1Ym1C4FK8MuuEVu-K7ZG8DnKfM",
+            "id": "UEwwTUE2UXFiVEdQNjhvSC04cGVmXy0wdzVrR09MTjRFYi41MjE1MkI0OTQ2QzJGNzNG",
+            "snippet": {
+                "publishedAt": "2024-03-26T04:53:54Z",
+                "channelId": "UCoNq7HF7vnqalfg-lTaxrDQ",
+                "title": "7 Dichos de la Cruz - Parte 2 - El Reto de Hoy",
+                "description": "“De cierto te digo que hoy estarás conmigo en el paraíso” Un malhechor, escuchó de Jesús la frase más preciosa que una persona podría escuchar de la boca de Jesús. Detrás de esta frase hay perdón y la oportunidad de volver a tener una relación. En este episodio Julio e Iván te explicarán que Jesús nos mostró que cuando ambas partes están dispuestas a perdonar, la relación puede ser restaurada.\n\n#elretodehoy",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/sNOqrpdZvF4/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/sNOqrpdZvF4/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/sNOqrpdZvF4/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/sNOqrpdZvF4/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    },
+                    "maxres": {
+                        "url": "https://i.ytimg.com/vi/sNOqrpdZvF4/maxresdefault.jpg",
+                        "width": 1280,
+                        "height": 720
+                    }
+                },
+                "channelTitle": "Iglesia Bautista Vida Nueva",
+                "playlistId": "PL0MA6QqbTGP68oH-8pef_-0w5kGOLN4Eb",
+                "position": 2,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "sNOqrpdZvF4"
+                },
+                "videoOwnerChannelTitle": "Iglesia Bautista Vida Nueva",
+                "videoOwnerChannelId": "UCoNq7HF7vnqalfg-lTaxrDQ"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "ofEUB106vBlJFz3-7vANMrj20vA",
+            "id": "UEwwTUE2UXFiVEdQNjhvSC04cGVmXy0wdzVrR09MTjRFYi4yODlGNEE0NkRGMEEzMEQy",
+            "snippet": {
+                "publishedAt": "2024-03-25T04:17:15Z",
+                "channelId": "UCoNq7HF7vnqalfg-lTaxrDQ",
+                "title": "7 Dichos de la Cruz - Parte 1 - El Reto de Hoy",
+                "description": "¡Padre, perdónalos, por que no saben lo que hacen! Jesús estando en la cruz, nos da una lección poderosa sobre el perdón. En este episodio Julio e Iván te mostrarán que la primera de las 7 frases de Jesús en la cruz, te retará a perdonar.",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/wkkqQTb0FKw/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/wkkqQTb0FKw/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/wkkqQTb0FKw/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/wkkqQTb0FKw/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    },
+                    "maxres": {
+                        "url": "https://i.ytimg.com/vi/wkkqQTb0FKw/maxresdefault.jpg",
+                        "width": 1280,
+                        "height": 720
+                    }
+                },
+                "channelTitle": "Iglesia Bautista Vida Nueva",
+                "playlistId": "PL0MA6QqbTGP68oH-8pef_-0w5kGOLN4Eb",
+                "position": 3,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "wkkqQTb0FKw"
+                },
+                "videoOwnerChannelTitle": "Iglesia Bautista Vida Nueva",
+                "videoOwnerChannelId": "UCoNq7HF7vnqalfg-lTaxrDQ"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "uLNKdjJdkZqWy3oQ_-b3UiU6wgA",
+            "id": "UEwwTUE2UXFiVEdQNjhvSC04cGVmXy0wdzVrR09MTjRFYi4wMTcyMDhGQUE4NTIzM0Y5",
+            "snippet": {
+                "publishedAt": "2024-03-25T19:08:30Z",
+                "channelId": "UCoNq7HF7vnqalfg-lTaxrDQ",
+                "title": "La Única Explicación es el Amor - Los 7 Dichos de la Cruz - Julio Contreras",
+                "description": "Las últimas palabras de alguien suelen ser las más importantes. Las últimas palabras de Jesús no solo son famosas, también son poderosas. En este mensaje descubrirás los 7 dichos de Jesús antes de morir.",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/_4bHdL9GDsw/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/_4bHdL9GDsw/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/_4bHdL9GDsw/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/_4bHdL9GDsw/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    },
+                    "maxres": {
+                        "url": "https://i.ytimg.com/vi/_4bHdL9GDsw/maxresdefault.jpg",
+                        "width": 1280,
+                        "height": 720
+                    }
+                },
+                "channelTitle": "Iglesia Bautista Vida Nueva",
+                "playlistId": "PL0MA6QqbTGP68oH-8pef_-0w5kGOLN4Eb",
+                "position": 4,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "_4bHdL9GDsw"
+                },
+                "videoOwnerChannelTitle": "Iglesia Bautista Vida Nueva",
+                "videoOwnerChannelId": "UCoNq7HF7vnqalfg-lTaxrDQ"
+            }
+        }
+    ],
+    "pageInfo": {
+        "totalResults": 5,
+        "resultsPerPage": 5
+    }
+}

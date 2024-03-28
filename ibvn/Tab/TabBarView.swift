@@ -1,0 +1,30 @@
+//
+//  TabBarView.swift
+//  ibvn
+//
+//  Created by Jose Letona on 28/3/24.
+//
+
+import SwiftUI
+
+struct TabBarView: View {
+    var body: some View {
+        TabView {
+            SundayPreachesView(viewModel: SundayPreachesViewModel())
+                .tabItem {
+                    Label("Domingos", systemImage: "house")
+                }
+                .tag("0")
+            
+            ElRetoDeHoyListView(viewModel: ElRetoDeHoyListViewModel())
+                .tabItem {
+                    Label("ERDH", systemImage: "bell")
+                }
+                .tag("1")
+        }
+    }
+}
+
+#Preview {
+    TabBarView()
+}

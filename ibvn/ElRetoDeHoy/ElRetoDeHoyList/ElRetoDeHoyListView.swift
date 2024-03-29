@@ -43,11 +43,11 @@ struct ElRetoDeHoyListView: View {
                               
                                     Text(item.snippet.title)
                                         .font(.caption)
-                                        .foregroundColor(.primary)
+                                        .foregroundColor(Constants.primary)
                                 
                                 Text(item.snippet.publishedAt.formatDate())
                                     .font(.caption2)
-                                    .foregroundColor(.secondary)
+                                    .foregroundColor(Constants.secondary)
                             }
                         }
                     }
@@ -56,6 +56,13 @@ struct ElRetoDeHoyListView: View {
                 }
             }
             .navigationTitle("El Reto de Hoy")
+            .toolbar {
+                ToolbarItemGroup(placement: .principal) {
+                    Image("IbvnLogo")
+                        .resizable()
+                        .frame(width: 80, height: 21)
+                }
+            }
         }
     }
 }

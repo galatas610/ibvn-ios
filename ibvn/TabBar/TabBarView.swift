@@ -12,7 +12,7 @@ struct TabBarView: View {
         TabView {
             SundayPreachesView(viewModel: SundayPreachesViewModel())
                 .tabItem {
-                    Label("Domingos", systemImage: "house")
+                    Label("Mensajes", systemImage: "house")
                 }
                 .tag("0")
             

@@ -9,12 +9,15 @@
 /* Begin PBXBuildFile section */
 		83386E552BB24E2E00E6BDE4 /* SundayPreachesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83386E542BB24E2E00E6BDE4 /* SundayPreachesView.swift */; };
 		83386E582BB24EA900E6BDE4 /* YouTubeiOSPlayerHelper in Frameworks */ = {isa = PBXBuildFile; productRef = 83386E572BB24EA900E6BDE4 /* YouTubeiOSPlayerHelper */; };
+		83891C3A2BB6229F002CBE99 /* YouTubePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83891C392BB6229F002CBE99 /* YouTubePlayer.swift */; };
+		83891C3D2BB62EDC002CBE99 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83891C3C2BB62EDC002CBE99 /* Constants.swift */; };
 		838DBAA32BB5D76900DB1591 /* NDVView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838DBAA22BB5D76900DB1591 /* NDVView.swift */; };
 		838DBAA52BB5D77700DB1591 /* NDVViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838DBAA42BB5D77700DB1591 /* NDVViewModel.swift */; };
 		838DBAA72BB5DAE600DB1591 /* NocheDeViernes.json in Resources */ = {isa = PBXBuildFile; fileRef = 838DBAA62BB5DAE600DB1591 /* NocheDeViernes.json */; };
 		838DBAAB2BB5DDF700DB1591 /* Koinonia.json in Resources */ = {isa = PBXBuildFile; fileRef = 838DBAAA2BB5DDF700DB1591 /* Koinonia.json */; };
 		838DBAAD2BB5DE0800DB1591 /* KoinoniaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838DBAAC2BB5DE0800DB1591 /* KoinoniaView.swift */; };
 		838DBAAF2BB5DE1800DB1591 /* KoinoniaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838DBAAE2BB5DE1800DB1591 /* KoinoniaViewModel.swift */; };
+		838DBAB12BB5F06F00DB1591 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838DBAB02BB5F06F00DB1591 /* View+Extensions.swift */; };
 		839DBA572BB3C71800E2B77F /* SundayPreaches.json in Resources */ = {isa = PBXBuildFile; fileRef = 839DBA562BB3C71800E2B77F /* SundayPreaches.json */; };
 		839DBA5A2BB3D4DB00E2B77F /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839DBA592BB3D4DB00E2B77F /* String+Extensions.swift */; };
 		83D182BF2BB552D00097A4D9 /* ElRetoDeHoyVideosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D182BE2BB552D00097A4D9 /* ElRetoDeHoyVideosView.swift */; };
@@ -56,12 +59,15 @@
 
 /* Begin PBXFileReference section */
 		83386E542BB24E2E00E6BDE4 /* SundayPreachesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SundayPreachesView.swift; sourceTree = "<group>"; };
+		83891C392BB6229F002CBE99 /* YouTubePlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouTubePlayer.swift; sourceTree = "<group>"; };
+		83891C3C2BB62EDC002CBE99 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		838DBAA22BB5D76900DB1591 /* NDVView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NDVView.swift; sourceTree = "<group>"; };
 		838DBAA42BB5D77700DB1591 /* NDVViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NDVViewModel.swift; sourceTree = "<group>"; };
 		838DBAA62BB5DAE600DB1591 /* NocheDeViernes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = NocheDeViernes.json; sourceTree = "<group>"; };
 		838DBAAA2BB5DDF700DB1591 /* Koinonia.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Koinonia.json; sourceTree = "<group>"; };
 		838DBAAC2BB5DE0800DB1591 /* KoinoniaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KoinoniaView.swift; sourceTree = "<group>"; };
 		838DBAAE2BB5DE1800DB1591 /* KoinoniaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KoinoniaViewModel.swift; sourceTree = "<group>"; };
+		838DBAB02BB5F06F00DB1591 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		839DBA562BB3C71800E2B77F /* SundayPreaches.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SundayPreaches.json; sourceTree = "<group>"; };
 		839DBA592BB3D4DB00E2B77F /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		83D182BE2BB552D00097A4D9 /* ElRetoDeHoyVideosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElRetoDeHoyVideosView.swift; sourceTree = "<group>"; };
@@ -113,6 +119,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		83891C382BB62268002CBE99 /* YouTubePlayer */ = {
+			isa = PBXGroup;
+			children = (
+				83891C392BB6229F002CBE99 /* YouTubePlayer.swift */,
+			);
+			path = YouTubePlayer;
+			sourceTree = "<group>";
+		};
+		83891C3B2BB62EC8002CBE99 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				83891C3C2BB62EDC002CBE99 /* Constants.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		838DBA9E2BB5D70900DB1591 /* NDV */ = {
 			isa = PBXGroup;
 			children = (
@@ -162,6 +184,7 @@
 			children = (
 				839DBA592BB3D4DB00E2B77F /* String+Extensions.swift */,
 				83E9808F2BB54F8000BF0094 /* Image+Extensions.swift */,
+				838DBAB02BB5F06F00DB1591 /* View+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -202,12 +225,12 @@
 			path = LocalData;
 			sourceTree = "<group>";
 		};
-		83D182C82BB55E110097A4D9 /* Tab */ = {
+		83D182C82BB55E110097A4D9 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
 				83D182C92BB55EA90097A4D9 /* TabBarView.swift */,
 			);
-			path = Tab;
+			path = TabBar;
 			sourceTree = "<group>";
 		};
 		83D1F43A2BB1C30400A611A5 = {
@@ -233,7 +256,9 @@
 		83D1F4452BB1C30400A611A5 /* ibvn */ = {
 			isa = PBXGroup;
 			children = (
-				83D182C82BB55E110097A4D9 /* Tab */,
+				83891C3B2BB62EC8002CBE99 /* Helper */,
+				83891C382BB62268002CBE99 /* YouTubePlayer */,
+				83D182C82BB55E110097A4D9 /* TabBar */,
 				839DBA582BB3D4C600E2B77F /* Extensions */,
 				83FF6A242BB3080D00E3B4DF /* SundayPreaches */,
 				83E9808A2BB5412100BF0094 /* ElRetoDeHoy */,
@@ -452,11 +477,14 @@
 				839DBA5A2BB3D4DB00E2B77F /* String+Extensions.swift in Sources */,
 				83E9808C2BB5414200BF0094 /* ElRetoDeHoyListView.swift in Sources */,
 				83D182C12BB552E00097A4D9 /* ElRetoDeHoyVideosViewModel.swift in Sources */,
+				838DBAB12BB5F06F00DB1591 /* View+Extensions.swift in Sources */,
 				83386E552BB24E2E00E6BDE4 /* SundayPreachesView.swift in Sources */,
 				838DBAAF2BB5DE1800DB1591 /* KoinoniaViewModel.swift in Sources */,
 				83E9808E2BB5415400BF0094 /* ElRetoDeHoyListViewModel.swift in Sources */,
 				83FF6A262BB3083A00E3B4DF /* SundayPreachesViewModel.swift in Sources */,
+				83891C3D2BB62EDC002CBE99 /* Constants.swift in Sources */,
 				83D1F4472BB1C30400A611A5 /* ibvnApp.swift in Sources */,
+				83891C3A2BB6229F002CBE99 /* YouTubePlayer.swift in Sources */,
 				838DBAA32BB5D76900DB1591 /* NDVView.swift in Sources */,
 				838DBAA52BB5D77700DB1591 /* NDVViewModel.swift in Sources */,
 			);

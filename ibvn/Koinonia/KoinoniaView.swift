@@ -24,7 +24,8 @@ struct KoinoniaView: View {
                         .padding(.horizontal, 8)
                     HStack {
                         Text(item.snippet.publishedAt.formatDate())
-                            .font(.caption2)
+                            .font(.caption)
+                            .foregroundColor(Constants.secondary)
                         
                         Spacer()
                     }
@@ -32,7 +33,7 @@ struct KoinoniaView: View {
                     
                     HStack {
                         Text(item.snippet.title)
-                            .font(.caption2)
+                            .foregroundColor(Constants.primary)
                         
                         Spacer()
                     }
@@ -40,13 +41,21 @@ struct KoinoniaView: View {
                     
                     HStack {
                         Text(item.snippet.description)
-                            .font(.caption2)
-                            .foregroundColor(.gray)
+                            .font(.caption)
+                            .foregroundColor(Constants.secondary)
                             .padding(.horizontal, 8)
                             .padding(.bottom, 16)
                         
                         Spacer()
                     }
+                }
+            }
+            .navigationTitle("Koinonia")
+            .toolbar {
+                ToolbarItemGroup(placement: .principal) {
+                    Image("IbvnLogo")
+                        .resizable()
+                        .frame(width: 80, height: 21)
                 }
             }
         }

@@ -17,6 +17,21 @@ struct ElRetoDeHoyVideosView: View {
     
     var body: some View {
             ScrollView {
+//                VStack {
+//                    HStack {
+//                        Text(viewModel.snippet.title)
+//                            .foregroundColor(Constants.primary)
+//                            .font(.caption)
+//                        
+//                        Spacer()
+//                    }
+//                    
+//                    Text(viewModel.snippet.description)
+//                        .foregroundColor(Constants.secondary)
+//                        .font(.caption2)
+//                }
+//                .padding(.horizontal, 8)
+                
                 ForEach(viewModel.elRetoDeHoyListVideos.items, id: \.id) { item in
                     YouTubePlayer(videoId: item.snippet.resourceID.videoID)
                         .cornerRadius(16)
@@ -24,7 +39,8 @@ struct ElRetoDeHoyVideosView: View {
                         .padding(.horizontal, 8)
                     HStack {
                         Text(item.snippet.publishedAt.formatDate())
-                            .font(.caption2)
+                            .font(.caption)
+                            .foregroundColor(Constants.secondary)
                         
                         Spacer()
                     }
@@ -32,7 +48,7 @@ struct ElRetoDeHoyVideosView: View {
                     
                     HStack {
                         Text(item.snippet.title)
-                            .font(.caption2)
+                            .foregroundColor(Constants.primary)
                         
                         Spacer()
                     }
@@ -40,8 +56,8 @@ struct ElRetoDeHoyVideosView: View {
                     
                     HStack {
                         Text(item.snippet.description)
-                            .font(.caption2)
-                            .foregroundColor(.gray)
+                            .font(.caption)
+                            .foregroundColor(Constants.secondary)
                             .padding(.horizontal, 8)
                             .padding(.bottom, 16)
                         
@@ -49,9 +65,15 @@ struct ElRetoDeHoyVideosView: View {
                     }
                 }
             }
-            .navigationTitle(viewModel.snippet.title)
             .navigationBarTitleDisplayMode(.inline)
-        
+            .toolbar {
+                ToolbarItemGroup(placement: .principal) {
+                    Image("IbvnLogo")
+                        .resizable()
+                        .frame(width: 80, height: 21)
+                }
+            }
+            .navigationBarBackButtonTitleHidden()
         .onAppear {
             Task {
                 await viewModel.fetchElRetoDeHoyPlaylistsVideos()

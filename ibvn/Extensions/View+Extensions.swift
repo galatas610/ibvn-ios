@@ -10,7 +10,7 @@ import SwiftUI
 extension View {
     
     func navigationBarBackButtonTitleHidden() -> some View {
-        self.modifier(NavigationBarBackButtonTitleHiddenModifier())
+        self.modifier(BackButtonTitleHiddenModifier())
     }
     
     func navigationBarTitleColor(_ color: Color) -> some View {
@@ -20,18 +20,13 @@ extension View {
     }
 }
 
-struct NavigationBarBackButtonTitleHiddenModifier: ViewModifier {
-    
+struct BackButtonTitleHiddenModifier: ViewModifier {
     @Environment(\.dismiss) var dismiss
     
     @ViewBuilder @MainActor func body(content: Content) -> some View {
         content
             .navigationBarBackButtonHidden(true)
-            .navigationBarItems(
-                leading: Button(action: { dismiss() }) {
-                    Image(systemName: "chevron.left")
-                        .foregroundColor(.accentColor)
-                    .imageScale(.large) })
+            .navigationBarItems(leading: button)
             .contentShape(Rectangle())
             .gesture(
                 DragGesture(coordinateSpace: .local)
@@ -44,6 +39,16 @@ struct NavigationBarBackButtonTitleHiddenModifier: ViewModifier {
                     }
             )
     }
+    
+    var button: some View {
+        Button {
+            dismiss()
+        } label: {
+            Image(systemName: "chevron.left")
+                .foregroundColor(.accentColor)
+            .imageScale(.large)
+        }
+    }
 }
 
 struct NavigationBarTitleColorModifier: ViewModifier {
@@ -51,7 +56,7 @@ struct NavigationBarTitleColorModifier: ViewModifier {
     
     func body(content: Content) -> some View {
         content
-            .onAppear() {
+            .onAppear {
                 let coloredAppearance = UINavigationBarAppearance()
                 
                 coloredAppearance.titleTextAttributes = [.foregroundColor: UIColor(color)]

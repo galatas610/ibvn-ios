@@ -8,8 +8,8 @@
 import SwiftUI
 import YouTubeiOSPlayerHelper
 
-struct YouTubePlayer : UIViewRepresentable {
-    var videoId : String
+struct YouTubePlayer: UIViewRepresentable {
+    var videoId: String
     
     func makeUIView(context: Context) -> YTPlayerView {
         let playerView = YTPlayerView()

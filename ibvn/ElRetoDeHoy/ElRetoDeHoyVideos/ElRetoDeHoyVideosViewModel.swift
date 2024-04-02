@@ -47,13 +47,13 @@ final class ElRetoDeHoyVideosViewModel: ObservableObject {
                 do {
                     self.elRetoDeHoyListVideos = try JSONDecoder().decode(YoutubeListVideos.self, from: data)
                     print("🚩 elRetoDeHoyListVideos: \(String(describing: self.elRetoDeHoyListVideos))")
-                } catch(let error) {
+                } catch let error as NSError {
                     print("🚩 error: \(error)")
                 }
             }
             
             
-        } catch(let error) {
+        } catch let error as NSError {
             print("🚩 error: \(error)")
         }
     }
@@ -76,7 +76,7 @@ final class ElRetoDeHoyVideosViewModel: ObservableObject {
 //                let elRetoDeHoyListVideos = try JSONDecoder().decode(YoutubeListVideos.self, from: data)
 //                print("🚩 elRetoDeHoyListVideos: \(String(describing: elRetoDeHoyListVideos))")
 //                self.elRetoDeHoyListVideos = elRetoDeHoyListVideos
-//            } catch(let error) {
+//             } catch let error as NSError {
 //                print("🚩 error decoding local #ElRetoDeHoyVideos: \(String(describing: error))")
 //            }
 //        }

@@ -15,7 +15,7 @@ struct NDVView: View {
     }
     
     var body: some View {
-        NavigationView{
+        NavigationView {
             ScrollView {
                 ForEach(viewModel.ndvVideos.items, id: \.id.videoId) { item in
                     YouTubePlayer(videoId: item.id.videoId)

@@ -11,10 +11,9 @@ class SundayPreachesViewModel: ObservableObject {
     @Published var youtubeSearch: YoutubeSearch = .init()
     @Published var elRetoDeHoyLists: YouTubeList = .init()
     // MARK: Initialization
-    init(){
+    init() {
         localFetchSundayPreaches()
     }
-    
     
     // MARK: Functions
     func localFetchSundayPreaches() {
@@ -34,7 +33,7 @@ class SundayPreachesViewModel: ObservableObject {
             do {
                 let youtubeSearch = try JSONDecoder().decode(YoutubeSearch.self, from: data)
                 self.youtubeSearch = youtubeSearch
-            } catch(let error) {
+            } catch let error as NSError {
                 print("🚩 error decoding #Preaches: \(String(describing: error))")
             }
         }
@@ -77,7 +76,7 @@ class SundayPreachesViewModel: ObservableObject {
                     do {
                         self.youtubeSearch = try JSONDecoder().decode(YoutubeSearch.self, from: data)
                         print("🚩 sundayPreaches: \(String(describing: self.youtubeSearch))")
-                    } catch(let error) {
+                    } catch let error as NSError {
                         print("🚩 error: \(String(describing: error))")
                     }
                 }

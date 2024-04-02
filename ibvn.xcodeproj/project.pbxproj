@@ -25,12 +25,12 @@
 		83D182C52BB5554A0097A4D9 /* ElRetoDeHoyVideos.json in Resources */ = {isa = PBXBuildFile; fileRef = 83D182C42BB5554A0097A4D9 /* ElRetoDeHoyVideos.json */; };
 		83D182C72BB5576F0097A4D9 /* YoutubeListVideos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D182C62BB5576F0097A4D9 /* YoutubeListVideos.swift */; };
 		83D182CA2BB55EA90097A4D9 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D182C92BB55EA90097A4D9 /* TabBarView.swift */; };
-		83D1F4472BB1C30400A611A5 /* ibvnApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D1F4462BB1C30400A611A5 /* ibvnApp.swift */; };
+		83D1F4472BB1C30400A611A5 /* IbvnApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D1F4462BB1C30400A611A5 /* IbvnApp.swift */; };
 		83D1F44B2BB1C30600A611A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83D1F44A2BB1C30600A611A5 /* Assets.xcassets */; };
 		83D1F44E2BB1C30600A611A5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83D1F44D2BB1C30600A611A5 /* Preview Assets.xcassets */; };
-		83D1F4582BB1C30700A611A5 /* ibvnTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D1F4572BB1C30700A611A5 /* ibvnTests.swift */; };
-		83D1F4622BB1C30700A611A5 /* ibvnUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D1F4612BB1C30700A611A5 /* ibvnUITests.swift */; };
-		83D1F4642BB1C30700A611A5 /* ibvnUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D1F4632BB1C30700A611A5 /* ibvnUITestsLaunchTests.swift */; };
+		83D1F4582BB1C30700A611A5 /* IbvnTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D1F4572BB1C30700A611A5 /* IbvnTests.swift */; };
+		83D1F4622BB1C30700A611A5 /* IbvnUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D1F4612BB1C30700A611A5 /* IbvnUITests.swift */; };
+		83D1F4642BB1C30700A611A5 /* IbvnUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D1F4632BB1C30700A611A5 /* IbvnUITestsLaunchTests.swift */; };
 		83E980852BB533BF00BF0094 /* YouTubeSeach.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E980842BB533BF00BF0094 /* YouTubeSeach.swift */; };
 		83E980872BB5388000BF0094 /* ElRetoDeHoyLists.json in Resources */ = {isa = PBXBuildFile; fileRef = 83E980862BB5388000BF0094 /* ElRetoDeHoyLists.json */; };
 		83E980892BB53AE000BF0094 /* YouTubeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E980882BB53AE000BF0094 /* YouTubeList.swift */; };
@@ -76,14 +76,14 @@
 		83D182C62BB5576F0097A4D9 /* YoutubeListVideos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeListVideos.swift; sourceTree = "<group>"; };
 		83D182C92BB55EA90097A4D9 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		83D1F4432BB1C30400A611A5 /* ibvn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ibvn.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		83D1F4462BB1C30400A611A5 /* ibvnApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ibvnApp.swift; sourceTree = "<group>"; };
+		83D1F4462BB1C30400A611A5 /* IbvnApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IbvnApp.swift; sourceTree = "<group>"; };
 		83D1F44A2BB1C30600A611A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		83D1F44D2BB1C30600A611A5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		83D1F4532BB1C30700A611A5 /* ibvnTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ibvnTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		83D1F4572BB1C30700A611A5 /* ibvnTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ibvnTests.swift; sourceTree = "<group>"; };
+		83D1F4572BB1C30700A611A5 /* IbvnTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IbvnTests.swift; sourceTree = "<group>"; };
 		83D1F45D2BB1C30700A611A5 /* ibvnUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ibvnUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		83D1F4612BB1C30700A611A5 /* ibvnUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ibvnUITests.swift; sourceTree = "<group>"; };
-		83D1F4632BB1C30700A611A5 /* ibvnUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ibvnUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		83D1F4612BB1C30700A611A5 /* IbvnUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IbvnUITests.swift; sourceTree = "<group>"; };
+		83D1F4632BB1C30700A611A5 /* IbvnUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IbvnUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		83E980842BB533BF00BF0094 /* YouTubeSeach.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouTubeSeach.swift; sourceTree = "<group>"; };
 		83E980862BB5388000BF0094 /* ElRetoDeHoyLists.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ElRetoDeHoyLists.json; sourceTree = "<group>"; };
 		83E980882BB53AE000BF0094 /* YouTubeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouTubeList.swift; sourceTree = "<group>"; };
@@ -264,7 +264,7 @@
 				83E9808A2BB5412100BF0094 /* ElRetoDeHoy */,
 				838DBA9E2BB5D70900DB1591 /* NDV */,
 				838DBAA82BB5DDB700DB1591 /* Koinonia */,
-				83D1F4462BB1C30400A611A5 /* ibvnApp.swift */,
+				83D1F4462BB1C30400A611A5 /* IbvnApp.swift */,
 				83D1F44A2BB1C30600A611A5 /* Assets.xcassets */,
 				83D1F44C2BB1C30600A611A5 /* Preview Content */,
 			);
@@ -282,7 +282,7 @@
 		83D1F4562BB1C30700A611A5 /* ibvnTests */ = {
 			isa = PBXGroup;
 			children = (
-				83D1F4572BB1C30700A611A5 /* ibvnTests.swift */,
+				83D1F4572BB1C30700A611A5 /* IbvnTests.swift */,
 			);
 			path = ibvnTests;
 			sourceTree = "<group>";
@@ -290,8 +290,8 @@
 		83D1F4602BB1C30700A611A5 /* ibvnUITests */ = {
 			isa = PBXGroup;
 			children = (
-				83D1F4612BB1C30700A611A5 /* ibvnUITests.swift */,
-				83D1F4632BB1C30700A611A5 /* ibvnUITestsLaunchTests.swift */,
+				83D1F4612BB1C30700A611A5 /* IbvnUITests.swift */,
+				83D1F4632BB1C30700A611A5 /* IbvnUITestsLaunchTests.swift */,
 			);
 			path = ibvnUITests;
 			sourceTree = "<group>";
@@ -334,6 +334,7 @@
 			buildConfigurationList = 83D1F4672BB1C30700A611A5 /* Build configuration list for PBXNativeTarget "ibvn" */;
 			buildPhases = (
 				83D1F43F2BB1C30400A611A5 /* Sources */,
+				83F6A7C82BBC8A1E00F79AEF /* ShellScript */,
 				83D1F4402BB1C30400A611A5 /* Frameworks */,
 				83D1F4412BB1C30400A611A5 /* Resources */,
 			);
@@ -462,6 +463,26 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		83F6A7C82BBC8A1E00F79AEF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		83D1F43F2BB1C30400A611A5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -483,7 +504,7 @@
 				83E9808E2BB5415400BF0094 /* ElRetoDeHoyListViewModel.swift in Sources */,
 				83FF6A262BB3083A00E3B4DF /* SundayPreachesViewModel.swift in Sources */,
 				83891C3D2BB62EDC002CBE99 /* Constants.swift in Sources */,
-				83D1F4472BB1C30400A611A5 /* ibvnApp.swift in Sources */,
+				83D1F4472BB1C30400A611A5 /* IbvnApp.swift in Sources */,
 				83891C3A2BB6229F002CBE99 /* YouTubePlayer.swift in Sources */,
 				838DBAA32BB5D76900DB1591 /* NDVView.swift in Sources */,
 				838DBAA52BB5D77700DB1591 /* NDVViewModel.swift in Sources */,
@@ -494,7 +515,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				83D1F4582BB1C30700A611A5 /* ibvnTests.swift in Sources */,
+				83D1F4582BB1C30700A611A5 /* IbvnTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,8 +523,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				83D1F4622BB1C30700A611A5 /* ibvnUITests.swift in Sources */,
-				83D1F4642BB1C30700A611A5 /* ibvnUITestsLaunchTests.swift in Sources */,
+				83D1F4622BB1C30700A611A5 /* IbvnUITests.swift in Sources */,
+				83D1F4642BB1C30700A611A5 /* IbvnUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -652,6 +673,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"ibvn/Preview Content\"";
 				DEVELOPMENT_TEAM = PPMH8RM668;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -683,6 +705,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"ibvn/Preview Content\"";
 				DEVELOPMENT_TEAM = PPMH8RM668;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

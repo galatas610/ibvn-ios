@@ -10,10 +10,9 @@ import Foundation
 class ElRetoDeHoyListViewModel: ObservableObject {
     @Published var elRetoDeHoyLists: YouTubeList = .init()
     // MARK: Initialization
-    init(){
+    init() {
         localFetchElRetoDeHoyPlaylists()
     }
-    
     
     // MARK: Functions
     func fetchElRetoDeHoyPlaylists() async {
@@ -38,12 +37,10 @@ class ElRetoDeHoyListViewModel: ObservableObject {
             
             do {
                 self.elRetoDeHoyLists = try JSONDecoder().decode(YouTubeList.self, from: data)
-            } catch(let error) {
+            } catch let error as NSError {
                 print("🚩 error: \(error)")
             }
-            
-            
-        } catch(let error) {
+        } catch let error as NSError {
             print("🚩 error: \(error)")
         }
     }
@@ -66,7 +63,7 @@ class ElRetoDeHoyListViewModel: ObservableObject {
                 let elRetoDeHoyLists = try JSONDecoder().decode(YouTubeList.self, from: data)
 //                print("🚩 elRetoDeHoyLists: \(String(describing: elRetoDeHoyLists))")
                 self.elRetoDeHoyLists = elRetoDeHoyLists
-            } catch(let error) {
+            } catch let error as NSError {
                 print("🚩 error decoding local #ElRetoDeHoy: \(String(describing: error))")
             }
         }

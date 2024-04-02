@@ -40,10 +40,10 @@ struct ElRetoDeHoyListView: View {
                             }
                             
                             VStack(alignment: .leading) {
-                              
-                                    Text(item.snippet.title)
-                                        .font(.caption)
-                                        .foregroundColor(Constants.primary)
+                                
+                                Text(item.snippet.title)
+                                    .font(.caption)
+                                    .foregroundColor(Constants.primary)
                                 
                                 Text(item.snippet.publishedAt.formatDate())
                                     .font(.caption2)
@@ -51,8 +51,6 @@ struct ElRetoDeHoyListView: View {
                             }
                         }
                     }
-
-                   
                 }
             }
             .navigationTitle("El Reto de Hoy")

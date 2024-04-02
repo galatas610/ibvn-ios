@@ -10,7 +10,7 @@ import Foundation
 final class KoinoniaViewModel: ObservableObject {
     @Published var koinoniaVideos: YoutubeSearch = .init()
     // MARK: Initialization
-    init(){
+    init() {
         localFetchkoinoniaVideos()
     }
     
@@ -32,16 +32,13 @@ final class KoinoniaViewModel: ObservableObject {
             do {
                 let koinoniaVideos = try JSONDecoder().decode(YoutubeSearch.self, from: data)
                 self.koinoniaVideos = koinoniaVideos
-            } catch(let error) {
+            } catch let error as NSError {
                 print("🚩 Koinonia error decoding #Preaches: \(String(describing: error))")
             }
         }
     }
     
     func fetchSundayPreaches() {
-        let _ = "AIzaSyCTkfyhNMgKcDTlZsNZ2IT57ztfXySdl5c"
-        let _ = "AIzaSyDxL4ZavnYUE0_cMWOVt_ibWoPqcfMfLSQ"
-        
         guard let url = URL(string: "https://www.googleapis.com/youtube/v3/search?key=AIzaSyDxL4ZavnYUE0_cMWOVt_ibWoPqcfMfLSQ&channelId=UCoNq7HF7vnqalfg-lTaxrDQ&type=video&order=date&part=snippet&maxResults=50&q=Koinonia") else {
             return
         }
@@ -75,7 +72,7 @@ final class KoinoniaViewModel: ObservableObject {
                     do {
                         self.koinoniaVideos = try JSONDecoder().decode(YoutubeSearch.self, from: data)
                         print("🚩 Koinonia sundayPreaches: \(String(describing: self.koinoniaVideos))")
-                    } catch(let error) {
+                    } catch let error as NSError {
                         print("🚩 Koinonia error: \(String(describing: error))")
                     }
                 }
@@ -83,4 +80,3 @@ final class KoinoniaViewModel: ObservableObject {
             .resume()
     }
 }
-

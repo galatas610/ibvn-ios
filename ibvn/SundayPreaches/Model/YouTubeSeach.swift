@@ -32,7 +32,7 @@ struct YoutubeSearch: Codable {
 struct Item: Codable {
     let kind: String
     let etag: String
-    let id: ID
+    let id: ItemId
     let snippet: Snippet
     
     enum CodingKeys: String, CodingKey {
@@ -44,7 +44,7 @@ struct Item: Codable {
 }
 
 // MARK: - ID
-struct ID: Codable {
+struct ItemId: Codable {
     let kind: String
     let videoId: String
 
@@ -76,7 +76,16 @@ struct Snippet: Codable {
         case publishTime
     }
     
-    init(publishedAt: String = "", channelId: String = "", title: String = "", description: String = "", thumbnails: Thumbnails = .init(), channelTitle: String = "", liveBroadcastContent: LiveBroadcastContent? = nil, publishTime: String? = "") {
+    init(
+        publishedAt: String = "",
+        channelId: String = "",
+        title: String = "",
+        description: String = "",
+        thumbnails: Thumbnails = .init(),
+        channelTitle: String = "",
+        liveBroadcastContent: LiveBroadcastContent? = nil,
+        publishTime: String? = ""
+    ) {
         self.publishedAt = publishedAt
         self.channelId = channelId
         self.title = title
@@ -121,9 +130,8 @@ struct ThumbnailsInfo: Codable {
 }
 
 enum LiveBroadcastContent: String, Codable {
-    case none = "none"
+    case none
 }
-
 
 // MARK: - PageInfo
 struct PageInfo: Codable {

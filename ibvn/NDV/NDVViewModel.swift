@@ -10,7 +10,7 @@ import Foundation
 class NDVViewModel: ObservableObject {
     @Published var ndvVideos: YoutubeSearch = .init()
     // MARK: Initialization
-    init(){
+    init() {
         localFetchNocheDeViernesVideos()
     }
     
@@ -32,7 +32,7 @@ class NDVViewModel: ObservableObject {
             do {
                 let ndvVideos = try JSONDecoder().decode(YoutubeSearch.self, from: data)
                 self.ndvVideos = ndvVideos
-            } catch(let error) {
+            } catch let error as NSError {
                 print("🚩 NDV error decoding #Preaches: \(String(describing: error))")
             }
         }
@@ -75,7 +75,7 @@ class NDVViewModel: ObservableObject {
                     do {
                         self.ndvVideos = try JSONDecoder().decode(YoutubeSearch.self, from: data)
                         print("🚩 sundayPreaches: \(String(describing: self.ndvVideos))")
-                    } catch(let error) {
+                    } catch let error as NSError {
                         print("🚩 error: \(String(describing: error))")
                     }
                 }

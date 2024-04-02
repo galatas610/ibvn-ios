@@ -15,7 +15,7 @@ struct SundayPreachesView: View {
     }
     
     var body: some View {
-        NavigationView{
+        NavigationView {
             ScrollView {
                 ForEach(viewModel.youtubeSearch.items, id: \.id.videoId) { item in
                     YouTubePlayer(videoId: item.id.videoId)
@@ -26,7 +26,6 @@ struct SundayPreachesView: View {
                         Text(item.snippet.publishedAt.formatDate())
                             .font(.caption)
                             .foregroundColor(Constants.secondary)
-                            
                         
                         Spacer()
                     }

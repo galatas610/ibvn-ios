@@ -43,10 +43,13 @@ final class ElRetoDeHoyVideosViewModel: ObservableObject {
                 return
             }
             
-            do {
-                self.elRetoDeHoyListVideos = try JSONDecoder().decode(YoutubeListVideos.self, from: data)
-            } catch(let error) {
-                print("🚩 error: \(error)")
+            DispatchQueue.main.async {
+                do {
+                    self.elRetoDeHoyListVideos = try JSONDecoder().decode(YoutubeListVideos.self, from: data)
+                    print("🚩 elRetoDeHoyListVideos: \(String(describing: self.elRetoDeHoyListVideos))")
+                } catch(let error) {
+                    print("🚩 error: \(error)")
+                }
             }
             
             
@@ -55,27 +58,27 @@ final class ElRetoDeHoyVideosViewModel: ObservableObject {
         }
     }
     
-    func localFetchVideosFromList() {
-        guard let url = Bundle.main.url(forResource: "ElRetoDeHoyVideos", withExtension: "json") else {
-            print("json file not found")
-            
-            return
-        }
-        
-        guard let data = try? Data(contentsOf: url) else {
-            print("error getting Data from json")
-            
-            return
-        }
-        
-        DispatchQueue.main.async {
-            do {
-                let elRetoDeHoyListVideos = try JSONDecoder().decode(YoutubeListVideos.self, from: data)
-                print("🚩 elRetoDeHoyListVideos: \(String(describing: elRetoDeHoyListVideos))")
-                self.elRetoDeHoyListVideos = elRetoDeHoyListVideos
-            } catch(let error) {
-                print("🚩 error decoding local #ElRetoDeHoyVideos: \(String(describing: error))")
-            }
-        }
-    }
+//    func localFetchVideosFromList() {
+//        guard let url = Bundle.main.url(forResource: "ElRetoDeHoyVideos", withExtension: "json") else {
+//            print("json file not found")
+//            
+//            return
+//        }
+//        
+//        guard let data = try? Data(contentsOf: url) else {
+//            print("error getting Data from json")
+//            
+//            return
+//        }
+//        
+//        DispatchQueue.main.async {
+//            do {
+//                let elRetoDeHoyListVideos = try JSONDecoder().decode(YoutubeListVideos.self, from: data)
+//                print("🚩 elRetoDeHoyListVideos: \(String(describing: elRetoDeHoyListVideos))")
+//                self.elRetoDeHoyListVideos = elRetoDeHoyListVideos
+//            } catch(let error) {
+//                print("🚩 error decoding local #ElRetoDeHoyVideos: \(String(describing: error))")
+//            }
+//        }
+//    }
 }

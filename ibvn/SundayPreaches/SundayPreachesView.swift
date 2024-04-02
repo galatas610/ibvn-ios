@@ -24,7 +24,9 @@ struct SundayPreachesView: View {
                         .padding(.horizontal, 8)
                     HStack {
                         Text(item.snippet.publishedAt.formatDate())
-                            .font(.caption2)
+                            .font(.caption)
+                            .foregroundColor(Constants.secondary)
+                            
                         
                         Spacer()
                     }
@@ -32,7 +34,7 @@ struct SundayPreachesView: View {
                     
                     HStack {
                         Text(item.snippet.title)
-                            .font(.caption2)
+                            .foregroundColor(Constants.primary)
                         
                         Spacer()
                     }
@@ -40,8 +42,8 @@ struct SundayPreachesView: View {
                     
                     HStack {
                         Text(item.snippet.description)
-                            .font(.caption2)
-                            .foregroundColor(.gray)
+                            .font(.caption)
+                            .foregroundColor(Constants.secondary)
                             .padding(.horizontal, 8)
                             .padding(.bottom, 16)
                         
@@ -49,26 +51,19 @@ struct SundayPreachesView: View {
                     }
                 }
             }
+            .navigationTitle("Mensajes")
+            .toolbar {
+                ToolbarItemGroup(placement: .principal) {
+                    Image("IbvnLogo")
+                        .resizable()
+                        .frame(width: 80, height: 21)
+                }
+            }
         }
+        .navigationBarTitleColor(.accentColor)
     }
 }
 
 #Preview {
     SundayPreachesView(viewModel: SundayPreachesViewModel())
-}
-
-import YouTubeiOSPlayerHelper
-
-struct YouTubePlayer : UIViewRepresentable {
-    var videoId : String
-    
-    func makeUIView(context: Context) -> YTPlayerView {
-        let playerView = YTPlayerView()
-        playerView.load(withVideoId: videoId)
-        return playerView
-    }
-    
-    func updateUIView(_ uiView: YTPlayerView, context: Context) {
-        //
-    }
 }

@@ -18,6 +18,5 @@ struct YouTubePlayer: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: YTPlayerView, context: Context) {
-        //
     }
 }

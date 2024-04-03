@@ -10,11 +10,10 @@ import Foundation
 final class ElRetoDeHoyVideosViewModel: ObservableObject {
     // MARK: Property Wrappers
     @Published var elRetoDeHoyListVideos: YoutubeListVideos = .init()
+    @Published var snippet: Snippet
     // MARK: Variables
     private var listId: String
-    
-    var snippet: Snippet
-    
+
     // MARK: Initialization
     init(listId: String, snippet: Snippet) {
         self.listId = listId
@@ -47,7 +46,6 @@ final class ElRetoDeHoyVideosViewModel: ObservableObject {
             DispatchQueue.main.async {
                 do {
                     self.elRetoDeHoyListVideos = try JSONDecoder().decode(YoutubeListVideos.self, from: data)
-                    print("🚩 elRetoDeHoyListVideos: \(String(describing: self.elRetoDeHoyListVideos))")
                 } catch let error as NSError {
                     print("🚩 error: \(error)")
                 }
@@ -56,28 +54,4 @@ final class ElRetoDeHoyVideosViewModel: ObservableObject {
             print("🚩 error: \(error)")
         }
     }
-    
-//    func localFetchVideosFromList() {
-//        guard let url = Bundle.main.url(forResource: "ElRetoDeHoyVideos", withExtension: "json") else {
-//            print("json file not found")
-//            
-//            return
-//        }
-//        
-//        guard let data = try? Data(contentsOf: url) else {
-//            print("error getting Data from json")
-//            
-//            return
-//        }
-//        
-//        DispatchQueue.main.async {
-//            do {
-//                let elRetoDeHoyListVideos = try JSONDecoder().decode(YoutubeListVideos.self, from: data)
-//                print("🚩 elRetoDeHoyListVideos: \(String(describing: elRetoDeHoyListVideos))")
-//                self.elRetoDeHoyListVideos = elRetoDeHoyListVideos
-//             } catch let error as NSError {
-//                print("🚩 error decoding local #ElRetoDeHoyVideos: \(String(describing: error))")
-//            }
-//        }
-//    }
 }

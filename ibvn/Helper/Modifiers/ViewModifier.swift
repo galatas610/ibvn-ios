@@ -1,20 +1,32 @@
 //
-//  View+Extensions.swift
+//  ViewModifier+Extensions.swift
 //  ibvn
 //
-//  Created by Jose Letona on 28/3/24.
+//  Created by Jose Letona on 3/4/24.
 //
 
 import SwiftUI
 
-extension View {
-    
-    func navigationBarBackButtonTitleHidden() -> some View {
-        self.modifier(BackButtonTitleHiddenModifier())
-    }
-    
-    func navigationBarTitleColor(_ color: Color) -> some View {
-        return self.modifier(NavigationBarTitleColorModifier(color: color))
+struct TopBar: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    Image("IbvnLogo")
+                        .resizable()
+                        .frame(width: 120, height: 31)
+                }
+                
+                ToolbarItem(placement: .topBarTrailing) {
+                    if let url = URL(string: "https://ibvn.org/formas-de-dar/") {
+                        Link(destination: url) {
+                            Text("Formas de dar")
+                                .foregroundColor(.accentColor)
+                                .bold()
+                        }
+                    }
+                }
+            }
     }
 }
 

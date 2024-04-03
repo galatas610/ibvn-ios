@@ -47,7 +47,7 @@ struct Item: Codable {
 struct ItemId: Codable {
     let kind: String
     let videoId: String
-
+    
     enum CodingKeys: String, CodingKey {
         case kind
         case videoId
@@ -64,7 +64,7 @@ struct Snippet: Codable {
     let channelTitle: String
     let liveBroadcastContent: LiveBroadcastContent?
     let publishTime: String?
-
+    
     enum CodingKeys: String, CodingKey {
         case publishedAt
         case channelId
@@ -77,12 +77,12 @@ struct Snippet: Codable {
     }
     
     init(
-        publishedAt: String = "",
-        channelId: String = "",
-        title: String = "",
-        description: String = "",
+        publishedAt: String = "2024-02-12T16:04:49Z",
+        channelId: String = "UCoNq7HF7vnqalfg-lTaxrDQ",
+        title: String = "Diseño Original - Hablemos de Matrimonio - El Reto de Hoy",
+        description: String = "Muchos han intentado vivir el matrimonio a su propio estilo, pero el matrimonio tiene un diseño original, y ese ese le único que realmente funciona.",
         thumbnails: Thumbnails = .init(),
-        channelTitle: String = "",
+        channelTitle: String = "Iglesia Bautista Vida Nueva",
         liveBroadcastContent: LiveBroadcastContent? = nil,
         publishTime: String? = ""
     ) {
@@ -102,14 +102,18 @@ struct Thumbnails: Codable {
     let `default`: ThumbnailsInfo
     let medium: ThumbnailsInfo
     let high: ThumbnailsInfo
-
+    
     enum CodingKeys: String, CodingKey {
         case `default`
         case medium
         case high
     }
     
-    init(`default`: ThumbnailsInfo = .init(), medium: ThumbnailsInfo = .init(), high: ThumbnailsInfo = .init()) {
+    init(
+        `default`: ThumbnailsInfo = .init(),
+        medium: ThumbnailsInfo = .init(),
+        high: ThumbnailsInfo = .init()
+    ) {
         self.medium = medium
         self.high = high
         self.default = `default`
@@ -122,7 +126,11 @@ struct ThumbnailsInfo: Codable {
     let width: Int
     let height: Int
     
-    init(url: String = "", width: Int = 0, height: Int = 0) {
+    init(
+        url: String = "https://i.ytimg.com/vi/M15q_cNaJZc/hqdefault.jpg",
+        width: Int = 480,
+        height: Int = 360
+    ) {
         self.url = url
         self.width = width
         self.height = height

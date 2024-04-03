@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 // MARK: - YoutubeSearch
 struct YouTubeList: Codable, Identifiable {
     let id = UUID()

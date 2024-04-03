@@ -20,7 +20,7 @@ struct ElRetoDeHoyVideosView: View {
 //                VStack {
 //                    HStack {
 //                        Text(viewModel.snippet.title)
-//                            .foregroundColor(Constants.primary)
+//                            .foregroundColor(Constants.primarySet)
 //                            .font(.caption)
 //                        
 //                        Spacer()
@@ -33,36 +33,7 @@ struct ElRetoDeHoyVideosView: View {
 //                .padding(.horizontal, 8)
                 
                 ForEach(viewModel.elRetoDeHoyListVideos.items, id: \.id) { item in
-                    YouTubePlayer(videoId: item.snippet.resourceID.videoID)
-                        .cornerRadius(16)
-                        .frame(height: 200)
-                        .padding(.horizontal, 8)
-                    HStack {
-                        Text(item.snippet.publishedAt.formatDate())
-                            .font(.caption)
-                            .foregroundColor(Constants.secondary)
-                        
-                        Spacer()
-                    }
-                    .padding(.horizontal, 8)
-                    
-                    HStack {
-                        Text(item.snippet.title)
-                            .foregroundColor(Constants.primary)
-                        
-                        Spacer()
-                    }
-                    .padding(.horizontal, 8)
-                    
-                    HStack {
-                        Text(item.snippet.description)
-                            .font(.caption)
-                            .foregroundColor(Constants.secondary)
-                            .padding(.horizontal, 8)
-                            .padding(.bottom, 16)
-                        
-                        Spacer()
-                    }
+                    YouTubeVideoListView(item: item)
                 }
             }
             .navigationBarTitleDisplayMode(.inline)

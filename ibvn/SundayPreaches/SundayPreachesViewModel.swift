@@ -11,10 +11,9 @@ class SundayPreachesViewModel: ObservableObject {
     @Published var youtubeSearch: YoutubeSearch = .init()
     @Published var elRetoDeHoyLists: YouTubeList = .init()
     // MARK: Initialization
-    init(){
+    init() {
         localFetchSundayPreaches()
     }
-    
     
     // MARK: Functions
     func localFetchSundayPreaches() {
@@ -34,17 +33,17 @@ class SundayPreachesViewModel: ObservableObject {
             do {
                 let youtubeSearch = try JSONDecoder().decode(YoutubeSearch.self, from: data)
                 self.youtubeSearch = youtubeSearch
-            } catch(let error) {
+            } catch let error as NSError {
                 print("🚩 error decoding #Preaches: \(String(describing: error))")
             }
         }
     }
     
     func fetchSundayPreaches() {
-        let _ = "AIzaSyCTkfyhNMgKcDTlZsNZ2IT57ztfXySdl5c"
-        let _ = "AIzaSyDxL4ZavnYUE0_cMWOVt_ibWoPqcfMfLSQ"
+        let baseSearchUrl = "https://www.googleapis.com/youtube/v3/search"
+        let apiKey = "AIzaSyDxL4ZavnYUE0_cMWOVt_ibWoPqcfMfLSQ"
         
-        guard let url = URL(string: "https://www.googleapis.com/youtube/v3/search?key=AIzaSyDxL4ZavnYUE0_cMWOVt_ibWoPqcfMfLSQ&channelId=UCoNq7HF7vnqalfg-lTaxrDQ&type=video&eventType=completed&part=snippet&order=date&maxResults=50") else {
+        guard let url = URL(string: baseSearchUrl + "?key=" + apiKey + "&channelId=UCoNq7HF7vnqalfg-lTaxrDQ&type=video&eventType=completed&part=snippet&order=date&maxResults=50") else {
             return
         }
         
@@ -77,7 +76,7 @@ class SundayPreachesViewModel: ObservableObject {
                     do {
                         self.youtubeSearch = try JSONDecoder().decode(YoutubeSearch.self, from: data)
                         print("🚩 sundayPreaches: \(String(describing: self.youtubeSearch))")
-                    } catch(let error) {
+                    } catch let error as NSError {
                         print("🚩 error: \(String(describing: error))")
                     }
                 }

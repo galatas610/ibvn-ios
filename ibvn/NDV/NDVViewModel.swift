@@ -10,7 +10,7 @@ import Foundation
 class NDVViewModel: ObservableObject {
     @Published var ndvVideos: YoutubeSearch = .init()
     // MARK: Initialization
-    init(){
+    init() {
         localFetchNocheDeViernesVideos()
     }
     
@@ -32,17 +32,17 @@ class NDVViewModel: ObservableObject {
             do {
                 let ndvVideos = try JSONDecoder().decode(YoutubeSearch.self, from: data)
                 self.ndvVideos = ndvVideos
-            } catch(let error) {
+            } catch let error as NSError {
                 print("🚩 NDV error decoding #Preaches: \(String(describing: error))")
             }
         }
     }
     
     func fetchSundayPreaches() {
-        let _ = "AIzaSyCTkfyhNMgKcDTlZsNZ2IT57ztfXySdl5c"
-        let _ = "AIzaSyDxL4ZavnYUE0_cMWOVt_ibWoPqcfMfLSQ"
+        let baseSearchUrl = "https://www.googleapis.com/youtube/v3/search"
+        let apiKey = "AIzaSyDxL4ZavnYUE0_cMWOVt_ibWoPqcfMfLSQ"
         
-        guard let url = URL(string: "https://www.googleapis.com/youtube/v3/search?key=AIzaSyDxL4ZavnYUE0_cMWOVt_ibWoPqcfMfLSQ&channelId=UCoNq7HF7vnqalfg-lTaxrDQ&type=video&order=date&part=snippet&maxResults=50&q=%23NDV") else {
+        guard let url = URL(string: baseSearchUrl + "?key=" + apiKey + "&channelId=UCoNq7HF7vnqalfg-lTaxrDQ&type=video&order=date&part=snippet&maxResults=50&q=%23NDV") else {
             return
         }
         
@@ -75,7 +75,7 @@ class NDVViewModel: ObservableObject {
                     do {
                         self.ndvVideos = try JSONDecoder().decode(YoutubeSearch.self, from: data)
                         print("🚩 sundayPreaches: \(String(describing: self.ndvVideos))")
-                    } catch(let error) {
+                    } catch let error as NSError {
                         print("🚩 error: \(String(describing: error))")
                     }
                 }

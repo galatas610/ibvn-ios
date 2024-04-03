@@ -427,11 +427,11 @@
 			};
 			buildConfigurationList = 83D1F43E2BB1C30400A611A5 /* Build configuration list for PBXProject "ibvn" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = en;
+			developmentRegion = "es-419";
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
+				"es-419",
 			);
 			mainGroup = 83D1F43A2BB1C30400A611A5;
 			packageReferences = (

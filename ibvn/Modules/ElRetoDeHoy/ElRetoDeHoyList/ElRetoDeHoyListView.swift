@@ -9,7 +9,8 @@ import SwiftUI
 
 struct ElRetoDeHoyListView: View {
     // MARK: Property Wrappers
-    @StateObject private var viewModel = ElRetoDeHoyListViewModel()
+    @StateObject private var viewModel: ElRetoDeHoyListViewModel
+    @State private var searchText = ""
     
     init(viewModel: ElRetoDeHoyListViewModel) {
         self._viewModel = StateObject(wrappedValue: viewModel)
@@ -19,7 +20,7 @@ struct ElRetoDeHoyListView: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(viewModel.elRetoDeHoyLists.items) { item in
+                ForEach(searchResults) { item in
                     NavigationLink {
                         ElRetoDeHoyVideosView(viewModel: ElRetoDeHoyVideosViewModel(
                             listId: item.id,
@@ -34,6 +35,18 @@ struct ElRetoDeHoyListView: View {
             .padding(.horizontal, -16)
             .navigationTitle("El Reto de Hoy")
             .modifier(TopBar())
+            .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
+        }
+        
+        var searchResults: [ListItem] {
+            if searchText.isEmpty {
+                return viewModel.elRetoDeHoyLists.items
+            } else {
+                return viewModel.elRetoDeHoyLists.items.filter {
+                    $0.snippet.title.localizedCaseInsensitiveContains(searchText) ||
+                    $0.snippet.description.localizedCaseInsensitiveContains(searchText)
+                }
+            }
         }
     }
     

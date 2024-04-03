@@ -9,6 +9,6 @@ import SwiftUI
 
 struct Constants {
     // MARK: Colors
-    static let primary = Color("Primary")
-    static let secondary = Color("Secondary")
+    static let primary = Color("Colors/primarySet")
+    static let secondary = Color("Colors/secondarySet")
 }

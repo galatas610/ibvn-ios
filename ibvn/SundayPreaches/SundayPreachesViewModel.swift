@@ -40,10 +40,10 @@ class SundayPreachesViewModel: ObservableObject {
     }
     
     func fetchSundayPreaches() {
-        let _ = "AIzaSyCTkfyhNMgKcDTlZsNZ2IT57ztfXySdl5c"
-        let _ = "AIzaSyDxL4ZavnYUE0_cMWOVt_ibWoPqcfMfLSQ"
+        let baseSearchUrl = "https://www.googleapis.com/youtube/v3/search"
+        let apiKey = "AIzaSyDxL4ZavnYUE0_cMWOVt_ibWoPqcfMfLSQ"
         
-        guard let url = URL(string: "https://www.googleapis.com/youtube/v3/search?key=AIzaSyDxL4ZavnYUE0_cMWOVt_ibWoPqcfMfLSQ&channelId=UCoNq7HF7vnqalfg-lTaxrDQ&type=video&eventType=completed&part=snippet&order=date&maxResults=50") else {
+        guard let url = URL(string: baseSearchUrl + "?key=" + apiKey + "&channelId=UCoNq7HF7vnqalfg-lTaxrDQ&type=video&eventType=completed&part=snippet&order=date&maxResults=50") else {
             return
         }
         

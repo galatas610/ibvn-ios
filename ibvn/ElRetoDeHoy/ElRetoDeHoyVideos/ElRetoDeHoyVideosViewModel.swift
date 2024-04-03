@@ -23,7 +23,8 @@ final class ElRetoDeHoyVideosViewModel: ObservableObject {
     
     // MARK: Functions
     func fetchElRetoDeHoyPlaylistsVideos() async {
-        guard let url = URL(string: "https://www.googleapis.com/youtube/v3/playlistItems?key=AIzaSyCTkfyhNMgKcDTlZsNZ2IT57ztfXySdl5c&channelId=UCoNq7HF7vnqalfg-lTaxrDQ&playlistId="+listId+"&part=snippet") else {
+        let playlistUrl = "https://www.googleapis.com/youtube/v3/playlistItems"
+        guard let url = URL(string: playlistUrl + "?key=AIzaSyCTkfyhNMgKcDTlZsNZ2IT57ztfXySdl5c&channelId=UCoNq7HF7vnqalfg-lTaxrDQ&playlistId=" + listId + "&part=snippet") else {
             print("🚩 Fail ElRetoDeHoy playlistVideos URL")
             
             return
@@ -51,8 +52,6 @@ final class ElRetoDeHoyVideosViewModel: ObservableObject {
                     print("🚩 error: \(error)")
                 }
             }
-            
-            
         } catch let error as NSError {
             print("🚩 error: \(error)")
         }

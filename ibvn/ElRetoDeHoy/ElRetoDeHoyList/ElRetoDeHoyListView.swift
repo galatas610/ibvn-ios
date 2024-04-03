@@ -22,34 +22,11 @@ struct ElRetoDeHoyListView: View {
                 ForEach(viewModel.elRetoDeHoyLists.items) { item in
                     NavigationLink {
                         ElRetoDeHoyVideosView(viewModel: ElRetoDeHoyVideosViewModel(
-                            listId: item.id, 
+                            listId: item.id,
                             snippet: item.snippet
                         ))
                     } label: {
-                        HStack {
-                            VStack {
-                                AsyncImage(url: URL(string: item.snippet.thumbnails.default.url)) { image in
-                                    image.resizable().centerCropped()
-                                } placeholder: {
-                                    ProgressView()
-                                }
-                                .frame(width: 120, height: 66)
-                                .clipped()
-                                .cornerRadius(8)
-                                
-                            }
-                            
-                            VStack(alignment: .leading) {
-                                
-                                Text(item.snippet.title)
-                                    .font(.caption)
-                                    .foregroundColor(Constants.primary)
-                                
-                                Text(item.snippet.publishedAt.formatDate())
-                                    .font(.caption2)
-                                    .foregroundColor(Constants.secondary)
-                            }
-                        }
+                        labelContent(with: item)
                     }
                 }
             }
@@ -60,6 +37,32 @@ struct ElRetoDeHoyListView: View {
                         .resizable()
                         .frame(width: 80, height: 21)
                 }
+            }
+        }
+    }
+    
+    // MARK: Functions
+    func labelContent(with item: ListItem) -> some View {
+        HStack {
+            VStack {
+                AsyncImage(url: URL(string: item.snippet.thumbnails.default.url)) { image in
+                    image.resizable().centerCropped()
+                } placeholder: {
+                    ProgressView()
+                }
+                .frame(width: 120, height: 66)
+                .clipped()
+                .cornerRadius(8)
+            }
+            
+            VStack(alignment: .leading) {
+                Text(item.snippet.title)
+                    .font(.caption)
+                    .foregroundColor(Constants.primary)
+                
+                Text(item.snippet.publishedAt.formatDate())
+                    .font(.caption2)
+                    .foregroundColor(Constants.secondary)
             }
         }
     }

@@ -9,7 +9,6 @@ disabled_rules: # This rules will be ignored
 opt_in_rules: # This optional rules will be enforced
   - empty_count
   - weak_delegate
-  - unused_capture_list
   - closure_body_length
   - force_unwrapping
   - force_cast

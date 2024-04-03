@@ -16,35 +16,14 @@ struct ElRetoDeHoyVideosView: View {
     }
     
     var body: some View {
-            ScrollView {
-//                VStack {
-//                    HStack {
-//                        Text(viewModel.snippet.title)
-//                            .foregroundColor(Constants.primarySet)
-//                            .font(.caption)
-//                        
-//                        Spacer()
-//                    }
-//                    
-//                    Text(viewModel.snippet.description)
-//                        .foregroundColor(Constants.secondary)
-//                        .font(.caption2)
-//                }
-//                .padding(.horizontal, 8)
-                
+        ScrollView {
                 ForEach(viewModel.elRetoDeHoyListVideos.items, id: \.id) { item in
                     YouTubeVideoListView(item: item)
                 }
             }
+            .padding(.top, 16)
             .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItemGroup(placement: .principal) {
-                    Image("IbvnLogo")
-                        .resizable()
-                        .frame(width: 80, height: 21)
-                }
-            }
-            .navigationBarBackButtonTitleHidden()
+            .modifier(TopBar())
         .onAppear {
             Task {
                 await viewModel.fetchElRetoDeHoyPlaylistsVideos()

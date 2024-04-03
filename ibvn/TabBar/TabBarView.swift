@@ -27,6 +27,7 @@ struct TabBarView: View {
                 }
                 .tag("2")
         }
+        .preferredColorScheme(.dark)
     }
 }
 

@@ -14,9 +14,7 @@ extension View {
     }
     
     func navigationBarTitleColor(_ color: Color) -> some View {
-        
         return self.modifier(NavigationBarTitleColorModifier(color: color))
-        
     }
 }
 

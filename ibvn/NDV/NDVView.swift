@@ -21,14 +21,9 @@ struct NDVView: View {
                     YouTubeVideoView(item: item)
                 }
             }
+            .padding(.top, 16)
             .navigationTitle("Noche de Viernes")
-            .toolbar {
-                ToolbarItemGroup(placement: .principal) {
-                    Image("IbvnLogo")
-                        .resizable()
-                        .frame(width: 80, height: 21)
-                }
-            }
+            .modifier(TopBar())
         }
     }
 }

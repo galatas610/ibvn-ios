@@ -18,7 +18,7 @@ struct ElRetoDeHoyListView: View {
     // MARK: Body
     var body: some View {
         NavigationView {
-            Form {
+            List {
                 ForEach(viewModel.elRetoDeHoyLists.items) { item in
                     NavigationLink {
                         ElRetoDeHoyVideosView(viewModel: ElRetoDeHoyVideosViewModel(
@@ -30,14 +30,10 @@ struct ElRetoDeHoyListView: View {
                     }
                 }
             }
+            .padding(.top, 16)
+            .padding(.horizontal, -16)
             .navigationTitle("El Reto de Hoy")
-            .toolbar {
-                ToolbarItemGroup(placement: .principal) {
-                    Image("IbvnLogo")
-                        .resizable()
-                        .frame(width: 80, height: 21)
-                }
-            }
+            .modifier(TopBar())
         }
     }
     

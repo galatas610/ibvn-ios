@@ -10,13 +10,15 @@ import Foundation
 class ElRetoDeHoyListViewModel: ObservableObject {
     @Published var elRetoDeHoyLists: YouTubeList = .init()
     // MARK: Initialization
-    init() {
-        localFetchElRetoDeHoyPlaylists()
-    }
+    init() { }
     
     // MARK: Functions
     func fetchElRetoDeHoyPlaylists() async {
-        guard let url = URL(string: "") else {
+        let apiSeachListBaseUrl: String = "https://www.googleapis.com/youtube/v3/playlists"
+        let apiKey: String = "AIzaSyCTkfyhNMgKcDTlZsNZ2IT57ztfXySdl5c"
+        let channelId: String = "UCoNq7HF7vnqalfg-lTaxrDQ"
+        
+        guard let url = URL(string: apiSeachListBaseUrl + "?key=" + apiKey + "&channelId=" + channelId + "&type=playlist&order=date&part=snippet&q=el+reto+de+hoy&maxResults=50") else {
             print("🚩 Fail ElRetoDeHoy playlist URL")
             
             return
@@ -45,6 +47,7 @@ class ElRetoDeHoyListViewModel: ObservableObject {
         }
     }
     
+    // TODO: remove localFetchElRetoDeHoyPlaylists and Local data ElRetoDeHoyLists
     func localFetchElRetoDeHoyPlaylists() {
         guard let url = Bundle.main.url(forResource: "ElRetoDeHoyLists", withExtension: "json") else {
             print("json file not found")
@@ -61,7 +64,7 @@ class ElRetoDeHoyListViewModel: ObservableObject {
         DispatchQueue.main.async {
             do {
                 let elRetoDeHoyLists = try JSONDecoder().decode(YouTubeList.self, from: data)
-//                print("🚩 elRetoDeHoyLists: \(String(describing: elRetoDeHoyLists))")
+                print("🚩 elRetoDeHoyLists: \(String(describing: elRetoDeHoyLists))")
                 self.elRetoDeHoyLists = elRetoDeHoyLists
             } catch let error as NSError {
                 print("🚩 error decoding local #ElRetoDeHoy: \(String(describing: error))")

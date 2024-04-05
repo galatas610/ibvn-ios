@@ -36,6 +36,11 @@ struct ElRetoDeHoyListView: View {
             .navigationTitle("El Reto de Hoy")
             .modifier(TopBar())
             .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
+            .onAppear {
+                Task {
+                    await viewModel.fetchElRetoDeHoyPlaylists()
+                }
+            }
         }
         
         var searchResults: [ListItem] {

@@ -1,15 +1,58 @@
 {
     "kind": "youtube#playlistListResponse",
-    "etag": "b2Y25xLFMcD7RdLIr6OTe7GH5xY",
+    "etag": "ulSQSKetKUkA4_4yRH9MUHVIlTg",
     "nextPageToken": "CDIQAA",
     "pageInfo": {
-        "totalResults": 194,
+        "totalResults": 195,
         "resultsPerPage": 50
     },
     "items": [
         {
             "kind": "youtube#playlist",
-            "etag": "WRd8Wl9rVmTCMkpTb4PJ_TnRITw",
+            "etag": "XHVTS4XRQBY4DROYc8_1VkIAoYc",
+            "id": "PL0MA6QqbTGP63aXGIHM8vxXfrLzAaD1rY",
+            "snippet": {
+                "publishedAt": "2024-04-02T04:01:42Z",
+                "channelId": "UCoNq7HF7vnqalfg-lTaxrDQ",
+                "title": "Inolvidable - Retos para Toda la Vida - El Reto de Hoy",
+                "description": "11 Años han pasado desde el primer episodio de El Reto de Hoy, en todos estos años, Julio e Iván nos han compartido muchos retos que nunca deberíamos olvidar. Esta semana te compartirán algunos recuerdos y retos que deben durar toda la vida.",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/pcl8JXGxojE/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/pcl8JXGxojE/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/pcl8JXGxojE/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/pcl8JXGxojE/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    },
+                    "maxres": {
+                        "url": "https://i.ytimg.com/vi/pcl8JXGxojE/maxresdefault.jpg",
+                        "width": 1280,
+                        "height": 720
+                    }
+                },
+                "channelTitle": "Iglesia Bautista Vida Nueva",
+                "localized": {
+                    "title": "Inolvidable - Retos para Toda la Vida - El Reto de Hoy",
+                    "description": "11 Años han pasado desde el primer episodio de El Reto de Hoy, en todos estos años, Julio e Iván nos han compartido muchos retos que nunca deberíamos olvidar. Esta semana te compartirán algunos recuerdos y retos que deben durar toda la vida."
+                }
+            }
+        },
+        {
+            "kind": "youtube#playlist",
+            "etag": "rGvytwJSYGLOw38GOKsXC6q3zTk",
             "id": "PL0MA6QqbTGP68oH-8pef_-0w5kGOLN4Eb",
             "snippet": {
                 "publishedAt": "2024-03-24T01:39:20Z",
@@ -18,27 +61,27 @@
                 "description": "En sus últimos momentos de vida, ahí, colgado la cruz, Jesús pronunció 7 frases que representan verdades poderosas. En esta serie descubrirás el tesoro que se esconde detrás de los 7 dichos que Jesús en la cruz.",
                 "thumbnails": {
                     "default": {
-                        "url": "https://i.ytimg.com/vi/NT18nZ4VAB8/default.jpg",
+                        "url": "https://i.ytimg.com/vi/igHD2tf80gY/default.jpg",
                         "width": 120,
                         "height": 90
                     },
                     "medium": {
-                        "url": "https://i.ytimg.com/vi/NT18nZ4VAB8/mqdefault.jpg",
+                        "url": "https://i.ytimg.com/vi/igHD2tf80gY/mqdefault.jpg",
                         "width": 320,
                         "height": 180
                     },
                     "high": {
-                        "url": "https://i.ytimg.com/vi/NT18nZ4VAB8/hqdefault.jpg",
+                        "url": "https://i.ytimg.com/vi/igHD2tf80gY/hqdefault.jpg",
                         "width": 480,
                         "height": 360
                     },
                     "standard": {
-                        "url": "https://i.ytimg.com/vi/NT18nZ4VAB8/sddefault.jpg",
+                        "url": "https://i.ytimg.com/vi/igHD2tf80gY/sddefault.jpg",
                         "width": 640,
                         "height": 480
                     },
                     "maxres": {
-                        "url": "https://i.ytimg.com/vi/NT18nZ4VAB8/maxresdefault.jpg",
+                        "url": "https://i.ytimg.com/vi/igHD2tf80gY/maxresdefault.jpg",
                         "width": 1280,
                         "height": 720
                     }
@@ -2096,49 +2139,6 @@
                 "localized": {
                     "title": "La Mies es Mucha pero... - El Reto de Hoy",
                     "description": "Hay millones de personas que necesitan encontrar una vida nueva, pero pareciera que muy pocos cristianos están preocupados por ayudarles a encontrarla. En esta serie Julio e Iván te retarán a sumarte al trabajo más importante de la vida."
-                }
-            }
-        },
-        {
-            "kind": "youtube#playlist",
-            "etag": "2Xm5HZEZMLSVF_d9ezHSRTvvrR4",
-            "id": "PL0MA6QqbTGP7BmCvhOaVjKUw7Jrf6lfR1",
-            "snippet": {
-                "publishedAt": "2023-05-29T02:49:30Z",
-                "channelId": "UCoNq7HF7vnqalfg-lTaxrDQ",
-                "title": "Cuidado con tu lengua",
-                "description": "Cordura, cada vez que abres la boca dejas ver tu madurez o tu inmadurez.\nSi nosotros queremos tener una fe que impacte a los demás, la boca es clave en lo que decimos y en lo que no decimos.",
-                "thumbnails": {
-                    "default": {
-                        "url": "https://i.ytimg.com/vi/1WV0xbDvanc/default.jpg",
-                        "width": 120,
-                        "height": 90
-                    },
-                    "medium": {
-                        "url": "https://i.ytimg.com/vi/1WV0xbDvanc/mqdefault.jpg",
-                        "width": 320,
-                        "height": 180
-                    },
-                    "high": {
-                        "url": "https://i.ytimg.com/vi/1WV0xbDvanc/hqdefault.jpg",
-                        "width": 480,
-                        "height": 360
-                    },
-                    "standard": {
-                        "url": "https://i.ytimg.com/vi/1WV0xbDvanc/sddefault.jpg",
-                        "width": 640,
-                        "height": 480
-                    },
-                    "maxres": {
-                        "url": "https://i.ytimg.com/vi/1WV0xbDvanc/maxresdefault.jpg",
-                        "width": 1280,
-                        "height": 720
-                    }
-                },
-                "channelTitle": "Iglesia Bautista Vida Nueva",
-                "localized": {
-                    "title": "Cuidado con tu lengua",
-                    "description": "Cordura, cada vez que abres la boca dejas ver tu madurez o tu inmadurez.\nSi nosotros queremos tener una fe que impacte a los demás, la boca es clave en lo que decimos y en lo que no decimos."
                 }
             }
         }

@@ -10,22 +10,23 @@ import SwiftUI
 struct TabBarView: View {
     var body: some View {
         TabView {
-//            SundayPreachesView(viewModel: SundayPreachesViewModel())
-//                .tabItem {
-//                    Label("Mensajes", systemImage: "house")
-//                }
-//                .tag("0")
+            ListView(viewModel: ListViewModel(ibvnType: .preaches))
+                .tabItem {
+                    Label("Mensajes", systemImage: "house")
+                }
+                .tag("0")
             
-            ElRetoDeHoyListView(viewModel: ElRetoDeHoyListViewModel())
+            ListView(viewModel: ListViewModel(ibvnType: .elRestoDeHoy))
                 .tabItem {
                     Label("ERDH", systemImage: "bell")
                 }
                 .tag("1")
-//            NDVView(viewModel: NDVViewModel())
-//                .tabItem {
-//                    Label("NDV", systemImage: "book")
-//                }
-//                .tag("2")
+            
+            ListView(viewModel: ListViewModel(ibvnType: .nocheDeViernes))
+                .tabItem {
+                    Label("NDV", systemImage: "book")
+                }
+                .tag("2")
         }
     }
 }

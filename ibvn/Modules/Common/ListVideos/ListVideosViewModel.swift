@@ -1,29 +1,35 @@
 //
-//  ElRetoDeHoyVideosViewModel.swift
+//  ListVideosViewModel.swift
 //  ibvn
 //
-//  Created by Jose Letona on 28/3/24.
+//  Created by Jose Letona on 5/4/24.
 //
 
 import Foundation
 
-final class ElRetoDeHoyVideosViewModel: ObservableObject {
+final class ListVideosViewModel: ObservableObject {
     // MARK: Property Wrappers
-    @Published var elRetoDeHoyListVideos: YoutubeListVideos = .init()
-    @Published var snippet: Snippet
-    // MARK: Variables
-    private var listId: String
+    @Published var youtubePlaylistItems: YoutubePlaylist = .init()
+    @Published var playlist: Item
 
     // MARK: Initialization
-    init(listId: String, snippet: Snippet) {
-        self.listId = listId
-        self.snippet = snippet
+    init(playlist: Item) {
+        self.playlist = playlist
+        
+        
+        taskFetchListVideos()
     }
     
     // MARK: Functions
-    func fetchElRetoDeHoyPlaylistsVideos() async {
+    private func taskFetchListVideos() {
+        Task {
+            await fetchListVideos()
+        }
+    }
+    
+    private func fetchListVideos() async {
         let playlistUrl = "https://www.googleapis.com/youtube/v3/playlistItems"
-        guard let url = URL(string: playlistUrl + "?key=AIzaSyCTkfyhNMgKcDTlZsNZ2IT57ztfXySdl5c&channelId=UCoNq7HF7vnqalfg-lTaxrDQ&playlistId=" + listId + "&part=snippet") else {
+        guard let url = URL(string: playlistUrl + "?key=AIzaSyCTkfyhNMgKcDTlZsNZ2IT57ztfXySdl5c&channelId=UCoNq7HF7vnqalfg-lTaxrDQ&playlistId=" + playlist.listId.playlistId + "&part=snippet&maxResults=50") else {
             print("🚩 Fail ElRetoDeHoy playlistVideos URL")
             
             return
@@ -45,7 +51,7 @@ final class ElRetoDeHoyVideosViewModel: ObservableObject {
             
             DispatchQueue.main.async {
                 do {
-                    self.elRetoDeHoyListVideos = try JSONDecoder().decode(YoutubeListVideos.self, from: data)
+                    self.youtubePlaylistItems = try JSONDecoder().decode(YoutubePlaylist.self, from: data)
                 } catch let error as NSError {
                     print("🚩 error: \(error)")
                 }

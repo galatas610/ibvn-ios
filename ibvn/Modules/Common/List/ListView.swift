@@ -1,18 +1,18 @@
 //
-//  ElRetoDeHoyListView.swift
+//  ListView.swift
 //  ibvn
 //
-//  Created by Jose Letona on 28/3/24.
+//  Created by Jose Letona on 5/4/24.
 //
 
 import SwiftUI
 
-struct ElRetoDeHoyListView: View {
+struct ListView: View {
     // MARK: Property Wrappers
-    @StateObject private var viewModel: ElRetoDeHoyListViewModel
+    @StateObject private var viewModel: ListViewModel
     @State private var searchText = ""
     
-    init(viewModel: ElRetoDeHoyListViewModel) {
+    init(viewModel: ListViewModel) {
         self._viewModel = StateObject(wrappedValue: viewModel)
     }
     
@@ -22,10 +22,7 @@ struct ElRetoDeHoyListView: View {
             List {
                 ForEach(searchResults) { item in
                     NavigationLink {
-                        ElRetoDeHoyVideosView(viewModel: ElRetoDeHoyVideosViewModel(
-                            listId: item.listId.playlistId,
-                            snippet: item.snippet
-                        ))
+                        ListVideosView(viewModel: ListVideosViewModel(playlist: item))
                     } label: {
                         labelContent(with: item)
                     }
@@ -33,19 +30,16 @@ struct ElRetoDeHoyListView: View {
             }
             .padding(.top, 16)
             .padding(.horizontal, -16)
-            .navigationTitle("El Reto de Hoy")
+            .navigationTitle(viewModel.ibvnType.viewTitle)
             .modifier(TopBar())
             .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
-            .onAppear {
-                viewModel.localFetchElRetoDeHoyPlaylists()
-            }
         }
         
         var searchResults: [Item] {
             if searchText.isEmpty {
-                return viewModel.elRetoDeHoyLists.items
+                return viewModel.youtubePlaylists.items
             } else {
-                return viewModel.elRetoDeHoyLists.items.filter {
+                return viewModel.youtubePlaylists.items.filter {
                     $0.snippet.title.localizedCaseInsensitiveContains(searchText) ||
                     $0.snippet.description.localizedCaseInsensitiveContains(searchText)
                 }
@@ -81,5 +75,5 @@ struct ElRetoDeHoyListView: View {
 }
 
 #Preview {
-    ElRetoDeHoyListView(viewModel: ElRetoDeHoyListViewModel())
+    ListView(viewModel: ListViewModel(ibvnType: .elRestoDeHoy))
 }

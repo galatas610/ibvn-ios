@@ -9,7 +9,7 @@ import Foundation
 
 
 // MARK: - Welcome
-struct YoutubeSearchPlaylist: Codable {
+struct YoutubePlaylists: Codable {
     let kind: String
     let etag: String
     let regionCode: String

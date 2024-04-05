@@ -1,21 +1,24 @@
 {
-    "kind": "youtube#playlistListResponse",
-    "etag": "ulSQSKetKUkA4_4yRH9MUHVIlTg",
-    "nextPageToken": "CDIQAA",
+    "kind": "youtube#searchListResponse",
+    "etag": "wLnEIQa6g7I92qIUDgA1zGRCNNI",
+    "regionCode": "SV",
     "pageInfo": {
-        "totalResults": 195,
-        "resultsPerPage": 50
+        "totalResults": 83,
+        "resultsPerPage": 40
     },
     "items": [
         {
-            "kind": "youtube#playlist",
-            "etag": "XHVTS4XRQBY4DROYc8_1VkIAoYc",
-            "id": "PL0MA6QqbTGP63aXGIHM8vxXfrLzAaD1rY",
+            "kind": "youtube#searchResult",
+            "etag": "JWuF5r1UuuHpMm9Y5xigtuSCiuY",
+            "id": {
+                "kind": "youtube#playlist",
+                "playlistId": "PL0MA6QqbTGP63aXGIHM8vxXfrLzAaD1rY"
+            },
             "snippet": {
                 "publishedAt": "2024-04-02T04:01:42Z",
                 "channelId": "UCoNq7HF7vnqalfg-lTaxrDQ",
                 "title": "Inolvidable - Retos para Toda la Vida - El Reto de Hoy",
-                "description": "11 Años han pasado desde el primer episodio de El Reto de Hoy, en todos estos años, Julio e Iván nos han compartido muchos retos que nunca deberíamos olvidar. Esta semana te compartirán algunos recuerdos y retos que deben durar toda la vida.",
+                "description": "11 Años han pasado desde el primer episodio de El Reto de Hoy, en todos estos años, Julio e Iván nos han compartido muchos ...",
                 "thumbnails": {
                     "default": {
                         "url": "https://i.ytimg.com/vi/pcl8JXGxojE/default.jpg",
@@ -31,34 +34,25 @@
                         "url": "https://i.ytimg.com/vi/pcl8JXGxojE/hqdefault.jpg",
                         "width": 480,
                         "height": 360
-                    },
-                    "standard": {
-                        "url": "https://i.ytimg.com/vi/pcl8JXGxojE/sddefault.jpg",
-                        "width": 640,
-                        "height": 480
-                    },
-                    "maxres": {
-                        "url": "https://i.ytimg.com/vi/pcl8JXGxojE/maxresdefault.jpg",
-                        "width": 1280,
-                        "height": 720
                     }
                 },
                 "channelTitle": "Iglesia Bautista Vida Nueva",
-                "localized": {
-                    "title": "Inolvidable - Retos para Toda la Vida - El Reto de Hoy",
-                    "description": "11 Años han pasado desde el primer episodio de El Reto de Hoy, en todos estos años, Julio e Iván nos han compartido muchos retos que nunca deberíamos olvidar. Esta semana te compartirán algunos recuerdos y retos que deben durar toda la vida."
-                }
+                "liveBroadcastContent": "none",
+                "publishTime": "2024-04-02T04:01:42Z"
             }
         },
         {
-            "kind": "youtube#playlist",
-            "etag": "rGvytwJSYGLOw38GOKsXC6q3zTk",
-            "id": "PL0MA6QqbTGP68oH-8pef_-0w5kGOLN4Eb",
+            "kind": "youtube#searchResult",
+            "etag": "wYco8yLVoPHUGTAk1gDzYWZDU3s",
+            "id": {
+                "kind": "youtube#playlist",
+                "playlistId": "PL0MA6QqbTGP68oH-8pef_-0w5kGOLN4Eb"
+            },
             "snippet": {
                 "publishedAt": "2024-03-24T01:39:20Z",
                 "channelId": "UCoNq7HF7vnqalfg-lTaxrDQ",
                 "title": "Los 7 Dichos de la Cruz - El Reto de Hoy",
-                "description": "En sus últimos momentos de vida, ahí, colgado la cruz, Jesús pronunció 7 frases que representan verdades poderosas. En esta serie descubrirás el tesoro que se esconde detrás de los 7 dichos que Jesús en la cruz.",
+                "description": "En sus últimos momentos de vida, ahí, colgado la cruz, Jesús pronunció 7 frases que representan verdades poderosas. En esta ...",
                 "thumbnails": {
                     "default": {
                         "url": "https://i.ytimg.com/vi/igHD2tf80gY/default.jpg",
@@ -74,34 +68,25 @@
                         "url": "https://i.ytimg.com/vi/igHD2tf80gY/hqdefault.jpg",
                         "width": 480,
                         "height": 360
-                    },
-                    "standard": {
-                        "url": "https://i.ytimg.com/vi/igHD2tf80gY/sddefault.jpg",
-                        "width": 640,
-                        "height": 480
-                    },
-                    "maxres": {
-                        "url": "https://i.ytimg.com/vi/igHD2tf80gY/maxresdefault.jpg",
-                        "width": 1280,
-                        "height": 720
                     }
                 },
                 "channelTitle": "Iglesia Bautista Vida Nueva",
-                "localized": {
-                    "title": "Los 7 Dichos de la Cruz - El Reto de Hoy",
-                    "description": "En sus últimos momentos de vida, ahí, colgado la cruz, Jesús pronunció 7 frases que representan verdades poderosas. En esta serie descubrirás el tesoro que se esconde detrás de los 7 dichos que Jesús en la cruz."
-                }
+                "liveBroadcastContent": "none",
+                "publishTime": "2024-03-24T01:39:20Z"
             }
         },
         {
-            "kind": "youtube#playlist",
-            "etag": "xYllysdOiQGU6pj9AM0aUGZYzoY",
-            "id": "PL0MA6QqbTGP7clzcQuqP4sVx558AS3oKl",
+            "kind": "youtube#searchResult",
+            "etag": "3l_Y4iTto8_FeVRF6O-h6N1N3aA",
+            "id": {
+                "kind": "youtube#playlist",
+                "playlistId": "PL0MA6QqbTGP7clzcQuqP4sVx558AS3oKl"
+            },
             "snippet": {
                 "publishedAt": "2024-03-18T16:44:18Z",
                 "channelId": "UCoNq7HF7vnqalfg-lTaxrDQ",
                 "title": "¿Qué Hago??? ¡Mi Hermano me Falló!",
-                "description": "¿Alguien te ha fallado? ¿Cómo has reaccionado? En esta serie Julio e Iván te contarán una historia de la vida real que te ayudará a descubrir lo que debes hacer, cuando tu hermano te ha defraudado.",
+                "description": "Alguien te ha fallado? ¿Cómo has reaccionado? En esta serie Julio e Iván te contarán una historia de la vida real que te ayudará ...",
                 "thumbnails": {
                     "default": {
                         "url": "https://i.ytimg.com/vi/JA8qbVcDX7Y/default.jpg",
@@ -117,191 +102,25 @@
                         "url": "https://i.ytimg.com/vi/JA8qbVcDX7Y/hqdefault.jpg",
                         "width": 480,
                         "height": 360
-                    },
-                    "standard": {
-                        "url": "https://i.ytimg.com/vi/JA8qbVcDX7Y/sddefault.jpg",
-                        "width": 640,
-                        "height": 480
-                    },
-                    "maxres": {
-                        "url": "https://i.ytimg.com/vi/JA8qbVcDX7Y/maxresdefault.jpg",
-                        "width": 1280,
-                        "height": 720
                     }
                 },
                 "channelTitle": "Iglesia Bautista Vida Nueva",
-                "localized": {
-                    "title": "¿Qué Hago??? ¡Mi Hermano me Falló!",
-                    "description": "¿Alguien te ha fallado? ¿Cómo has reaccionado? En esta serie Julio e Iván te contarán una historia de la vida real que te ayudará a descubrir lo que debes hacer, cuando tu hermano te ha defraudado."
-                }
+                "liveBroadcastContent": "none",
+                "publishTime": "2024-03-18T16:44:18Z"
             }
         },
         {
-            "kind": "youtube#playlist",
-            "etag": "hDeWVFHox3QLF-tm_aIZVSK3tbg",
-            "id": "PL0MA6QqbTGP4vvVzhXqmdWoKEKKyertCb",
-            "snippet": {
-                "publishedAt": "2024-03-13T19:34:18Z",
-                "channelId": "UCoNq7HF7vnqalfg-lTaxrDQ",
-                "title": "Agradecer es Hacer -  Salmos 103",
-                "description": "",
-                "thumbnails": {
-                    "default": {
-                        "url": "https://i.ytimg.com/vi/WZMUToLOn7U/default.jpg",
-                        "width": 120,
-                        "height": 90
-                    },
-                    "medium": {
-                        "url": "https://i.ytimg.com/vi/WZMUToLOn7U/mqdefault.jpg",
-                        "width": 320,
-                        "height": 180
-                    },
-                    "high": {
-                        "url": "https://i.ytimg.com/vi/WZMUToLOn7U/hqdefault.jpg",
-                        "width": 480,
-                        "height": 360
-                    },
-                    "standard": {
-                        "url": "https://i.ytimg.com/vi/WZMUToLOn7U/sddefault.jpg",
-                        "width": 640,
-                        "height": 480
-                    },
-                    "maxres": {
-                        "url": "https://i.ytimg.com/vi/WZMUToLOn7U/maxresdefault.jpg",
-                        "width": 1280,
-                        "height": 720
-                    }
-                },
-                "channelTitle": "Iglesia Bautista Vida Nueva",
-                "localized": {
-                    "title": "Agradecer es Hacer -  Salmos 103",
-                    "description": ""
-                }
-            }
-        },
-        {
-            "kind": "youtube#playlist",
-            "etag": "jsBhJMKMdBtVPErkmln4Bt0KrOI",
-            "id": "PL0MA6QqbTGP6H3tzSl6e-W_0o06Jhw496",
-            "snippet": {
-                "publishedAt": "2024-03-13T19:16:49Z",
-                "channelId": "UCoNq7HF7vnqalfg-lTaxrDQ",
-                "title": "Un Mundo que se Hunde - Una Serie de sobre Genesis",
-                "description": "",
-                "thumbnails": {
-                    "default": {
-                        "url": "https://i.ytimg.com/vi/6khv7btJ4qI/default.jpg",
-                        "width": 120,
-                        "height": 90
-                    },
-                    "medium": {
-                        "url": "https://i.ytimg.com/vi/6khv7btJ4qI/mqdefault.jpg",
-                        "width": 320,
-                        "height": 180
-                    },
-                    "high": {
-                        "url": "https://i.ytimg.com/vi/6khv7btJ4qI/hqdefault.jpg",
-                        "width": 480,
-                        "height": 360
-                    },
-                    "standard": {
-                        "url": "https://i.ytimg.com/vi/6khv7btJ4qI/sddefault.jpg",
-                        "width": 640,
-                        "height": 480
-                    }
-                },
-                "channelTitle": "Iglesia Bautista Vida Nueva",
-                "localized": {
-                    "title": "Un Mundo que se Hunde - Una Serie de sobre Genesis",
-                    "description": ""
-                }
-            }
-        },
-        {
-            "kind": "youtube#playlist",
-            "etag": "Imp1GQdbp1kKblOCfJVMTJf2oSo",
-            "id": "PL0MA6QqbTGP4NyToS0NB3xJ974gXny8qq",
-            "snippet": {
-                "publishedAt": "2024-03-13T19:10:44Z",
-                "channelId": "UCoNq7HF7vnqalfg-lTaxrDQ",
-                "title": "Dios Está en Línea - Vida de Oración",
-                "description": "",
-                "thumbnails": {
-                    "default": {
-                        "url": "https://i.ytimg.com/img/no_thumbnail.jpg",
-                        "width": 120,
-                        "height": 90
-                    },
-                    "medium": {
-                        "url": "https://i.ytimg.com/img/no_thumbnail.jpg",
-                        "width": 320,
-                        "height": 180
-                    },
-                    "high": {
-                        "url": "https://i.ytimg.com/img/no_thumbnail.jpg",
-                        "width": 480,
-                        "height": 360
-                    }
-                },
-                "channelTitle": "Iglesia Bautista Vida Nueva",
-                "localized": {
-                    "title": "Dios Está en Línea - Vida de Oración",
-                    "description": ""
-                }
-            }
-        },
-        {
-            "kind": "youtube#playlist",
-            "etag": "3eGXqMjdM4yYDlPbcuCvc3nPDeI",
-            "id": "PL0MA6QqbTGP6YreIxxgTtGV509bUpNYqS",
-            "snippet": {
-                "publishedAt": "2024-03-13T19:09:06Z",
-                "channelId": "UCoNq7HF7vnqalfg-lTaxrDQ",
-                "title": "Crónicas de Reyes - 2 Crónicas",
-                "description": "",
-                "thumbnails": {
-                    "default": {
-                        "url": "https://i.ytimg.com/vi/mC7cI6nQj3Q/default.jpg",
-                        "width": 120,
-                        "height": 90
-                    },
-                    "medium": {
-                        "url": "https://i.ytimg.com/vi/mC7cI6nQj3Q/mqdefault.jpg",
-                        "width": 320,
-                        "height": 180
-                    },
-                    "high": {
-                        "url": "https://i.ytimg.com/vi/mC7cI6nQj3Q/hqdefault.jpg",
-                        "width": 480,
-                        "height": 360
-                    },
-                    "standard": {
-                        "url": "https://i.ytimg.com/vi/mC7cI6nQj3Q/sddefault.jpg",
-                        "width": 640,
-                        "height": 480
-                    },
-                    "maxres": {
-                        "url": "https://i.ytimg.com/vi/mC7cI6nQj3Q/maxresdefault.jpg",
-                        "width": 1280,
-                        "height": 720
-                    }
-                },
-                "channelTitle": "Iglesia Bautista Vida Nueva",
-                "localized": {
-                    "title": "Crónicas de Reyes - 2 Crónicas",
-                    "description": ""
-                }
-            }
-        },
-        {
-            "kind": "youtube#playlist",
-            "etag": "mI6MQeUVsMNLjjrkzUItYUiUdtY",
-            "id": "PL0MA6QqbTGP57ve0QQmRRmWKkoEeyPc8Q",
+            "kind": "youtube#searchResult",
+            "etag": "SC2MiMJgafK1cFM7_Hu3_oLXuzM",
+            "id": {
+                "kind": "youtube#playlist",
+                "playlistId": "PL0MA6QqbTGP57ve0QQmRRmWKkoEeyPc8Q"
+            },
             "snippet": {
                 "publishedAt": "2024-03-04T16:43:20Z",
                 "channelId": "UCoNq7HF7vnqalfg-lTaxrDQ",
                 "title": "Hijos Déspotas / Padres Subyugados - El Reto de Hoy",
-                "description": "Algunos padres quieren evitar los conflictos con los hijos, pero no se imaginan el problema que se está gestando en el corazón de su hijo y familia. En esta serie Julio e Iván te explicarán que cuando los hijos son déspotas, los padres terminan subyugados.",
+                "description": "Algunos padres quieren evitar los conflictos con los hijos, pero no se imaginan el problema que se está gestando en el corazón ...",
                 "thumbnails": {
                     "default": {
                         "url": "https://i.ytimg.com/vi/NlCRoFg9CYs/default.jpg",
@@ -317,34 +136,25 @@
                         "url": "https://i.ytimg.com/vi/NlCRoFg9CYs/hqdefault.jpg",
                         "width": 480,
                         "height": 360
-                    },
-                    "standard": {
-                        "url": "https://i.ytimg.com/vi/NlCRoFg9CYs/sddefault.jpg",
-                        "width": 640,
-                        "height": 480
-                    },
-                    "maxres": {
-                        "url": "https://i.ytimg.com/vi/NlCRoFg9CYs/maxresdefault.jpg",
-                        "width": 1280,
-                        "height": 720
                     }
                 },
                 "channelTitle": "Iglesia Bautista Vida Nueva",
-                "localized": {
-                    "title": "Hijos Déspotas / Padres Subyugados - El Reto de Hoy",
-                    "description": "Algunos padres quieren evitar los conflictos con los hijos, pero no se imaginan el problema que se está gestando en el corazón de su hijo y familia. En esta serie Julio e Iván te explicarán que cuando los hijos son déspotas, los padres terminan subyugados."
-                }
+                "liveBroadcastContent": "none",
+                "publishTime": "2024-03-04T16:43:20Z"
             }
         },
         {
-            "kind": "youtube#playlist",
-            "etag": "b2vmNeQhBIh512PG5GajTRdjtWg",
-            "id": "PL0MA6QqbTGP4bUicRTXH43jqpI_cAinTq",
+            "kind": "youtube#searchResult",
+            "etag": "s_ciaOunr4jfbCf0JvaI2qUvo2c",
+            "id": {
+                "kind": "youtube#playlist",
+                "playlistId": "PL0MA6QqbTGP4bUicRTXH43jqpI_cAinTq"
+            },
             "snippet": {
                 "publishedAt": "2024-02-19T15:55:58Z",
                 "channelId": "UCoNq7HF7vnqalfg-lTaxrDQ",
                 "title": "Cuando la Vida Cristiana es una Actuación - El Reto de Hoy",
-                "description": "No todos los que dicen ser cristianos realmente viven el cristianismo, algunos solo son actores religiosos. En esta serie Julio e Iván te retarán a no vivir una actuación.",
+                "description": "No todos los que dicen ser cristianos realmente viven el cristianismo, algunos solo son actores religiosos. En esta serie Julio e ...",
                 "thumbnails": {
                     "default": {
                         "url": "https://i.ytimg.com/vi/Cf3Z7dSi748/default.jpg",
@@ -360,34 +170,25 @@
                         "url": "https://i.ytimg.com/vi/Cf3Z7dSi748/hqdefault.jpg",
                         "width": 480,
                         "height": 360
-                    },
-                    "standard": {
-                        "url": "https://i.ytimg.com/vi/Cf3Z7dSi748/sddefault.jpg",
-                        "width": 640,
-                        "height": 480
-                    },
-                    "maxres": {
-                        "url": "https://i.ytimg.com/vi/Cf3Z7dSi748/maxresdefault.jpg",
-                        "width": 1280,
-                        "height": 720
                     }
                 },
                 "channelTitle": "Iglesia Bautista Vida Nueva",
-                "localized": {
-                    "title": "Cuando la Vida Cristiana es una Actuación - El Reto de Hoy",
-                    "description": "No todos los que dicen ser cristianos realmente viven el cristianismo, algunos solo son actores religiosos. En esta serie Julio e Iván te retarán a no vivir una actuación."
-                }
+                "liveBroadcastContent": "none",
+                "publishTime": "2024-02-19T15:55:58Z"
             }
         },
         {
-            "kind": "youtube#playlist",
-            "etag": "2Ox_whE6dANUVklRbWznuyR7ADw",
-            "id": "PL0MA6QqbTGP6Z4ZKoqaEmw0rBT7ya7F8A",
+            "kind": "youtube#searchResult",
+            "etag": "Cvmp0c2J5Wgx03Q-nonSO_5nI8w",
+            "id": {
+                "kind": "youtube#playlist",
+                "playlistId": "PL0MA6QqbTGP6Z4ZKoqaEmw0rBT7ya7F8A"
+            },
             "snippet": {
                 "publishedAt": "2024-02-12T16:04:49Z",
                 "channelId": "UCoNq7HF7vnqalfg-lTaxrDQ",
                 "title": "Diseño Original - Hablemos de Matrimonio - El Reto de Hoy",
-                "description": "Muchos han intentado vivir el matrimonio a su propio estilo, pero el matrimonio tiene un diseño original, y ese ese le único que realmente funciona.",
+                "description": "Muchos han intentado vivir el matrimonio a su propio estilo, pero el matrimonio tiene un diseño original, y ese ese le único que ...",
                 "thumbnails": {
                     "default": {
                         "url": "https://i.ytimg.com/vi/M15q_cNaJZc/default.jpg",
@@ -403,29 +204,20 @@
                         "url": "https://i.ytimg.com/vi/M15q_cNaJZc/hqdefault.jpg",
                         "width": 480,
                         "height": 360
-                    },
-                    "standard": {
-                        "url": "https://i.ytimg.com/vi/M15q_cNaJZc/sddefault.jpg",
-                        "width": 640,
-                        "height": 480
-                    },
-                    "maxres": {
-                        "url": "https://i.ytimg.com/vi/M15q_cNaJZc/maxresdefault.jpg",
-                        "width": 1280,
-                        "height": 720
                     }
                 },
                 "channelTitle": "Iglesia Bautista Vida Nueva",
-                "localized": {
-                    "title": "Diseño Original - Hablemos de Matrimonio - El Reto de Hoy",
-                    "description": "Muchos han intentado vivir el matrimonio a su propio estilo, pero el matrimonio tiene un diseño original, y ese ese le único que realmente funciona."
-                }
+                "liveBroadcastContent": "none",
+                "publishTime": "2024-02-12T16:04:49Z"
             }
         },
         {
-            "kind": "youtube#playlist",
-            "etag": "eWZb3VTImJhFM6qNouB-eN8922U",
-            "id": "PL0MA6QqbTGP7-e7hy1VI9AQ1Kl4HQDGbv",
+            "kind": "youtube#searchResult",
+            "etag": "A6E6JyVuHQf9LFpWZ1zm1dV1-ow",
+            "id": {
+                "kind": "youtube#playlist",
+                "playlistId": "PL0MA6QqbTGP7-e7hy1VI9AQ1Kl4HQDGbv"
+            },
             "snippet": {
                 "publishedAt": "2024-02-05T16:56:51Z",
                 "channelId": "UCoNq7HF7vnqalfg-lTaxrDQ",
@@ -446,34 +238,25 @@
                         "url": "https://i.ytimg.com/vi/ak0_ZnSHEjE/hqdefault.jpg",
                         "width": 480,
                         "height": 360
-                    },
-                    "standard": {
-                        "url": "https://i.ytimg.com/vi/ak0_ZnSHEjE/sddefault.jpg",
-                        "width": 640,
-                        "height": 480
-                    },
-                    "maxres": {
-                        "url": "https://i.ytimg.com/vi/ak0_ZnSHEjE/maxresdefault.jpg",
-                        "width": 1280,
-                        "height": 720
                     }
                 },
                 "channelTitle": "Iglesia Bautista Vida Nueva",
-                "localized": {
-                    "title": "Una Fascinante Aventura Llamada Discipulado - El Reto de Hoy",
-                    "description": ""
-                }
+                "liveBroadcastContent": "none",
+                "publishTime": "2024-02-05T16:56:51Z"
             }
         },
         {
-            "kind": "youtube#playlist",
-            "etag": "pThTNEUXYcX3iEN265UzEN_LzeA",
-            "id": "PL0MA6QqbTGP59qKk-kHWhI92brPXPpAA7",
+            "kind": "youtube#searchResult",
+            "etag": "hqLsc419wlYNI7AMtzZoBhqFQ3Q",
+            "id": {
+                "kind": "youtube#playlist",
+                "playlistId": "PL0MA6QqbTGP59qKk-kHWhI92brPXPpAA7"
+            },
             "snippet": {
                 "publishedAt": "2024-01-29T16:17:47Z",
                 "channelId": "UCoNq7HF7vnqalfg-lTaxrDQ",
                 "title": "Palabra de Dios vs Palabra de Hombre",
-                "description": "No todo lo que te dicen que viene de Dios, realmente viene de él. En esta serie Julio e Iván te retarán a discernir entre la palabra De Dios y la palabra de los hombres.",
+                "description": "No todo lo que te dicen que viene de Dios, realmente viene de él. En esta serie Julio e Iván te retarán a discernir entre la palabra ...",
                 "thumbnails": {
                     "default": {
                         "url": "https://i.ytimg.com/vi/RY289VGPYnI/default.jpg",
@@ -489,34 +272,25 @@
                         "url": "https://i.ytimg.com/vi/RY289VGPYnI/hqdefault.jpg",
                         "width": 480,
                         "height": 360
-                    },
-                    "standard": {
-                        "url": "https://i.ytimg.com/vi/RY289VGPYnI/sddefault.jpg",
-                        "width": 640,
-                        "height": 480
-                    },
-                    "maxres": {
-                        "url": "https://i.ytimg.com/vi/RY289VGPYnI/maxresdefault.jpg",
-                        "width": 1280,
-                        "height": 720
                     }
                 },
                 "channelTitle": "Iglesia Bautista Vida Nueva",
-                "localized": {
-                    "title": "Palabra de Dios vs Palabra de Hombre",
-                    "description": "No todo lo que te dicen que viene de Dios, realmente viene de él. En esta serie Julio e Iván te retarán a discernir entre la palabra De Dios y la palabra de los hombres."
-                }
+                "liveBroadcastContent": "none",
+                "publishTime": "2024-01-29T16:17:47Z"
             }
         },
         {
-            "kind": "youtube#playlist",
-            "etag": "x22znFbdoU_24opb_54uyC4uQ0k",
-            "id": "PL0MA6QqbTGP61IuXaRrX3lbJY8QVrDguh",
+            "kind": "youtube#searchResult",
+            "etag": "T5YYAsXbIvXiJQMLETjxl031OTo",
+            "id": {
+                "kind": "youtube#playlist",
+                "playlistId": "PL0MA6QqbTGP61IuXaRrX3lbJY8QVrDguh"
+            },
             "snippet": {
                 "publishedAt": "2024-01-22T16:42:19Z",
                 "channelId": "UCoNq7HF7vnqalfg-lTaxrDQ",
                 "title": "Bases para Construir una Fe Sólida - El Reto de Hoy",
-                "description": "Una fe sólida es clave para enfrentar la vida, pero no siempre sabemos como construirla, en esta serie Julio e Iván conversan sobre algunos retos que te ayudarán a mejorar en tu relación con Dios",
+                "description": "Una fe sólida es clave para enfrentar la vida, pero no siempre sabemos como construirla, en esta serie Julio e Iván conversan ...",
                 "thumbnails": {
                     "default": {
                         "url": "https://i.ytimg.com/vi/S6zFJHXbiII/default.jpg",
@@ -532,34 +306,25 @@
                         "url": "https://i.ytimg.com/vi/S6zFJHXbiII/hqdefault.jpg",
                         "width": 480,
                         "height": 360
-                    },
-                    "standard": {
-                        "url": "https://i.ytimg.com/vi/S6zFJHXbiII/sddefault.jpg",
-                        "width": 640,
-                        "height": 480
-                    },
-                    "maxres": {
-                        "url": "https://i.ytimg.com/vi/S6zFJHXbiII/maxresdefault.jpg",
-                        "width": 1280,
-                        "height": 720
                     }
                 },
                 "channelTitle": "Iglesia Bautista Vida Nueva",
-                "localized": {
-                    "title": "Bases para Construir una Fe Sólida - El Reto de Hoy",
-                    "description": "Una fe sólida es clave para enfrentar la vida, pero no siempre sabemos como construirla, en esta serie Julio e Iván conversan sobre algunos retos que te ayudarán a mejorar en tu relación con Dios"
-                }
+                "liveBroadcastContent": "none",
+                "publishTime": "2024-01-22T16:42:19Z"
             }
         },
         {
-            "kind": "youtube#playlist",
-            "etag": "_qSz1MlmKRG8P2VN577z4RyFLBQ",
-            "id": "PL0MA6QqbTGP7ZgTCi9xNPybNjkAlccrtX",
+            "kind": "youtube#searchResult",
+            "etag": "s-m69rkllBj2ptkqpRDu9XIZS5I",
+            "id": {
+                "kind": "youtube#playlist",
+                "playlistId": "PL0MA6QqbTGP7ZgTCi9xNPybNjkAlccrtX"
+            },
             "snippet": {
                 "publishedAt": "2024-01-15T18:25:11Z",
                 "channelId": "UCoNq7HF7vnqalfg-lTaxrDQ",
                 "title": "Si Alguno Piensa Estar Firme - El Reto de Hoy",
-                "description": "En ocaciones, las áreas en las que más fuertes nos sentimos, son las áreas en que podemos cometer los peores errores. En esta serie Julio e Iván van a retarte a permanecer alerta, sin importar",
+                "description": "En ocaciones, las áreas en las que más fuertes nos sentimos, son las áreas en que podemos cometer los peores errores. En esta ...",
                 "thumbnails": {
                     "default": {
                         "url": "https://i.ytimg.com/vi/mrxbUqQJaAA/default.jpg",
@@ -575,77 +340,25 @@
                         "url": "https://i.ytimg.com/vi/mrxbUqQJaAA/hqdefault.jpg",
                         "width": 480,
                         "height": 360
-                    },
-                    "standard": {
-                        "url": "https://i.ytimg.com/vi/mrxbUqQJaAA/sddefault.jpg",
-                        "width": 640,
-                        "height": 480
-                    },
-                    "maxres": {
-                        "url": "https://i.ytimg.com/vi/mrxbUqQJaAA/maxresdefault.jpg",
-                        "width": 1280,
-                        "height": 720
                     }
                 },
                 "channelTitle": "Iglesia Bautista Vida Nueva",
-                "localized": {
-                    "title": "Si Alguno Piensa Estar Firme - El Reto de Hoy",
-                    "description": "En ocaciones, las áreas en las que más fuertes nos sentimos, son las áreas en que podemos cometer los peores errores. En esta serie Julio e Iván van a retarte a permanecer alerta, sin importar"
-                }
+                "liveBroadcastContent": "none",
+                "publishTime": "2024-01-15T18:25:11Z"
             }
         },
         {
-            "kind": "youtube#playlist",
-            "etag": "ttG8Kx54pfVKd3eGdfXWUqI-6N0",
-            "id": "PL0MA6QqbTGP7-gDYhViwME7eag_9vr6Np",
-            "snippet": {
-                "publishedAt": "2024-01-09T22:07:08Z",
-                "channelId": "UCoNq7HF7vnqalfg-lTaxrDQ",
-                "title": "La Llave Bajo el Tapete - Levítico – Noche de Viernes",
-                "description": "En esta serie Steve Kern te ayudará a descubrir los secretos en el libro de Levítico para disfrutar de la presencia de Dios.",
-                "thumbnails": {
-                    "default": {
-                        "url": "https://i.ytimg.com/vi/KRciXi1d7cs/default.jpg",
-                        "width": 120,
-                        "height": 90
-                    },
-                    "medium": {
-                        "url": "https://i.ytimg.com/vi/KRciXi1d7cs/mqdefault.jpg",
-                        "width": 320,
-                        "height": 180
-                    },
-                    "high": {
-                        "url": "https://i.ytimg.com/vi/KRciXi1d7cs/hqdefault.jpg",
-                        "width": 480,
-                        "height": 360
-                    },
-                    "standard": {
-                        "url": "https://i.ytimg.com/vi/KRciXi1d7cs/sddefault.jpg",
-                        "width": 640,
-                        "height": 480
-                    },
-                    "maxres": {
-                        "url": "https://i.ytimg.com/vi/KRciXi1d7cs/maxresdefault.jpg",
-                        "width": 1280,
-                        "height": 720
-                    }
-                },
-                "channelTitle": "Iglesia Bautista Vida Nueva",
-                "localized": {
-                    "title": "La Llave Bajo el Tapete - Levítico – Noche de Viernes",
-                    "description": "En esta serie Steve Kern te ayudará a descubrir los secretos en el libro de Levítico para disfrutar de la presencia de Dios."
-                }
-            }
-        },
-        {
-            "kind": "youtube#playlist",
-            "etag": "SC1sPHcIfI5DVKrt7aDt7cKebFE",
-            "id": "PL0MA6QqbTGP7S7347nRv-86PKfrsAozzC",
+            "kind": "youtube#searchResult",
+            "etag": "sLn9nOzfU9iquQKWeTRgArJql0U",
+            "id": {
+                "kind": "youtube#playlist",
+                "playlistId": "PL0MA6QqbTGP7S7347nRv-86PKfrsAozzC"
+            },
             "snippet": {
                 "publishedAt": "2024-01-08T21:04:02Z",
                 "channelId": "UCoNq7HF7vnqalfg-lTaxrDQ",
                 "title": "El Secreto para Lograr tus Metas - El Reto de Hoy",
-                "description": "Muchos colocan sus metas al inicio de un nuevo año, pero solo algunos las alcanzan. En esta serie Julio e Iván te explicaran cuál es el secreto para lograr tus metas.",
+                "description": "Muchos colocan sus metas al inicio de un nuevo año, pero solo algunos las alcanzan. En esta serie Julio e Iván te explicaran ...",
                 "thumbnails": {
                     "default": {
                         "url": "https://i.ytimg.com/vi/wOTPZR25S8k/default.jpg",
@@ -661,34 +374,25 @@
                         "url": "https://i.ytimg.com/vi/wOTPZR25S8k/hqdefault.jpg",
                         "width": 480,
                         "height": 360
-                    },
-                    "standard": {
-                        "url": "https://i.ytimg.com/vi/wOTPZR25S8k/sddefault.jpg",
-                        "width": 640,
-                        "height": 480
-                    },
-                    "maxres": {
-                        "url": "https://i.ytimg.com/vi/wOTPZR25S8k/maxresdefault.jpg",
-                        "width": 1280,
-                        "height": 720
                     }
                 },
                 "channelTitle": "Iglesia Bautista Vida Nueva",
-                "localized": {
-                    "title": "El Secreto para Lograr tus Metas - El Reto de Hoy",
-                    "description": "Muchos colocan sus metas al inicio de un nuevo año, pero solo algunos las alcanzan. En esta serie Julio e Iván te explicaran cuál es el secreto para lograr tus metas."
-                }
+                "liveBroadcastContent": "none",
+                "publishTime": "2024-01-08T21:04:02Z"
             }
         },
         {
-            "kind": "youtube#playlist",
-            "etag": "g-M6hDwvJoOMQrFPjbQSW27HLBY",
-            "id": "PL0MA6QqbTGP7NN8Z9uRlPwPEsYTpyiSr7",
+            "kind": "youtube#searchResult",
+            "etag": "V2l8hRydTqjKkUGXU61WHq2Fx-0",
+            "id": {
+                "kind": "youtube#playlist",
+                "playlistId": "PL0MA6QqbTGP7NN8Z9uRlPwPEsYTpyiSr7"
+            },
             "snippet": {
                 "publishedAt": "2024-01-02T21:43:55Z",
                 "channelId": "UCoNq7HF7vnqalfg-lTaxrDQ",
                 "title": "Volver al Futuro - Un Vistazo al 2023 - El Reto de Hoy",
-                "description": "En esta primera serie del año, Julio e Iván te retarán a no olvidar las lecciones que has aprendido durante el 2023; por eso te presentarán los 5 episodios más vistos del año anterior.",
+                "description": "En esta primera serie del año, Julio e Iván te retarán a no olvidar las lecciones que has aprendido durante el 2023; por eso te ...",
                 "thumbnails": {
                     "default": {
                         "url": "https://i.ytimg.com/vi/4vFfhdfCyZo/default.jpg",
@@ -704,34 +408,25 @@
                         "url": "https://i.ytimg.com/vi/4vFfhdfCyZo/hqdefault.jpg",
                         "width": 480,
                         "height": 360
-                    },
-                    "standard": {
-                        "url": "https://i.ytimg.com/vi/4vFfhdfCyZo/sddefault.jpg",
-                        "width": 640,
-                        "height": 480
-                    },
-                    "maxres": {
-                        "url": "https://i.ytimg.com/vi/4vFfhdfCyZo/maxresdefault.jpg",
-                        "width": 1280,
-                        "height": 720
                     }
                 },
                 "channelTitle": "Iglesia Bautista Vida Nueva",
-                "localized": {
-                    "title": "Volver al Futuro - Un Vistazo al 2023 - El Reto de Hoy",
-                    "description": "En esta primera serie del año, Julio e Iván te retarán a no olvidar las lecciones que has aprendido durante el 2023; por eso te presentarán los 5 episodios más vistos del año anterior."
-                }
+                "liveBroadcastContent": "none",
+                "publishTime": "2024-01-02T21:43:55Z"
             }
         },
         {
-            "kind": "youtube#playlist",
-            "etag": "RyR-dIYGAE2FOUiNIdoe1UEYdXI",
-            "id": "PL0MA6QqbTGP49B9Jk58AadMUeAcKB8jh0",
+            "kind": "youtube#searchResult",
+            "etag": "w-1To-yGpzOvktS80_G3hPGmRgY",
+            "id": {
+                "kind": "youtube#playlist",
+                "playlistId": "PL0MA6QqbTGP49B9Jk58AadMUeAcKB8jh0"
+            },
             "snippet": {
                 "publishedAt": "2023-12-18T16:47:52Z",
                 "channelId": "UCoNq7HF7vnqalfg-lTaxrDQ",
                 "title": "Navidad es Humildad - El Reto de Hoy",
-                "description": "Jesús no solo decidió convertirse en un humano, él deseo tener la experiencia completa, por eso su nacimiento fue humilde desde todo punto de vista. En esta serie Julio e Iván te explicarán que Navidad es Humildad",
+                "description": "Jesús no solo decidió convertirse en un humano, él deseo tener la experiencia completa, por eso su nacimiento fue humilde ...",
                 "thumbnails": {
                     "default": {
                         "url": "https://i.ytimg.com/vi/yNYYZLmSjLA/default.jpg",
@@ -747,29 +442,20 @@
                         "url": "https://i.ytimg.com/vi/yNYYZLmSjLA/hqdefault.jpg",
                         "width": 480,
                         "height": 360
-                    },
-                    "standard": {
-                        "url": "https://i.ytimg.com/vi/yNYYZLmSjLA/sddefault.jpg",
-                        "width": 640,
-                        "height": 480
-                    },
-                    "maxres": {
-                        "url": "https://i.ytimg.com/vi/yNYYZLmSjLA/maxresdefault.jpg",
-                        "width": 1280,
-                        "height": 720
                     }
                 },
                 "channelTitle": "Iglesia Bautista Vida Nueva",
-                "localized": {
-                    "title": "Navidad es Humildad - El Reto de Hoy",
-                    "description": "Jesús no solo decidió convertirse en un humano, él deseo tener la experiencia completa, por eso su nacimiento fue humilde desde todo punto de vista. En esta serie Julio e Iván te explicarán que Navidad es Humildad"
-                }
+                "liveBroadcastContent": "none",
+                "publishTime": "2023-12-18T16:47:52Z"
             }
         },
         {
-            "kind": "youtube#playlist",
-            "etag": "oUABLocoVpQuvwU2qfWZr_hgy8I",
-            "id": "PL0MA6QqbTGP5ekfKa9hJco9gf8xFEJGLZ",
+            "kind": "youtube#searchResult",
+            "etag": "ObRL8rhEfiStiXUhahyEPYvFxkg",
+            "id": {
+                "kind": "youtube#playlist",
+                "playlistId": "PL0MA6QqbTGP5ekfKa9hJco9gf8xFEJGLZ"
+            },
             "snippet": {
                 "publishedAt": "2023-12-11T18:22:34Z",
                 "channelId": "UCoNq7HF7vnqalfg-lTaxrDQ",
@@ -790,34 +476,25 @@
                         "url": "https://i.ytimg.com/vi/uBdBX29D0tc/hqdefault.jpg",
                         "width": 480,
                         "height": 360
-                    },
-                    "standard": {
-                        "url": "https://i.ytimg.com/vi/uBdBX29D0tc/sddefault.jpg",
-                        "width": 640,
-                        "height": 480
-                    },
-                    "maxres": {
-                        "url": "https://i.ytimg.com/vi/uBdBX29D0tc/maxresdefault.jpg",
-                        "width": 1280,
-                        "height": 720
                     }
                 },
                 "channelTitle": "Iglesia Bautista Vida Nueva",
-                "localized": {
-                    "title": "5 Salmos Antes de Navidad - El Reto de Hoy",
-                    "description": "En esta serie Julio e Iván quieren compartir contigo 5 Salmos que te ayudarán a terminar el 2023 con mucha esperanza."
-                }
+                "liveBroadcastContent": "none",
+                "publishTime": "2023-12-11T18:22:34Z"
             }
         },
         {
-            "kind": "youtube#playlist",
-            "etag": "wGCrEk0R4dpDY3WUXdYZzHtSSwo",
-            "id": "PL0MA6QqbTGP7cy75qu1RGFhw8arkQz9DB",
+            "kind": "youtube#searchResult",
+            "etag": "hYNyO1BfHvyPEZW1VjdCIRSiCmA",
+            "id": {
+                "kind": "youtube#playlist",
+                "playlistId": "PL0MA6QqbTGP7cy75qu1RGFhw8arkQz9DB"
+            },
             "snippet": {
                 "publishedAt": "2023-12-04T17:19:34Z",
                 "channelId": "UCoNq7HF7vnqalfg-lTaxrDQ",
                 "title": "Usurpadores de la Navidad - El Reto de Hoy",
-                "description": "La época de Navidad está llena de usurpadores que quieren que olvides la verdadera razón de la celebración. Esta serie te retará a quitar a los usurpadores de la Navidad.",
+                "description": "La época de Navidad está llena de usurpadores que quieren que olvides la verdadera razón de la celebración. Esta serie te ...",
                 "thumbnails": {
                     "default": {
                         "url": "https://i.ytimg.com/vi/Eg4BRo7bGH0/default.jpg",
@@ -833,120 +510,25 @@
                         "url": "https://i.ytimg.com/vi/Eg4BRo7bGH0/hqdefault.jpg",
                         "width": 480,
                         "height": 360
-                    },
-                    "standard": {
-                        "url": "https://i.ytimg.com/vi/Eg4BRo7bGH0/sddefault.jpg",
-                        "width": 640,
-                        "height": 480
-                    },
-                    "maxres": {
-                        "url": "https://i.ytimg.com/vi/Eg4BRo7bGH0/maxresdefault.jpg",
-                        "width": 1280,
-                        "height": 720
                     }
                 },
                 "channelTitle": "Iglesia Bautista Vida Nueva",
-                "localized": {
-                    "title": "Usurpadores de la Navidad - El Reto de Hoy",
-                    "description": "La época de Navidad está llena de usurpadores que quieren que olvides la verdadera razón de la celebración. Esta serie te retará a quitar a los usurpadores de la Navidad."
-                }
+                "liveBroadcastContent": "none",
+                "publishTime": "2023-12-04T17:19:34Z"
             }
         },
         {
-            "kind": "youtube#playlist",
-            "etag": "4nHnrmEeuw30SbHGQDF7LCNgSJE",
-            "id": "PL0MA6QqbTGP6hAtg679jwvn_-5lGS11xm",
-            "snippet": {
-                "publishedAt": "2023-12-02T01:04:21Z",
-                "channelId": "UCoNq7HF7vnqalfg-lTaxrDQ",
-                "title": "Especiales de Navidad en VidaNueva",
-                "description": "Navidad es un tiempo maravilloso, es la época del año en que celebramos que la luz vino al mundo. Disfruta de estos especiales navideños que VidaNueva ha creado a lo largo de los años.",
-                "thumbnails": {
-                    "default": {
-                        "url": "https://i.ytimg.com/vi/uOMGCn84B9A/default.jpg",
-                        "width": 120,
-                        "height": 90
-                    },
-                    "medium": {
-                        "url": "https://i.ytimg.com/vi/uOMGCn84B9A/mqdefault.jpg",
-                        "width": 320,
-                        "height": 180
-                    },
-                    "high": {
-                        "url": "https://i.ytimg.com/vi/uOMGCn84B9A/hqdefault.jpg",
-                        "width": 480,
-                        "height": 360
-                    },
-                    "standard": {
-                        "url": "https://i.ytimg.com/vi/uOMGCn84B9A/sddefault.jpg",
-                        "width": 640,
-                        "height": 480
-                    },
-                    "maxres": {
-                        "url": "https://i.ytimg.com/vi/uOMGCn84B9A/maxresdefault.jpg",
-                        "width": 1280,
-                        "height": 720
-                    }
-                },
-                "channelTitle": "Iglesia Bautista Vida Nueva",
-                "localized": {
-                    "title": "Especiales de Navidad en VidaNueva",
-                    "description": "Navidad es un tiempo maravilloso, es la época del año en que celebramos que la luz vino al mundo. Disfruta de estos especiales navideños que VidaNueva ha creado a lo largo de los años."
-                }
-            }
-        },
-        {
-            "kind": "youtube#playlist",
-            "etag": "Mk5wEY-u0HtJIH948gTs_PI5s8w",
-            "id": "PL0MA6QqbTGP5akIczhe96tA8jtqc7sDO1",
-            "snippet": {
-                "publishedAt": "2023-11-27T21:33:34Z",
-                "channelId": "UCoNq7HF7vnqalfg-lTaxrDQ",
-                "title": "Operación Terminemos Bien el Año - El Reto de Hoy",
-                "description": "No importa cómo comenzaste el 2023, lo importante es cómo vas a terminarlo.\nEn esta serie Julio e Iván te inspirarán a terminar el año bien.",
-                "thumbnails": {
-                    "default": {
-                        "url": "https://i.ytimg.com/vi/yTK7DFacI5w/default.jpg",
-                        "width": 120,
-                        "height": 90
-                    },
-                    "medium": {
-                        "url": "https://i.ytimg.com/vi/yTK7DFacI5w/mqdefault.jpg",
-                        "width": 320,
-                        "height": 180
-                    },
-                    "high": {
-                        "url": "https://i.ytimg.com/vi/yTK7DFacI5w/hqdefault.jpg",
-                        "width": 480,
-                        "height": 360
-                    },
-                    "standard": {
-                        "url": "https://i.ytimg.com/vi/yTK7DFacI5w/sddefault.jpg",
-                        "width": 640,
-                        "height": 480
-                    },
-                    "maxres": {
-                        "url": "https://i.ytimg.com/vi/yTK7DFacI5w/maxresdefault.jpg",
-                        "width": 1280,
-                        "height": 720
-                    }
-                },
-                "channelTitle": "Iglesia Bautista Vida Nueva",
-                "localized": {
-                    "title": "Operación Terminemos Bien el Año - El Reto de Hoy",
-                    "description": "No importa cómo comenzaste el 2023, lo importante es cómo vas a terminarlo.\nEn esta serie Julio e Iván te inspirarán a terminar el año bien."
-                }
-            }
-        },
-        {
-            "kind": "youtube#playlist",
-            "etag": "k8MVlkjIpyXhoBttDhF8UW_HPXs",
-            "id": "PL0MA6QqbTGP5uAJZDry8_tnw_2BDzcj9l",
+            "kind": "youtube#searchResult",
+            "etag": "LmsTgxu0w_HP9vjeqYyua1cIwxc",
+            "id": {
+                "kind": "youtube#playlist",
+                "playlistId": "PL0MA6QqbTGP5uAJZDry8_tnw_2BDzcj9l"
+            },
             "snippet": {
                 "publishedAt": "2023-11-20T15:59:41Z",
                 "channelId": "UCoNq7HF7vnqalfg-lTaxrDQ",
                 "title": "Canales de Bendición - El Reto de Hoy",
-                "description": "El mundo está lleno de personas que atraviesan por un desierto, en esta serie descubrirás que siempre existe una forma de ayudar a los que nos rodean a encontrar una forma de disfrutar más la vida.",
+                "description": "El mundo está lleno de personas que atraviesan por un desierto, en esta serie descubrirás que siempre existe una forma de ...",
                 "thumbnails": {
                     "default": {
                         "url": "https://i.ytimg.com/vi/tM1CxGTGJLs/default.jpg",
@@ -962,29 +544,20 @@
                         "url": "https://i.ytimg.com/vi/tM1CxGTGJLs/hqdefault.jpg",
                         "width": 480,
                         "height": 360
-                    },
-                    "standard": {
-                        "url": "https://i.ytimg.com/vi/tM1CxGTGJLs/sddefault.jpg",
-                        "width": 640,
-                        "height": 480
-                    },
-                    "maxres": {
-                        "url": "https://i.ytimg.com/vi/tM1CxGTGJLs/maxresdefault.jpg",
-                        "width": 1280,
-                        "height": 720
                     }
                 },
                 "channelTitle": "Iglesia Bautista Vida Nueva",
-                "localized": {
-                    "title": "Canales de Bendición - El Reto de Hoy",
-                    "description": "El mundo está lleno de personas que atraviesan por un desierto, en esta serie descubrirás que siempre existe una forma de ayudar a los que nos rodean a encontrar una forma de disfrutar más la vida."
-                }
+                "liveBroadcastContent": "none",
+                "publishTime": "2023-11-20T15:59:41Z"
             }
         },
         {
-            "kind": "youtube#playlist",
-            "etag": "2Ei9Bs6YpIqycQVUQg1H1cW3a-E",
-            "id": "PL0MA6QqbTGP5z_Sw4CafMPaXRKEiDw9nC",
+            "kind": "youtube#searchResult",
+            "etag": "nn22oV6p08nOVjl2rAUyHLd-Lk8",
+            "id": {
+                "kind": "youtube#playlist",
+                "playlistId": "PL0MA6QqbTGP5z_Sw4CafMPaXRKEiDw9nC"
+            },
             "snippet": {
                 "publishedAt": "2023-11-13T19:36:44Z",
                 "channelId": "UCoNq7HF7vnqalfg-lTaxrDQ",
@@ -1005,34 +578,25 @@
                         "url": "https://i.ytimg.com/vi/0uR8WFTY4_4/hqdefault.jpg",
                         "width": 480,
                         "height": 360
-                    },
-                    "standard": {
-                        "url": "https://i.ytimg.com/vi/0uR8WFTY4_4/sddefault.jpg",
-                        "width": 640,
-                        "height": 480
-                    },
-                    "maxres": {
-                        "url": "https://i.ytimg.com/vi/0uR8WFTY4_4/maxresdefault.jpg",
-                        "width": 1280,
-                        "height": 720
                     }
                 },
                 "channelTitle": "Iglesia Bautista Vida Nueva",
-                "localized": {
-                    "title": "Con los Pies Firmes - El Reto de Hoy",
-                    "description": "Esta serie te retará a estar dispuesto a enfrentar los problemas que vengan."
-                }
+                "liveBroadcastContent": "none",
+                "publishTime": "2023-11-13T19:36:44Z"
             }
         },
         {
-            "kind": "youtube#playlist",
-            "etag": "w3n1350AiXHccaI9Dggct94wqIg",
-            "id": "PL0MA6QqbTGP5TdOV6fzSlAqYmmYUodb43",
+            "kind": "youtube#searchResult",
+            "etag": "vN6bdv-dHw7AM_K0Zqz1Yp49zN4",
+            "id": {
+                "kind": "youtube#playlist",
+                "playlistId": "PL0MA6QqbTGP5TdOV6fzSlAqYmmYUodb43"
+            },
             "snippet": {
                 "publishedAt": "2023-11-06T03:16:03Z",
                 "channelId": "UCoNq7HF7vnqalfg-lTaxrDQ",
                 "title": "Masculinidad Bíblica - El Reto de Hoy",
-                "description": "¿Quién define la masculinidad y los roles del hombre? Esta serie tiene un gran reto para hombres y mujeres. Julio e Iván te retarán a aceptar el desafío de vivir la masculinidad bíblica; pero también desafiarán a las mujeres a aceptar y promover la masculinidad que Dios ha establecido.",
+                "description": "Quién define la masculinidad y los roles del hombre? Esta serie tiene un gran reto para hombres y mujeres. Julio e Iván te retarán ...",
                 "thumbnails": {
                     "default": {
                         "url": "https://i.ytimg.com/vi/zVyEmTZ3rus/default.jpg",
@@ -1048,34 +612,25 @@
                         "url": "https://i.ytimg.com/vi/zVyEmTZ3rus/hqdefault.jpg",
                         "width": 480,
                         "height": 360
-                    },
-                    "standard": {
-                        "url": "https://i.ytimg.com/vi/zVyEmTZ3rus/sddefault.jpg",
-                        "width": 640,
-                        "height": 480
-                    },
-                    "maxres": {
-                        "url": "https://i.ytimg.com/vi/zVyEmTZ3rus/maxresdefault.jpg",
-                        "width": 1280,
-                        "height": 720
                     }
                 },
                 "channelTitle": "Iglesia Bautista Vida Nueva",
-                "localized": {
-                    "title": "Masculinidad Bíblica - El Reto de Hoy",
-                    "description": "¿Quién define la masculinidad y los roles del hombre? Esta serie tiene un gran reto para hombres y mujeres. Julio e Iván te retarán a aceptar el desafío de vivir la masculinidad bíblica; pero también desafiarán a las mujeres a aceptar y promover la masculinidad que Dios ha establecido."
-                }
+                "liveBroadcastContent": "none",
+                "publishTime": "2023-11-06T03:16:03Z"
             }
         },
         {
-            "kind": "youtube#playlist",
-            "etag": "VX_6vK7OM1MjPItIhuXMNOhWgQs",
-            "id": "PL0MA6QqbTGP7oOGf2VoaTdlJMizOiqJRe",
+            "kind": "youtube#searchResult",
+            "etag": "-vs3_ENrIr784SpTFTgqgZInZg8",
+            "id": {
+                "kind": "youtube#playlist",
+                "playlistId": "PL0MA6QqbTGP7oOGf2VoaTdlJMizOiqJRe"
+            },
             "snippet": {
                 "publishedAt": "2023-10-30T17:10:53Z",
                 "channelId": "UCoNq7HF7vnqalfg-lTaxrDQ",
                 "title": "Intimidad con Dios. Un Vistazo al Libro de Levítico - El Reto de Hoy",
-                "description": "Steve Kern regresa al Reto de Hoy para conversar con Julio e Iván sobre un libro de la Biblia, que no siempre entendemos fácilmente, pero que está lleno de revelaciones asombrosas, y Steve te las explicará en forma muy sencilla.",
+                "description": "Steve Kern regresa al Reto de Hoy para conversar con Julio e Iván sobre un libro de la Biblia, que no siempre entendemos ...",
                 "thumbnails": {
                     "default": {
                         "url": "https://i.ytimg.com/vi/-gK8Fec234I/default.jpg",
@@ -1091,34 +646,25 @@
                         "url": "https://i.ytimg.com/vi/-gK8Fec234I/hqdefault.jpg",
                         "width": 480,
                         "height": 360
-                    },
-                    "standard": {
-                        "url": "https://i.ytimg.com/vi/-gK8Fec234I/sddefault.jpg",
-                        "width": 640,
-                        "height": 480
-                    },
-                    "maxres": {
-                        "url": "https://i.ytimg.com/vi/-gK8Fec234I/maxresdefault.jpg",
-                        "width": 1280,
-                        "height": 720
                     }
                 },
                 "channelTitle": "Iglesia Bautista Vida Nueva",
-                "localized": {
-                    "title": "Intimidad con Dios. Un Vistazo al Libro de Levítico - El Reto de Hoy",
-                    "description": "Steve Kern regresa al Reto de Hoy para conversar con Julio e Iván sobre un libro de la Biblia, que no siempre entendemos fácilmente, pero que está lleno de revelaciones asombrosas, y Steve te las explicará en forma muy sencilla."
-                }
+                "liveBroadcastContent": "none",
+                "publishTime": "2023-10-30T17:10:53Z"
             }
         },
         {
-            "kind": "youtube#playlist",
-            "etag": "y-vgEjLijP-ZAPOfDntuFdjeu3g",
-            "id": "PL0MA6QqbTGP5NTJd_4T752iNVwKVKKH-R",
+            "kind": "youtube#searchResult",
+            "etag": "lnbOgtKVVVDhMduhRCshrbs-_2A",
+            "id": {
+                "kind": "youtube#playlist",
+                "playlistId": "PL0MA6QqbTGP5NTJd_4T752iNVwKVKKH-R"
+            },
             "snippet": {
                 "publishedAt": "2023-10-23T18:47:40Z",
                 "channelId": "UCoNq7HF7vnqalfg-lTaxrDQ",
                 "title": "Antiguo pero No Anticuado - El Reto de Hoy",
-                "description": "Existe un mensaje que es antiguo, pero que permanece relevante sin importar el tiempo que pase. En esta serie descubrirás que lo antiguo no necesariamente es anticuado.",
+                "description": "Existe un mensaje que es antiguo, pero que permanece relevante sin importar el tiempo que pase. En esta serie descubrirás que ...",
                 "thumbnails": {
                     "default": {
                         "url": "https://i.ytimg.com/vi/IwfmpO8XlKs/default.jpg",
@@ -1134,34 +680,25 @@
                         "url": "https://i.ytimg.com/vi/IwfmpO8XlKs/hqdefault.jpg",
                         "width": 480,
                         "height": 360
-                    },
-                    "standard": {
-                        "url": "https://i.ytimg.com/vi/IwfmpO8XlKs/sddefault.jpg",
-                        "width": 640,
-                        "height": 480
-                    },
-                    "maxres": {
-                        "url": "https://i.ytimg.com/vi/IwfmpO8XlKs/maxresdefault.jpg",
-                        "width": 1280,
-                        "height": 720
                     }
                 },
                 "channelTitle": "Iglesia Bautista Vida Nueva",
-                "localized": {
-                    "title": "Antiguo pero No Anticuado - El Reto de Hoy",
-                    "description": "Existe un mensaje que es antiguo, pero que permanece relevante sin importar el tiempo que pase. En esta serie descubrirás que lo antiguo no necesariamente es anticuado."
-                }
+                "liveBroadcastContent": "none",
+                "publishTime": "2023-10-23T18:47:40Z"
             }
         },
         {
-            "kind": "youtube#playlist",
-            "etag": "vB_z_8ZQWBHhIJdbRXS31Qnodt0",
-            "id": "PL0MA6QqbTGP7p2mTXRaWJAzZebrZ-sHQK",
+            "kind": "youtube#searchResult",
+            "etag": "U0vnipAr7b7fxh6DvM7lRf-MVGU",
+            "id": {
+                "kind": "youtube#playlist",
+                "playlistId": "PL0MA6QqbTGP7p2mTXRaWJAzZebrZ-sHQK"
+            },
             "snippet": {
                 "publishedAt": "2023-10-16T16:37:50Z",
                 "channelId": "UCoNq7HF7vnqalfg-lTaxrDQ",
                 "title": "¡Créenos! Dios No te ha Dejado - El Reto de Hoy",
-                "description": "¿Alguna vez has sentido que Dios te ha dejado? Hay momentos en la vida en los que las cosas se ponen complejas y oras al Señor, pero pareciera que no responde. Julio e Iván te dirán que en momentos como esos, les creas cuando te dice que Dios no te ha dejado.",
+                "description": "Alguna vez has sentido que Dios te ha dejado? Hay momentos en la vida en los que las cosas se ponen complejas y oras al ...",
                 "thumbnails": {
                     "default": {
                         "url": "https://i.ytimg.com/vi/zX9VMdLuTeo/default.jpg",
@@ -1177,77 +714,59 @@
                         "url": "https://i.ytimg.com/vi/zX9VMdLuTeo/hqdefault.jpg",
                         "width": 480,
                         "height": 360
-                    },
-                    "standard": {
-                        "url": "https://i.ytimg.com/vi/zX9VMdLuTeo/sddefault.jpg",
-                        "width": 640,
-                        "height": 480
-                    },
-                    "maxres": {
-                        "url": "https://i.ytimg.com/vi/zX9VMdLuTeo/maxresdefault.jpg",
-                        "width": 1280,
-                        "height": 720
                     }
                 },
                 "channelTitle": "Iglesia Bautista Vida Nueva",
-                "localized": {
-                    "title": "¡Créenos! Dios No te ha Dejado - El Reto de Hoy",
-                    "description": "¿Alguna vez has sentido que Dios te ha dejado? Hay momentos en la vida en los que las cosas se ponen complejas y oras al Señor, pero pareciera que no responde. Julio e Iván te dirán que en momentos como esos, les creas cuando te dice que Dios no te ha dejado."
-                }
+                "liveBroadcastContent": "none",
+                "publishTime": "2023-10-16T16:37:50Z"
             }
         },
         {
-            "kind": "youtube#playlist",
-            "etag": "xNsa7ozuc6que37KC7mhVmq20N0",
-            "id": "PL0MA6QqbTGP5sButL_TYHfmFm0ETuwr1U",
+            "kind": "youtube#searchResult",
+            "etag": "xepjN94h73ThlQs_n_B8hVglSf4",
+            "id": {
+                "kind": "youtube#playlist",
+                "playlistId": "PL0MA6QqbTGP5sButL_TYHfmFm0ETuwr1U"
+            },
             "snippet": {
                 "publishedAt": "2023-10-09T15:07:34Z",
                 "channelId": "UCoNq7HF7vnqalfg-lTaxrDQ",
                 "title": "Escapa del Diabólico Uso de tu Lengua - El Reto de Hoy",
-                "description": "La Biblia dice que la lengua es un fuego, un mundo de maldad y que es inflamada por el infierno... Algunas personas tienen en su lengua un arma letal, tóxica y diabólica, en esta serie Julio e Iván te retarán a escapar de ese terrible problema.",
+                "description": "La Biblia dice que la lengua es un fuego, un mundo de maldad y que es inflamada por el infierno... Algunas personas tienen en ...",
                 "thumbnails": {
                     "default": {
-                        "url": "https://i.ytimg.com/vi/WJhgcp8wanc/default.jpg",
+                        "url": "https://i.ytimg.com/vi/pVEhvF2uu5E/default.jpg",
                         "width": 120,
                         "height": 90
                     },
                     "medium": {
-                        "url": "https://i.ytimg.com/vi/WJhgcp8wanc/mqdefault.jpg",
+                        "url": "https://i.ytimg.com/vi/pVEhvF2uu5E/mqdefault.jpg",
                         "width": 320,
                         "height": 180
                     },
                     "high": {
-                        "url": "https://i.ytimg.com/vi/WJhgcp8wanc/hqdefault.jpg",
+                        "url": "https://i.ytimg.com/vi/pVEhvF2uu5E/hqdefault.jpg",
                         "width": 480,
                         "height": 360
-                    },
-                    "standard": {
-                        "url": "https://i.ytimg.com/vi/WJhgcp8wanc/sddefault.jpg",
-                        "width": 640,
-                        "height": 480
-                    },
-                    "maxres": {
-                        "url": "https://i.ytimg.com/vi/WJhgcp8wanc/maxresdefault.jpg",
-                        "width": 1280,
-                        "height": 720
                     }
                 },
                 "channelTitle": "Iglesia Bautista Vida Nueva",
-                "localized": {
-                    "title": "Escapa del Diabólico Uso de tu Lengua - El Reto de Hoy",
-                    "description": "La Biblia dice que la lengua es un fuego, un mundo de maldad y que es inflamada por el infierno... Algunas personas tienen en su lengua un arma letal, tóxica y diabólica, en esta serie Julio e Iván te retarán a escapar de ese terrible problema."
-                }
+                "liveBroadcastContent": "none",
+                "publishTime": "2023-10-09T15:07:34Z"
             }
         },
         {
-            "kind": "youtube#playlist",
-            "etag": "SsRDWx97Wg6cuuOpqV8_OAJWk_0",
-            "id": "PL0MA6QqbTGP7VxwzgAKKHZWnxSBQzC-hf",
+            "kind": "youtube#searchResult",
+            "etag": "WNH8Wz3T_71bwg1Z2bhjnL903pk",
+            "id": {
+                "kind": "youtube#playlist",
+                "playlistId": "PL0MA6QqbTGP7VxwzgAKKHZWnxSBQzC-hf"
+            },
             "snippet": {
                 "publishedAt": "2023-10-03T15:55:08Z",
                 "channelId": "UCoNq7HF7vnqalfg-lTaxrDQ",
                 "title": "El Rey y Su Reino - El Reto de Hoy",
-                "description": "Dios es el Rey y merece reinar. Jesús habló sobre el reino de Dios y la forma en que debemos anhelarlo, en esta serie Julio e Iván te explicarán de qué se trata el reino de Dios.",
+                "description": "Dios es el Rey y merece reinar. Jesús habló sobre el reino de Dios y la forma en que debemos anhelarlo, en esta serie Julio e ...",
                 "thumbnails": {
                     "default": {
                         "url": "https://i.ytimg.com/vi/N3ikumgsyPc/default.jpg",
@@ -1263,34 +782,25 @@
                         "url": "https://i.ytimg.com/vi/N3ikumgsyPc/hqdefault.jpg",
                         "width": 480,
                         "height": 360
-                    },
-                    "standard": {
-                        "url": "https://i.ytimg.com/vi/N3ikumgsyPc/sddefault.jpg",
-                        "width": 640,
-                        "height": 480
-                    },
-                    "maxres": {
-                        "url": "https://i.ytimg.com/vi/N3ikumgsyPc/maxresdefault.jpg",
-                        "width": 1280,
-                        "height": 720
                     }
                 },
                 "channelTitle": "Iglesia Bautista Vida Nueva",
-                "localized": {
-                    "title": "El Rey y Su Reino - El Reto de Hoy",
-                    "description": "Dios es el Rey y merece reinar. Jesús habló sobre el reino de Dios y la forma en que debemos anhelarlo, en esta serie Julio e Iván te explicarán de qué se trata el reino de Dios."
-                }
+                "liveBroadcastContent": "none",
+                "publishTime": "2023-10-03T15:55:08Z"
             }
         },
         {
-            "kind": "youtube#playlist",
-            "etag": "ELdPi-pLUtrZUuZsmT1GCLAfNhk",
-            "id": "PL0MA6QqbTGP4U-V69hq-3YtUeM1fm97uz",
+            "kind": "youtube#searchResult",
+            "etag": "_kAwdzHdEN0w6Z3TbwGYDp1zvsI",
+            "id": {
+                "kind": "youtube#playlist",
+                "playlistId": "PL0MA6QqbTGP4U-V69hq-3YtUeM1fm97uz"
+            },
             "snippet": {
                 "publishedAt": "2023-09-25T15:40:53Z",
                 "channelId": "UCoNq7HF7vnqalfg-lTaxrDQ",
                 "title": "Y Tú en Quién Confías? - El Reto de Hoy",
-                "description": "Muchos cristianos cuando entregaron su vida a Jesús lo hicieron con mucha fe, pero a medida pasan los años y las circunstancias se complican, su confianza en Dios pierde intensidad. En esta serie descubrirás que la fe puede crecer o decrecer.",
+                "description": "Muchos cristianos cuando entregaron su vida a Jesús lo hicieron con mucha fe, pero a medida pasan los años y las ...",
                 "thumbnails": {
                     "default": {
                         "url": "https://i.ytimg.com/vi/QZOL4RmqVcU/default.jpg",
@@ -1306,77 +816,25 @@
                         "url": "https://i.ytimg.com/vi/QZOL4RmqVcU/hqdefault.jpg",
                         "width": 480,
                         "height": 360
-                    },
-                    "standard": {
-                        "url": "https://i.ytimg.com/vi/QZOL4RmqVcU/sddefault.jpg",
-                        "width": 640,
-                        "height": 480
-                    },
-                    "maxres": {
-                        "url": "https://i.ytimg.com/vi/QZOL4RmqVcU/maxresdefault.jpg",
-                        "width": 1280,
-                        "height": 720
                     }
                 },
                 "channelTitle": "Iglesia Bautista Vida Nueva",
-                "localized": {
-                    "title": "Y Tú en Quién Confías? - El Reto de Hoy",
-                    "description": "Muchos cristianos cuando entregaron su vida a Jesús lo hicieron con mucha fe, pero a medida pasan los años y las circunstancias se complican, su confianza en Dios pierde intensidad. En esta serie descubrirás que la fe puede crecer o decrecer."
-                }
+                "liveBroadcastContent": "none",
+                "publishTime": "2023-09-25T15:40:53Z"
             }
         },
         {
-            "kind": "youtube#playlist",
-            "etag": "3tVnb2wT7bFiWxW5RL8_JERPkJk",
-            "id": "PL0MA6QqbTGP4c055XA--KQ_aUQ8yGvKwm",
-            "snippet": {
-                "publishedAt": "2023-09-18T16:34:59Z",
-                "channelId": "UCoNq7HF7vnqalfg-lTaxrDQ",
-                "title": "Dios está en Línea - Una Serie sobre la Oración",
-                "description": "",
-                "thumbnails": {
-                    "default": {
-                        "url": "https://i.ytimg.com/vi/AqL11lmLIS4/default.jpg",
-                        "width": 120,
-                        "height": 90
-                    },
-                    "medium": {
-                        "url": "https://i.ytimg.com/vi/AqL11lmLIS4/mqdefault.jpg",
-                        "width": 320,
-                        "height": 180
-                    },
-                    "high": {
-                        "url": "https://i.ytimg.com/vi/AqL11lmLIS4/hqdefault.jpg",
-                        "width": 480,
-                        "height": 360
-                    },
-                    "standard": {
-                        "url": "https://i.ytimg.com/vi/AqL11lmLIS4/sddefault.jpg",
-                        "width": 640,
-                        "height": 480
-                    },
-                    "maxres": {
-                        "url": "https://i.ytimg.com/vi/AqL11lmLIS4/maxresdefault.jpg",
-                        "width": 1280,
-                        "height": 720
-                    }
-                },
-                "channelTitle": "Iglesia Bautista Vida Nueva",
-                "localized": {
-                    "title": "Dios está en Línea - Una Serie sobre la Oración",
-                    "description": ""
-                }
-            }
-        },
-        {
-            "kind": "youtube#playlist",
-            "etag": "PxQVZw63KkSN5ZNa55iY31AUnxY",
-            "id": "PL0MA6QqbTGP6O4DsqDW5g_JUfEvV4s_uD",
+            "kind": "youtube#searchResult",
+            "etag": "NkYr35uI95tWiVts3VWjTnKOBhc",
+            "id": {
+                "kind": "youtube#playlist",
+                "playlistId": "PL0MA6QqbTGP6O4DsqDW5g_JUfEvV4s_uD"
+            },
             "snippet": {
                 "publishedAt": "2023-09-18T16:30:07Z",
                 "channelId": "UCoNq7HF7vnqalfg-lTaxrDQ",
                 "title": "Hablemos de Nuestra Salvación - El Reto de Hoy",
-                "description": "La salvación es mucho más que un ticket al cielo, en esta serie descubrirás que nuestra salvación es algo precioso y emocionante",
+                "description": "La salvación es mucho más que un ticket al cielo, en esta serie descubrirás que nuestra salvación es algo precioso y ...",
                 "thumbnails": {
                     "default": {
                         "url": "https://i.ytimg.com/vi/_bbH4ahYWKg/default.jpg",
@@ -1392,34 +850,25 @@
                         "url": "https://i.ytimg.com/vi/_bbH4ahYWKg/hqdefault.jpg",
                         "width": 480,
                         "height": 360
-                    },
-                    "standard": {
-                        "url": "https://i.ytimg.com/vi/_bbH4ahYWKg/sddefault.jpg",
-                        "width": 640,
-                        "height": 480
-                    },
-                    "maxres": {
-                        "url": "https://i.ytimg.com/vi/_bbH4ahYWKg/maxresdefault.jpg",
-                        "width": 1280,
-                        "height": 720
                     }
                 },
                 "channelTitle": "Iglesia Bautista Vida Nueva",
-                "localized": {
-                    "title": "Hablemos de Nuestra Salvación - El Reto de Hoy",
-                    "description": "La salvación es mucho más que un ticket al cielo, en esta serie descubrirás que nuestra salvación es algo precioso y emocionante"
-                }
+                "liveBroadcastContent": "none",
+                "publishTime": "2023-09-18T16:30:07Z"
             }
         },
         {
-            "kind": "youtube#playlist",
-            "etag": "RyYyCCX9ke1BDgF-qpDhsMAdDaU",
-            "id": "PL0MA6QqbTGP6u7gN6wy8lLwZyK0RUAZTa",
+            "kind": "youtube#searchResult",
+            "etag": "dpfhyNxr-HIgc6VP2XiXgL0asYQ",
+            "id": {
+                "kind": "youtube#playlist",
+                "playlistId": "PL0MA6QqbTGP6u7gN6wy8lLwZyK0RUAZTa"
+            },
             "snippet": {
                 "publishedAt": "2023-09-13T15:51:11Z",
                 "channelId": "UCoNq7HF7vnqalfg-lTaxrDQ",
                 "title": "Un Dios de Limites - El Reto de Hoy",
-                "description": "Los límites no son para echarnos a perder la vida, Dios los estableció con un propósito, en esta serie Julio e Iván te explicarán que Dios es ordenado, y ha establecido limites que son beneficiosos para nosotros.",
+                "description": "Los límites no son para echarnos a perder la vida, Dios los estableció con un propósito, en esta serie Julio e Iván te explicarán ...",
                 "thumbnails": {
                     "default": {
                         "url": "https://i.ytimg.com/vi/KujFyMb_zog/default.jpg",
@@ -1435,77 +884,25 @@
                         "url": "https://i.ytimg.com/vi/KujFyMb_zog/hqdefault.jpg",
                         "width": 480,
                         "height": 360
-                    },
-                    "standard": {
-                        "url": "https://i.ytimg.com/vi/KujFyMb_zog/sddefault.jpg",
-                        "width": 640,
-                        "height": 480
-                    },
-                    "maxres": {
-                        "url": "https://i.ytimg.com/vi/KujFyMb_zog/maxresdefault.jpg",
-                        "width": 1280,
-                        "height": 720
                     }
                 },
                 "channelTitle": "Iglesia Bautista Vida Nueva",
-                "localized": {
-                    "title": "Un Dios de Limites - El Reto de Hoy",
-                    "description": "Los límites no son para echarnos a perder la vida, Dios los estableció con un propósito, en esta serie Julio e Iván te explicarán que Dios es ordenado, y ha establecido limites que son beneficiosos para nosotros."
-                }
+                "liveBroadcastContent": "none",
+                "publishTime": "2023-09-13T15:51:11Z"
             }
         },
         {
-            "kind": "youtube#playlist",
-            "etag": "0upGLojKgWMzE1vrmlJuzbt9n6U",
-            "id": "PL0MA6QqbTGP4PJvoASckn53KeE5x7CTpg",
-            "snippet": {
-                "publishedAt": "2023-09-05T15:43:12Z",
-                "channelId": "UCoNq7HF7vnqalfg-lTaxrDQ",
-                "title": "El Extraño Mundo de Nuestros Hijos - El Reto de Hoy",
-                "description": "",
-                "thumbnails": {
-                    "default": {
-                        "url": "https://i.ytimg.com/vi/E89M8rE4QZQ/default.jpg",
-                        "width": 120,
-                        "height": 90
-                    },
-                    "medium": {
-                        "url": "https://i.ytimg.com/vi/E89M8rE4QZQ/mqdefault.jpg",
-                        "width": 320,
-                        "height": 180
-                    },
-                    "high": {
-                        "url": "https://i.ytimg.com/vi/E89M8rE4QZQ/hqdefault.jpg",
-                        "width": 480,
-                        "height": 360
-                    },
-                    "standard": {
-                        "url": "https://i.ytimg.com/vi/E89M8rE4QZQ/sddefault.jpg",
-                        "width": 640,
-                        "height": 480
-                    },
-                    "maxres": {
-                        "url": "https://i.ytimg.com/vi/E89M8rE4QZQ/maxresdefault.jpg",
-                        "width": 1280,
-                        "height": 720
-                    }
-                },
-                "channelTitle": "Iglesia Bautista Vida Nueva",
-                "localized": {
-                    "title": "El Extraño Mundo de Nuestros Hijos - El Reto de Hoy",
-                    "description": ""
-                }
-            }
-        },
-        {
-            "kind": "youtube#playlist",
-            "etag": "d4aAJBExpQ3IAWeRdTFXlVjh4aY",
-            "id": "PL0MA6QqbTGP6TYG6eaMsM_Gh8Myaoupp-",
+            "kind": "youtube#searchResult",
+            "etag": "MihHRTOXrwZ2avbKihETymYzs5k",
+            "id": {
+                "kind": "youtube#playlist",
+                "playlistId": "PL0MA6QqbTGP6TYG6eaMsM_Gh8Myaoupp-"
+            },
             "snippet": {
                 "publishedAt": "2023-08-28T16:37:57Z",
                 "channelId": "UCoNq7HF7vnqalfg-lTaxrDQ",
                 "title": "No te Rindas - El Reto de Hoy",
-                "description": "¡No te ridas! Quizá estás cansado de luchar o decepcionado de que los problemas solo empeoren; pero rendirte no es la mejor opción. En esta serie Julio e Iván te retarán a no darte por vencido y encontrar una nueva forma de enfrentar las dificultades.",
+                "description": "No te ridas! Quizá estás cansado de luchar o decepcionado de que los problemas solo empeoren; pero rendirte no es la mejor ...",
                 "thumbnails": {
                     "default": {
                         "url": "https://i.ytimg.com/vi/_vlckvsnYt0/default.jpg",
@@ -1521,34 +918,25 @@
                         "url": "https://i.ytimg.com/vi/_vlckvsnYt0/hqdefault.jpg",
                         "width": 480,
                         "height": 360
-                    },
-                    "standard": {
-                        "url": "https://i.ytimg.com/vi/_vlckvsnYt0/sddefault.jpg",
-                        "width": 640,
-                        "height": 480
-                    },
-                    "maxres": {
-                        "url": "https://i.ytimg.com/vi/_vlckvsnYt0/maxresdefault.jpg",
-                        "width": 1280,
-                        "height": 720
                     }
                 },
                 "channelTitle": "Iglesia Bautista Vida Nueva",
-                "localized": {
-                    "title": "No te Rindas - El Reto de Hoy",
-                    "description": "¡No te ridas! Quizá estás cansado de luchar o decepcionado de que los problemas solo empeoren; pero rendirte no es la mejor opción. En esta serie Julio e Iván te retarán a no darte por vencido y encontrar una nueva forma de enfrentar las dificultades."
-                }
+                "liveBroadcastContent": "none",
+                "publishTime": "2023-08-28T16:37:57Z"
             }
         },
         {
-            "kind": "youtube#playlist",
-            "etag": "CWzZmNnBO3Lhb5uHvjmR-W1WvuI",
-            "id": "PL0MA6QqbTGP60yT8S9rUCEOFjoK7AF5LN",
+            "kind": "youtube#searchResult",
+            "etag": "cpHAUt2XSpPir2IryuxebA87Unk",
+            "id": {
+                "kind": "youtube#playlist",
+                "playlistId": "PL0MA6QqbTGP60yT8S9rUCEOFjoK7AF5LN"
+            },
             "snippet": {
                 "publishedAt": "2023-08-22T17:35:41Z",
                 "channelId": "UCoNq7HF7vnqalfg-lTaxrDQ",
                 "title": "No es un Libro Más - El Reto de Hoy",
-                "description": "Muchos libros tienen buenos consejos o fabulosos relatos históricos, muchos libros prometen conectarte con el mundo espiritual y muchos libros pueden hablar de Dios; pero ninguno es cómo la Biblia. En esta serie Julio e Iván te explicarán por qué la Biblia es el libro más importante que existe.",
+                "description": "Muchos libros tienen buenos consejos o fabulosos relatos históricos, muchos libros prometen conectarte con el mundo espiritual ...",
                 "thumbnails": {
                     "default": {
                         "url": "https://i.ytimg.com/vi/5RS_I_XX_J4/default.jpg",
@@ -1564,34 +952,25 @@
                         "url": "https://i.ytimg.com/vi/5RS_I_XX_J4/hqdefault.jpg",
                         "width": 480,
                         "height": 360
-                    },
-                    "standard": {
-                        "url": "https://i.ytimg.com/vi/5RS_I_XX_J4/sddefault.jpg",
-                        "width": 640,
-                        "height": 480
-                    },
-                    "maxres": {
-                        "url": "https://i.ytimg.com/vi/5RS_I_XX_J4/maxresdefault.jpg",
-                        "width": 1280,
-                        "height": 720
                     }
                 },
                 "channelTitle": "Iglesia Bautista Vida Nueva",
-                "localized": {
-                    "title": "No es un Libro Más - El Reto de Hoy",
-                    "description": "Muchos libros tienen buenos consejos o fabulosos relatos históricos, muchos libros prometen conectarte con el mundo espiritual y muchos libros pueden hablar de Dios; pero ninguno es cómo la Biblia. En esta serie Julio e Iván te explicarán por qué la Biblia es el libro más importante que existe."
-                }
+                "liveBroadcastContent": "none",
+                "publishTime": "2023-08-22T17:35:41Z"
             }
         },
         {
-            "kind": "youtube#playlist",
-            "etag": "_-a9XC44dRdoWAgnkC6GkjGmC_w",
-            "id": "PL0MA6QqbTGP5OWr36kwSmXXVtUfKuUUIj",
+            "kind": "youtube#searchResult",
+            "etag": "zOlBHkJo9-O3tFlajuUDTLm8EV4",
+            "id": {
+                "kind": "youtube#playlist",
+                "playlistId": "PL0MA6QqbTGP5OWr36kwSmXXVtUfKuUUIj"
+            },
             "snippet": {
                 "publishedAt": "2023-08-14T16:18:48Z",
                 "channelId": "UCoNq7HF7vnqalfg-lTaxrDQ",
                 "title": "¡Descontrolados! El Grave Problema de la Ira - El Reto de Hoy",
-                "description": "Todos nos enojamos, experimentar enojo no es pecado, es una capacidad con la que Dios nos diseñó; pero cuando la ira se sale de control el pecado es prácticamente inevitable.",
+                "description": "Todos nos enojamos, experimentar enojo no es pecado, es una capacidad con la que Dios nos diseñó; pero cuando la ira se ...",
                 "thumbnails": {
                     "default": {
                         "url": "https://i.ytimg.com/vi/-owaWHn1uRw/default.jpg",
@@ -1607,120 +986,59 @@
                         "url": "https://i.ytimg.com/vi/-owaWHn1uRw/hqdefault.jpg",
                         "width": 480,
                         "height": 360
-                    },
-                    "standard": {
-                        "url": "https://i.ytimg.com/vi/-owaWHn1uRw/sddefault.jpg",
-                        "width": 640,
-                        "height": 480
-                    },
-                    "maxres": {
-                        "url": "https://i.ytimg.com/vi/-owaWHn1uRw/maxresdefault.jpg",
-                        "width": 1280,
-                        "height": 720
                     }
                 },
                 "channelTitle": "Iglesia Bautista Vida Nueva",
-                "localized": {
-                    "title": "¡Descontrolados! El Grave Problema de la Ira - El Reto de Hoy",
-                    "description": "Todos nos enojamos, experimentar enojo no es pecado, es una capacidad con la que Dios nos diseñó; pero cuando la ira se sale de control el pecado es prácticamente inevitable."
-                }
+                "liveBroadcastContent": "none",
+                "publishTime": "2023-08-14T16:18:48Z"
             }
         },
         {
-            "kind": "youtube#playlist",
-            "etag": "e7CGwaqHDhTvW619F_ETPI9B0JI",
-            "id": "PL0MA6QqbTGP6wpkMLvWwr3QfSrNVCT-mJ",
+            "kind": "youtube#searchResult",
+            "etag": "KYQm4fs46hqbB_r2UZh1G-jw7IM",
+            "id": {
+                "kind": "youtube#playlist",
+                "playlistId": "PL0MA6QqbTGP6wpkMLvWwr3QfSrNVCT-mJ"
+            },
             "snippet": {
                 "publishedAt": "2023-08-07T15:32:17Z",
                 "channelId": "UCoNq7HF7vnqalfg-lTaxrDQ",
                 "title": "Casados pero Felices - El Reto de Hoy",
-                "description": "Estar casados y permanecer felices sí es posible. Julio e Iván te explicarán que aunque en la relación matrimonial hay montañas y valles, siempre es posible cultivar la felicidad en el matrimonio.",
+                "description": "Estar casados y permanecer felices sí es posible. Julio e Iván te explicarán que aunque en la relación matrimonial hay montañas ...",
                 "thumbnails": {
                     "default": {
-                        "url": "https://i.ytimg.com/vi/ZwEHpZxobLo/default.jpg",
+                        "url": "https://i.ytimg.com/vi/4XlZif_eALw/default.jpg",
                         "width": 120,
                         "height": 90
                     },
                     "medium": {
-                        "url": "https://i.ytimg.com/vi/ZwEHpZxobLo/mqdefault.jpg",
+                        "url": "https://i.ytimg.com/vi/4XlZif_eALw/mqdefault.jpg",
                         "width": 320,
                         "height": 180
                     },
                     "high": {
-                        "url": "https://i.ytimg.com/vi/ZwEHpZxobLo/hqdefault.jpg",
+                        "url": "https://i.ytimg.com/vi/4XlZif_eALw/hqdefault.jpg",
                         "width": 480,
                         "height": 360
-                    },
-                    "standard": {
-                        "url": "https://i.ytimg.com/vi/ZwEHpZxobLo/sddefault.jpg",
-                        "width": 640,
-                        "height": 480
-                    },
-                    "maxres": {
-                        "url": "https://i.ytimg.com/vi/ZwEHpZxobLo/maxresdefault.jpg",
-                        "width": 1280,
-                        "height": 720
                     }
                 },
                 "channelTitle": "Iglesia Bautista Vida Nueva",
-                "localized": {
-                    "title": "Casados pero Felices - El Reto de Hoy",
-                    "description": "Estar casados y permanecer felices sí es posible. Julio e Iván te explicarán que aunque en la relación matrimonial hay montañas y valles, siempre es posible cultivar la felicidad en el matrimonio."
-                }
+                "liveBroadcastContent": "none",
+                "publishTime": "2023-08-07T15:32:17Z"
             }
         },
         {
-            "kind": "youtube#playlist",
-            "etag": "-RBOEzdGKciUKPdsv0nj9Q1RihM",
-            "id": "PL0MA6QqbTGP7PJUgdSVekvhyoPZFk__b-",
-            "snippet": {
-                "publishedAt": "2023-07-31T03:43:53Z",
-                "channelId": "UCoNq7HF7vnqalfg-lTaxrDQ",
-                "title": "Hijología2 (Repetición) - El Reto de Hoy",
-                "description": "",
-                "thumbnails": {
-                    "default": {
-                        "url": "https://i.ytimg.com/vi/ftrxsZE-sY0/default.jpg",
-                        "width": 120,
-                        "height": 90
-                    },
-                    "medium": {
-                        "url": "https://i.ytimg.com/vi/ftrxsZE-sY0/mqdefault.jpg",
-                        "width": 320,
-                        "height": 180
-                    },
-                    "high": {
-                        "url": "https://i.ytimg.com/vi/ftrxsZE-sY0/hqdefault.jpg",
-                        "width": 480,
-                        "height": 360
-                    },
-                    "standard": {
-                        "url": "https://i.ytimg.com/vi/ftrxsZE-sY0/sddefault.jpg",
-                        "width": 640,
-                        "height": 480
-                    },
-                    "maxres": {
-                        "url": "https://i.ytimg.com/vi/ftrxsZE-sY0/maxresdefault.jpg",
-                        "width": 1280,
-                        "height": 720
-                    }
-                },
-                "channelTitle": "Iglesia Bautista Vida Nueva",
-                "localized": {
-                    "title": "Hijología2 (Repetición) - El Reto de Hoy",
-                    "description": ""
-                }
-            }
-        },
-        {
-            "kind": "youtube#playlist",
-            "etag": "Yz-_IMmDEh4ExyhEaPJbU9Oi7Zw",
-            "id": "PL0MA6QqbTGP6Mr_R99EDnfaKrTDWTmAM-",
+            "kind": "youtube#searchResult",
+            "etag": "hlujT8vbSJPZ-aWbvgwPBjX7zuo",
+            "id": {
+                "kind": "youtube#playlist",
+                "playlistId": "PL0MA6QqbTGP6Mr_R99EDnfaKrTDWTmAM-"
+            },
             "snippet": {
                 "publishedAt": "2023-07-24T17:47:59Z",
                 "channelId": "UCoNq7HF7vnqalfg-lTaxrDQ",
                 "title": "Relevante Podcast  en El Reto de Hoy",
-                "description": "Julio e Iván invitan a Daniel, Carlos, Marco y Marcos; los anfitriones de Relevante, un podcast diseñado especialmente para esta generación. Esta semana conversarán juntos sobre los temas más escuchados de su podcast.",
+                "description": "Julio e Iván invitan a Daniel, Carlos, Marco y Marcos; los anfitriones de Relevante, un podcast diseñado especialmente para esta ...",
                 "thumbnails": {
                     "default": {
                         "url": "https://i.ytimg.com/vi/anY-JK-aFtM/default.jpg",
@@ -1736,410 +1054,317 @@
                         "url": "https://i.ytimg.com/vi/anY-JK-aFtM/hqdefault.jpg",
                         "width": 480,
                         "height": 360
-                    },
-                    "standard": {
-                        "url": "https://i.ytimg.com/vi/anY-JK-aFtM/sddefault.jpg",
-                        "width": 640,
-                        "height": 480
-                    },
-                    "maxres": {
-                        "url": "https://i.ytimg.com/vi/anY-JK-aFtM/maxresdefault.jpg",
-                        "width": 1280,
-                        "height": 720
                     }
                 },
                 "channelTitle": "Iglesia Bautista Vida Nueva",
-                "localized": {
-                    "title": "Relevante Podcast  en El Reto de Hoy",
-                    "description": "Julio e Iván invitan a Daniel, Carlos, Marco y Marcos; los anfitriones de Relevante, un podcast diseñado especialmente para esta generación. Esta semana conversarán juntos sobre los temas más escuchados de su podcast."
-                }
+                "liveBroadcastContent": "none",
+                "publishTime": "2023-07-24T17:47:59Z"
             }
         },
         {
-            "kind": "youtube#playlist",
-            "etag": "aEnTBST-9Sn7HhfDHm2AzOVONpc",
-            "id": "PL0MA6QqbTGP5deMX_XlGoz8WfjJR9FcOU",
+            "kind": "youtube#searchResult",
+            "etag": "a7gSbLk-KwwbQ4hx3WaCs1AhN3o",
+            "id": {
+                "kind": "youtube#playlist",
+                "playlistId": "PL0MA6QqbTGP4O1-6q4k4wvrGZNf9QRbCp"
+            },
             "snippet": {
-                "publishedAt": "2023-07-24T17:05:19Z",
+                "publishedAt": "2023-03-27T16:02:56Z",
                 "channelId": "UCoNq7HF7vnqalfg-lTaxrDQ",
-                "title": "Relevante (Serie de Aniversario) - El Reto de Hoy",
-                "description": "Julio e Iván invitan a Daniel, Carlos, Marco y Marcos; los anfitriones de Relevante, un podcast diseñado especialmente para esta generación. Esta semana conversarán juntos sobre los temas más escuchados de su podcast.",
+                "title": "Gracias a Dios por su Gracia - El Reto de Hoy (Especial 10 años)",
+                "description": "EL Reto de Hoy celebra sus 10 años con una serie muy especial.",
                 "thumbnails": {
                     "default": {
-                        "url": "https://i.ytimg.com/vi/6sXa6xbkSSE/default.jpg",
+                        "url": "https://i.ytimg.com/vi/u3ciQS1izgo/default.jpg",
                         "width": 120,
                         "height": 90
                     },
                     "medium": {
-                        "url": "https://i.ytimg.com/vi/6sXa6xbkSSE/mqdefault.jpg",
+                        "url": "https://i.ytimg.com/vi/u3ciQS1izgo/mqdefault.jpg",
                         "width": 320,
                         "height": 180
                     },
                     "high": {
-                        "url": "https://i.ytimg.com/vi/6sXa6xbkSSE/hqdefault.jpg",
+                        "url": "https://i.ytimg.com/vi/u3ciQS1izgo/hqdefault.jpg",
                         "width": 480,
                         "height": 360
-                    },
-                    "standard": {
-                        "url": "https://i.ytimg.com/vi/6sXa6xbkSSE/sddefault.jpg",
-                        "width": 640,
-                        "height": 480
-                    },
-                    "maxres": {
-                        "url": "https://i.ytimg.com/vi/6sXa6xbkSSE/maxresdefault.jpg",
-                        "width": 1280,
-                        "height": 720
                     }
                 },
                 "channelTitle": "Iglesia Bautista Vida Nueva",
-                "localized": {
-                    "title": "Relevante (Serie de Aniversario) - El Reto de Hoy",
-                    "description": "Julio e Iván invitan a Daniel, Carlos, Marco y Marcos; los anfitriones de Relevante, un podcast diseñado especialmente para esta generación. Esta semana conversarán juntos sobre los temas más escuchados de su podcast."
-                }
+                "liveBroadcastContent": "none",
+                "publishTime": "2023-03-27T16:02:56Z"
             }
         },
         {
-            "kind": "youtube#playlist",
-            "etag": "09Xwcov4c8iumgHLrtCrQXcrU4U",
-            "id": "PL0MA6QqbTGP6I8ab07t9zSMH_WHLmrCj3",
+            "kind": "youtube#searchResult",
+            "etag": "KmC0BkdMPx6cWE1ji3GHXkPXqUw",
+            "id": {
+                "kind": "youtube#playlist",
+                "playlistId": "PL0MA6QqbTGP5Ub-ys7D3ERtcDBDJasaQI"
+            },
             "snippet": {
-                "publishedAt": "2023-07-17T15:27:03Z",
+                "publishedAt": "2023-03-20T14:34:52Z",
                 "channelId": "UCoNq7HF7vnqalfg-lTaxrDQ",
-                "title": "Hablemos de Trabajo - El Reto de Hoy",
-                "description": "¿Es una bendición o es un castigo? para muchas personas el trabajo es una consecuencia, pero en esta serie podrás descubrir que realmente es un invento que surgió mucho antes de la caída de la humanidad, que puede darnos propósito y ser una bendición, a pesar de eso, hay empleos que pueden ser una maldición.",
-                "thumbnails": {
-                    "default": {
-                        "url": "https://i.ytimg.com/vi/L8KbDdJB1Q0/default.jpg",
-                        "width": 120,
-                        "height": 90
-                    },
-                    "medium": {
-                        "url": "https://i.ytimg.com/vi/L8KbDdJB1Q0/mqdefault.jpg",
-                        "width": 320,
-                        "height": 180
-                    },
-                    "high": {
-                        "url": "https://i.ytimg.com/vi/L8KbDdJB1Q0/hqdefault.jpg",
-                        "width": 480,
-                        "height": 360
-                    },
-                    "standard": {
-                        "url": "https://i.ytimg.com/vi/L8KbDdJB1Q0/sddefault.jpg",
-                        "width": 640,
-                        "height": 480
-                    },
-                    "maxres": {
-                        "url": "https://i.ytimg.com/vi/L8KbDdJB1Q0/maxresdefault.jpg",
-                        "width": 1280,
-                        "height": 720
-                    }
-                },
-                "channelTitle": "Iglesia Bautista Vida Nueva",
-                "localized": {
-                    "title": "Hablemos de Trabajo - El Reto de Hoy",
-                    "description": "¿Es una bendición o es un castigo? para muchas personas el trabajo es una consecuencia, pero en esta serie podrás descubrir que realmente es un invento que surgió mucho antes de la caída de la humanidad, que puede darnos propósito y ser una bendición, a pesar de eso, hay empleos que pueden ser una maldición."
-                }
-            }
-        },
-        {
-            "kind": "youtube#playlist",
-            "etag": "mJ7TO7V_rlIKRngZICtxKjhrulw",
-            "id": "PL0MA6QqbTGP7oXBVLe_fAODLUVI0Wz9E1",
-            "snippet": {
-                "publishedAt": "2023-07-10T15:23:10Z",
-                "channelId": "UCoNq7HF7vnqalfg-lTaxrDQ",
-                "title": "Regresar a lo Básico - El Reto de Hoy",
+                "title": "Las Batallas Diarias que Nuestros Jóvenes Enfrentan - El Reto de Hoy",
                 "description": "",
                 "thumbnails": {
                     "default": {
-                        "url": "https://i.ytimg.com/vi/9vcoF2kNzJA/default.jpg",
+                        "url": "https://i.ytimg.com/vi/Xtt02wZACWE/default.jpg",
                         "width": 120,
                         "height": 90
                     },
                     "medium": {
-                        "url": "https://i.ytimg.com/vi/9vcoF2kNzJA/mqdefault.jpg",
+                        "url": "https://i.ytimg.com/vi/Xtt02wZACWE/mqdefault.jpg",
                         "width": 320,
                         "height": 180
                     },
                     "high": {
-                        "url": "https://i.ytimg.com/vi/9vcoF2kNzJA/hqdefault.jpg",
+                        "url": "https://i.ytimg.com/vi/Xtt02wZACWE/hqdefault.jpg",
                         "width": 480,
                         "height": 360
-                    },
-                    "standard": {
-                        "url": "https://i.ytimg.com/vi/9vcoF2kNzJA/sddefault.jpg",
-                        "width": 640,
-                        "height": 480
-                    },
-                    "maxres": {
-                        "url": "https://i.ytimg.com/vi/9vcoF2kNzJA/maxresdefault.jpg",
-                        "width": 1280,
-                        "height": 720
                     }
                 },
                 "channelTitle": "Iglesia Bautista Vida Nueva",
-                "localized": {
-                    "title": "Regresar a lo Básico - El Reto de Hoy",
-                    "description": ""
-                }
+                "liveBroadcastContent": "none",
+                "publishTime": "2023-03-20T14:34:52Z"
             }
         },
         {
-            "kind": "youtube#playlist",
-            "etag": "I19chkxa9owngR0TjAk8uu2HV20",
-            "id": "PL0MA6QqbTGP5IRGOg9JDp8DR_sJF0T_--",
+            "kind": "youtube#searchResult",
+            "etag": "NF0VejBrgAYgu_T1pIfa7FSGmDs",
+            "id": {
+                "kind": "youtube#playlist",
+                "playlistId": "PL0MA6QqbTGP5l2wcnkQqbzKOkzFRIkjjk"
+            },
             "snippet": {
-                "publishedAt": "2023-07-03T16:18:09Z",
+                "publishedAt": "2023-03-13T16:53:06Z",
                 "channelId": "UCoNq7HF7vnqalfg-lTaxrDQ",
-                "title": "La Provechosa Virtud de Pensar antes de Actuar - El Reto de Hoy",
+                "title": "Radiografía de una Calumnia Diabólica - El Reto de Hoy",
+                "description": "No todos los que dicen que quieren ayudarnos realmente tienen buenos propósitos, es necesario aprender a cuidarnos de ellos ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/91Doom66V7k/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/91Doom66V7k/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/91Doom66V7k/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Iglesia Bautista Vida Nueva",
+                "liveBroadcastContent": "none",
+                "publishTime": "2023-03-13T16:53:06Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "tLxCDguT2qIuqGze410L9XNdAVI",
+            "id": {
+                "kind": "youtube#playlist",
+                "playlistId": "PL0MA6QqbTGP5xa3SdTQObHAkCMMvxJVtD"
+            },
+            "snippet": {
+                "publishedAt": "2023-03-06T17:20:37Z",
+                "channelId": "UCoNq7HF7vnqalfg-lTaxrDQ",
+                "title": "Verdades Liberados que cada Mujer Necesita - El Reto de Hoy",
+                "description": "Algunas personas se equivocan al pensar que la Biblia y Dios es machista, el mundo disfruta mentirle a las mujeres y algunas ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/lMst1LTJXKQ/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/lMst1LTJXKQ/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/lMst1LTJXKQ/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Iglesia Bautista Vida Nueva",
+                "liveBroadcastContent": "none",
+                "publishTime": "2023-03-06T17:20:37Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "kmA71N5FKlojK7oLpsAgEhHfKos",
+            "id": {
+                "kind": "youtube#playlist",
+                "playlistId": "PL0MA6QqbTGP6dnTKXG7_waHOTu-4KxneL"
+            },
+            "snippet": {
+                "publishedAt": "2023-02-27T16:12:32Z",
+                "channelId": "UCoNq7HF7vnqalfg-lTaxrDQ",
+                "title": "No Traspases los Linderos - El Reto de Hoy",
+                "description": "Hay limites que nunca deberíamos traspasar, en este episodio Julio e Iván te explicarán que no debemos llamar anticuado a lo ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/YZq_LBtIO1Q/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/YZq_LBtIO1Q/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/YZq_LBtIO1Q/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Iglesia Bautista Vida Nueva",
+                "liveBroadcastContent": "none",
+                "publishTime": "2023-02-27T16:12:32Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "JJUZBxLigsrSCYRp5D94Xk-jpKY",
+            "id": {
+                "kind": "youtube#playlist",
+                "playlistId": "PL0MA6QqbTGP4Rk9B9ZypI0ujMrFIfjv8a"
+            },
+            "snippet": {
+                "publishedAt": "2022-10-03T12:52:25Z",
+                "channelId": "UCoNq7HF7vnqalfg-lTaxrDQ",
+                "title": "Ordena tus Pensamientos - El Reto de Hoy",
                 "description": "",
                 "thumbnails": {
                     "default": {
-                        "url": "https://i.ytimg.com/vi/7KHX4Co-bTY/default.jpg",
+                        "url": "https://i.ytimg.com/vi/4FViz0Jo3sM/default.jpg",
                         "width": 120,
                         "height": 90
                     },
                     "medium": {
-                        "url": "https://i.ytimg.com/vi/7KHX4Co-bTY/mqdefault.jpg",
+                        "url": "https://i.ytimg.com/vi/4FViz0Jo3sM/mqdefault.jpg",
                         "width": 320,
                         "height": 180
                     },
                     "high": {
-                        "url": "https://i.ytimg.com/vi/7KHX4Co-bTY/hqdefault.jpg",
+                        "url": "https://i.ytimg.com/vi/4FViz0Jo3sM/hqdefault.jpg",
                         "width": 480,
                         "height": 360
-                    },
-                    "standard": {
-                        "url": "https://i.ytimg.com/vi/7KHX4Co-bTY/sddefault.jpg",
-                        "width": 640,
-                        "height": 480
-                    },
-                    "maxres": {
-                        "url": "https://i.ytimg.com/vi/7KHX4Co-bTY/maxresdefault.jpg",
-                        "width": 1280,
-                        "height": 720
                     }
                 },
                 "channelTitle": "Iglesia Bautista Vida Nueva",
-                "localized": {
-                    "title": "La Provechosa Virtud de Pensar antes de Actuar - El Reto de Hoy",
-                    "description": ""
-                }
+                "liveBroadcastContent": "none",
+                "publishTime": "2022-10-03T12:52:25Z"
             }
         },
         {
-            "kind": "youtube#playlist",
-            "etag": "gy_WSvL4r-XjAssunR3n-Fzzm_U",
-            "id": "PL0MA6QqbTGP4c_iO0_fUwujy8FgHyihQv",
+            "kind": "youtube#searchResult",
+            "etag": "_v05K1kRklXeb-tkuUIjlDUw74c",
+            "id": {
+                "kind": "youtube#playlist",
+                "playlistId": "PL0MA6QqbTGP6X8z9bR80RHE_2HXmaPURm"
+            },
             "snippet": {
-                "publishedAt": "2023-06-26T13:51:54Z",
+                "publishedAt": "2022-06-13T20:59:01Z",
                 "channelId": "UCoNq7HF7vnqalfg-lTaxrDQ",
-                "title": "Cuando la Vida No Va Como Quisieras - El Reto de Hoy",
+                "title": "¿Qué dice la Biblia acerca del Licor?",
                 "description": "",
                 "thumbnails": {
                     "default": {
-                        "url": "https://i.ytimg.com/vi/AwX-VJbkQ4I/default.jpg",
+                        "url": "https://i.ytimg.com/vi/zxu3nEXy21I/default.jpg",
                         "width": 120,
                         "height": 90
                     },
                     "medium": {
-                        "url": "https://i.ytimg.com/vi/AwX-VJbkQ4I/mqdefault.jpg",
+                        "url": "https://i.ytimg.com/vi/zxu3nEXy21I/mqdefault.jpg",
                         "width": 320,
                         "height": 180
                     },
                     "high": {
-                        "url": "https://i.ytimg.com/vi/AwX-VJbkQ4I/hqdefault.jpg",
+                        "url": "https://i.ytimg.com/vi/zxu3nEXy21I/hqdefault.jpg",
                         "width": 480,
                         "height": 360
-                    },
-                    "standard": {
-                        "url": "https://i.ytimg.com/vi/AwX-VJbkQ4I/sddefault.jpg",
-                        "width": 640,
-                        "height": 480
-                    },
-                    "maxres": {
-                        "url": "https://i.ytimg.com/vi/AwX-VJbkQ4I/maxresdefault.jpg",
-                        "width": 1280,
-                        "height": 720
                     }
                 },
                 "channelTitle": "Iglesia Bautista Vida Nueva",
-                "localized": {
-                    "title": "Cuando la Vida No Va Como Quisieras - El Reto de Hoy",
-                    "description": ""
-                }
+                "liveBroadcastContent": "none",
+                "publishTime": "2022-06-13T20:59:01Z"
             }
         },
         {
-            "kind": "youtube#playlist",
-            "etag": "WgLnYl8RBAO-LvUW7USXftAOBMg",
-            "id": "PL0MA6QqbTGP5njV1NQTXp_0anpnK1QWtJ",
+            "kind": "youtube#searchResult",
+            "etag": "lEQnM6V4hkh4VPz6ox-atDgbPWE",
+            "id": {
+                "kind": "youtube#playlist",
+                "playlistId": "PL0MA6QqbTGP56Fiohga4r1n8u3NsuXD9U"
+            },
             "snippet": {
-                "publishedAt": "2023-06-19T18:11:58Z",
+                "publishedAt": "2022-02-22T16:34:46Z",
                 "channelId": "UCoNq7HF7vnqalfg-lTaxrDQ",
-                "title": "Palabra Clave: Equilibrio - El Reto de Hoy",
+                "title": "El Sentido del Deber - El Reto de Hoy",
                 "description": "",
                 "thumbnails": {
                     "default": {
-                        "url": "https://i.ytimg.com/vi/tMeqhJEOwgc/default.jpg",
+                        "url": "https://i.ytimg.com/vi/bclb9PyYvoY/default.jpg",
                         "width": 120,
                         "height": 90
                     },
                     "medium": {
-                        "url": "https://i.ytimg.com/vi/tMeqhJEOwgc/mqdefault.jpg",
+                        "url": "https://i.ytimg.com/vi/bclb9PyYvoY/mqdefault.jpg",
                         "width": 320,
                         "height": 180
                     },
                     "high": {
-                        "url": "https://i.ytimg.com/vi/tMeqhJEOwgc/hqdefault.jpg",
+                        "url": "https://i.ytimg.com/vi/bclb9PyYvoY/hqdefault.jpg",
                         "width": 480,
                         "height": 360
-                    },
-                    "standard": {
-                        "url": "https://i.ytimg.com/vi/tMeqhJEOwgc/sddefault.jpg",
-                        "width": 640,
-                        "height": 480
-                    },
-                    "maxres": {
-                        "url": "https://i.ytimg.com/vi/tMeqhJEOwgc/maxresdefault.jpg",
-                        "width": 1280,
-                        "height": 720
                     }
                 },
                 "channelTitle": "Iglesia Bautista Vida Nueva",
-                "localized": {
-                    "title": "Palabra Clave: Equilibrio - El Reto de Hoy",
-                    "description": ""
-                }
+                "liveBroadcastContent": "none",
+                "publishTime": "2022-02-22T16:34:46Z"
             }
         },
         {
-            "kind": "youtube#playlist",
-            "etag": "j6KP1jUsV9fF6NOHoN-IQIeKkDk",
-            "id": "PL0MA6QqbTGP6lsg4ioyQbiKOnc43HpQc9",
+            "kind": "youtube#searchResult",
+            "etag": "lh6neLN5UjhIuCr0v1MY8KcPC8U",
+            "id": {
+                "kind": "youtube#playlist",
+                "playlistId": "PL0MA6QqbTGP5smSBrWfMaoXVtIRQNmTYQ"
+            },
             "snippet": {
-                "publishedAt": "2023-06-12T15:49:56Z",
+                "publishedAt": "2020-07-03T13:51:15Z",
                 "channelId": "UCoNq7HF7vnqalfg-lTaxrDQ",
-                "title": "El Trascendental Desafío de Ser Padre - El Reto de Hoy",
-                "description": "Ser padre no es tarea simple, tener la oportunidad de formar una vida es una bendición, pero también un desafío trascendental. \nEn esta serie Julio e Iván te explicarán lo que la Biblia dice sobre el reto de ser papá.",
-                "thumbnails": {
-                    "default": {
-                        "url": "https://i.ytimg.com/vi/HsYOiXEKwKA/default.jpg",
-                        "width": 120,
-                        "height": 90
-                    },
-                    "medium": {
-                        "url": "https://i.ytimg.com/vi/HsYOiXEKwKA/mqdefault.jpg",
-                        "width": 320,
-                        "height": 180
-                    },
-                    "high": {
-                        "url": "https://i.ytimg.com/vi/HsYOiXEKwKA/hqdefault.jpg",
-                        "width": 480,
-                        "height": 360
-                    },
-                    "standard": {
-                        "url": "https://i.ytimg.com/vi/HsYOiXEKwKA/sddefault.jpg",
-                        "width": 640,
-                        "height": 480
-                    },
-                    "maxres": {
-                        "url": "https://i.ytimg.com/vi/HsYOiXEKwKA/maxresdefault.jpg",
-                        "width": 1280,
-                        "height": 720
-                    }
-                },
-                "channelTitle": "Iglesia Bautista Vida Nueva",
-                "localized": {
-                    "title": "El Trascendental Desafío de Ser Padre - El Reto de Hoy",
-                    "description": "Ser padre no es tarea simple, tener la oportunidad de formar una vida es una bendición, pero también un desafío trascendental. \nEn esta serie Julio e Iván te explicarán lo que la Biblia dice sobre el reto de ser papá."
-                }
-            }
-        },
-        {
-            "kind": "youtube#playlist",
-            "etag": "DXYiQNCt8F8UxoCLqNu0XE9RclI",
-            "id": "PL0MA6QqbTGP4y-mF0xQyITo6BsIyNFGyu",
-            "snippet": {
-                "publishedAt": "2023-06-08T17:20:46Z",
-                "channelId": "UCoNq7HF7vnqalfg-lTaxrDQ",
-                "title": "Crónicas de Reyes -  Autoliderazgo",
+                "title": "¿Qué Dice el Texto? Con Julio Contreras",
                 "description": "",
                 "thumbnails": {
                     "default": {
-                        "url": "https://i.ytimg.com/vi/mC7cI6nQj3Q/default.jpg",
+                        "url": "https://i.ytimg.com/vi/LD7UIAs8S0Q/default.jpg",
                         "width": 120,
                         "height": 90
                     },
                     "medium": {
-                        "url": "https://i.ytimg.com/vi/mC7cI6nQj3Q/mqdefault.jpg",
+                        "url": "https://i.ytimg.com/vi/LD7UIAs8S0Q/mqdefault.jpg",
                         "width": 320,
                         "height": 180
                     },
                     "high": {
-                        "url": "https://i.ytimg.com/vi/mC7cI6nQj3Q/hqdefault.jpg",
+                        "url": "https://i.ytimg.com/vi/LD7UIAs8S0Q/hqdefault.jpg",
                         "width": 480,
                         "height": 360
-                    },
-                    "standard": {
-                        "url": "https://i.ytimg.com/vi/mC7cI6nQj3Q/sddefault.jpg",
-                        "width": 640,
-                        "height": 480
-                    },
-                    "maxres": {
-                        "url": "https://i.ytimg.com/vi/mC7cI6nQj3Q/maxresdefault.jpg",
-                        "width": 1280,
-                        "height": 720
                     }
                 },
                 "channelTitle": "Iglesia Bautista Vida Nueva",
-                "localized": {
-                    "title": "Crónicas de Reyes -  Autoliderazgo",
-                    "description": ""
-                }
-            }
-        },
-        {
-            "kind": "youtube#playlist",
-            "etag": "TWy-GTc_83EHY-1SPGipNMM1B-k",
-            "id": "PL0MA6QqbTGP43giZOP43bJ-ySa_ELI1Bs",
-            "snippet": {
-                "publishedAt": "2023-06-05T16:33:16Z",
-                "channelId": "UCoNq7HF7vnqalfg-lTaxrDQ",
-                "title": "La Mies es Mucha pero... - El Reto de Hoy",
-                "description": "Hay millones de personas que necesitan encontrar una vida nueva, pero pareciera que muy pocos cristianos están preocupados por ayudarles a encontrarla. En esta serie Julio e Iván te retarán a sumarte al trabajo más importante de la vida.",
-                "thumbnails": {
-                    "default": {
-                        "url": "https://i.ytimg.com/vi/i2uwOJnD_sU/default.jpg",
-                        "width": 120,
-                        "height": 90
-                    },
-                    "medium": {
-                        "url": "https://i.ytimg.com/vi/i2uwOJnD_sU/mqdefault.jpg",
-                        "width": 320,
-                        "height": 180
-                    },
-                    "high": {
-                        "url": "https://i.ytimg.com/vi/i2uwOJnD_sU/hqdefault.jpg",
-                        "width": 480,
-                        "height": 360
-                    },
-                    "standard": {
-                        "url": "https://i.ytimg.com/vi/i2uwOJnD_sU/sddefault.jpg",
-                        "width": 640,
-                        "height": 480
-                    },
-                    "maxres": {
-                        "url": "https://i.ytimg.com/vi/i2uwOJnD_sU/maxresdefault.jpg",
-                        "width": 1280,
-                        "height": 720
-                    }
-                },
-                "channelTitle": "Iglesia Bautista Vida Nueva",
-                "localized": {
-                    "title": "La Mies es Mucha pero... - El Reto de Hoy",
-                    "description": "Hay millones de personas que necesitan encontrar una vida nueva, pero pareciera que muy pocos cristianos están preocupados por ayudarles a encontrarla. En esta serie Julio e Iván te retarán a sumarte al trabajo más importante de la vida."
-                }
+                "liveBroadcastContent": "none",
+                "publishTime": "2020-07-03T13:51:15Z"
             }
         }
     ]

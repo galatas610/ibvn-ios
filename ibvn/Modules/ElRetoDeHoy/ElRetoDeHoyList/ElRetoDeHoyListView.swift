@@ -23,7 +23,7 @@ struct ElRetoDeHoyListView: View {
                 ForEach(searchResults) { item in
                     NavigationLink {
                         ElRetoDeHoyVideosView(viewModel: ElRetoDeHoyVideosViewModel(
-                            listId: item.id,
+                            listId: item.listId.playlistId,
                             snippet: item.snippet
                         ))
                     } label: {
@@ -37,13 +37,11 @@ struct ElRetoDeHoyListView: View {
             .modifier(TopBar())
             .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
             .onAppear {
-                Task {
-                    await viewModel.fetchElRetoDeHoyPlaylists()
-                }
+                viewModel.localFetchElRetoDeHoyPlaylists()
             }
         }
         
-        var searchResults: [ListItem] {
+        var searchResults: [Item] {
             if searchText.isEmpty {
                 return viewModel.elRetoDeHoyLists.items
             } else {
@@ -56,7 +54,7 @@ struct ElRetoDeHoyListView: View {
     }
     
     // MARK: Functions
-    func labelContent(with item: ListItem) -> some View {
+    func labelContent(with item: Item) -> some View {
         HStack {
             VStack {
                 AsyncImage(url: URL(string: item.snippet.thumbnails.default.url)) { image in

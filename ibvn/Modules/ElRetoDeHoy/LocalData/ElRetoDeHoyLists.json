@@ -1,10 +1,10 @@
 {
     "kind": "youtube#searchListResponse",
-    "etag": "wLnEIQa6g7I92qIUDgA1zGRCNNI",
+    "etag": "8Z2oHOZLTuDAn2b-nuYm9yOkTyc",
     "regionCode": "SV",
     "pageInfo": {
-        "totalResults": 83,
-        "resultsPerPage": 40
+        "totalResults": 41,
+        "resultsPerPage": 37
     },
     "items": [
         {
@@ -73,40 +73,6 @@
                 "channelTitle": "Iglesia Bautista Vida Nueva",
                 "liveBroadcastContent": "none",
                 "publishTime": "2024-03-24T01:39:20Z"
-            }
-        },
-        {
-            "kind": "youtube#searchResult",
-            "etag": "3l_Y4iTto8_FeVRF6O-h6N1N3aA",
-            "id": {
-                "kind": "youtube#playlist",
-                "playlistId": "PL0MA6QqbTGP7clzcQuqP4sVx558AS3oKl"
-            },
-            "snippet": {
-                "publishedAt": "2024-03-18T16:44:18Z",
-                "channelId": "UCoNq7HF7vnqalfg-lTaxrDQ",
-                "title": "¿Qué Hago??? ¡Mi Hermano me Falló!",
-                "description": "Alguien te ha fallado? ¿Cómo has reaccionado? En esta serie Julio e Iván te contarán una historia de la vida real que te ayudará ...",
-                "thumbnails": {
-                    "default": {
-                        "url": "https://i.ytimg.com/vi/JA8qbVcDX7Y/default.jpg",
-                        "width": 120,
-                        "height": 90
-                    },
-                    "medium": {
-                        "url": "https://i.ytimg.com/vi/JA8qbVcDX7Y/mqdefault.jpg",
-                        "width": 320,
-                        "height": 180
-                    },
-                    "high": {
-                        "url": "https://i.ytimg.com/vi/JA8qbVcDX7Y/hqdefault.jpg",
-                        "width": 480,
-                        "height": 360
-                    }
-                },
-                "channelTitle": "Iglesia Bautista Vida Nueva",
-                "liveBroadcastContent": "none",
-                "publishTime": "2024-03-18T16:44:18Z"
             }
         },
         {
@@ -1267,40 +1233,6 @@
         },
         {
             "kind": "youtube#searchResult",
-            "etag": "_v05K1kRklXeb-tkuUIjlDUw74c",
-            "id": {
-                "kind": "youtube#playlist",
-                "playlistId": "PL0MA6QqbTGP6X8z9bR80RHE_2HXmaPURm"
-            },
-            "snippet": {
-                "publishedAt": "2022-06-13T20:59:01Z",
-                "channelId": "UCoNq7HF7vnqalfg-lTaxrDQ",
-                "title": "¿Qué dice la Biblia acerca del Licor?",
-                "description": "",
-                "thumbnails": {
-                    "default": {
-                        "url": "https://i.ytimg.com/vi/zxu3nEXy21I/default.jpg",
-                        "width": 120,
-                        "height": 90
-                    },
-                    "medium": {
-                        "url": "https://i.ytimg.com/vi/zxu3nEXy21I/mqdefault.jpg",
-                        "width": 320,
-                        "height": 180
-                    },
-                    "high": {
-                        "url": "https://i.ytimg.com/vi/zxu3nEXy21I/hqdefault.jpg",
-                        "width": 480,
-                        "height": 360
-                    }
-                },
-                "channelTitle": "Iglesia Bautista Vida Nueva",
-                "liveBroadcastContent": "none",
-                "publishTime": "2022-06-13T20:59:01Z"
-            }
-        },
-        {
-            "kind": "youtube#searchResult",
             "etag": "lEQnM6V4hkh4VPz6ox-atDgbPWE",
             "id": {
                 "kind": "youtube#playlist",
@@ -1331,40 +1263,6 @@
                 "channelTitle": "Iglesia Bautista Vida Nueva",
                 "liveBroadcastContent": "none",
                 "publishTime": "2022-02-22T16:34:46Z"
-            }
-        },
-        {
-            "kind": "youtube#searchResult",
-            "etag": "lh6neLN5UjhIuCr0v1MY8KcPC8U",
-            "id": {
-                "kind": "youtube#playlist",
-                "playlistId": "PL0MA6QqbTGP5smSBrWfMaoXVtIRQNmTYQ"
-            },
-            "snippet": {
-                "publishedAt": "2020-07-03T13:51:15Z",
-                "channelId": "UCoNq7HF7vnqalfg-lTaxrDQ",
-                "title": "¿Qué Dice el Texto? Con Julio Contreras",
-                "description": "",
-                "thumbnails": {
-                    "default": {
-                        "url": "https://i.ytimg.com/vi/LD7UIAs8S0Q/default.jpg",
-                        "width": 120,
-                        "height": 90
-                    },
-                    "medium": {
-                        "url": "https://i.ytimg.com/vi/LD7UIAs8S0Q/mqdefault.jpg",
-                        "width": 320,
-                        "height": 180
-                    },
-                    "high": {
-                        "url": "https://i.ytimg.com/vi/LD7UIAs8S0Q/hqdefault.jpg",
-                        "width": 480,
-                        "height": 360
-                    }
-                },
-                "channelTitle": "Iglesia Bautista Vida Nueva",
-                "liveBroadcastContent": "none",
-                "publishTime": "2020-07-03T13:51:15Z"
             }
         }
     ]

@@ -1,5 +1,5 @@
 //
-//  SearchPlaylist.swift
+//  YoutubeSearchPlaylist.swift
 //  ibvn
 //
 //  Created by Jose Letona on 5/4/24.
@@ -9,7 +9,7 @@ import Foundation
 
 
 // MARK: - Welcome
-struct SearchPlaylist: Codable {
+struct YoutubeSearchPlaylist: Codable {
     let kind: String
     let etag: String
     let regionCode: String

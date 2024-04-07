@@ -1,16 +1,16 @@
 //
-//  YouTubeVideoListView.swift
+//  YoutubeVideoView.swift
 //  ibvn
 //
-//  Created by Jose Letona on 2/4/24.
+//  Created by Jose Letona on 5/4/24.
 //
 
 import SwiftUI
 
 // MARK: YouTube Standard Cell View
-struct YouTubeVideoListView: View {
+struct YoutubeVideoView: View {
     // MARK: Variables
-    let item: ListVideosItem
+    let item: Item
     
     // MARK: Body
     var body: some View {
@@ -21,14 +21,14 @@ struct YouTubeVideoListView: View {
     }
     
     // MARK: Functions
-    func youTubePlayerView(with item: ListVideosItem) -> some View {
-        YouTubePlayer(videoId: Binding.constant(item.snippet.resourceID.videoID))
+    func youTubePlayerView(with item: Item) -> some View {
+        YouTubePlayer(videoId: Binding.constant(item.listId.videoId ?? ""))
             .cornerRadius(16)
             .frame(height: 200)
             .padding(.horizontal, 8)
     }
     
-    func date(with item: ListVideosItem) -> some View {
+    func date(with item: Item) -> some View {
         HStack {
             Text(item.snippet.publishedAt.formatDate())
                 .font(.caption)
@@ -39,7 +39,7 @@ struct YouTubeVideoListView: View {
         .padding(.horizontal, 8)
     }
     
-    func title(with item: ListVideosItem) -> some View {
+    func title(with item: Item) -> some View {
         HStack {
             Text(item.snippet.title)
                 .foregroundColor(Constants.primary)
@@ -49,7 +49,7 @@ struct YouTubeVideoListView: View {
         .padding(.horizontal, 8)
     }
     
-    func description(with item: ListVideosItem) -> some View {
+    func description(with item: Item) -> some View {
         HStack {
             Text(item.snippet.description)
                 .font(.caption)
@@ -60,4 +60,8 @@ struct YouTubeVideoListView: View {
         .padding(.horizontal, 8)
         .padding(.bottom, 16)
     }
+}
+
+#Preview {
+    YoutubeVideoView(item: Item(kind: "", etag: "", listId: ListId(kind: "", videoId: "", playlistId: ""), snippet: Snippet()))
 }

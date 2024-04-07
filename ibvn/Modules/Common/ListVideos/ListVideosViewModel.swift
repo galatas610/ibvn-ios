@@ -16,7 +16,6 @@ final class ListVideosViewModel: ObservableObject {
     init(playlist: Item) {
         self.playlist = playlist
         
-        
         taskFetchListVideos()
     }
     
@@ -29,7 +28,7 @@ final class ListVideosViewModel: ObservableObject {
     
     private func fetchListVideos() async {
         let playlistUrl = "https://www.googleapis.com/youtube/v3/playlistItems"
-        guard let url = URL(string: playlistUrl + "?key=AIzaSyCTkfyhNMgKcDTlZsNZ2IT57ztfXySdl5c&channelId=UCoNq7HF7vnqalfg-lTaxrDQ&playlistId=" + playlist.listId.playlistId + "&part=snippet&maxResults=50") else {
+        guard let url = URL(string: playlistUrl + "?key=AIzaSyCTkfyhNMgKcDTlZsNZ2IT57ztfXySdl5c&channelId=UCoNq7HF7vnqalfg-lTaxrDQ&playlistId=" + (playlist.listId.playlistId ?? "") + "&part=snippet&maxResults=50") else {
             print("🚩 Fail ElRetoDeHoy playlistVideos URL")
             
             return

@@ -32,7 +32,8 @@ struct VideoSnippet: Codable {
     let publishedAt: String
     let channelID, title, description: String
     let thumbnails: VideoThumbnails
-    let channelTitle, categoryID, liveBroadcastContent: String
+    let channelTitle, categoryID: String
+    let liveBroadcastContent: LiveBroadcastContent
     let localized: Localized
     let defaultAudioLanguage: String
 
@@ -41,7 +42,24 @@ struct VideoSnippet: Codable {
         case channelID = "channelId"
         case title, description, thumbnails, channelTitle
         case categoryID = "categoryId"
-        case liveBroadcastContent, localized, defaultAudioLanguage
+        case liveBroadcastContent
+        case localized, defaultAudioLanguage
+    }
+}
+
+// MARK: LiveBroadcastContent
+enum LiveBroadcastContent: String, Codable {
+    case none
+    case live
+    case upcoming
+    
+    var title: String {
+        switch self {
+        case .none:
+            "Último en vivo"
+        case .live, .upcoming:
+            "En Vivo"
+        }
     }
 }
 
@@ -53,7 +71,7 @@ struct Localized: Codable {
 // MARK: - Thumbnails
 struct VideoThumbnails: Codable {
     let thumbnailsDefault, medium, high, standard: Default
-    let maxres: Default
+    let maxres: Default?
 
     enum CodingKeys: String, CodingKey {
         case thumbnailsDefault = "default"

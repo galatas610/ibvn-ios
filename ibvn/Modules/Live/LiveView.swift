@@ -20,30 +20,20 @@ struct LiveView: View {
     var body: some View {
         NavigationView {
             VStack {
-                    if let lastLive = viewModel.youtubeVideo.items.first {
+                if let lastLive = viewModel.youtubeVideo.items.first {
                     YoutubeOnlyVideoView(item: lastLive)
+                        .padding(.top, 8)
                 }
                 
                 Spacer()
-                
-                Text("Cloud Video Id: \(String(describing: viewModel.live.first?.videoId))")
-                
-                Button {
-                    viewModel.taskFetchYoutubeUpcoming()
-                } label: {
-                    Text("Sincronizar en Vivo")
-                }
-                .buttonStyle(.bordered)
-
             }
-            .navigationTitle(viewModel.ibvnType.viewTitle)
-            .navigationBarTitleDisplayMode(.inline)
+            .navigationTitle(viewModel.youtubeVideo.items.first?.snippet.liveBroadcastContent.title ?? "")
             .padding(.top, 16)
             .modifier(TopBar())
-//            .onAppear {
-//                viewModel.fetchCloudLive()
-//            }
-
+            .onAppear {
+                viewModel.fetchCloudLive()
+            }
+            
         }
     }
 }

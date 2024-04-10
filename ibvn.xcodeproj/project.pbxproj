@@ -53,6 +53,10 @@
 		83E5F48C2BC1C8E9001C23EF /* PresentAlertType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E5F48B2BC1C8E9001C23EF /* PresentAlertType.swift */; };
 		83E980872BB5388000BF0094 /* ERDHLists.json in Resources */ = {isa = PBXBuildFile; fileRef = 83E980862BB5388000BF0094 /* ERDHLists.json */; };
 		83E980902BB54F8000BF0094 /* Image+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E9808F2BB54F8000BF0094 /* Image+Extensions.swift */; };
+		83EBBDE32BC6A965003AD08B /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EBBDE22BC6A965003AD08B /* SettingsView.swift */; };
+		83EBBDE52BC6A976003AD08B /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EBBDE42BC6A976003AD08B /* SettingsViewModel.swift */; };
+		83EBBDE72BC6B704003AD08B /* LiveCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EBBDE62BC6B704003AD08B /* LiveCloud.swift */; };
+		83EBBDE92BC6B7DC003AD08B /* Encodable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EBBDE82BC6B7DC003AD08B /* Encodable+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +118,10 @@
 		83E5F48B2BC1C8E9001C23EF /* PresentAlertType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentAlertType.swift; sourceTree = "<group>"; };
 		83E980862BB5388000BF0094 /* ERDHLists.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ERDHLists.json; sourceTree = "<group>"; };
 		83E9808F2BB54F8000BF0094 /* Image+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Extensions.swift"; sourceTree = "<group>"; };
+		83EBBDE22BC6A965003AD08B /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		83EBBDE42BC6A976003AD08B /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		83EBBDE62BC6B704003AD08B /* LiveCloud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveCloud.swift; sourceTree = "<group>"; };
+		83EBBDE82BC6B7DC003AD08B /* Encodable+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +228,7 @@
 				839BDCCB2BBD3AC200DE4442 /* Modifiers */,
 				839DBA582BB3D4C600E2B77F /* Extensions */,
 				83891C3C2BB62EDC002CBE99 /* Constants.swift */,
+				83EBBDE82BC6B7DC003AD08B /* Encodable+Extensions.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -235,6 +244,7 @@
 		839BDCCC2BBD3B3600DE4442 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				83EBBDE12BC6A956003AD08B /* Settings */,
 				8388017F2BC0DEDB00FC31BC /* Live */,
 				83389A3F2BC09CF1001B6171 /* LocaData */,
 				83D182C22BB553F40097A4D9 /* Model */,
@@ -268,6 +278,7 @@
 				83389A1F2BC06262001B6171 /* YoutubePlaylists.swift */,
 				83A8D4672BC3125900EFAD3B /* Video.swift */,
 				83A8D4692BC315F300EFAD3B /* Live.swift */,
+				83EBBDE62BC6B704003AD08B /* LiveCloud.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -346,6 +357,15 @@
 				83E5F48B2BC1C8E9001C23EF /* PresentAlertType.swift */,
 			);
 			path = Alert;
+			sourceTree = "<group>";
+		};
+		83EBBDE12BC6A956003AD08B /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				83EBBDE22BC6A965003AD08B /* SettingsView.swift */,
+				83EBBDE42BC6A976003AD08B /* SettingsViewModel.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -528,9 +548,11 @@
 				839BDCCA2BBD390500DE4442 /* ViewModifier.swift in Sources */,
 				83389A3B2BC093A1001B6171 /* ListVideosViewModel.swift in Sources */,
 				839DBA5A2BB3D4DB00E2B77F /* String+Extensions.swift in Sources */,
+				83EBBDE92BC6B7DC003AD08B /* Encodable+Extensions.swift in Sources */,
 				838DBAB12BB5F06F00DB1591 /* View+Extensions.swift in Sources */,
 				83389A342BC09338001B6171 /* ListViewModel.swift in Sources */,
 				83E5F48C2BC1C8E9001C23EF /* PresentAlertType.swift in Sources */,
+				83EBBDE72BC6B704003AD08B /* LiveCloud.swift in Sources */,
 				838801852BC0E6E900FC31BC /* YoutubeVideoView.swift in Sources */,
 				83389A202BC06262001B6171 /* YoutubePlaylists.swift in Sources */,
 				83389A392BC09394001B6171 /* ListVideosView.swift in Sources */,
@@ -542,11 +564,13 @@
 				83E5F4892BC1C884001C23EF /* AlertInfo.swift in Sources */,
 				83D1F4472BB1C30400A611A5 /* IbvnApp.swift in Sources */,
 				83A8D4662BC3094000EFAD3B /* YoutubeOnlyVideoView.swift in Sources */,
+				83EBBDE32BC6A965003AD08B /* SettingsView.swift in Sources */,
 				83891C3A2BB6229F002CBE99 /* YouTubePlayer.swift in Sources */,
 				8315C84C2BBCD004002186E9 /* YouTubeVideoListView.swift in Sources */,
 				838801832BC0E12900FC31BC /* LiveViewModel.swift in Sources */,
 				83389A312BC09315001B6171 /* ListView.swift in Sources */,
 				83389A2C2BC08AD9001B6171 /* PlaylistCover.swift in Sources */,
+				83EBBDE52BC6A976003AD08B /* SettingsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

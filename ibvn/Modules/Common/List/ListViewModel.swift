@@ -38,7 +38,7 @@ final class ListViewModel: ObservableObject {
         DispatchQueue.main.async {
             do {
                 let youtubePlaylists = try JSONDecoder().decode(YoutubePlaylists.self, from: data)
-                print("🚩 elRetoDeHoyLists: \(String(describing: youtubePlaylists))")
+//                print("🚩 elRetoDeHoyLists: \(String(describing: youtubePlaylists))")
                 self.youtubePlaylists = youtubePlaylists
             } catch let error as NSError {
                 print("🚩 error decoding local #ElRetoDeHoy: \(String(describing: error))")

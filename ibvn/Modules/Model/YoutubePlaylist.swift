@@ -28,7 +28,9 @@ struct YoutubePlaylist: Codable {
 
 // MARK: - Item
 struct ListVideosItem: Codable {
-    let kind, etag, id: String
+    let kind: String
+    let etag: String
+    let id: String
     let snippet: SnippetList
 }
 

@@ -10,23 +10,34 @@ import SwiftUI
 struct TabBarView: View {
     var body: some View {
         TabView {
+            LiveView(viewModel: LiveViewModel(ibvnType: .live))
+                .tabItem {
+                    Label("En Vivo", systemImage: "livephoto")
+                }
+                .tag("1")
+            
             ListView(viewModel: ListViewModel(ibvnType: .preaches))
                 .tabItem {
                     Label("Mensajes", systemImage: "house")
                 }
-                .tag("0")
+                .tag("1")
             
             ListView(viewModel: ListViewModel(ibvnType: .elRestoDeHoy))
                 .tabItem {
                     Label("ERDH", systemImage: "bell")
                 }
-                .tag("1")
+                .tag("2")
             
             ListView(viewModel: ListViewModel(ibvnType: .nocheDeViernes))
                 .tabItem {
                     Label("NDV", systemImage: "book")
                 }
-                .tag("2")
+                .tag("3")
+            SettingsView(viewModel: SettingsViewModel())
+                .tabItem {
+                    Label("Configuración", systemImage: "gear")
+                }
+                .tag("4")
         }
     }
 }

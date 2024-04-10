@@ -9,14 +9,20 @@ import SwiftUI
 import YouTubeiOSPlayerHelper
 
 struct YouTubePlayer: UIViewRepresentable {
-    var videoId: String
+    @Binding var videoId: String
     
     func makeUIView(context: Context) -> YTPlayerView {
+       
         let playerView = YTPlayerView()
-        playerView.load(withVideoId: videoId)
+        DispatchQueue.main.asyncAfter(deadline: .now()) {
+            let _ = print("ITEM ID: ", videoId)
+            playerView.load(withVideoId: videoId)
+        }
         return playerView
+            
     }
     
     func updateUIView(_ uiView: YTPlayerView, context: Context) {
+        uiView.load(withVideoId: videoId)
     }
 }

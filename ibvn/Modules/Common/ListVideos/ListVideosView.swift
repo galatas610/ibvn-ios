@@ -33,5 +33,5 @@ struct ListVideosView: View {
 }
 
 #Preview {
-    ListVideosView(viewModel: ListVideosViewModel(playlist: Item(kind: "", etag: "", listId: ListId(kind: "", playlistId: ""), snippet: Snippet())))
+    ListVideosView(viewModel: ListVideosViewModel(playlist: Item(kind: "", etag: "", listId: ListId(kind: "", videoId: "", playlistId: ""), snippet: Snippet())))
 }

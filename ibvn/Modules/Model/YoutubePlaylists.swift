@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 // MARK: - Welcome
 struct YoutubePlaylists: Codable {
     let kind: String
@@ -47,19 +46,27 @@ struct Item: Codable, Identifiable {
         case snippet
     }
     
+    init(kind: String = "", etag: String = "", listId: ListId = ListId(kind: "", videoId: "", playlistId: ""), snippet: Snippet = Snippet()) {
+        self.kind = kind
+        self.etag = etag
+        self.listId = listId
+        self.snippet = snippet
+    }
+    
 }
 
 // MARK: - ListId
 struct ListId: Codable {
     let kind: String
-    let playlistId: String
+    let videoId: String?
+    let playlistId: String?
 }
 
 // MARK: - Snippet
 struct Snippet: Codable {
     let publishedAt: String
     let channelId: String
-    let title:String
+    let title: String
     let description: String
     let thumbnails: Thumbnails
     let channelTitle: String

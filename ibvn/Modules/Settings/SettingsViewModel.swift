@@ -55,17 +55,17 @@ class SettingsViewModel: ObservableObject, PresentAlertType {
                     print("🚶 search Upcoming: ", self.youtubeLive)
                     
                     if self.youtubeLive.items.isEmpty {
-                        self.viewMessage += " 🚫 Próximo en vivo no disponible."
+                        self.viewMessage += " 🚫 Próximo en vivo, no disponible."
                         self.taskFetchYoutubeLive()
                     } else {
-                        self.viewMessage += "\n ✅ Próximo en vivo disponible."
+                        self.viewMessage += "\n ✅ Próximo en vivo, disponible."
                        
                         if let newLive = self.youtubeLive.items.first?.id.videoId {
                             self.viewMessage += "\n ⬆️ Subiendo en vivo a la nube."
                             
                             self.saveCloudLiveVideoId(liveVideoId: newLive)
                         } else {
-                            self.viewMessage += "\n 🚫 No en vivo id disponible."
+                            self.viewMessage += "\n 🚫 No disponible, en vivo id."
                         }
                     }
                 } catch let error as NSError {
@@ -112,8 +112,8 @@ class SettingsViewModel: ObservableObject, PresentAlertType {
                     if self.youtubeLive.items.isEmpty {
                         self.viewMessage += "\n 🚫 En vivo no disponible."
                         // TODO: Eliminar after Debug
-                        self.viewMessage += "\n ⬆️ Subiendo en vivo de prueba a la nube."
-                        self.saveCloudLiveVideoId(liveVideoId: self.youtubeLive.items.first?.id.videoId ?? "Fw_Xla9ItH8")
+//                        self.viewMessage += "\n ⬆️ Subiendo en vivo de prueba a la nube."
+//                        self.saveCloudLiveVideoId(liveVideoId: self.youtubeLive.items.first?.id.videoId ?? "S86uS25Tvlk")
                     } else {
                         self.viewMessage += "\n ✅ En vivo disponible."
                         

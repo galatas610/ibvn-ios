@@ -15,6 +15,7 @@ enum YoutubeApiManager {
     static private let channelId = "UCoNq7HF7vnqalfg-lTaxrDQ"
     
     case playlistItems(playlistId: String)
+    case live(eventType: String)
 }
 extension YoutubeApiManager: TargetType {
   public var baseURL: URL {
@@ -25,12 +26,14 @@ extension YoutubeApiManager: TargetType {
     switch self {
     case .playlistItems:
         return "/playlistItems"
+    case .live:
+        return "/search"
     }
   }
 
   public var method: Moya.Method {
     switch self {
-    case .playlistItems:
+    case .playlistItems, .live:
         return .get
     }
   }
@@ -47,6 +50,18 @@ extension YoutubeApiManager: TargetType {
                     "key": YoutubeApiManager.privateKey,
                     "channelId": YoutubeApiManager.channelId,
                     "playlistId": playlistId,
+                    "part": "snippet",
+                    "maxResults": 50
+                ],
+                encoding: URLEncoding.default)
+        case .live(let eventType):
+            return .requestParameters(
+                parameters: [
+                    "key": YoutubeApiManager.privateKey,
+                    "channelId": YoutubeApiManager.channelId,
+                    "type": "video",
+                    "order": "date",
+                    "eventType": eventType,
                     "part": "snippet",
                     "maxResults": 50
                 ],

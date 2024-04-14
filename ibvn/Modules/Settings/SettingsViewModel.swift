@@ -7,6 +7,7 @@
 
 import Foundation
 import FirebaseFirestore
+import Moya
 
 class SettingsViewModel: ObservableObject, PresentAlertType {
     // MARK: Property Wrappers
@@ -17,124 +18,47 @@ class SettingsViewModel: ObservableObject, PresentAlertType {
     // MARK: Properties
     var alertIsPresenting: Bool = false
     
-    // MARK:  Initialization
+    // MARK: Initialization
     init() { }
     
     // MARK: Functions
-    func syncLive() {
-        viewMessage = ""
-        Task {
-            await fetchYoutubeUpcoming()
-        }
-    }
-    
-    private func fetchYoutubeUpcoming() async {
-        guard let url = URL(string: "https://www.googleapis.com/youtube/v3/search?key=AIzaSyDxL4ZavnYUE0_cMWOVt_ibWoPqcfMfLSQ&channelId=UCoNq7HF7vnqalfg-lTaxrDQ&type=video&order=date&part=snippet&maxResults=10&eventType=upcoming") else {
-            print("🚩 Fail ElRetoDeHoy playlistVideos URL")
-            
-            return
-        }
+    func syncLive(eventType: String = "upcoming") {
+        viewMessage = eventType == "upcoming" ? "" : viewMessage
         
-        do {
-            let (data, response) = try await URLSession.shared.data(from: url)
-            
-            guard  let httpResponse = response as? HTTPURLResponse else {
-                print("🚩 httpResponse: \(String(describing: response))")
-                print("🚩 error Response: \(String(describing: response.description))")
-                return
-            }
-            
-            guard httpResponse.statusCode == 200 else {
-                print("🚩 fail httpResponde StatusCode: \(httpResponse.statusCode)")
-                return
-            }
-            
-            DispatchQueue.main.async {
+        let provider = MoyaProvider<YoutubeApiManager>()
+        
+        provider.request(.live(eventType: eventType)) { result in
+            switch result {
+            case let .success(response):
                 do {
-                    self.youtubeLive = try JSONDecoder().decode(Live.self, from: data)
-                    print("🚶 search Upcoming: ", self.youtubeLive)
+                    self.youtubeLive = try JSONDecoder().decode(Live.self, from: response.data)
                     
                     if self.youtubeLive.items.isEmpty {
-                        self.viewMessage += " 🚫 Próximo en vivo, no disponible."
-                        self.taskFetchYoutubeLive()
+                        self.viewMessage += "\n 🚫 \(eventType), no disponible."
+                        if eventType == "upcoming" {
+                            self.syncLive(eventType: "live")
+                        }
                     } else {
-                        self.viewMessage += "\n ✅ Próximo en vivo, disponible."
+                        self.viewMessage += "\n ✅ \(eventType) en vivo, disponible."
                        
                         if let newLive = self.youtubeLive.items.first?.id.videoId {
-                            self.viewMessage += "\n ⬆️ Subiendo en vivo a la nube."
+                            self.viewMessage += "\n ⬆️ Subiendo \(eventType) a la nube."
                             
-                            self.saveCloudLiveVideoId(liveVideoId: newLive)
+                            self.saveLiveOnCloud(liveVideoId: newLive)
                         } else {
-                            self.viewMessage += "\n 🚫 No disponible, en vivo id."
+                            self.viewMessage += "\n 🚫 No disponible, \(eventType) id."
                         }
                     }
-                } catch let error as NSError {
-                    print("🚩 error: \(error)")
+                } catch {
+                    self.displayError(error)
                 }
+            case let .failure(error):
+                self.displayError(error)
             }
-        } catch let error as NSError {
-            print("🚩 error: \(error)")
         }
     }
     
-    private func taskFetchYoutubeLive() {
-        Task {
-            await fetchYoutubeLive()
-        }
-    }
-    
-    private func fetchYoutubeLive() async {
-        guard let url = URL(string: "https://www.googleapis.com/youtube/v3/search?key=AIzaSyDxL4ZavnYUE0_cMWOVt_ibWoPqcfMfLSQ&channelId=UCoNq7HF7vnqalfg-lTaxrDQ&type=video&order=date&part=snippet&maxResults=10&eventType=live") else {
-            print("🚩 Fail ElRetoDeHoy playlistVideos URL")
-            
-            return
-        }
-        
-        do {
-            let (data, response) = try await URLSession.shared.data(from: url)
-            
-            guard  let httpResponse = response as? HTTPURLResponse else {
-                print("🚩 httpResponse: \(String(describing: response))")
-                print("🚩 error Response: \(String(describing: response.description))")
-                return
-            }
-            
-            guard httpResponse.statusCode == 200 else {
-                print("🚩 fail httpResponde StatusCode: \(httpResponse.statusCode)")
-                return
-            }
-            
-            DispatchQueue.main.async {
-                do {
-                    self.youtubeLive = try JSONDecoder().decode(Live.self, from: data)
-                    print("🚶 search live: ", self.youtubeLive)
-                    
-                    if self.youtubeLive.items.isEmpty {
-                        self.viewMessage += "\n 🚫 En vivo no disponible."
-                        // TODO: Eliminar after Debug
-//                        self.viewMessage += "\n ⬆️ Subiendo en vivo de prueba a la nube."
-//                        self.saveCloudLiveVideoId(liveVideoId: self.youtubeLive.items.first?.id.videoId ?? "S86uS25Tvlk")
-                    } else {
-                        self.viewMessage += "\n ✅ En vivo disponible."
-                        
-                        if let newLive = self.youtubeLive.items.first?.id.videoId {
-                            self.viewMessage += "\n ⬆️ Subiendo en vivo a la nube."
-                            
-                            self.saveCloudLiveVideoId(liveVideoId: newLive)
-                        } else {
-                            self.viewMessage += "\n 🚫 No en vivo id disponible."
-                        }
-                    }
-                } catch let error as NSError {
-                    print("🚩 error: \(error)")
-                }
-            }
-        } catch let error as NSError {
-            print("🚩 error: \(error)")
-        }
-    }
-    
-    private func saveCloudLiveVideoId(liveVideoId: String) {
+    private func saveLiveOnCloud(liveVideoId: String) {
         let liveCloud = LiveCloud(videoId: liveVideoId)
         
         let dataBase = Firestore.firestore()
@@ -150,32 +74,5 @@ class SettingsViewModel: ObservableObject, PresentAlertType {
                 
                 self?.viewMessage += "\n ✅ En vivo en la nube"
             }
-    }
-}
-
-// MARK: - Alert
-extension SettingsViewModel {
-    func setupAlertInfo(_ alert: AlertInfo) {
-        presentAlert(alert)
-    }
-    
-    private func displayError(_ error: Error?) {
-        let configuration = ButtonConfiguration(
-            title: "Entendido",
-            buttonAction: {}
-        )
-                
-        guard let errorMessage = error?.localizedDescription else {
-            return
-        }
-        
-        alertInfo = AlertInfo(
-            title: "Alerta",
-            message: errorMessage,
-            type: .error,
-            leftButtonConfiguration: configuration
-        )
-        
-        presentAlert(alertInfo)
     }
 }

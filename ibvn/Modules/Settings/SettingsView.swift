@@ -35,6 +35,7 @@ struct SettingsView: View {
                     .foregroundColor(.secondary)
                     .padding()
             }
+            .showAlert(viewModel.alertInfo, when: $viewModel.alertIsPresenting)
         }
         .navigationTitle("Configuración")
     }

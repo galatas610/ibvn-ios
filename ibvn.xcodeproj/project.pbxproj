@@ -17,6 +17,11 @@
 		83389A3B2BC093A1001B6171 /* ListVideosViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83389A3A2BC093A1001B6171 /* ListVideosViewModel.swift */; };
 		83389A3E2BC09C3A001B6171 /* IbvnType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83389A3D2BC09C3A001B6171 /* IbvnType.swift */; };
 		83389A412BC09D4B001B6171 /* PreachesLists.json in Resources */ = {isa = PBXBuildFile; fileRef = 83389A402BC09D4B001B6171 /* PreachesLists.json */; };
+		8338F0782BCB43C4008598F4 /* YoutubeApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8338F0772BCB43C4008598F4 /* YoutubeApiManager.swift */; };
+		8371D6A72BCAF2910010EB85 /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 8371D6A62BCAF2910010EB85 /* CombineMoya */; };
+		8371D6A92BCAF2910010EB85 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 8371D6A82BCAF2910010EB85 /* Moya */; };
+		8371D6AB2BCAF2910010EB85 /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 8371D6AA2BCAF2910010EB85 /* ReactiveMoya */; };
+		8371D6AD2BCAF2910010EB85 /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 8371D6AC2BCAF2910010EB85 /* RxMoya */; };
 		8388016D2BC0B35E00FC31BC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8388016C2BC0B35E00FC31BC /* GoogleService-Info.plist */; };
 		8388017C2BC0DDEA00FC31BC /* Live.json in Resources */ = {isa = PBXBuildFile; fileRef = 8388017B2BC0DDEA00FC31BC /* Live.json */; };
 		8388017E2BC0DE1B00FC31BC /* LiveOff.json in Resources */ = {isa = PBXBuildFile; fileRef = 8388017D2BC0DE1B00FC31BC /* LiveOff.json */; };
@@ -86,6 +91,7 @@
 		83389A3A2BC093A1001B6171 /* ListVideosViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListVideosViewModel.swift; sourceTree = "<group>"; };
 		83389A3D2BC09C3A001B6171 /* IbvnType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IbvnType.swift; sourceTree = "<group>"; };
 		83389A402BC09D4B001B6171 /* PreachesLists.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PreachesLists.json; sourceTree = "<group>"; };
+		8338F0772BCB43C4008598F4 /* YoutubeApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeApiManager.swift; sourceTree = "<group>"; };
 		8388016C2BC0B35E00FC31BC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8388017B2BC0DDEA00FC31BC /* Live.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Live.json; sourceTree = "<group>"; };
 		8388017D2BC0DE1B00FC31BC /* LiveOff.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = LiveOff.json; sourceTree = "<group>"; };
@@ -131,12 +137,16 @@
 			files = (
 				83A8D4592BC20C0B00EFAD3B /* FirebaseAnalyticsSwift in Frameworks */,
 				83A8D45B2BC20C0B00EFAD3B /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
+				8371D6A72BCAF2910010EB85 /* CombineMoya in Frameworks */,
 				83A8D4552BC20C0B00EFAD3B /* FirebaseAnalytics in Frameworks */,
 				83A8D4572BC20C0B00EFAD3B /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
 				83A8D45D2BC20C0B00EFAD3B /* FirebaseAppCheck in Frameworks */,
+				8371D6AD2BCAF2910010EB85 /* RxMoya in Frameworks */,
 				83386E582BB24EA900E6BDE4 /* YouTubeiOSPlayerHelper in Frameworks */,
 				83A8D4622BC20ED100EFAD3B /* FirebaseFirestore in Frameworks */,
+				8371D6A92BCAF2910010EB85 /* Moya in Frameworks */,
 				83A8D4642BC20EDA00EFAD3B /* FirebaseFirestoreSwift in Frameworks */,
+				8371D6AB2BCAF2910010EB85 /* ReactiveMoya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,6 +221,14 @@
 				838801862BC1B24500FC31BC /* Video.json */,
 			);
 			path = LocaData;
+			sourceTree = "<group>";
+		};
+		8371D6A42BCAF1AB0010EB85 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				8338F0772BCB43C4008598F4 /* YoutubeApiManager.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		8388017F2BC0DEDB00FC31BC /* Live */ = {
@@ -316,6 +334,7 @@
 		83D1F4452BB1C30400A611A5 /* ibvn */ = {
 			isa = PBXGroup;
 			children = (
+				8371D6A42BCAF1AB0010EB85 /* Network */,
 				839BDCCC2BBD3B3600DE4442 /* Modules */,
 				83891C3B2BB62EC8002CBE99 /* Helper */,
 				83D1F4462BB1C30400A611A5 /* IbvnApp.swift */,
@@ -394,6 +413,10 @@
 				83A8D45C2BC20C0B00EFAD3B /* FirebaseAppCheck */,
 				83A8D4612BC20ED100EFAD3B /* FirebaseFirestore */,
 				83A8D4632BC20EDA00EFAD3B /* FirebaseFirestoreSwift */,
+				8371D6A62BCAF2910010EB85 /* CombineMoya */,
+				8371D6A82BCAF2910010EB85 /* Moya */,
+				8371D6AA2BCAF2910010EB85 /* ReactiveMoya */,
+				8371D6AC2BCAF2910010EB85 /* RxMoya */,
 			);
 			productName = ibvn;
 			productReference = 83D1F4432BB1C30400A611A5 /* ibvn.app */;
@@ -470,6 +493,7 @@
 			packageReferences = (
 				83386E562BB24EA900E6BDE4 /* XCRemoteSwiftPackageReference "youtube-ios-player-helper" */,
 				83A8D4532BC20C0B00EFAD3B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				8371D6A52BCAF2910010EB85 /* XCRemoteSwiftPackageReference "Moya" */,
 			);
 			productRefGroup = 83D1F4442BB1C30400A611A5 /* Products */;
 			projectDirPath = "";
@@ -571,6 +595,7 @@
 				83389A312BC09315001B6171 /* ListView.swift in Sources */,
 				83389A2C2BC08AD9001B6171 /* PlaylistCover.swift in Sources */,
 				83EBBDE52BC6A976003AD08B /* SettingsViewModel.swift in Sources */,
+				8338F0782BCB43C4008598F4 /* YoutubeApiManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -914,6 +939,14 @@
 				minimumVersion = 1.0.4;
 			};
 		};
+		8371D6A52BCAF2910010EB85 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.3;
+			};
+		};
 		83A8D4532BC20C0B00EFAD3B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -929,6 +962,26 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 83386E562BB24EA900E6BDE4 /* XCRemoteSwiftPackageReference "youtube-ios-player-helper" */;
 			productName = YouTubeiOSPlayerHelper;
+		};
+		8371D6A62BCAF2910010EB85 /* CombineMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8371D6A52BCAF2910010EB85 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = CombineMoya;
+		};
+		8371D6A82BCAF2910010EB85 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8371D6A52BCAF2910010EB85 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		8371D6AA2BCAF2910010EB85 /* ReactiveMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8371D6A52BCAF2910010EB85 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = ReactiveMoya;
+		};
+		8371D6AC2BCAF2910010EB85 /* RxMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8371D6A52BCAF2910010EB85 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = RxMoya;
 		};
 		83A8D4542BC20C0B00EFAD3B /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;

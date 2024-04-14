@@ -8,7 +8,6 @@
 import SwiftUI
 
 extension View {
-    
     func navigationBarBackButtonTitleHidden() -> some View {
         self.modifier(BackButtonTitleHiddenModifier())
     }
@@ -25,5 +24,28 @@ extension View {
             EmptyView()
                 .hidden()
         }
+    }
+    
+    /// Simplifies showing an alertInfo object to one line
+    func showAlert(_ alertInfo: AlertInfo?, when isPresenting: Binding<Bool>) -> some View {
+        self
+            .alert(alertInfo?.title ?? "",
+                   isPresented: isPresenting,
+                   presenting: alertInfo) { alertInfo in
+                switch alertInfo.type {
+                case .warning:
+                    Button(alertInfo.leftButtonConfiguration.title,
+                           role: .cancel,
+                           action: alertInfo.leftButtonConfiguration.buttonAction)
+                    Button(alertInfo.rightButtonConfiguration?.title ?? "",
+                           action: alertInfo.rightButtonConfiguration?.buttonAction ?? {})
+                    .keyboardShortcut(.defaultAction)
+                case .error, .info:
+                    Button(alertInfo.leftButtonConfiguration.title,
+                           action: alertInfo.leftButtonConfiguration.buttonAction)
+                }
+            } message: { detail in
+                Text(detail.message)
+            }
     }
 }

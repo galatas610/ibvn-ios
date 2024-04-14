@@ -33,7 +33,6 @@ struct LiveView: View {
             .onAppear {
                 viewModel.fetchCloudLive()
             }
-            
         }
     }
 }

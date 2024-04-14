@@ -23,4 +23,24 @@ extension PresentAlertType {
         self.alertInfo = alertInfo
         alertIsPresenting = true
     }
+    
+    func displayError(_ error: Error?) {
+        let configuration = ButtonConfiguration(
+            title: "Entendido",
+            buttonAction: {}
+        )
+        
+        guard let errorMessage = error?.localizedDescription else {
+            return
+        }
+                
+        alertInfo = AlertInfo(
+            title: "Error",
+            message: errorMessage,
+            type: .error,
+            leftButtonConfiguration: configuration
+        )
+        
+        presentAlert(alertInfo)
+    }
 }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		83081A702BCC58130015A8F4 /* PlaylistCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83081A6F2BCC58130015A8F4 /* PlaylistCloud.swift */; };
+		83081A722BCC59150015A8F4 /* PlaylistResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83081A712BCC59150015A8F4 /* PlaylistResponse.swift */; };
 		8315C84C2BBCD004002186E9 /* YouTubeVideoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8315C84B2BBCD004002186E9 /* YouTubeVideoListView.swift */; };
 		83386E582BB24EA900E6BDE4 /* YouTubeiOSPlayerHelper in Frameworks */ = {isa = PBXBuildFile; productRef = 83386E572BB24EA900E6BDE4 /* YouTubeiOSPlayerHelper */; };
 		83389A202BC06262001B6171 /* YoutubePlaylists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83389A1F2BC06262001B6171 /* YoutubePlaylists.swift */; };
@@ -82,6 +84,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		83081A6F2BCC58130015A8F4 /* PlaylistCloud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistCloud.swift; sourceTree = "<group>"; };
+		83081A712BCC59150015A8F4 /* PlaylistResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistResponse.swift; sourceTree = "<group>"; };
 		8315C84B2BBCD004002186E9 /* YouTubeVideoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouTubeVideoListView.swift; sourceTree = "<group>"; };
 		83389A1F2BC06262001B6171 /* YoutubePlaylists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubePlaylists.swift; sourceTree = "<group>"; };
 		83389A2B2BC08AD9001B6171 /* PlaylistCover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistCover.swift; sourceTree = "<group>"; };
@@ -297,6 +301,8 @@
 				83A8D4672BC3125900EFAD3B /* Video.swift */,
 				83A8D4692BC315F300EFAD3B /* Live.swift */,
 				83EBBDE62BC6B704003AD08B /* LiveCloud.swift */,
+				83081A6F2BCC58130015A8F4 /* PlaylistCloud.swift */,
+				83081A712BCC59150015A8F4 /* PlaylistResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -576,9 +582,11 @@
 				838DBAB12BB5F06F00DB1591 /* View+Extensions.swift in Sources */,
 				83389A342BC09338001B6171 /* ListViewModel.swift in Sources */,
 				83E5F48C2BC1C8E9001C23EF /* PresentAlertType.swift in Sources */,
+				83081A702BCC58130015A8F4 /* PlaylistCloud.swift in Sources */,
 				83EBBDE72BC6B704003AD08B /* LiveCloud.swift in Sources */,
 				838801852BC0E6E900FC31BC /* YoutubeVideoView.swift in Sources */,
 				83389A202BC06262001B6171 /* YoutubePlaylists.swift in Sources */,
+				83081A722BCC59150015A8F4 /* PlaylistResponse.swift in Sources */,
 				83389A392BC09394001B6171 /* ListVideosView.swift in Sources */,
 				83389A3E2BC09C3A001B6171 /* IbvnType.swift in Sources */,
 				83A8D46A2BC315F300EFAD3B /* Live.swift in Sources */,

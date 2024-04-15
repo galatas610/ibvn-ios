@@ -76,15 +76,3 @@ struct ThumbnailsList: Codable {
         case medium, high, standard, maxres
     }
 }
-/*
-// MARK: - Default
-struct Default: Codable {
-    let url: String
-    let width, height: Int
-}
-
-// MARK: - PageInfo
-struct PageInfo: Codable {
-    let totalResults, resultsPerPage: Int
-}
-*/

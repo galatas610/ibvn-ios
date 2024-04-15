@@ -28,12 +28,24 @@ struct SettingsView: View {
                 .buttonStyle(.bordered)
                 .padding()
                 
+                Button {
+                    viewModel.syncPlaylist()
+                } label: {
+                    Text("El Reto de Hoy")
+                }
+                .buttonStyle(.bordered)
+                .padding()
+                
                 Spacer()
                 
-                Text(viewModel.viewMessage)
-                    .font(.caption)
-                    .foregroundColor(.secondary)
-                    .padding()
+                HStack {
+                    Text(viewModel.viewMessage)
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                        .padding()
+                    
+                    Spacer()
+                }
             }
             .showAlert(viewModel.alertInfo, when: $viewModel.alertIsPresenting)
         }

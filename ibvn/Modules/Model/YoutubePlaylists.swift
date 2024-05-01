@@ -1,8 +1,8 @@
 //
-//  YoutubeSearchPlaylist.swift
+//  YoutubePlaylists.swift
 //  ibvn
 //
-//  Created by Jose Letona on 5/4/24.
+//  Created by Jose Letona on 14/4/24.
 //
 
 import Foundation
@@ -11,67 +11,49 @@ import Foundation
 struct YoutubePlaylists: Codable {
     let kind: String
     let etag: String
-    let regionCode: String
-    let pageInfo: PageInfo
-    let items: [Item]
+    let nextPageToken: String?
+    let prevPageToken: String?
+    let pageInfo: PageInfoResponse
+    let items: [ItemResponse]
     
     init(
         kind: String = "",
         etag: String = "",
-        regionCode: String = "",
-        pageInfo: PageInfo = .init(),
-        items: [Item] = []
+        nextPageToken: String = "",
+        prevPageToken: String = "",
+        items: [ItemResponse] = [],
+        pageInfo: PageInfoResponse = .init()
     ) {
         self.kind = kind
         self.etag = etag
-        self.regionCode = regionCode
-        self.pageInfo = pageInfo
+        self.nextPageToken = nextPageToken
+        self.prevPageToken = prevPageToken
         self.items = items
+        self.pageInfo = pageInfo
     }
 }
 
 // MARK: - Item
-struct Item: Codable, Identifiable {
-    var id = UUID()
-    
-    let kind: String
+struct ItemResponse: Codable {
+    let kind: KindResponse
     let etag: String
-    let listId: ListId
-    let snippet: Snippet
-    
-    enum CodingKeys: String, CodingKey {
-        case kind
-        case etag
-        case listId = "id"
-        case snippet
-    }
-    
-    init(kind: String = "", etag: String = "", listId: ListId = ListId(kind: "", videoId: "", playlistId: ""), snippet: Snippet = Snippet()) {
-        self.kind = kind
-        self.etag = etag
-        self.listId = listId
-        self.snippet = snippet
-    }
-    
+    let id: String
+    let snippet: SnippetResponse
 }
 
-// MARK: - ListId
-struct ListId: Codable {
-    let kind: String
-    let videoId: String?
-    let playlistId: String?
+enum KindResponse: String, Codable {
+    case youtubePlaylist = "youtube#playlist"
 }
 
 // MARK: - Snippet
-struct Snippet: Codable {
+struct SnippetResponse: Codable {
     let publishedAt: String
-    let channelId: String
+    let channelId: ChannelIdResponse
     let title: String
     let description: String
-    let thumbnails: Thumbnails
-    let channelTitle: String
-    let liveBroadcastContent: String
-    let publishTime: String
+    let thumbnails: ThumbnailsResponse
+    let channelTitle: ChannelTitleResponse
+    let localized: LocalizedResponse
 
     enum CodingKeys: String, CodingKey {
         case publishedAt
@@ -80,36 +62,28 @@ struct Snippet: Codable {
         case description
         case thumbnails
         case channelTitle
-        case liveBroadcastContent
-        case publishTime
-    }
-    
-    init(
-        publishedAt: String = "2024-02-12T16:04:49Z",
-         channelId: String = "UCoNq7HF7vnqalfg-lTaxrDQ",
-         title: String = "Diseño Original - Hablemos de Matrimonio - El Reto de Hoy",
-        description: String = "Muchos han intentado vivir el matrimonio a su propio estilo, pero el matrimonio tiene un diseño original, y ese ese le único que realmente funciona.",
-        thumbnails: Thumbnails = .init(),
-        channelTitle: String = "Iglesia Bautista Vida Nueva",
-        liveBroadcastContent: String = "",
-        publishTime: String = "2025-02-12T16:04:49Z"
-    ) {
-        self.publishedAt = publishedAt
-        self.channelId = channelId
-        self.title = title
-        self.description = description
-        self.thumbnails = thumbnails
-        self.channelTitle = channelTitle
-        self.liveBroadcastContent = liveBroadcastContent
-        self.publishTime = publishTime
+        case localized
     }
 }
 
+enum ChannelIdResponse: String, Codable {
+    case uCoNq7HF7VnqalfgLTaxrDQ = "UCoNq7HF7vnqalfg-lTaxrDQ"
+}
+
+enum ChannelTitleResponse: String, Codable {
+    case iglesiaBautistaVidaNueva = "Iglesia Bautista Vida Nueva"
+}
+
+// MARK: - Localized
+struct LocalizedResponse: Codable {
+    let title, description: String
+}
+
 // MARK: - Thumbnails
-struct Thumbnails: Codable {
-    let `default`: ThumbnailsInfo
-    let medium: ThumbnailsInfo
-    let high: ThumbnailsInfo
+struct ThumbnailsResponse: Codable {
+    let `default`: ThumbnailsInfoResponse
+    let medium: ThumbnailsInfoResponse
+    let high: ThumbnailsInfoResponse
 
     enum CodingKeys: String, CodingKey {
         case `default`
@@ -118,9 +92,9 @@ struct Thumbnails: Codable {
     }
 
     init(
-        `default`: ThumbnailsInfo = .init(),
-        medium: ThumbnailsInfo = .init(),
-        high: ThumbnailsInfo = .init()
+        `default`: ThumbnailsInfoResponse = .init(),
+        medium: ThumbnailsInfoResponse = .init(),
+        high: ThumbnailsInfoResponse = .init()
     ) {
         self.medium = medium
         self.high = high
@@ -129,7 +103,7 @@ struct Thumbnails: Codable {
 }
 
 // MARK: - Default
-struct ThumbnailsInfo: Codable {
+struct ThumbnailsInfoResponse: Codable {
     let url: String
     let width: Int
     let height: Int
@@ -146,14 +120,11 @@ struct ThumbnailsInfo: Codable {
 }
 
 // MARK: - PageInfo
-struct PageInfo: Codable {
+struct PageInfoResponse: Codable {
     let totalResults: Int
     let resultsPerPage: Int
     
-    init(
-        totalResults: Int = 0,
-        resultsPerPage: Int = 0
-    ) {
+    init(totalResults: Int = 0, resultsPerPage: Int = 0) {
         self.totalResults = totalResults
         self.resultsPerPage = resultsPerPage
     }

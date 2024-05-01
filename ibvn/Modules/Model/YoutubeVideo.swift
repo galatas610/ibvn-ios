@@ -1,5 +1,5 @@
 //
-//  Video.swift
+//  YoutubeVideo.swift
 //  ibvn
 //
 //  Created by Jose Letona on 7/4/24.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Video: Codable {
+struct YoutubeVideo: Codable {
     let kind, etag: String
     let items: [VideoItem]
     let pageInfo: VideoPageInfo

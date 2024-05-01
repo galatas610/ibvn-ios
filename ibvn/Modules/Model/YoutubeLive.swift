@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Live: Codable {
+struct YoutubeLive: Codable {
     let kind, etag, regionCode: String
     let pageInfo: LivePageInfo
     let items: [LiveItem]

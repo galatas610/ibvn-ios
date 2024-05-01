@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		83081A702BCC58130015A8F4 /* CloudPlaylist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83081A6F2BCC58130015A8F4 /* CloudPlaylist.swift */; };
-		83081A722BCC59150015A8F4 /* YoutubePlaylist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83081A712BCC59150015A8F4 /* YoutubePlaylist.swift */; };
+		83081A722BCC59150015A8F4 /* YoutubePlaylists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83081A712BCC59150015A8F4 /* YoutubePlaylists.swift */; };
 		8315C84C2BBCD004002186E9 /* YouTubeVideoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8315C84B2BBCD004002186E9 /* YouTubeVideoListView.swift */; };
 		83386E582BB24EA900E6BDE4 /* YouTubeiOSPlayerHelper in Frameworks */ = {isa = PBXBuildFile; productRef = 83386E572BB24EA900E6BDE4 /* YouTubeiOSPlayerHelper */; };
 		83389A202BC06262001B6171 /* YoutubePlaylistsTMP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83389A1F2BC06262001B6171 /* YoutubePlaylistsTMP.swift */; };
@@ -85,7 +85,7 @@
 
 /* Begin PBXFileReference section */
 		83081A6F2BCC58130015A8F4 /* CloudPlaylist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudPlaylist.swift; sourceTree = "<group>"; };
-		83081A712BCC59150015A8F4 /* YoutubePlaylist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubePlaylist.swift; sourceTree = "<group>"; };
+		83081A712BCC59150015A8F4 /* YoutubePlaylists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubePlaylists.swift; sourceTree = "<group>"; };
 		8315C84B2BBCD004002186E9 /* YouTubeVideoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouTubeVideoListView.swift; sourceTree = "<group>"; };
 		83389A1F2BC06262001B6171 /* YoutubePlaylistsTMP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubePlaylistsTMP.swift; sourceTree = "<group>"; };
 		83389A2B2BC08AD9001B6171 /* PlaylistCover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistCover.swift; sourceTree = "<group>"; };
@@ -302,7 +302,7 @@
 				83A8D4692BC315F300EFAD3B /* YoutubeLive.swift */,
 				83EBBDE62BC6B704003AD08B /* CloudLive.swift */,
 				83081A6F2BCC58130015A8F4 /* CloudPlaylist.swift */,
-				83081A712BCC59150015A8F4 /* YoutubePlaylist.swift */,
+				83081A712BCC59150015A8F4 /* YoutubePlaylists.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -586,7 +586,7 @@
 				83EBBDE72BC6B704003AD08B /* CloudLive.swift in Sources */,
 				838801852BC0E6E900FC31BC /* YoutubeVideoView.swift in Sources */,
 				83389A202BC06262001B6171 /* YoutubePlaylistsTMP.swift in Sources */,
-				83081A722BCC59150015A8F4 /* YoutubePlaylist.swift in Sources */,
+				83081A722BCC59150015A8F4 /* YoutubePlaylists.swift in Sources */,
 				83389A392BC09394001B6171 /* ListVideosView.swift in Sources */,
 				83389A3E2BC09C3A001B6171 /* IbvnType.swift in Sources */,
 				83A8D46A2BC315F300EFAD3B /* YoutubeLive.swift in Sources */,

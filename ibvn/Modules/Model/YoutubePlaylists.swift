@@ -1,5 +1,5 @@
 //
-//  YoutubePlaylist.swift
+//  YoutubePlaylists.swift
 //  ibvn
 //
 //  Created by Jose Letona on 14/4/24.
@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - Welcome
-struct YoutubePlaylist: Codable {
+struct YoutubePlaylists: Codable {
     let kind: String
     let etag: String
     let nextPageToken: String?

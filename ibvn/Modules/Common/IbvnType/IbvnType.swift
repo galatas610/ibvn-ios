@@ -43,4 +43,15 @@ enum IbvnType {
             "LiveOff"
         }
     }
+    
+    var hashTag: String {
+        switch self {
+        case .elRestoDeHoy:
+            "#ElRetoDeHoy"
+        case .nocheDeViernes:
+            "#NDV"
+        case .preaches, .live, .liveOff:
+            ""
+        }
+    }
 }

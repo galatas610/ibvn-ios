@@ -20,9 +20,10 @@ struct ListView: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(searchResults) { item in
+                ForEach(searchResults, id: \.id) { item in
                     NavigationLink {
-                        ListVideosView(viewModel: ListVideosViewModel(playlist: item))
+                        EmptyView()
+//                        ListVideosView(viewModel: ListVideosViewModel(playlist: item))
                     } label: {
                         labelContent(with: item)
                     }
@@ -35,23 +36,23 @@ struct ListView: View {
             .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
         }
         
-        var searchResults: [Item] {
+        var searchResults: [CloudPlaylist] {
             if searchText.isEmpty {
-                return viewModel.youtubePlaylists.items
+                return viewModel.cloudPlaylists
             } else {
-                return viewModel.youtubePlaylists.items.filter {
-                    $0.snippet.title.localizedCaseInsensitiveContains(searchText) ||
-                    $0.snippet.description.localizedCaseInsensitiveContains(searchText)
+                return viewModel.cloudPlaylists.filter {
+                    $0.title.localizedCaseInsensitiveContains(searchText) ||
+                    $0.description.localizedCaseInsensitiveContains(searchText)
                 }
             }
         }
     }
     
     // MARK: Functions
-    func labelContent(with item: Item) -> some View {
+    func labelContent(with item: CloudPlaylist) -> some View {
         HStack {
             VStack {
-                AsyncImage(url: URL(string: item.snippet.thumbnails.default.url)) { image in
+                AsyncImage(url: URL(string: item.thumbnailUrl)) { image in
                     image.resizable().centerCropped()
                 } placeholder: {
                     ProgressView()
@@ -62,11 +63,11 @@ struct ListView: View {
             }
             
             VStack(alignment: .leading) {
-                Text(item.snippet.title)
+                Text(item.title)
                     .font(.caption)
                     .foregroundColor(Constants.primary)
                 
-                Text(item.snippet.publishedAt.formatDate())
+                Text(item.publishedAt.formatDate())
                     .font(.caption2)
                     .foregroundColor(Constants.secondary)
             }

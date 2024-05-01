@@ -14,8 +14,8 @@ class SettingsViewModel: ObservableObject, PresentAlertType {
     @Published var youtubeLive: YoutubeLive = .init()
     @Published var viewMessage: String = ""
     @Published var alertInfo: AlertInfo?
-    @Published var youtubePlaylist: YoutubePlaylist = .init()
-    @Published var cloudPlaylist: [CloudPlaylist] = .init()
+    @Published var youtubePlaylists: YoutubePlaylists = .init()
+    @Published var cloudPlaylists: [CloudPlaylist] = .init()
     
     // MARK: Properties
     let provider = MoyaProvider<YoutubeApiManager>()
@@ -28,32 +28,29 @@ class SettingsViewModel: ObservableObject, PresentAlertType {
     // MARK: Functions
     func syncPlaylist(pageToken: String = "") {
         viewMessage = pageToken.isEmpty ? "" : viewMessage
-        cloudPlaylist = pageToken.isEmpty ? .init() : cloudPlaylist
+        cloudPlaylists = pageToken.isEmpty ? .init() : cloudPlaylists
         
         provider.request(.playlist(pageToken: pageToken)) {[weak self] result in
             switch result {
             case let .success(response):
                 do {
-                    self?.youtubePlaylist = try JSONDecoder().decode(YoutubePlaylist.self, from: response.data)
-                    _ = self?.youtubePlaylist.items.map { [weak self] playlist in
-                        self?.cloudPlaylist.append(CloudPlaylist(id: playlist.id,
-                                                                snippet: SnippetCloud(
-                                                                    publishedAt: playlist.snippet.publishedAt,
-                                                                    title: playlist.snippet.title,
-                                                                    description: playlist.snippet.description,
-                                                                    thumbnailUrl: playlist.snippet.thumbnails.medium.url,
-                                                                    thumbnailWidth: playlist.snippet.thumbnails.high.width,
-                                                                    thumbnailHeight: playlist.snippet.thumbnails.high.height
-                                                                )
-                                                               )
+                    self?.youtubePlaylists = try JSONDecoder().decode(YoutubePlaylists.self, from: response.data)
+                    _ = self?.youtubePlaylists.items.map { [weak self] playlist in
+                        self?.cloudPlaylists.append(CloudPlaylist(id: playlist.id,
+                                                                  publishedAt: playlist.snippet.publishedAt,
+                                                                  title: playlist.snippet.title,
+                                                                  description: playlist.snippet.description,
+                                                                  thumbnailUrl: playlist.snippet.thumbnails.medium.url,
+                                                                  thumbnailWidth: playlist.snippet.thumbnails.high.width,
+                                                                  thumbnailHeight: playlist.snippet.thumbnails.high.height)
                         )
                     }
-                    self?.viewMessage += "\n🔄 \(self?.cloudPlaylist.count ?? 0) Listas descargadas."
+                    self?.viewMessage += "\n🔄 \(self?.cloudPlaylists.count ?? 0) Listas descargadas."
                     
-                    guard let nextPageToken = self?.youtubePlaylist.nextPageToken, !nextPageToken.isEmpty else {
-                        self?.viewMessage += "\n✅ \(self?.cloudPlaylist.count ?? 0) Listas descargadas en total."
+                    guard let nextPageToken = self?.youtubePlaylists.nextPageToken, !nextPageToken.isEmpty else {
+                        self?.viewMessage += "\n✅ \(self?.cloudPlaylists.count ?? 0) Listas descargadas en total."
                         
-                        self?.saveListsOnCloud(cloudPlaylist: self?.cloudPlaylist ?? [])
+                        self?.saveListsOnCloud(cloudPlaylist: self?.cloudPlaylists ?? [])
                         
                         return
                     }
@@ -111,7 +108,7 @@ class SettingsViewModel: ObservableObject, PresentAlertType {
         let dataBase = Firestore.firestore()
         
         for playlist in cloudPlaylist {
-            dataBase.collection("playList")
+            dataBase.collection("playlists")
                 .document(playlist.id)
                 .setData(playlist.asDictionary()) { [weak self] error in
                     guard error == nil else {

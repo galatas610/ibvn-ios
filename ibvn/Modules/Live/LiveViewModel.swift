@@ -15,9 +15,9 @@ class LiveViewModel: ObservableObject, PresentAlertType {
     @Published var cloudLive: [CloudLive] = .init()
     
     // MARK: Propertes
-    var alertIsPresenting: Bool = false
-    
     let ibvnType: IbvnType
+    
+    var alertIsPresenting: Bool = false
     
     // MARK: Initialization
     init(ibvnType: IbvnType) {

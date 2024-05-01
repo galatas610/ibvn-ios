@@ -48,7 +48,7 @@
 		83A8D4682BC3125900EFAD3B /* YoutubeVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A8D4672BC3125900EFAD3B /* YoutubeVideo.swift */; };
 		83A8D46A2BC315F300EFAD3B /* YoutubeLive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A8D4692BC315F300EFAD3B /* YoutubeLive.swift */; };
 		83A8D46C2BC3178000EFAD3B /* YoutubeVideoLiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A8D46B2BC3178000EFAD3B /* YoutubeVideoLiveView.swift */; };
-		83D182C72BB5576F0097A4D9 /* YoutubePlaylistTMP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D182C62BB5576F0097A4D9 /* YoutubePlaylistTMP.swift */; };
+		83D182C72BB5576F0097A4D9 /* YoutubePlaylist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D182C62BB5576F0097A4D9 /* YoutubePlaylist.swift */; };
 		83D182CA2BB55EA90097A4D9 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D182C92BB55EA90097A4D9 /* TabBarView.swift */; };
 		83D1F4472BB1C30400A611A5 /* IbvnApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D1F4462BB1C30400A611A5 /* IbvnApp.swift */; };
 		83D1F44B2BB1C30600A611A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83D1F44A2BB1C30600A611A5 /* Assets.xcassets */; };
@@ -113,7 +113,7 @@
 		83A8D4672BC3125900EFAD3B /* YoutubeVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeVideo.swift; sourceTree = "<group>"; };
 		83A8D4692BC315F300EFAD3B /* YoutubeLive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeLive.swift; sourceTree = "<group>"; };
 		83A8D46B2BC3178000EFAD3B /* YoutubeVideoLiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeVideoLiveView.swift; sourceTree = "<group>"; };
-		83D182C62BB5576F0097A4D9 /* YoutubePlaylistTMP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubePlaylistTMP.swift; sourceTree = "<group>"; };
+		83D182C62BB5576F0097A4D9 /* YoutubePlaylist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubePlaylist.swift; sourceTree = "<group>"; };
 		83D182C92BB55EA90097A4D9 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		83D1F4432BB1C30400A611A5 /* ibvn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ibvn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83D1F4462BB1C30400A611A5 /* IbvnApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IbvnApp.swift; sourceTree = "<group>"; };
@@ -296,7 +296,7 @@
 		83D182C22BB553F40097A4D9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				83D182C62BB5576F0097A4D9 /* YoutubePlaylistTMP.swift */,
+				83D182C62BB5576F0097A4D9 /* YoutubePlaylist.swift */,
 				83389A1F2BC06262001B6171 /* YoutubePlaylistsTMP.swift */,
 				83A8D4672BC3125900EFAD3B /* YoutubeVideo.swift */,
 				83A8D4692BC315F300EFAD3B /* YoutubeLive.swift */,
@@ -574,7 +574,7 @@
 				83A8D46C2BC3178000EFAD3B /* YoutubeVideoLiveView.swift in Sources */,
 				83E980902BB54F8000BF0094 /* Image+Extensions.swift in Sources */,
 				83D182CA2BB55EA90097A4D9 /* TabBarView.swift in Sources */,
-				83D182C72BB5576F0097A4D9 /* YoutubePlaylistTMP.swift in Sources */,
+				83D182C72BB5576F0097A4D9 /* YoutubePlaylist.swift in Sources */,
 				839BDCCA2BBD390500DE4442 /* ViewModifier.swift in Sources */,
 				83389A3B2BC093A1001B6171 /* ListVideosViewModel.swift in Sources */,
 				839DBA5A2BB3D4DB00E2B77F /* String+Extensions.swift in Sources */,

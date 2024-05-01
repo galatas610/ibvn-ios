@@ -7,20 +7,27 @@
 
 import Foundation
 
-// MARK: - Welcome
-struct YoutubePlaylistTMP: Codable {
-    let kind, etag: String
-    let items: [ListVideosItem]
+// MARK: - YoutubePlaylist
+struct YoutubePlaylist: Codable {
+    let kind: String
+    let etag: String
+    let nextPageToken: String?
+    let prevPageToken: String?
+    var items: [ListVideosItem]
     let pageInfo: PageInfo
     
     init(
         kind: String = "",
         etag: String = "",
+        nextPageToken: String = "",
+        prevPageToken: String = "",
         items: [ListVideosItem] = [],
         pageInfo: PageInfo = .init()
     ) {
         self.kind = kind
         self.etag = etag
+        self.nextPageToken = nextPageToken
+        self.prevPageToken = prevPageToken
         self.items = items
         self.pageInfo = pageInfo
     }
@@ -37,17 +44,24 @@ struct ListVideosItem: Codable {
 // MARK: - Snippet
 struct SnippetList: Codable {
     let publishedAt: String
-    let channelID, title, description: String
+    let channelID: String
+    let title: String
+    let description: String
     let thumbnails: ThumbnailsList
-    let channelTitle, playlistID: String
+    let channelTitle: String
+    let playlistID: String
     let position: Int
     let resourceID: ResourceID
-    let videoOwnerChannelTitle, videoOwnerChannelID: String?
+    let videoOwnerChannelTitle: String?
+    let videoOwnerChannelID: String?
 
     enum CodingKeys: String, CodingKey {
         case publishedAt
         case channelID = "channelId"
-        case title, description, thumbnails, channelTitle
+        case title
+        case description
+        case thumbnails
+        case channelTitle
         case playlistID = "playlistId"
         case position
         case resourceID = "resourceId"
@@ -58,7 +72,8 @@ struct SnippetList: Codable {
 
 // MARK: - ResourceID
 struct ResourceID: Codable {
-    let kind, videoID: String
+    let kind: String
+    let videoID: String
 
     enum CodingKeys: String, CodingKey {
         case kind
@@ -68,11 +83,17 @@ struct ResourceID: Codable {
 
 // MARK: - Thumbnails
 struct ThumbnailsList: Codable {
-    let thumbnailsDefault, medium, high, standard: ThumbnailsInfo?
+    let thumbnailsDefault: ThumbnailsInfo?
+    let medium: ThumbnailsInfo?
+    let high: ThumbnailsInfo?
+    let standard: ThumbnailsInfo?
     let maxres: ThumbnailsInfo?
 
     enum CodingKeys: String, CodingKey {
         case thumbnailsDefault = "default"
-        case medium, high, standard, maxres
+        case medium
+        case high
+        case standard
+        case maxres
     }
 }

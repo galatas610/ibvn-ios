@@ -80,6 +80,8 @@ class SettingsViewModel: ObservableObject, PresentAlertType {
                         self.viewMessage += "\n 🚫 \(eventType), no disponible."
                         if eventType == "upcoming" {
                             self.syncLive(eventType: "live")
+                        } else if eventType == "live" {
+                            self.syncLive(eventType: "completed")
                         }
                     } else {
                         self.viewMessage += "\n ✅ \(eventType) en vivo, disponible."

@@ -31,7 +31,7 @@ struct SettingsView: View {
                 Button {
                     viewModel.syncPlaylist()
                 } label: {
-                    Text("El Reto de Hoy")
+                    Text("Sincronizar listas")
                 }
                 .buttonStyle(.bordered)
                 .padding()

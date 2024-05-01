@@ -53,6 +53,8 @@ class SettingsViewModel: ObservableObject, PresentAlertType {
                     guard let nextPageToken = self?.youtubePlaylist.nextPageToken, !nextPageToken.isEmpty else {
                         self?.viewMessage += "\n✅ \(self?.cloudPlaylist.count ?? 0) Listas descargadas en total."
                         
+                        self?.saveListsOnCloud(cloudPlaylist: self?.cloudPlaylist ?? [])
+                        
                         return
                     }
                     
@@ -103,20 +105,24 @@ class SettingsViewModel: ObservableObject, PresentAlertType {
         }
     }
     
-    private func saveListsOnCloud(liveVideoId: String) {
+    private func saveListsOnCloud(cloudPlaylist: [CloudPlaylist]) {
+        viewMessage += "\n⬆️ Subiendo \(cloudPlaylist.count) Listas a la nube."
+        
         let dataBase = Firestore.firestore()
         
-        dataBase.collection("lists")
-            .document("lastLive")
-            .setData(cloudPlaylist.asDictionary()) { [weak self] error in
-                guard error == nil else {
-                    self?.displayError(error)
-                    
-                    return
+        for playlist in cloudPlaylist {
+            dataBase.collection("playList")
+                .document(playlist.id)
+                .setData(playlist.asDictionary()) { [weak self] error in
+                    guard error == nil else {
+                        self?.displayError(error)
+                        
+                        return
+                    }
                 }
-                
-                self?.viewMessage += "\n ✅ En vivo en la nube"
-            }
+        }
+        
+        viewMessage += "\n🆗 \(cloudPlaylist.count) Listas en la Nube"
     }
     
     private func saveLiveOnCloud(liveVideoId: String) {
@@ -133,7 +139,8 @@ class SettingsViewModel: ObservableObject, PresentAlertType {
                     return
                 }
                 
-                self?.viewMessage += "\n ✅ En vivo en la nube"
+                self?.viewMessage += "\n 🆗 En vivo en la nube"
             }
+        
     }
 }

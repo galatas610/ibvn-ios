@@ -1,5 +1,5 @@
 //
-//  PlaylistCloud.swift
+//  CloudPlaylist.swift
 //  ibvn
 //
 //  Created by Jose Letona on 14/4/24.
@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - Item
-struct PlaylistCloud: Codable {
+struct CloudPlaylist: Codable {
     let id: String
     let snippet: SnippetCloud
     

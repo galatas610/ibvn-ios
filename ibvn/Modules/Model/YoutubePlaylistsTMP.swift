@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - Welcome
-struct YoutubePlaylists: Codable {
+struct YoutubePlaylistsTMP: Codable {
     let kind: String
     let etag: String
     let regionCode: String

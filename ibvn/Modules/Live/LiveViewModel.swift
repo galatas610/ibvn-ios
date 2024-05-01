@@ -10,9 +10,9 @@ import FirebaseFirestore
 
 class LiveViewModel: ObservableObject, PresentAlertType {
     // MARK: Property Wrappers
-    @Published var youtubeVideo: Video = .init()
+    @Published var youtubeVideo: YoutubeVideo = .init()
     @Published var alertInfo: AlertInfo?
-    @Published var live: [LiveCloud] = .init()
+    @Published var cloudLive: [CloudLive] = .init()
     
     // MARK: Propertes
     var alertIsPresenting: Bool = false
@@ -40,9 +40,9 @@ class LiveViewModel: ObservableObject, PresentAlertType {
                 return
             }
             
-            self?.live = data.map { LiveCloud(videoId: $0["videoId"] as? String ?? "") }
+            self?.cloudLive = data.map { CloudLive(videoId: $0["videoId"] as? String ?? "") }
             
-            self?.taskFetchYoutubeVideoById(self?.live.first?.videoId ?? "")
+            self?.taskFetchYoutubeVideoById(self?.cloudLive.first?.videoId ?? "")
             
         }
     }
@@ -77,7 +77,7 @@ class LiveViewModel: ObservableObject, PresentAlertType {
             
             DispatchQueue.main.async {
                 do {
-                    self.youtubeVideo = try JSONDecoder().decode(Video.self, from: data)
+                    self.youtubeVideo = try JSONDecoder().decode(YoutubeVideo.self, from: data)
                 } catch let error as NSError {
                     print("🚩 error: \(error)")
                 }

@@ -10,7 +10,7 @@ import Moya
 
 final class ListVideosViewModel: ObservableObject, PresentAlertType {
     // MARK: Property Wrappers
-    @Published var youtubePlaylistItems: YoutubePlaylist = .init()
+    @Published var youtubePlaylistItems: YoutubePlaylistTMP = .init()
     @Published var playlist: Item
     @Published var showAlertDecodeError: Bool = false
     @Published var showRequestError: Bool = false
@@ -28,7 +28,7 @@ final class ListVideosViewModel: ObservableObject, PresentAlertType {
             switch result {
             case let .success(response):
                 do {
-                    self.youtubePlaylistItems = try JSONDecoder().decode(YoutubePlaylist.self, from: response.data)
+                    self.youtubePlaylistItems = try JSONDecoder().decode(YoutubePlaylistTMP.self, from: response.data)
                 } catch {
                     self.displayError(error)
                 }

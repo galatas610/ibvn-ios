@@ -1,78 +1,131 @@
 //
-//  YoutubeList.swift
+//  YoutubePlaylist.swift
 //  ibvn
 //
-//  Created by Jose Letona on 28/3/24.
+//  Created by Jose Letona on 14/4/24.
 //
 
 import Foundation
 
 // MARK: - Welcome
 struct YoutubePlaylist: Codable {
-    let kind, etag: String
-    let items: [ListVideosItem]
-    let pageInfo: PageInfo
+    let kind: String
+    let etag: String
+    let nextPageToken: String?
+    let prevPageToken: String?
+    let pageInfo: PageInfoResponse
+    let items: [ItemResponse]
     
     init(
         kind: String = "",
         etag: String = "",
-        items: [ListVideosItem] = [],
-        pageInfo: PageInfo = .init()
+        nextPageToken: String = "",
+        prevPageToken: String = "",
+        items: [ItemResponse] = [],
+        pageInfo: PageInfoResponse = .init()
     ) {
         self.kind = kind
         self.etag = etag
+        self.nextPageToken = nextPageToken
+        self.prevPageToken = prevPageToken
         self.items = items
         self.pageInfo = pageInfo
     }
 }
 
 // MARK: - Item
-struct ListVideosItem: Codable {
-    let kind: String
+struct ItemResponse: Codable {
+    let kind: KindResponse
     let etag: String
     let id: String
-    let snippet: SnippetList
+    let snippet: SnippetResponse
+}
+
+enum KindResponse: String, Codable {
+    case youtubePlaylist = "youtube#playlist"
 }
 
 // MARK: - Snippet
-struct SnippetList: Codable {
+struct SnippetResponse: Codable {
     let publishedAt: String
-    let channelID, title, description: String
-    let thumbnails: ThumbnailsList
-    let channelTitle, playlistID: String
-    let position: Int
-    let resourceID: ResourceID
-    let videoOwnerChannelTitle, videoOwnerChannelID: String?
+    let channelId: ChannelIdResponse
+    let title: String
+    let description: String
+    let thumbnails: ThumbnailsResponse
+    let channelTitle: ChannelTitleResponse
+    let localized: LocalizedResponse
 
     enum CodingKeys: String, CodingKey {
         case publishedAt
-        case channelID = "channelId"
-        case title, description, thumbnails, channelTitle
-        case playlistID = "playlistId"
-        case position
-        case resourceID = "resourceId"
-        case videoOwnerChannelTitle
-        case videoOwnerChannelID = "videoOwnerChannelId"
+        case channelId
+        case title
+        case description
+        case thumbnails
+        case channelTitle
+        case localized
     }
 }
 
-// MARK: - ResourceID
-struct ResourceID: Codable {
-    let kind, videoID: String
+enum ChannelIdResponse: String, Codable {
+    case uCoNq7HF7VnqalfgLTaxrDQ = "UCoNq7HF7vnqalfg-lTaxrDQ"
+}
 
-    enum CodingKeys: String, CodingKey {
-        case kind
-        case videoID = "videoId"
-    }
+enum ChannelTitleResponse: String, Codable {
+    case iglesiaBautistaVidaNueva = "Iglesia Bautista Vida Nueva"
+}
+
+// MARK: - Localized
+struct LocalizedResponse: Codable {
+    let title, description: String
 }
 
 // MARK: - Thumbnails
-struct ThumbnailsList: Codable {
-    let thumbnailsDefault, medium, high, standard: ThumbnailsInfo?
-    let maxres: ThumbnailsInfo?
+struct ThumbnailsResponse: Codable {
+    let `default`: ThumbnailsInfoResponse
+    let medium: ThumbnailsInfoResponse
+    let high: ThumbnailsInfoResponse
 
     enum CodingKeys: String, CodingKey {
-        case thumbnailsDefault = "default"
-        case medium, high, standard, maxres
+        case `default`
+        case medium
+        case high
+    }
+
+    init(
+        `default`: ThumbnailsInfoResponse = .init(),
+        medium: ThumbnailsInfoResponse = .init(),
+        high: ThumbnailsInfoResponse = .init()
+    ) {
+        self.medium = medium
+        self.high = high
+        self.default = `default`
+    }
+}
+
+// MARK: - Default
+struct ThumbnailsInfoResponse: Codable {
+    let url: String
+    let width: Int
+    let height: Int
+
+    init(
+        url: String = "https://i.ytimg.com/vi/M15q_cNaJZc/hqdefault.jpg",
+        width: Int = 480,
+        height: Int = 360
+    ) {
+        self.url = url
+        self.width = width
+        self.height = height
+    }
+}
+
+// MARK: - PageInfo
+struct PageInfoResponse: Codable {
+    let totalResults: Int
+    let resultsPerPage: Int
+    
+    init(totalResults: Int = 0, resultsPerPage: Int = 0) {
+        self.totalResults = totalResults
+        self.resultsPerPage = resultsPerPage
     }
 }

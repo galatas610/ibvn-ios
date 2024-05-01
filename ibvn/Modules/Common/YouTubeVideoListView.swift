@@ -11,13 +11,24 @@ import SwiftUI
 struct YouTubeVideoListView: View {
     // MARK: Variables
     let item: ListVideosItem
+    let showPreview: Bool
     
     // MARK: Body
     var body: some View {
-        youTubePlayerView(with: item)
-        date(with: item)
-        title(with: item)
-        description(with: item)
+        VStack {
+            viewContent
+        }
+        .show(when: !showPreview)
+        
+        VStack {
+            viewContent
+        }
+        .padding(.top, 16)
+        .navigationBarTitleDisplayMode(.inline)
+        .modifier(TopBar())
+        .modifier(BackButtonTitleHiddenModifier())
+        .show(when: showPreview)
+        
     }
     
     // MARK: Functions
@@ -59,5 +70,15 @@ struct YouTubeVideoListView: View {
         }
         .padding(.horizontal, 8)
         .padding(.bottom, 16)
+    }
+    
+    @ViewBuilder
+    var viewContent: some View {
+        youTubePlayerView(with: item)
+        date(with: item)
+        title(with: item)
+        description(with: item)
+        
+        Spacer()
     }
 }

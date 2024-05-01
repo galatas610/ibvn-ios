@@ -20,12 +20,11 @@ struct ListView: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(searchResults, id: \.id) { item in
+                ForEach(searchResults, id: \.id) { playlist in
                     NavigationLink {
-                        EmptyView()
-//                        ListVideosView(viewModel: ListVideosViewModel(playlist: item))
+                        ListVideosView(viewModel: ListVideosViewModel(playlist: playlist))
                     } label: {
-                        labelContent(with: item)
+                        labelContent(with: playlist)
                     }
                 }
             }

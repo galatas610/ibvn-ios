@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct PlaylistCover: View {
-    let snippet: Snippet
+    let playlist: CloudPlaylist
     
     var body: some View {
         VStack {
             VStack {
-                AsyncImage(url: URL(string: snippet.thumbnails.high.url)) { image in
+                AsyncImage(url: URL(string: playlist.thumbnailUrl)) { image in
                     image.resizable().centerCropped()
                 } placeholder: {
                     ProgressView()
@@ -21,19 +21,19 @@ struct PlaylistCover: View {
                 .scaledToFit()
                 .cornerRadius(8)
                 
-                Text(snippet.title)
+                Text(playlist.title)
                     .bold()
                     .foregroundColor(Constants.primaryDark)
                     .padding(.bottom, 8)
                 
-                Text(snippet.description)
+                Text(playlist.description)
                     .foregroundColor(Constants.secondaryDark)
                     .font(.caption)
                 
                 HStack {
                     Spacer()
                     
-                    Text(snippet.publishedAt.formatDate())
+                    Text(playlist.publishedAt.formatDate())
                         .foregroundColor(Constants.secondaryDark)
                         .font(.caption2)
                 }

@@ -1,5 +1,5 @@
 //
-//  ListView.swift
+//  ListsView.swift
 //  ibvn
 //
 //  Created by Jose Letona on 5/4/24.
@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct ListView: View {
+struct ListsView: View {
     // MARK: Property Wrappers
-    @StateObject private var viewModel: ListViewModel
+    @StateObject private var viewModel: ListsViewModel
     @State private var searchText = ""
     
-    init(viewModel: ListViewModel) {
+    init(viewModel: ListsViewModel) {
         self._viewModel = StateObject(wrappedValue: viewModel)
     }
     
@@ -75,5 +75,5 @@ struct ListView: View {
 }
 
 #Preview {
-    ListView(viewModel: ListViewModel(ibvnType: .elRestoDeHoy))
+    ListsView(viewModel: ListsViewModel(ibvnType: .elRestoDeHoy))
 }

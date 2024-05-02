@@ -1,5 +1,5 @@
 //
-//  YouTubePlayer.swift
+//  YoutubePlayer.swift
 //  ibvn
 //
 //  Created by Jose Letona on 28/3/24.
@@ -8,7 +8,7 @@
 import SwiftUI
 import YouTubeiOSPlayerHelper
 
-struct YouTubePlayer: UIViewRepresentable {
+struct YoutubePlayer: UIViewRepresentable {
     @Binding var videoId: String
     
     func makeUIView(context: Context) -> YTPlayerView {

@@ -8,11 +8,19 @@
 import Foundation
 
 struct YoutubeLive: Codable {
-    let kind, etag, regionCode: String
+    let kind: String
+    let etag: String
+    let regionCode: String
     let pageInfo: LivePageInfo
     let items: [LiveItem]
     
-    init(kind: String = "", etag: String = "", regionCode: String = "", pageInfo: LivePageInfo = .init(), items: [LiveItem] = []) {
+    init(
+        kind: String = "",
+        etag: String = "",
+        regionCode: String = "",
+        pageInfo: LivePageInfo = .init(),
+        items: [LiveItem] = []
+    ) {
         self.kind = kind
         self.etag = etag
         self.regionCode = regionCode

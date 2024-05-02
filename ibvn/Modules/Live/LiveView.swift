@@ -21,7 +21,7 @@ struct LiveView: View {
         NavigationView {
             VStack {
                 if let lastLive = viewModel.youtubeVideo.items.first {
-                    YoutubeOnlyVideoView(item: lastLive)
+                    VideoLiveView(item: lastLive)
                         .padding(.top, 8)
                 }
                 

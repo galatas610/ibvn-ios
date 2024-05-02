@@ -8,11 +8,17 @@
 import Foundation
 
 struct YoutubeVideo: Codable {
-    let kind, etag: String
+    let kind: String
+    let etag: String
     let items: [VideoItem]
     let pageInfo: VideoPageInfo
     
-    init(kind: String = "", etag: String = "", items: [VideoItem] = [], pageInfo: VideoPageInfo = .init()) {
+    init(
+        kind: String = "",
+        etag: String = "",
+        items: [VideoItem] = [],
+        pageInfo: VideoPageInfo = .init()
+    ) {
         self.kind = kind
         self.etag = etag
         self.items = items
@@ -22,7 +28,8 @@ struct YoutubeVideo: Codable {
 
 // MARK: - Item
 struct VideoItem: Codable {
-    let kind, etag: String
+    let kind: String
+    let etag: String
     var id: String
     let snippet: VideoSnippet
 }
@@ -30,9 +37,12 @@ struct VideoItem: Codable {
 // MARK: - Snippet
 struct VideoSnippet: Codable {
     let publishedAt: String
-    let channelID, title, description: String
+    let channelID: String
+    let title: String
+    let description: String
     let thumbnails: VideoThumbnails
-    let channelTitle, categoryID: String
+    let channelTitle: String
+    let categoryID: String
     let liveBroadcastContent: LiveBroadcastContent
     let localized: Localized
     let defaultAudioLanguage: String
@@ -40,10 +50,14 @@ struct VideoSnippet: Codable {
     enum CodingKeys: String, CodingKey {
         case publishedAt
         case channelID = "channelId"
-        case title, description, thumbnails, channelTitle
+        case title
+        case description
+        case thumbnails
+        case channelTitle
         case categoryID = "categoryId"
         case liveBroadcastContent
-        case localized, defaultAudioLanguage
+        case localized
+        case defaultAudioLanguage
     }
 }
 
@@ -70,26 +84,37 @@ struct Localized: Codable {
 
 // MARK: - Thumbnails
 struct VideoThumbnails: Codable {
-    let thumbnailsDefault, medium, high, standard: Default
+    let thumbnailsDefault: Default
+    let medium: Default
+    let high: Default
+    let standard: Default
     let maxres: Default?
 
     enum CodingKeys: String, CodingKey {
         case thumbnailsDefault = "default"
-        case medium, high, standard, maxres
+        case medium
+        case high
+        case standard
+        case maxres
     }
 }
 
 // MARK: - Default
 struct Default: Codable {
     let url: String
-    let width, height: Int
+    let width: Int
+    let height: Int
 }
 
 // MARK: - PageInfo
 struct VideoPageInfo: Codable {
-    let totalResults, resultsPerPage: Int
+    let totalResults: Int
+    let resultsPerPage: Int
     
-    init(totalResults: Int = 0, resultsPerPage: Int = 0) {
+    init(
+        totalResults: Int = 0,
+        resultsPerPage: Int = 0
+    ) {
         self.totalResults = totalResults
         self.resultsPerPage = resultsPerPage
     }

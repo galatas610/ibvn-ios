@@ -8,14 +8,6 @@
 import SwiftUI
 
 extension View {
-    func navigationBarBackButtonTitleHidden() -> some View {
-        self.modifier(BackButtonTitleHiddenModifier())
-    }
-    
-    func navigationBarTitleColor(_ color: Color) -> some View {
-        return self.modifier(NavigationBarTitleColorModifier(color: color))
-    }
-    
     @ViewBuilder
     func show(when condition: Bool) -> some View {
         if condition {

@@ -1,5 +1,5 @@
 //
-//  YoutubeOnlyVideoView.swift
+//  VideoLiveView.swift
 //  ibvn
 //
 //  Created by Jose Letona on 7/4/24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct YoutubeOnlyVideoView: View {
+struct VideoLiveView: View {
     // MARK: Variables
     var item: VideoItem
     
@@ -23,7 +23,7 @@ struct YoutubeOnlyVideoView: View {
        
     // MARK: Functions
     func youTubePlayerView(with item: VideoItem) -> some View {
-        YouTubePlayer(videoId: Binding.constant(item.id))
+        YoutubePlayer(videoId: Binding.constant(item.id))
             .cornerRadius(16)
             .frame(height: 200)
             .padding(.horizontal, 8)

@@ -60,22 +60,3 @@ struct BackButtonTitleHiddenModifier: ViewModifier {
         }
     }
 }
-
-struct NavigationBarTitleColorModifier: ViewModifier {
-    var color: Color
-    
-    func body(content: Content) -> some View {
-        content
-            .onAppear {
-                let coloredAppearance = UINavigationBarAppearance()
-                
-                coloredAppearance.titleTextAttributes = [.foregroundColor: UIColor(color)]
-                
-                coloredAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor(color)]
-                
-                UINavigationBar.appearance().standardAppearance = coloredAppearance
-                
-                UINavigationBar.appearance().scrollEdgeAppearance = coloredAppearance
-            }
-    }
-}

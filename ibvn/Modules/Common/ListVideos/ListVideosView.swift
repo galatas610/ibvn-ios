@@ -71,6 +71,7 @@ struct ListVideosView: View {
                 Text(item.snippet.title)
                     .font(.caption)
                     .foregroundColor(Constants.primary)
+                    .multilineTextAlignment(.leading)
                 
                 Text(item.snippet.publishedAt.formatDate())
                     .font(.caption2)

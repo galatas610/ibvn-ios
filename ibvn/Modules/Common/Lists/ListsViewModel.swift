@@ -13,7 +13,7 @@ final class ListsViewModel: ObservableObject, PresentAlertType {
     @Published var cloudPlaylists: [CloudPlaylist] = []
     @Published var alertInfo: AlertInfo?
     
-    // MARK: Propertes
+    // MARK: Properties
     let ibvnType: IbvnType
     
     var alertIsPresenting: Bool = false

@@ -12,6 +12,7 @@ struct ListsView: View {
     @StateObject private var viewModel: ListsViewModel
     @State private var searchText = ""
     
+    // MARK: Initialization
     init(viewModel: ListsViewModel) {
         self._viewModel = StateObject(wrappedValue: viewModel)
     }

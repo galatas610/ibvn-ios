@@ -40,6 +40,9 @@
 		83A8D4662BC3094000EFAD3B /* VideoLiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A8D4652BC3094000EFAD3B /* VideoLiveView.swift */; };
 		83A8D4682BC3125900EFAD3B /* YoutubeVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A8D4672BC3125900EFAD3B /* YoutubeVideo.swift */; };
 		83A8D46A2BC315F300EFAD3B /* YoutubeLive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A8D4692BC315F300EFAD3B /* YoutubeLive.swift */; };
+		83BC51E52BE3216400C26C85 /* CampusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BC51E42BE3216400C26C85 /* CampusView.swift */; };
+		83BC51E72BE321B800C26C85 /* Campus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BC51E62BE321B800C26C85 /* Campus.swift */; };
+		83BC51E92BE3229200C26C85 /* CampusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BC51E82BE3229200C26C85 /* CampusViewModel.swift */; };
 		83D182C72BB5576F0097A4D9 /* YoutubePlaylist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D182C62BB5576F0097A4D9 /* YoutubePlaylist.swift */; };
 		83D182CA2BB55EA90097A4D9 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D182C92BB55EA90097A4D9 /* TabBarView.swift */; };
 		83D1F4472BB1C30400A611A5 /* IbvnApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D1F4462BB1C30400A611A5 /* IbvnApp.swift */; };
@@ -96,6 +99,9 @@
 		83A8D4652BC3094000EFAD3B /* VideoLiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoLiveView.swift; sourceTree = "<group>"; };
 		83A8D4672BC3125900EFAD3B /* YoutubeVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeVideo.swift; sourceTree = "<group>"; };
 		83A8D4692BC315F300EFAD3B /* YoutubeLive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeLive.swift; sourceTree = "<group>"; };
+		83BC51E42BE3216400C26C85 /* CampusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampusView.swift; sourceTree = "<group>"; };
+		83BC51E62BE321B800C26C85 /* Campus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Campus.swift; sourceTree = "<group>"; };
+		83BC51E82BE3229200C26C85 /* CampusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampusViewModel.swift; sourceTree = "<group>"; };
 		83D182C62BB5576F0097A4D9 /* YoutubePlaylist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubePlaylist.swift; sourceTree = "<group>"; };
 		83D182C92BB55EA90097A4D9 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		83D1F4432BB1C30400A611A5 /* ibvn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ibvn.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -256,6 +262,7 @@
 		839BDCCC2BBD3B3600DE4442 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				83BC51E32BE3215100C26C85 /* Campus */,
 				83EBBDE12BC6A956003AD08B /* Settings */,
 				8388017F2BC0DEDB00FC31BC /* Live */,
 				83D182C22BB553F40097A4D9 /* Model */,
@@ -283,6 +290,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		83BC51E32BE3215100C26C85 /* Campus */ = {
+			isa = PBXGroup;
+			children = (
+				83BC51E42BE3216400C26C85 /* CampusView.swift */,
+				83BC51E82BE3229200C26C85 /* CampusViewModel.swift */,
+			);
+			path = Campus;
+			sourceTree = "<group>";
+		};
 		83D182C22BB553F40097A4D9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -292,6 +308,7 @@
 				83A8D4692BC315F300EFAD3B /* YoutubeLive.swift */,
 				83EBBDE62BC6B704003AD08B /* CloudLive.swift */,
 				83081A6F2BCC58130015A8F4 /* CloudPlaylist.swift */,
+				83BC51E62BE321B800C26C85 /* Campus.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -565,10 +582,13 @@
 				83389A342BC09338001B6171 /* ListsViewModel.swift in Sources */,
 				83E5F48C2BC1C8E9001C23EF /* PresentAlertType.swift in Sources */,
 				83081A702BCC58130015A8F4 /* CloudPlaylist.swift in Sources */,
+				83BC51E92BE3229200C26C85 /* CampusViewModel.swift in Sources */,
 				83EBBDE72BC6B704003AD08B /* CloudLive.swift in Sources */,
 				83081A722BCC59150015A8F4 /* YoutubePlaylists.swift in Sources */,
 				83389A392BC09394001B6171 /* ListVideosView.swift in Sources */,
+				83BC51E52BE3216400C26C85 /* CampusView.swift in Sources */,
 				83389A3E2BC09C3A001B6171 /* IbvnType.swift in Sources */,
+				83BC51E72BE321B800C26C85 /* Campus.swift in Sources */,
 				83A8D46A2BC315F300EFAD3B /* YoutubeLive.swift in Sources */,
 				83A8D4682BC3125900EFAD3B /* YoutubeVideo.swift in Sources */,
 				83891C3D2BB62EDC002CBE99 /* Constants.swift in Sources */,

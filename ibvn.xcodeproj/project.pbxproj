@@ -30,6 +30,7 @@
 		838DBAB12BB5F06F00DB1591 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838DBAB02BB5F06F00DB1591 /* View+Extensions.swift */; };
 		839BDCCA2BBD390500DE4442 /* ViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839BDCC92BBD390500DE4442 /* ViewModifier.swift */; };
 		839DBA5A2BB3D4DB00E2B77F /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839DBA592BB3D4DB00E2B77F /* String+Extensions.swift */; };
+		83A5BD782BE6D45300511D7D /* CampusLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A5BD772BE6D45300511D7D /* CampusLocation.swift */; };
 		83A8D4552BC20C0B00EFAD3B /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 83A8D4542BC20C0B00EFAD3B /* FirebaseAnalytics */; };
 		83A8D4572BC20C0B00EFAD3B /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = 83A8D4562BC20C0B00EFAD3B /* FirebaseAnalyticsOnDeviceConversion */; };
 		83A8D4592BC20C0B00EFAD3B /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 83A8D4582BC20C0B00EFAD3B /* FirebaseAnalyticsSwift */; };
@@ -96,6 +97,7 @@
 		838DBAB02BB5F06F00DB1591 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		839BDCC92BBD390500DE4442 /* ViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifier.swift; sourceTree = "<group>"; };
 		839DBA592BB3D4DB00E2B77F /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		83A5BD772BE6D45300511D7D /* CampusLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampusLocation.swift; sourceTree = "<group>"; };
 		83A8D4652BC3094000EFAD3B /* VideoLiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoLiveView.swift; sourceTree = "<group>"; };
 		83A8D4672BC3125900EFAD3B /* YoutubeVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeVideo.swift; sourceTree = "<group>"; };
 		83A8D4692BC315F300EFAD3B /* YoutubeLive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeLive.swift; sourceTree = "<group>"; };
@@ -309,6 +311,7 @@
 				83EBBDE62BC6B704003AD08B /* CloudLive.swift */,
 				83081A6F2BCC58130015A8F4 /* CloudPlaylist.swift */,
 				83BC51E62BE321B800C26C85 /* Campus.swift */,
+				83A5BD772BE6D45300511D7D /* CampusLocation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -604,6 +607,7 @@
 				83389A2C2BC08AD9001B6171 /* PlaylistCover.swift in Sources */,
 				83EBBDE52BC6A976003AD08B /* SettingsViewModel.swift in Sources */,
 				8338F0782BCB43C4008598F4 /* YoutubeApiManager.swift in Sources */,
+				83A5BD782BE6D45300511D7D /* CampusLocation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

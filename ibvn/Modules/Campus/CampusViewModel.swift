@@ -20,12 +20,19 @@ final class CampusViewModel: ObservableObject, PresentAlertType {
     // MARK: Initialization
     init() {
         fetchCloudPlaylists()
-        fillPinnedCampus()
     }
     
     // MARK: Functions
     func fillPinnedCampus() {
-        campusLocations = [CampusLocation(latitude: 13.674692, longitude: -89.227735)]
+        campusLocations = []
+        
+        guard let campus = self.campus else {
+            return
+        }
+        
+        for loc in campus {
+            campusLocations.append(CampusLocation(latitude: loc.latitude ?? 0.0, longitude: loc.longitude ?? 0.0))
+        }
     }
     
     func moveToPreviousCampus(currentCampus: Campus) -> Campus {
@@ -74,6 +81,8 @@ final class CampusViewModel: ObservableObject, PresentAlertType {
                               whatsapp: campus.element["whatsapp"] as? String ?? ""
                 )
             })
+            
+            self?.fillPinnedCampus()
         }
     }
     

@@ -25,18 +25,20 @@ struct CampusView: View {
     // MARK: Body
     var body: some View {
         VStack {
-            Image("IbvnLogo")
-                .resizable()
-                .frame(width: 120, height: 31)
-            
-            HStack {
-                pastor(with: campus)
-                pastor(with: campus)
-                pastor(with: campus)
+            VStack {
+                logo
+                
+                HStack {
+                    pastor(with: campus)
+                    pastor(with: campus)
+                    pastor(with: campus)
+                }
+                
+                Divider()
+                    .padding(.bottom, 2)
             }
-            
-            Divider()
-            
+            .background(Constants.primaryDark)
+           
             HStack {
                 leftArrow
                 
@@ -56,6 +58,13 @@ struct CampusView: View {
         .onChange(of: viewModel.campus ?? .init()) { campus in
             self.campus = campus.first ?? .init()
         }
+    }
+    
+    private var logo: some View {
+        Image("IbvnLogo")
+            .resizable()
+            .frame(width: 120, height: 31)
+            .padding(.vertical, 16)
     }
     
     private var leftArrow: some View {
@@ -83,8 +92,12 @@ struct CampusView: View {
             name(with: campus)
             address(with: campus)
             country(with: campus)
-            phone(with: campus)
-            whatsapp(with: campus)
+            
+            VStack(alignment: .leading) {
+                phone(with: campus)
+                whatsapp(with: campus)
+            }
+            
             pastor(with: campus)
         }
     }
@@ -103,6 +116,7 @@ struct CampusView: View {
     private func address(with campus: Campus) -> some View {
         Text(campus.address ?? "")
             .font(.footnote)
+            .multilineTextAlignment(.center)
     }
     
     private func country(with campus: Campus) -> some View {
@@ -133,7 +147,9 @@ struct CampusView: View {
     
     @ViewBuilder
     private func whatsapp(with campus: Campus) -> some View {
-        if let url = URL(string: "https://wa.me/50325228106/?text=Los visito desde la App 💬") {
+        let whatsapp = campus.whatsapp?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        
+        if let url = URL(string: "https://wa.me/" + whatsapp + "/?text=Los visito desde la App 💬") {
             Link(destination: url, label: {
                 HStack {
                     Image(systemName: "message.fill")
@@ -180,7 +196,7 @@ struct CampusView: View {
                 .foregroundColor(Constants.secondary)
                 .font(.caption2)
         }
-        .padding(.bottom, 8)
+        .padding(.bottom, 16)
     }
     
     private func campusMap(with campus: Campus) -> some View {

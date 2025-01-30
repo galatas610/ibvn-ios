@@ -83,11 +83,11 @@ struct ResourceID: Codable {
 
 // MARK: - Thumbnails
 struct ThumbnailsList: Codable {
-    let thumbnailsDefault: ThumbnailsInfo?
-    let medium: ThumbnailsInfo?
-    let high: ThumbnailsInfo?
-    let standard: ThumbnailsInfo?
-    let maxres: ThumbnailsInfo?
+    let thumbnailsDefault: Thumbnails?
+    let medium: Thumbnails?
+    let high: Thumbnails?
+    let standard: Thumbnails?
+    let maxres: Thumbnails?
 
     enum CodingKeys: String, CodingKey {
         case thumbnailsDefault = "default"
@@ -95,5 +95,35 @@ struct ThumbnailsList: Codable {
         case high
         case standard
         case maxres
+    }
+}
+// MARK: - Default
+struct Thumbnails: Codable {
+    let url: String
+    let width: Int
+    let height: Int
+
+    init(
+        url: String = "https://i.ytimg.com/vi/M15q_cNaJZc/hqdefault.jpg",
+        width: Int = 480,
+        height: Int = 360
+    ) {
+        self.url = url
+        self.width = width
+        self.height = height
+    }
+}
+
+// MARK: - PageInfo
+struct PageInfo: Codable {
+    let totalResults: Int
+    let resultsPerPage: Int
+    
+    init(
+        totalResults: Int = 0,
+        resultsPerPage: Int = 0
+    ) {
+        self.totalResults = totalResults
+        self.resultsPerPage = resultsPerPage
     }
 }

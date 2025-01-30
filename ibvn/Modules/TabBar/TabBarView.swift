@@ -16,19 +16,19 @@ struct TabBarView: View {
                 }
                 .tag("1")
             
-            ListView(viewModel: ListViewModel(ibvnType: .preaches))
+            ListsView(viewModel: ListsViewModel(ibvnType: .preaches))
                 .tabItem {
                     Label("Mensajes", systemImage: "house")
                 }
                 .tag("1")
             
-            ListView(viewModel: ListViewModel(ibvnType: .elRestoDeHoy))
+            ListsView(viewModel: ListsViewModel(ibvnType: .elRestoDeHoy))
                 .tabItem {
                     Label("ERDH", systemImage: "bell")
                 }
                 .tag("2")
             
-            ListView(viewModel: ListViewModel(ibvnType: .nocheDeViernes))
+            ListsView(viewModel: ListsViewModel(ibvnType: .nocheDeViernes))
                 .tabItem {
                     Label("NDV", systemImage: "book")
                 }

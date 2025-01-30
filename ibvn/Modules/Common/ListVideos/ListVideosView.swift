@@ -25,12 +25,12 @@ struct ListVideosView: View {
             ForEach(searchResults, id: \.id) { item in
                 if viewModel.showPreview {
                     NavigationLink {
-                        YouTubeVideoListView(item: item, showPreview: viewModel.showPreview)
+                        VideoView(item: item, showPreview: viewModel.showPreview)
                     } label: {
                         labelContent(with: item)
                     }
                 } else {
-                    YouTubeVideoListView(item: item, showPreview: viewModel.showPreview)
+                    VideoView(item: item, showPreview: viewModel.showPreview)
                 }
             }
         }
@@ -71,6 +71,7 @@ struct ListVideosView: View {
                 Text(item.snippet.title)
                     .font(.caption)
                     .foregroundColor(Constants.primary)
+                    .multilineTextAlignment(.leading)
                 
                 Text(item.snippet.publishedAt.formatDate())
                     .font(.caption2)

@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct TopBar: ViewModifier {
+    @State var openCampusView: Bool = false
+    
     func body(content: Content) -> some View {
         content
             .toolbar {
@@ -15,6 +17,9 @@ struct TopBar: ViewModifier {
                     Image("IbvnLogo")
                         .resizable()
                         .frame(width: 120, height: 31)
+                        .onTapGesture {
+                            openCampusView.toggle()
+                        }
                 }
                 
                 ToolbarItem(placement: .topBarTrailing) {
@@ -27,6 +32,11 @@ struct TopBar: ViewModifier {
                     }
                 }
             }
+            .sheet(isPresented: $openCampusView, content: {
+                let viewModel = CampusViewModel()
+                
+                CampusView(viewModel: viewModel)
+            })
     }
 }
 
@@ -58,24 +68,5 @@ struct BackButtonTitleHiddenModifier: ViewModifier {
                 .foregroundColor(.accentColor)
             .imageScale(.large)
         }
-    }
-}
-
-struct NavigationBarTitleColorModifier: ViewModifier {
-    var color: Color
-    
-    func body(content: Content) -> some View {
-        content
-            .onAppear {
-                let coloredAppearance = UINavigationBarAppearance()
-                
-                coloredAppearance.titleTextAttributes = [.foregroundColor: UIColor(color)]
-                
-                coloredAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor(color)]
-                
-                UINavigationBar.appearance().standardAppearance = coloredAppearance
-                
-                UINavigationBar.appearance().scrollEdgeAppearance = coloredAppearance
-            }
     }
 }

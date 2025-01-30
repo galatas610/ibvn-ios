@@ -1,5 +1,5 @@
 //
-//  YouTubeVideoListView.swift
+//  VideoView.swift
 //  ibvn
 //
 //  Created by Jose Letona on 2/4/24.
@@ -8,7 +8,7 @@
 import SwiftUI
 
 // MARK: YouTube Standard Cell View
-struct YouTubeVideoListView: View {
+struct VideoView: View {
     // MARK: Variables
     let item: ListVideosItem
     let showPreview: Bool
@@ -33,7 +33,7 @@ struct YouTubeVideoListView: View {
     
     // MARK: Functions
     func youTubePlayerView(with item: ListVideosItem) -> some View {
-        YouTubePlayer(videoId: Binding.constant(item.snippet.resourceID.videoID))
+        YoutubePlayer(videoId: item.snippet.resourceID.videoID)
             .cornerRadius(16)
             .frame(height: 200)
             .padding(.horizontal, 8)

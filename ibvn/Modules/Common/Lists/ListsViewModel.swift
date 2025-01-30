@@ -1,5 +1,5 @@
 //
-//  ListViewModel.swift
+//  ListsViewModel.swift
 //  ibvn
 //
 //  Created by Jose Letona on 5/4/24.
@@ -8,12 +8,12 @@
 import Foundation
 import FirebaseFirestore
 
-final class ListViewModel: ObservableObject, PresentAlertType {
+final class ListsViewModel: ObservableObject, PresentAlertType {
    // MARK: Property Wrappers
     @Published var cloudPlaylists: [CloudPlaylist] = []
     @Published var alertInfo: AlertInfo?
     
-    // MARK: Propertes
+    // MARK: Properties
     let ibvnType: IbvnType
     
     var alertIsPresenting: Bool = false

@@ -13,7 +13,7 @@ struct YoutubePlaylists: Codable {
     let etag: String
     let nextPageToken: String?
     let prevPageToken: String?
-    let pageInfo: PageInfoResponse
+    let pageInfo: PageInfo
     let items: [ItemResponse]
     
     init(
@@ -22,7 +22,7 @@ struct YoutubePlaylists: Codable {
         nextPageToken: String = "",
         prevPageToken: String = "",
         items: [ItemResponse] = [],
-        pageInfo: PageInfoResponse = .init()
+        pageInfo: PageInfo = .init()
     ) {
         self.kind = kind
         self.etag = etag
@@ -54,7 +54,7 @@ struct SnippetResponse: Codable {
     let thumbnails: ThumbnailsResponse
     let channelTitle: ChannelTitleResponse
     let localized: LocalizedResponse
-
+    
     enum CodingKeys: String, CodingKey {
         case publishedAt
         case channelId
@@ -81,51 +81,23 @@ struct LocalizedResponse: Codable {
 
 // MARK: - Thumbnails
 struct ThumbnailsResponse: Codable {
-    let `default`: ThumbnailsInfoResponse
-    let medium: ThumbnailsInfoResponse
-    let high: ThumbnailsInfoResponse
-
+    let `default`: Thumbnails
+    let medium: Thumbnails
+    let high: Thumbnails
+    
     enum CodingKeys: String, CodingKey {
         case `default`
         case medium
         case high
     }
-
+    
     init(
-        `default`: ThumbnailsInfoResponse = .init(),
-        medium: ThumbnailsInfoResponse = .init(),
-        high: ThumbnailsInfoResponse = .init()
+        `default`: Thumbnails = .init(),
+        medium: Thumbnails = .init(),
+        high: Thumbnails = .init()
     ) {
         self.medium = medium
         self.high = high
         self.default = `default`
-    }
-}
-
-// MARK: - Default
-struct ThumbnailsInfoResponse: Codable {
-    let url: String
-    let width: Int
-    let height: Int
-
-    init(
-        url: String = "https://i.ytimg.com/vi/M15q_cNaJZc/hqdefault.jpg",
-        width: Int = 480,
-        height: Int = 360
-    ) {
-        self.url = url
-        self.width = width
-        self.height = height
-    }
-}
-
-// MARK: - PageInfo
-struct PageInfoResponse: Codable {
-    let totalResults: Int
-    let resultsPerPage: Int
-    
-    init(totalResults: Int = 0, resultsPerPage: Int = 0) {
-        self.totalResults = totalResults
-        self.resultsPerPage = resultsPerPage
     }
 }

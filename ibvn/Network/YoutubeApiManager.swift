@@ -20,6 +20,7 @@ enum YoutubeApiManager {
 }
 extension YoutubeApiManager: TargetType {
   public var baseURL: URL {
+      // swiftlint:disable:next force_unwrapping
     return URL(string: "https://www.googleapis.com/youtube/v3")!
   }
 

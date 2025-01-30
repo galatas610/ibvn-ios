@@ -23,7 +23,7 @@ struct VideoLiveView: View {
        
     // MARK: Functions
     func youTubePlayerView(with item: VideoItem) -> some View {
-        YoutubePlayer(videoId: Binding.constant(item.id))
+        YoutubePlayer(videoId: item.id)
             .cornerRadius(16)
             .frame(height: 200)
             .padding(.horizontal, 8)

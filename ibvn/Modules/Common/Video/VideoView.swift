@@ -33,7 +33,7 @@ struct VideoView: View {
     
     // MARK: Functions
     func youTubePlayerView(with item: ListVideosItem) -> some View {
-        YoutubePlayer(videoId: Binding.constant(item.snippet.resourceID.videoID))
+        YoutubePlayer(videoId: item.snippet.resourceID.videoID)
             .cornerRadius(16)
             .frame(height: 200)
             .padding(.horizontal, 8)

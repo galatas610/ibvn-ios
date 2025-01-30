@@ -13,4 +13,6 @@ struct Constants {
     static let primaryDark = Color("Colors/primaryDark")
     static let secondary = Color("Colors/secondarySet")
     static let secondaryDark = Color("Colors/secondaryDark")
+    
+    static let youtubeBaseURL: String = "https://www.youtube.com/embed/"
 }

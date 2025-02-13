@@ -33,7 +33,8 @@ struct TabBarView: View {
                     Label("NDV", systemImage: "book")
                 }
                 .tag("3")
-            SettingsView(viewModel: SettingsViewModel())
+//            SettingsView(viewModel: SettingsViewModel())
+            SignInView()
                 .tabItem {
                     Label("Configuración", systemImage: "gear")
                 }

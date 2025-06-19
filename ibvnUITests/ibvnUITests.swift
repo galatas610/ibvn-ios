@@ -1,13 +1,13 @@
 //
-//  IbvnUITests.swift
-//  IbvnUITests
+//  ibvnUITests.swift
+//  ibvnUITests
 //
 //  Created by Jose Letona on 25/3/24.
 //
 
 import XCTest
 
-final class IbvnUITests: XCTestCase {
+final class ibvnUITests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

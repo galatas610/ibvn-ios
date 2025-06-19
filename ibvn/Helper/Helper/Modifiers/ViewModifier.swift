@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TopBar: ViewModifier {
-    @State var openCampusView: Bool = false
+    @State var openSignInView: Bool = false
     
     func body(content: Content) -> some View {
         content
@@ -18,12 +18,12 @@ struct TopBar: ViewModifier {
                         .resizable()
                         .frame(width: 120, height: 31)
                         .onTapGesture {
-                            openCampusView.toggle()
+                            openSignInView.toggle()
                         }
                 }
                 
                 ToolbarItem(placement: .topBarTrailing) {
-                    if let url = URL(string: "https://ibvn.org/formas-de-dar/") {
+                    if let url = URL(string: "https://donaciones.ibvn.org") {
                         Link(destination: url) {
                             Text("Formas de dar")
                                 .foregroundColor(.accentColor)
@@ -32,10 +32,8 @@ struct TopBar: ViewModifier {
                     }
                 }
             }
-            .sheet(isPresented: $openCampusView, content: {
-                let viewModel = CampusViewModel()
-                
-                CampusView(viewModel: viewModel)
+            .sheet(isPresented: $openSignInView, content: {
+                SignInView()
             })
     }
 }

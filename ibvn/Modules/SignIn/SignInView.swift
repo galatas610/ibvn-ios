@@ -10,21 +10,21 @@ import SwiftUI
 struct SignInView: View {
     // MARK: - Property Wrappers
     @StateObject private var viewModel = SignInViewModel()
-//    @EnvironmentObject var coordinator: MainCoordinatorViewModel
+    @State private var shouldNavigate = false
     @FocusState var focusField: FocusType?
     
     // MARK: - body
     var body: some View {
         VStack {
             signInForm
-            signInButton
+            
+            if viewModel.isShowSettings {
+                SettingsView(viewModel: SettingsViewModel())
+            }
             
             Spacer()
         }
         .navigationTitle("Ingresar")
-        .onChange(of: viewModel.closeMainFlow) { _ in
-           // TODO: goto Setting View
-        }
         .showAlert(viewModel.alertInfo, when: $viewModel.alertIsPresenting)
     }
     
@@ -32,7 +32,6 @@ struct SignInView: View {
     var signInForm: some View {
         Form {
             Section {
-                
                 TextField("Correo Electrónico", text: $viewModel.email)
                     .textFieldStyle(FormTextField())
                     .focused($focusField, equals: .email)
@@ -42,6 +41,8 @@ struct SignInView: View {
                     .textFieldStyle(FormTextField())
                     .focused($focusField, equals: .password)
                     .id(FocusField.password)
+                
+                signInButton
             } header: {
                 Text("Credenciales")
             } footer: {

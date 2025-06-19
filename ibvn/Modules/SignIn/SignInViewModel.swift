@@ -13,7 +13,7 @@ class SignInViewModel: ObservableObject, PresentAlertType {
     @Published var email: String = ""
     @Published var password: String = ""
     @Published var errorMessage: String = ""
-    @Published var closeMainFlow: Bool = false
+    @Published var isShowSettings: Bool = false
     @Published var alertInfo: AlertInfo?
     
     // MARK: - Variables
@@ -59,13 +59,7 @@ class SignInViewModel: ObservableObject, PresentAlertType {
                 
                 return
             }
-            
-            let loginSuccessful = AlertInfo(title: "Información",
-                                            message: "Inicio de sesión exitoso.",
-                                            type: .info,
-                                            leftButtonConfiguration: ButtonConfiguration(title: "Ir a configuración",
-                                                                                         buttonAction: { self?.closeMainFlow.toggle() }))
-            
+                      
             let emailUnVerified = AlertInfo(title: "Información",
                                             message: "Su correo necesita verificación",
                                             type: .warning,
@@ -75,7 +69,7 @@ class SignInViewModel: ObservableObject, PresentAlertType {
                                                                                           buttonAction: { self?.resendEmailVerification() }))
             
             if isEmailVerified {
-                self?.setupAlertInfo(loginSuccessful)
+                self?.isShowSettings.toggle()
             } else {
                 self?.setupAlertInfo(emailUnVerified)
             }

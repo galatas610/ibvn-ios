@@ -1,5 +1,5 @@
 //
-//  ibvnTests.swift
+//  IbvnTests.swift
 //  ibvnTests
 //
 //  Created by Jose Letona on 25/3/24.
@@ -8,7 +8,7 @@
 import XCTest
 @testable import ibvn
 
-final class ibvnTests: XCTestCase {
+final class IbvnTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

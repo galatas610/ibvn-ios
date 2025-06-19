@@ -13,6 +13,14 @@ struct TopBar: ViewModifier {
     func body(content: Content) -> some View {
         content
             .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button {
+                        openWhatsApp()
+                    } label: {
+                        Image(systemName: "ellipsis.message.fill")
+                    }
+                }
+                
                 ToolbarItem(placement: .principal) {
                     Image("IbvnLogo")
                         .resizable()
@@ -25,9 +33,8 @@ struct TopBar: ViewModifier {
                 ToolbarItem(placement: .topBarTrailing) {
                     if let url = URL(string: "https://donaciones.ibvn.org") {
                         Link(destination: url) {
-                            Text("Formas de dar")
+                            Image(systemName: "gift")
                                 .foregroundColor(.accentColor)
-                                .bold()
                         }
                     }
                 }
@@ -36,6 +43,14 @@ struct TopBar: ViewModifier {
                 SignInView()
             })
     }
+    
+    func openWhatsApp() {
+            let phoneNumber = "50379100309"
+            if let url = URL(string: "https://wa.me/\(phoneNumber)"),
+               UIApplication.shared.canOpenURL(url) {
+                UIApplication.shared.open(url)
+            }
+        }
 }
 
 struct BackButtonTitleHiddenModifier: ViewModifier {

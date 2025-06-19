@@ -1,5 +1,5 @@
 //
-//  IbvnUITestsLaunchTests.swift
+//  ibvnUITestsLaunchTests.swift
 //  ibvnUITests
 //
 //  Created by Jose Letona on 25/3/24.
@@ -7,7 +7,7 @@
 
 import XCTest
 
-final class IbvnUITestsLaunchTests: XCTestCase {
+final class ibvnUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

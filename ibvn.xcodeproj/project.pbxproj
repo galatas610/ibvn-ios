@@ -28,6 +28,7 @@
 		8388016D2BC0B35E00FC31BC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8388016C2BC0B35E00FC31BC /* GoogleService-Info.plist */; };
 		838801812BC0DEE900FC31BC /* LiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838801802BC0DEE900FC31BC /* LiveView.swift */; };
 		838801832BC0E12900FC31BC /* LiveViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838801822BC0E12900FC31BC /* LiveViewModel.swift */; };
+		8388813E2E0C6FDC00B017D1 /* Pastor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8388813D2E0C6FDC00B017D1 /* Pastor.swift */; };
 		83891C3A2BB6229F002CBE99 /* YoutubePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83891C392BB6229F002CBE99 /* YoutubePlayer.swift */; };
 		83A5BD782BE6D45300511D7D /* CampusLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A5BD772BE6D45300511D7D /* CampusLocation.swift */; };
 		83A8D4552BC20C0B00EFAD3B /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 83A8D4542BC20C0B00EFAD3B /* FirebaseAnalytics */; };
@@ -91,6 +92,7 @@
 		8388016C2BC0B35E00FC31BC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		838801802BC0DEE900FC31BC /* LiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveView.swift; sourceTree = "<group>"; };
 		838801822BC0E12900FC31BC /* LiveViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveViewModel.swift; sourceTree = "<group>"; };
+		8388813D2E0C6FDC00B017D1 /* Pastor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pastor.swift; sourceTree = "<group>"; };
 		83891C392BB6229F002CBE99 /* YoutubePlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubePlayer.swift; sourceTree = "<group>"; };
 		83A5BD772BE6D45300511D7D /* CampusLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampusLocation.swift; sourceTree = "<group>"; };
 		83A8D4652BC3094000EFAD3B /* VideoLiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoLiveView.swift; sourceTree = "<group>"; };
@@ -291,6 +293,7 @@
 				83081A6F2BCC58130015A8F4 /* CloudPlaylist.swift */,
 				83BC51E62BE321B800C26C85 /* Campus.swift */,
 				83A5BD772BE6D45300511D7D /* CampusLocation.swift */,
+				8388813D2E0C6FDC00B017D1 /* Pastor.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -566,6 +569,7 @@
 				83081A702BCC58130015A8F4 /* CloudPlaylist.swift in Sources */,
 				83BC51E92BE3229200C26C85 /* CampusViewModel.swift in Sources */,
 				83EBBDE72BC6B704003AD08B /* CloudLive.swift in Sources */,
+				8388813E2E0C6FDC00B017D1 /* Pastor.swift in Sources */,
 				83081A722BCC59150015A8F4 /* YoutubePlaylists.swift in Sources */,
 				83389A392BC09394001B6171 /* ListVideosView.swift in Sources */,
 				83BC51E52BE3216400C26C85 /* CampusView.swift in Sources */,
@@ -853,6 +857,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PPMH8RM668;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = jmletona.ibvnUITests;

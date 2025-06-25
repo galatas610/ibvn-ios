@@ -28,14 +28,13 @@ struct CampusView: View {
             VStack {
                 logo
                 
-                HStack {
-                    pastor(with: campus)
-                    pastor(with: campus)
-                    pastor(with: campus)
+                HStack(spacing: 32) {
+                    ForEach(viewModel.pastor ?? [], id: \.id) { pastor in
+                        generalPastor(with: pastor)
+                    }
                 }
                 
                 Divider()
-                    .padding(.bottom, 2)
             }
             .background(Constants.primaryDark)
            
@@ -170,6 +169,36 @@ struct CampusView: View {
     }
     
     @ViewBuilder
+    private func generalPastor(with pastor: Pastor) -> some View {
+        VStack {
+            AsyncImage(url: URL(string: pastor.image ?? "")) { image in
+                image.resizable().centerCropped()
+            } placeholder: {
+                ProgressView()
+            }
+            .frame(width: 80, height: 80)
+            .foregroundColor(.white)
+            .background(Color.green)
+            .clipShape(Circle())
+            
+            HStack {
+                Text(pastor.name ?? "")
+                    .foregroundColor(.accent)
+                    .font(.caption) +
+                
+                Text(pastor.lastname ?? "")
+                    .foregroundColor(Constants.primary)
+                    .font(.caption)
+            }
+            
+            Text(pastor.rol ?? "")
+                .foregroundColor(Constants.secondary)
+                .font(.caption2)
+        }
+        .padding(.bottom, 8)
+    }
+    
+    @ViewBuilder
     private func pastor(with campus: Campus) -> some View {
         VStack {
             AsyncImage(url: URL(string: campus.pastorImage ?? "")) { image in
@@ -177,7 +206,7 @@ struct CampusView: View {
             } placeholder: {
                 ProgressView()
             }
-            .frame(width: 40, height: 40)
+            .frame(width: 80, height: 80)
             .foregroundColor(.white)
             .background(Color.green)
             .clipShape(Circle())
@@ -192,7 +221,7 @@ struct CampusView: View {
                     .font(.caption)
             }
             
-            Text("pastor")
+            Text("Pastor")
                 .foregroundColor(Constants.secondary)
                 .font(.caption2)
         }
@@ -223,7 +252,7 @@ struct CampusView: View {
                         .frame(width: 32, height: 32)
                 }
                 
-                Text("Campus \n\(campus.name ?? "")")
+                Text("Campus \n IBVN")
                     .font(.caption2)
                     .foregroundColor(Constants.primary)
                     .multilineTextAlignment(.center)

@@ -13,13 +13,15 @@ final class CampusViewModel: ObservableObject, PresentAlertType {
     @Published var campus: [Campus]? = []
     @Published var alertInfo: AlertInfo?
     @Published var campusLocations: [CampusLocation] = []
+    @Published var pastor: [Pastor]? = []
     
     // MARK: Properties
     var alertIsPresenting: Bool = false
     
     // MARK: Initialization
     init() {
-        fetchCloudPlaylists()
+        fetchCloudCampusPlaylists()
+        fetchCloudPastorPlaylists()
     }
     
     // MARK: Functions
@@ -55,7 +57,31 @@ final class CampusViewModel: ObservableObject, PresentAlertType {
         return campus?[index + 1] ?? .init()
     }
     
-    func fetchCloudPlaylists() {
+    func fetchCloudPastorPlaylists() {
+        let dataBase = Firestore.firestore()
+        
+        dataBase.collection("pastor").getDocuments { [weak self] snapshot, error in
+            guard let data = snapshot?.documents, error == nil else {
+                self?.setupAlertInfo(AlertInfo(title: "Firebase Error",
+                                               message: "No se ha logrado recuperar datos.",
+                                               type: .error,
+                                               leftButtonConfiguration: .okConfiguration))
+                
+                return
+            }
+            
+            self?.pastor = data.enumerated().map({ pastor in
+                return Pastor(id: UUID(),
+                              image: pastor.element["image"] as? String ?? "",
+                              name: pastor.element["name"] as? String ?? "",
+                              lastname: pastor.element["lastname"] as? String ?? "",
+                              rol: pastor.element["rol"] as? String ?? ""
+                )
+            })
+        }
+    }
+    
+    func fetchCloudCampusPlaylists() {
         let dataBase = Firestore.firestore()
         
         dataBase.collection("campus").getDocuments { [weak self] snapshot, error in

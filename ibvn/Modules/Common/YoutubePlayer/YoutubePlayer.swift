@@ -7,19 +7,28 @@
 
 import SwiftUI
 import YouTubeiOSPlayerHelper
-import WebKit
 
 struct YoutubePlayer: UIViewRepresentable {
-    var videoId: String
-    
-    func makeUIView(context: Context) -> WKWebView {
-        WKWebView()
+
+    let videoId: String
+
+    func makeUIView(context: Context) -> YTPlayerView {
+        let player = YTPlayerView()
+
+        player.load(
+            withVideoId: videoId,
+            playerVars: [
+                "playsinline": 1,
+                "autoplay": 0,
+                "controls": 1,
+                "rel": 0
+            ]
+        )
+
+        return player
     }
-    
-    func updateUIView(_ uiView: WKWebView, context: Context) {
-        guard let demoURL = URL(string: Constants.youtubeBaseURL + videoId) else { return }
-        
-        uiView.scrollView.isScrollEnabled = false
-        uiView.load(URLRequest(url: demoURL))
+
+    func updateUIView(_ uiView: YTPlayerView, context: Context) {
+        // ⚠️ dont reload here
     }
 }

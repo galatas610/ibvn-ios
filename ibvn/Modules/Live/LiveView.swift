@@ -19,6 +19,7 @@ struct LiveView: View {
     // MARK: Body
     var body: some View {
         NavigationView {
+            
             VStack(alignment: .leading) {
                 Text(viewModel.youtubeVideo.items.first?.snippet.liveBroadcastContent.title ?? "")
                     .appFont(.moldin, .regular, size: 48)
@@ -26,16 +27,18 @@ struct LiveView: View {
                 
                 if let lastLive = viewModel.youtubeVideo.items.first {
                     VideoLiveView(item: lastLive)
-                        .padding(.top, 8)
+                        .padding()
                 }
-                    
+                
                 Spacer()
             }
+            .navigationBarTitleDisplayMode(.inline)
             .padding(.top, 16)
             .modifier(TopBar())
             .onAppear {
                 viewModel.fetchCloudLive()
             }
+            .background(Constants.fondoOscuro)
         }
     }
 }

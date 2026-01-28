@@ -41,3 +41,64 @@ extension View {
             }
     }
 }
+
+extension AppFontFamily {
+
+    func fontName(style: AppFontStyle) -> String {
+        // Lookup tables per family to reduce branching complexity
+        let moldinMap: [AppFontStyle: String] = [
+            .black: "Moldin-Black",
+            .extraBold: "Moldin-ExtraBold",
+            .bold: "Moldin-Bold",
+            .semiBold: "Moldin-SemiBold",
+            .medium: "Moldin-Medium",
+            .regular: "Moldin-Regular"
+        ]
+
+        let dmSansMap: [AppFontStyle: String] = [
+            .black: "DMSans-Black",
+            .blackItalic: "DMSans-BlackItalic",
+            .extraBold: "DMSans-ExtraBold",
+            .extraBoldItalic: "DMSans-ExtraBoldItalic",
+            .bold: "DMSans-Bold",
+            .boldItalic: "DMSans-BoldItalic",
+            .semiBold: "DMSans-SemiBold",
+            .semiBoldItalic: "DMSans-SemiBoldItalic",
+            .medium: "DMSans-Medium",
+            .mediumItalic: "DMSans-MediumItalic",
+            .regular: "DMSans-Regular",
+            .italic: "DMSans-Italic",
+            .light: "DMSans-Light",
+            .lightItalic: "DMSans-LightItalic",
+            .thin: "DMSans-Thin",
+            .thinItalic: "DMSans-ThinItalic"
+        ]
+
+        let map: [AppFontStyle: String]
+        
+        switch self {
+        case .moldin:
+            map = moldinMap
+        case .dmSans:
+            map = dmSansMap
+        }
+
+        if let name = map[style] {
+            return name
+        }
+
+        // Preserve previous fatalError behavior for unsupported combinations
+        fatalError("❌ \(self) no soporta el estilo \(style)")
+    }
+}
+
+extension View {
+
+    func appFont(
+        _ family: AppFontFamily,
+        _ style: AppFontStyle = .regular,
+        size: CGFloat
+    ) -> some View {
+        self.font(.custom(family.fontName(style: style), size: size))
+    }
+}

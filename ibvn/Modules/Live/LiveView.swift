@@ -19,15 +19,18 @@ struct LiveView: View {
     // MARK: Body
     var body: some View {
         NavigationView {
-            VStack {
+            VStack(alignment: .leading) {
+                Text(viewModel.youtubeVideo.items.first?.snippet.liveBroadcastContent.title ?? "")
+                    .appFont(.moldin, .regular, size: 48)
+                    .padding(.leading)
+                
                 if let lastLive = viewModel.youtubeVideo.items.first {
                     VideoLiveView(item: lastLive)
                         .padding(.top, 8)
                 }
-                
+                    
                 Spacer()
             }
-            .navigationTitle(viewModel.youtubeVideo.items.first?.snippet.liveBroadcastContent.title ?? "")
             .padding(.top, 16)
             .modifier(TopBar())
             .onAppear {

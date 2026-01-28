@@ -32,17 +32,18 @@ struct VideoLiveView: View {
     func date(with item: VideoItem) -> some View {
         HStack {
             Text(item.snippet.publishedAt.formatDate())
-                .font(.caption)
+                .appFont(.dmSans, .medium, size: 16)
                 .foregroundColor(Constants.secondary)
             
             Spacer()
         }
         .padding(.horizontal, 8)
     }
-    
+
     func title(with item: VideoItem) -> some View {
         HStack {
             Text(item.snippet.title)
+                .appFont(.dmSans, .bold, size: 18)
                 .foregroundColor(Constants.primary)
             
             Spacer()
@@ -53,7 +54,7 @@ struct VideoLiveView: View {
     func description(with item: VideoItem) -> some View {
         HStack {
             Text(item.snippet.description)
-                .font(.caption)
+                .appFont(.dmSans, .medium, size: 14)
                 .foregroundColor(Constants.secondary)
             
             Spacer()

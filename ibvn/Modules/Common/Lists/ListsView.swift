@@ -35,22 +35,13 @@ struct ListsView: View {
                 
                 buttonsSection
                 
-                List {
-                    ForEach(searchResults, id: \.id) { playlist in
-                        NavigationLink {
-                            ListVideosView(viewModel: ListVideosViewModel(playlist: playlist))
-                        } label: {
-                            labelContent(with: playlist)
-                        }
-                        .listRowBackground(Color.clear)
-                    }
-                }
-                .padding(.horizontal, -16)
-                .scrollContentBackground(.hidden)
-                .background(Constants.fondoOscuro)
+                listSection(searchResults)
             }
             .background(Constants.fondoOscuro)
             .modifier(TopBar())
+            .toolbarBackground(.hidden, for: .navigationBar)
+            .toolbar(.visible, for: .navigationBar)
+            .navigationBarTitleDisplayMode(.inline)
         }
         
         var searchResults: [CloudPlaylist] {
@@ -65,10 +56,27 @@ struct ListsView: View {
         }
     }
     
+    func listSection(_ searchResults: [CloudPlaylist]) -> some View {
+        List {
+            ForEach(searchResults, id: \.id) { playlist in
+                NavigationLink {
+                    ListVideosView(viewModel: ListVideosViewModel(playlist: playlist))
+                } label: {
+                    labelContent(with: playlist)
+                }
+                .listRowBackground(Color.clear)
+            }
+        }
+        .listStyle(.plain)
+//        .padding(.horizontal, -16)
+        .scrollContentBackground(.hidden)
+        .background(Constants.fondoOscuro)
+    }
+    
     var buttonsSection: some View {
         VStack(spacing: 16) {
             Rectangle()
-                .fill(Color.gray.opacity(0.6))
+                .fill(Color.gray.opacity(0.8))
                 .frame(height: 1)
                 .frame(maxWidth: .infinity)
             
@@ -93,7 +101,7 @@ struct ListsView: View {
             .padding(.horizontal)
             
             Rectangle()
-                .fill(Color.gray.opacity(0.6))
+                .fill(Color.gray.opacity(0.8))
                 .frame(height: 1)
                 .frame(maxWidth: .infinity)
         }

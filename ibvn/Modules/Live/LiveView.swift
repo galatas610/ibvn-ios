@@ -21,32 +21,44 @@ struct LiveView: View {
     // MARK: Body
     var body: some View {
         NavigationView {
-            ScrollView {
-                VStack(alignment: .leading) {
-                    Text(viewModel.youtubeVideo.items.first?.snippet.liveBroadcastContent.title ?? "")
-                        .appFont(.moldin, .regular, size: 48)
-                        .padding(.leading)
+            if viewModel.isLoading {
+                ZStack {
+                    Constants.fondoOscuro
+                        .ignoresSafeArea()
                     
-                    if let lastLive = viewModel.youtubeVideo.items.first {
-                        VideoLiveView(item: lastLive)
-                            .padding()
+                    Image("IbvnLogo")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 120, height: 31)
+                }
+            } else {
+                ScrollView {
+                    VStack(alignment: .leading) {
+                        Text(viewModel.youtubeVideo.items.first?.snippet.liveBroadcastContent.title ?? "")
+                            .appFont(.moldin, .regular, size: 48)
+                            .padding(.leading)
+                            .padding(.bottom, -2)
+                        
+                        if let lastLive = viewModel.youtubeVideo.items.first {
+                            VideoLiveView(item: lastLive)
+                                .padding(.horizontal)
+                        }
+                        
+                        quickLinks
+                        
+                        donateButton
+                        
+                        Spacer()
                     }
-                    
-                    Spacer()
-                    
-                    quickLinks
-                    
-                    donateButton
+                    .navigationBarTitleDisplayMode(.inline)
+                    .modifier(TopBar())
                 }
-                .navigationBarTitleDisplayMode(.inline)
-                .padding(.top, 16)
-                .modifier(TopBar())
-                .onAppear {
-                    viewModel.fetchCloudLive()
-                }
+                .scrollIndicators(.hidden)
+                .background(Constants.fondoOscuro)
             }
-            .scrollIndicators(.hidden)
-            .background(Constants.fondoOscuro)
+        }
+        .onAppear {
+            viewModel.fetchCloudLive()
         }
         .sheet(item: $safariItem) { item in
             SafariView(url: item.url)

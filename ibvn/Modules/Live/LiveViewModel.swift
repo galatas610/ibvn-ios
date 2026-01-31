@@ -13,6 +13,7 @@ class LiveViewModel: ObservableObject, PresentAlertType {
     @Published var youtubeVideo: YoutubeVideo = .init()
     @Published var alertInfo: AlertInfo?
     @Published var cloudLive: [CloudLive] = .init()
+    @Published var isLoading = true
     
     // MARK: Propertes
     let ibvnType: IbvnType
@@ -28,6 +29,8 @@ class LiveViewModel: ObservableObject, PresentAlertType {
     
     // MARK: Functions
     func fetchCloudLive() {
+        isLoading = true
+        
         let dataBase = Firestore.firestore()
         
         dataBase.collection("live").addSnapshotListener { [weak self] snapshot, error in
@@ -79,6 +82,8 @@ class LiveViewModel: ObservableObject, PresentAlertType {
             
             await MainActor.run {
                 self.youtubeVideo = decoded
+                
+                isLoading = false
             }
             
         } catch let error as NSError {

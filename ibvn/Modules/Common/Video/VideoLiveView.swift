@@ -15,7 +15,7 @@ struct VideoLiveView: View {
     var body: some View {
         VStack {
             youTubePlayerView(with: item)
-                .padding(.bottom, 20)
+                .padding(.bottom, 4)
             
             date(with: item)
                 .padding(.leading)
@@ -24,7 +24,7 @@ struct VideoLiveView: View {
                 title(with: item)
                     .lineLimit(nil)
                     .fixedSize(horizontal: false, vertical: true)
-                    .padding(.bottom)
+                    .padding(.bottom, 4)
                 
                 description(with: item)
                     .lineLimit(nil)
@@ -41,7 +41,6 @@ struct VideoLiveView: View {
         YoutubePlayer(videoId: item.id)
             .cornerRadius(16)
             .frame(height: 200)
-            .padding(.horizontal, 8)
     }
     
     func date(with item: VideoItem) -> some View {

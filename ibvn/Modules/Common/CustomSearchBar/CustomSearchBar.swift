@@ -16,7 +16,8 @@ struct CustomSearchBar: View {
                 .foregroundColor(Constants.textoPrincipal)
 
             TextField("Buscar", text: $text)
-                .foregroundStyle(Constants.textoPrincipal)
+                .appFont(.dmSans, .regular, size: 14)
+                .foregroundStyle(.white)
                 .textInputAutocapitalization(.never)
                 .disableAutocorrection(true)
 
@@ -25,7 +26,7 @@ struct CustomSearchBar: View {
                     text = ""
                 } label: {
                     Image(systemName: "xmark.circle.fill")
-                        .foregroundColor(.accentColor)
+                        .foregroundColor(Constants.textoPrincipal)
                 }
             }
         }

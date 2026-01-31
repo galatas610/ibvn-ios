@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1026607C2F2E67BA00F7DCA7 /* GradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1026607B2F2E67BA00F7DCA7 /* GradientButton.swift */; };
+		1026607E2F2E6A1200F7DCA7 /* OutlineButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1026607D2F2E6A1200F7DCA7 /* OutlineButton.swift */; };
 		104430312F2DBA3400A3B570 /* CampusMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104430302F2DBA3400A3B570 /* CampusMap.swift */; };
 		10E4589E2F2994A60002A8FC /* Moldin-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 10E458982F2994A60002A8FC /* Moldin-Black.otf */; };
 		10E4589F2F2994A60002A8FC /* Moldin-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 10E4589C2F2994A60002A8FC /* Moldin-Regular.otf */; };
@@ -104,6 +106,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1026607B2F2E67BA00F7DCA7 /* GradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientButton.swift; sourceTree = "<group>"; };
+		1026607D2F2E6A1200F7DCA7 /* OutlineButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlineButton.swift; sourceTree = "<group>"; };
 		104430302F2DBA3400A3B570 /* CampusMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampusMap.swift; sourceTree = "<group>"; };
 		10E458982F2994A60002A8FC /* Moldin-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Moldin-Black.otf"; sourceTree = "<group>"; };
 		10E458992F2994A60002A8FC /* Moldin-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Moldin-Bold.otf"; sourceTree = "<group>"; };
@@ -215,6 +219,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1026607A2F2E679B00F7DCA7 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				1026607B2F2E67BA00F7DCA7 /* GradientButton.swift */,
+				1026607D2F2E6A1200F7DCA7 /* OutlineButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
 		10E458A42F2994B30002A8FC /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -257,6 +270,7 @@
 		8315C8472BBCCD6E002186E9 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				1026607A2F2E679B00F7DCA7 /* Buttons */,
 				831159842F2DE50400169FFF /* CustomSearchBar */,
 				8344D6AD2BE3097200BC0AB3 /* PlaylistCover */,
 				8344D6AC2BE3095600BC0AB3 /* YoutubePlayer */,
@@ -694,6 +708,7 @@
 				83D182C72BB5576F0097A4D9 /* YoutubePlaylist.swift in Sources */,
 				83389A3B2BC093A1001B6171 /* ListVideosViewModel.swift in Sources */,
 				83389A342BC09338001B6171 /* ListsViewModel.swift in Sources */,
+				1026607E2F2E6A1200F7DCA7 /* OutlineButton.swift in Sources */,
 				83E5F48C2BC1C8E9001C23EF /* PresentAlertType.swift in Sources */,
 				83081A702BCC58130015A8F4 /* CloudPlaylist.swift in Sources */,
 				83BC51E92BE3229200C26C85 /* CampusViewModel.swift in Sources */,
@@ -720,6 +735,7 @@
 				104430312F2DBA3400A3B570 /* CampusMap.swift in Sources */,
 				83389A2C2BC08AD9001B6171 /* PlaylistCover.swift in Sources */,
 				838501632D4B119B008A49E2 /* SignInViewModel.swift in Sources */,
+				1026607C2F2E67BA00F7DCA7 /* GradientButton.swift in Sources */,
 				83EBBDE52BC6A976003AD08B /* SettingsViewModel.swift in Sources */,
 				8338F0782BCB43C4008598F4 /* YoutubeApiManager.swift in Sources */,
 				831159862F2DE51D00169FFF /* CustomSearchBar.swift in Sources */,

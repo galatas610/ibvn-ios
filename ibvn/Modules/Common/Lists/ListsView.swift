@@ -31,6 +31,9 @@ struct ListsView: View {
                 }
                 
                 CustomSearchBar(text: $searchText)
+                    .padding(.bottom, 8)
+                
+                buttonsSection
                 
                 List {
                     ForEach(searchResults, id: \.id) { playlist in
@@ -39,9 +42,12 @@ struct ListsView: View {
                         } label: {
                             labelContent(with: playlist)
                         }
+                        .listRowBackground(Color.clear)
                     }
                 }
                 .padding(.horizontal, -16)
+                .scrollContentBackground(.hidden)
+                .background(Constants.fondoOscuro)
             }
             .background(Constants.fondoOscuro)
             .modifier(TopBar())
@@ -56,6 +62,40 @@ struct ListsView: View {
                     $0.description.localizedCaseInsensitiveContains(searchText)
                 }
             }
+        }
+    }
+    
+    var buttonsSection: some View {
+        VStack(spacing: 16) {
+            Rectangle()
+                .fill(Color.gray.opacity(0.6))
+                .frame(height: 1)
+                .frame(maxWidth: .infinity)
+            
+            HStack {
+                Text("Ordenar por:")
+                    .appFont(.dmSans, .medium, size: 16)
+                    .foregroundStyle(.white)
+                
+                GradientButton(text: "Más reciente", showImage: false) {
+                    print("Mas reciente")
+                }
+                
+                OutlineButton(text: "NDVN", showImage: false, fullWidth: false) {
+                    print("Noches de Vida Nueva")
+                }
+                
+                OutlineButton(text: "A-Z", showImage: false, fullWidth: false) {
+                    print("A-Z")
+                }
+                
+            }
+            .padding(.horizontal)
+            
+            Rectangle()
+                .fill(Color.gray.opacity(0.6))
+                .frame(height: 1)
+                .frame(maxWidth: .infinity)
         }
     }
     

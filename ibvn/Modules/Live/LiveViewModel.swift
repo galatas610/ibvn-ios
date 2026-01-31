@@ -75,13 +75,12 @@ class LiveViewModel: ObservableObject, PresentAlertType {
                 return
             }
             
-            DispatchQueue.main.async {
-                do {
-                    self.youtubeVideo = try JSONDecoder().decode(YoutubeVideo.self, from: data)
-                } catch let error as NSError {
-                    print("🚩 error: \(error)")
-                }
+            let decoded = try JSONDecoder().decode(YoutubeVideo.self, from: data)
+            
+            await MainActor.run {
+                self.youtubeVideo = decoded
             }
+            
         } catch let error as NSError {
             print("🚩 error: \(error)")
         }
@@ -89,5 +88,15 @@ class LiveViewModel: ObservableObject, PresentAlertType {
     
     func setupAlertInfo(_ alert: AlertInfo) {
         presentAlert(alert)
+    }
+    
+    func openWhatsApp(phone: String, message: String) {
+        let encodedMessage = message.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+        let urlString = "https://wa.me/\(phone)?text=\(encodedMessage)"
+
+        if let url = URL(string: urlString),
+           UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url)
+        }
     }
 }

@@ -19,7 +19,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 @main
 struct IbvnApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
-    
+
     var body: some Scene {
         WindowGroup {
             TabBarView()

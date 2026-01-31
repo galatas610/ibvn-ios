@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		104430312F2DBA3400A3B570 /* CampusMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104430302F2DBA3400A3B570 /* CampusMap.swift */; };
 		10E4589E2F2994A60002A8FC /* Moldin-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 10E458982F2994A60002A8FC /* Moldin-Black.otf */; };
 		10E4589F2F2994A60002A8FC /* Moldin-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 10E4589C2F2994A60002A8FC /* Moldin-Regular.otf */; };
 		10E458A02F2994A60002A8FC /* Moldin-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 10E4589D2F2994A60002A8FC /* Moldin-SemiBold.otf */; };
@@ -102,6 +103,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		104430302F2DBA3400A3B570 /* CampusMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampusMap.swift; sourceTree = "<group>"; };
 		10E458982F2994A60002A8FC /* Moldin-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Moldin-Black.otf"; sourceTree = "<group>"; };
 		10E458992F2994A60002A8FC /* Moldin-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Moldin-Bold.otf"; sourceTree = "<group>"; };
 		10E4589A2F2994A60002A8FC /* Moldin-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Moldin-ExtraBold.otf"; sourceTree = "<group>"; };
@@ -367,6 +369,7 @@
 			children = (
 				83BC51E42BE3216400C26C85 /* CampusView.swift */,
 				83BC51E82BE3229200C26C85 /* CampusViewModel.swift */,
+				104430302F2DBA3400A3B570 /* CampusMap.swift */,
 			);
 			path = Campus;
 			sourceTree = "<group>";
@@ -558,7 +561,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1520;
-				LastUpgradeCheck = 1520;
+				LastUpgradeCheck = 2620;
 				TargetAttributes = {
 					83D1F4422BB1C30400A611A5 = {
 						CreatedOnToolsVersion = 15.2;
@@ -703,6 +706,7 @@
 				838801832BC0E12900FC31BC /* LiveViewModel.swift in Sources */,
 				838501612D4B113A008A49E2 /* SignInView.swift in Sources */,
 				83389A312BC09315001B6171 /* ListsView.swift in Sources */,
+				104430312F2DBA3400A3B570 /* CampusMap.swift in Sources */,
 				83389A2C2BC08AD9001B6171 /* PlaylistCover.swift in Sources */,
 				838501632D4B119B008A49E2 /* SignInViewModel.swift in Sources */,
 				83EBBDE52BC6A976003AD08B /* SettingsViewModel.swift in Sources */,
@@ -749,6 +753,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -802,6 +807,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -812,6 +818,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -858,6 +865,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -883,7 +891,7 @@
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -917,7 +925,7 @@
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -934,7 +942,6 @@
 		83D1F46B2BB1C30700A611A5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -953,7 +960,6 @@
 		83D1F46C2BB1C30700A611A5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -972,7 +978,6 @@
 		83D1F46E2BB1C30700A611A5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = PPMH8RM668;
@@ -990,7 +995,6 @@
 		83D1F46F2BB1C30700A611A5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;

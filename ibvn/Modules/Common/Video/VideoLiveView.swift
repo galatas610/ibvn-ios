@@ -15,12 +15,23 @@ struct VideoLiveView: View {
     var body: some View {
         VStack {
             youTubePlayerView(with: item)
+                .padding(.bottom, 20)
+            
             date(with: item)
-            title(with: item)
-            description(with: item)
+                .padding(.leading)
+            
+            VStack {
+                title(with: item)
+                    .padding(.bottom)
+                
+                description(with: item)
+            }
+            .padding()
+            .background(Constants.fondo)
+            .cornerRadius(20)
         }
     }
-       
+    
     // MARK: Functions
     func youTubePlayerView(with item: VideoItem) -> some View {
         YoutubePlayer(videoId: item.id)
@@ -33,33 +44,29 @@ struct VideoLiveView: View {
         HStack {
             Text(item.snippet.publishedAt.formatDate())
                 .appFont(.dmSans, .medium, size: 16)
-                .foregroundColor(Constants.secondary)
+                .foregroundStyle(Constants.textoPrincipal)
             
             Spacer()
         }
-        .padding(.horizontal, 8)
     }
-
+    
     func title(with item: VideoItem) -> some View {
         HStack {
             Text(item.snippet.title)
                 .appFont(.dmSans, .bold, size: 18)
-                .foregroundColor(Constants.primary)
+                .foregroundColor(.white)
             
             Spacer()
         }
-        .padding(.horizontal, 8)
     }
     
     func description(with item: VideoItem) -> some View {
         HStack {
             Text(item.snippet.description)
                 .appFont(.dmSans, .medium, size: 14)
-                .foregroundColor(Constants.secondary)
+                .foregroundStyle(Constants.textoPrincipal)
             
             Spacer()
         }
-        .padding(.horizontal, 8)
-        .padding(.bottom, 16)
     }
 }

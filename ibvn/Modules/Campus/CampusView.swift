@@ -51,7 +51,7 @@ struct CampusView: View {
                 
             }
             
-            campusMap(with: campus)
+            CampusMapView(campus: campus, locations: viewModel.campusLocations)
             
         }
         .onChange(of: viewModel.campus ?? .init()) { campus in
@@ -226,38 +226,6 @@ struct CampusView: View {
                 .font(.caption2)
         }
         .padding(.bottom, 16)
-    }
-    
-    private func campusMap(with campus: Campus) -> some View {
-        @State var region = MKCoordinateRegion(
-            center: CLLocationCoordinate2D(
-                latitude: campus.latitude ?? 0,
-                longitude: campus.longitude ?? 0),
-            span: MKCoordinateSpan(
-                latitudeDelta: 0.01,
-                longitudeDelta: 0.01)
-        )
-        
-        return Map(coordinateRegion: $region, annotationItems: viewModel.campusLocations) { loc in
-            MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: loc.latitude, longitude: loc.longitude)) {
-                ZStack {
-                    Image("logoShort")
-                        .resizable()
-                        .renderingMode(.original)
-                        .frame(width: 30, height: 30)
-                    
-                    Circle()
-                        .strokeBorder(Constants.primary, lineWidth: 2)
-                        .background(.clear)
-                        .frame(width: 32, height: 32)
-                }
-                
-                Text("Campus \n IBVN")
-                    .font(.caption2)
-                    .foregroundColor(Constants.primary)
-                    .multilineTextAlignment(.center)
-            }
-        }
     }
 }
 

@@ -13,6 +13,7 @@ enum IbvnType {
     case preaches
     case live
     case liveOff
+    case series
     
     var viewTitle: String {
         switch self {
@@ -26,6 +27,8 @@ enum IbvnType {
             "En Vivo"
         case .liveOff:
             "En Vivo OFF"
+        case .series:
+            "Series de Mensajes"
         }
     }
     
@@ -41,6 +44,8 @@ enum IbvnType {
             "Live"
         case .liveOff:
             "LiveOff"
+        case .series:
+            "SeriesLists"
         }
     }
     
@@ -50,7 +55,7 @@ enum IbvnType {
             "#ElRetoDeHoy"
         case .nocheDeViernes:
             "#NDV"
-        case .preaches, .live, .liveOff:
+        case .preaches, .live, .liveOff, .series:
             ""
         }
     }

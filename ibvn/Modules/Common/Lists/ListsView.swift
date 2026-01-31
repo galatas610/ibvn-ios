@@ -20,20 +20,31 @@ struct ListsView: View {
     // MARK: Body
     var body: some View {
         NavigationView {
-            List {
-                ForEach(searchResults, id: \.id) { playlist in
-                    NavigationLink {
-                        ListVideosView(viewModel: ListVideosViewModel(playlist: playlist))
-                    } label: {
-                        labelContent(with: playlist)
+            VStack {
+                HStack {
+                    Text(viewModel.ibvnType.viewTitle)
+                        .appFont(.moldin, .regular, size: 48)
+                        .padding(.leading)
+                        .padding(.bottom, 8)
+                    
+                    Spacer()
+                }
+                
+                CustomSearchBar(text: $searchText)
+                
+                List {
+                    ForEach(searchResults, id: \.id) { playlist in
+                        NavigationLink {
+                            ListVideosView(viewModel: ListVideosViewModel(playlist: playlist))
+                        } label: {
+                            labelContent(with: playlist)
+                        }
                     }
                 }
+                .padding(.horizontal, -16)
             }
-            .padding(.top, 16)
-            .padding(.horizontal, -16)
-            .navigationTitle(viewModel.ibvnType.viewTitle)
+            .background(Constants.fondoOscuro)
             .modifier(TopBar())
-            .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
         }
         
         var searchResults: [CloudPlaylist] {

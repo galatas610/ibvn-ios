@@ -12,32 +12,27 @@ struct TabBarView: View {
         TabView {
             LiveView(viewModel: LiveViewModel(ibvnType: .live))
                 .tabItem {
-                    Label("En Vivo", systemImage: "livephoto")
+                    Label("Inicio", image: "home")
                 }
                 .tag("1")
             
             ListsView(viewModel: ListsViewModel(ibvnType: .preaches))
                 .tabItem {
-                    Label("Mensajes", systemImage: "house")
+                    Label("Series", image: "bookOpen")
                 }
                 .tag("1")
             
             ListsView(viewModel: ListsViewModel(ibvnType: .elRestoDeHoy))
                 .tabItem {
-                    Label("ERDH", systemImage: "bell")
+                    Label("Podcast", image: "microphone")
                 }
                 .tag("2")
             
             ListsView(viewModel: ListsViewModel(ibvnType: .nocheDeViernes))
                 .tabItem {
-                    Label("NDV", systemImage: "book")
+                    Label("Recomendados", image: "bookmarkStar")
                 }
                 .tag("3")
-            CampusView(viewModel: CampusViewModel())
-                .tabItem {
-                    Label("Ubicación", systemImage: "location")
-                }
-                .tag("4")
         }
     }
 }

@@ -22,9 +22,13 @@ struct VideoLiveView: View {
             
             VStack {
                 title(with: item)
+                    .lineLimit(nil)
+                    .fixedSize(horizontal: false, vertical: true)
                     .padding(.bottom)
                 
                 description(with: item)
+                    .lineLimit(nil)
+                    .fixedSize(horizontal: false, vertical: true)
             }
             .padding()
             .background(Constants.fondo)

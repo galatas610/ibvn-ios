@@ -75,13 +75,12 @@ class LiveViewModel: ObservableObject, PresentAlertType {
                 return
             }
             
-            DispatchQueue.main.async {
-                do {
-                    self.youtubeVideo = try JSONDecoder().decode(YoutubeVideo.self, from: data)
-                } catch let error as NSError {
-                    print("🚩 error: \(error)")
-                }
+            let decoded = try JSONDecoder().decode(YoutubeVideo.self, from: data)
+            
+            await MainActor.run {
+                self.youtubeVideo = decoded
             }
+            
         } catch let error as NSError {
             print("🚩 error: \(error)")
         }
@@ -100,6 +99,4 @@ class LiveViewModel: ObservableObject, PresentAlertType {
             UIApplication.shared.open(url)
         }
     }
-    
-    
 }

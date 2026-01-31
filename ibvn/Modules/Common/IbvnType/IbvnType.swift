@@ -14,21 +14,24 @@ enum IbvnType {
     case live
     case liveOff
     case series
+    case podcast
+    case recommended
+    case recommendedSunday
+    case recommendedNDVN
+    case recommendedOlds
     
     var viewTitle: String {
         switch self {
-        case .elRestoDeHoy:
-            "El Reto de Hoy"
-        case .nocheDeViernes:
-            "Noche de Viernes"
-        case .preaches:
-            "Mensajes"
         case .live:
             "En Vivo"
         case .liveOff:
             "En Vivo OFF"
-        case .series:
+        case .series, .preaches, .nocheDeViernes:
             "Series de Mensajes"
+        case .podcast, .elRestoDeHoy:
+            "Podcast"
+        case .recommended, .recommendedSunday, .recommendedNDVN, .recommendedOlds:
+            "Recomendados"
         }
     }
     
@@ -46,6 +49,16 @@ enum IbvnType {
             "LiveOff"
         case .series:
             "SeriesLists"
+        case .podcast:
+            "PodcastLists"
+        case .recommended:
+            "RecommendedList"
+        case .recommendedSunday:
+            "RecommendedSundayList"
+        case .recommendedNDVN:
+            "RecommendedNDVNLists"
+        case .recommendedOlds:
+            "RecommendedOldsList"
         }
     }
     
@@ -55,7 +68,15 @@ enum IbvnType {
             "#ElRetoDeHoy"
         case .nocheDeViernes:
             "#NDV"
-        case .preaches, .live, .liveOff, .series:
+        case .podcast:
+            "#Podcast"
+        case .recommendedSunday:
+            "#RecomendadaDomingo"
+        case .recommendedNDVN:
+            "#RecomendadaNDVN"
+        case .recommendedOlds:
+            "#RecomendadaOlds"
+        case .preaches, .live, .liveOff, .series, .recommended:
             ""
         }
     }

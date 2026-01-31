@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct TopBar: ViewModifier {
-    @State var openSignInView: Bool = false
+    // MARK: Property Wrappers
+    @State private var openSignInView: Bool = false
     
+    // MARK: Body
     func body(content: Content) -> some View {
         content
             .toolbar {

@@ -16,6 +16,9 @@ struct Constants {
     static let fondo = Color("Colors/fondo")
     static let fondoOscuro = Color("Colors/fondoOscuro")
     static let textoPrincipal = Color("Colors/textoPrincipal")
+    static let acentoVerde = Color("Colors/acentoVerde")
+    static let greenGradienteBase1 = Color("Colors/greenGradienteBase1")
+    static let greenGradienteBase2 = Color("Colors/greenGradienteBase2")
     
     static let youtubeBaseURL: String = "https://www.youtube.com/embed/"
 }

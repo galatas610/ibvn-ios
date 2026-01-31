@@ -90,4 +90,16 @@ class LiveViewModel: ObservableObject, PresentAlertType {
     func setupAlertInfo(_ alert: AlertInfo) {
         presentAlert(alert)
     }
+    
+    func openWhatsApp(phone: String, message: String) {
+        let encodedMessage = message.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+        let urlString = "https://wa.me/\(phone)?text=\(encodedMessage)"
+
+        if let url = URL(string: urlString),
+           UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url)
+        }
+    }
+    
+    
 }

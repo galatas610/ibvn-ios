@@ -21,28 +21,31 @@ struct LiveView: View {
     // MARK: Body
     var body: some View {
         NavigationView {
-            VStack(alignment: .leading) {
-                Text(viewModel.youtubeVideo.items.first?.snippet.liveBroadcastContent.title ?? "")
-                    .appFont(.moldin, .regular, size: 48)
-                    .padding(.leading)
-                
-                if let lastLive = viewModel.youtubeVideo.items.first {
-                    VideoLiveView(item: lastLive)
-                        .padding()
+            ScrollView {
+                VStack(alignment: .leading) {
+                    Text(viewModel.youtubeVideo.items.first?.snippet.liveBroadcastContent.title ?? "")
+                        .appFont(.moldin, .regular, size: 48)
+                        .padding(.leading)
+                    
+                    if let lastLive = viewModel.youtubeVideo.items.first {
+                        VideoLiveView(item: lastLive)
+                            .padding()
+                    }
+                    
+                    Spacer()
+                    
+                    quickLinks
+                    
+                    donateButton
                 }
-                
-                Spacer()
-                
-                quickLinks
-                
-                donateButton
+                .navigationBarTitleDisplayMode(.inline)
+                .padding(.top, 16)
+                .modifier(TopBar())
+                .onAppear {
+                    viewModel.fetchCloudLive()
+                }
             }
-            .navigationBarTitleDisplayMode(.inline)
-            .padding(.top, 16)
-            .modifier(TopBar())
-            .onAppear {
-                viewModel.fetchCloudLive()
-            }
+            .scrollIndicators(.hidden)
             .background(Constants.fondoOscuro)
         }
         .sheet(item: $safariItem) { item in

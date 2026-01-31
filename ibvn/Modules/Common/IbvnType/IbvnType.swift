@@ -8,7 +8,7 @@
 import Foundation
 
 enum IbvnType {
-    case elRestoDeHoy
+    case elRetoDeHoy
     case nocheDeViernes
     case preaches
     case live
@@ -18,7 +18,6 @@ enum IbvnType {
     case recommended
     case recommendedSunday
     case recommendedNDVN
-    case recommendedOlds
     
     var viewTitle: String {
         switch self {
@@ -28,16 +27,16 @@ enum IbvnType {
             "En Vivo OFF"
         case .series, .preaches, .nocheDeViernes:
             "Series de Mensajes"
-        case .podcast, .elRestoDeHoy:
+        case .podcast, .elRetoDeHoy:
             "Podcast"
-        case .recommended, .recommendedSunday, .recommendedNDVN, .recommendedOlds:
+        case .recommended, .recommendedSunday, .recommendedNDVN:
             "Recomendados"
         }
     }
     
     var localDataFileName: String {
         switch self {
-        case .elRestoDeHoy:
+        case .elRetoDeHoy:
             "ERDHLists"
         case .nocheDeViernes:
             "NDVLists"
@@ -57,14 +56,12 @@ enum IbvnType {
             "RecommendedSundayList"
         case .recommendedNDVN:
             "RecommendedNDVNLists"
-        case .recommendedOlds:
-            "RecommendedOldsList"
         }
     }
     
     var hashTag: String {
         switch self {
-        case .elRestoDeHoy:
+        case .elRetoDeHoy:
             "#ElRetoDeHoy"
         case .nocheDeViernes:
             "#NDV"
@@ -74,9 +71,9 @@ enum IbvnType {
             "#RecomendadaDomingo"
         case .recommendedNDVN:
             "#RecomendadaNDVN"
-        case .recommendedOlds:
-            "#RecomendadaOlds"
-        case .preaches, .live, .liveOff, .series, .recommended:
+        case .recommended:
+            "#Recomendada"
+        case .preaches, .live, .liveOff, .series:
             ""
         }
     }

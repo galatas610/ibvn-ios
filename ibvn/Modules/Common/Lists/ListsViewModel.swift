@@ -51,17 +51,32 @@ final class ListsViewModel: ObservableObject, PresentAlertType {
                 )
             })
             
-            guard
-                self?.ibvnType == .elRestoDeHoy ||
-                self?.ibvnType == .nocheDeViernes
-            else {
-                return
+//            guard
+//                self?.ibvnType == .podcast ||
+//                self?.ibvnType == .recommended
+//            else {
+//                return
+//            }
+            
+            switch self?.ibvnType {
+// /           case .series:
+            case .podcast:
+                
+                self?.cloudPlaylists = self?.cloudPlaylists.filter({ playlist in
+                    playlist.title.contains(IbvnType.podcast.hashTag) ||
+                    playlist.description.contains(IbvnType.podcast.hashTag) ||
+                    playlist.title.contains(IbvnType.elRetoDeHoy.hashTag) ||
+                    playlist.description.contains(IbvnType.elRetoDeHoy.hashTag)
+                }) ?? []
+//            case .recommended:
+            
+            default: break
             }
             
-            self?.cloudPlaylists = self?.cloudPlaylists.filter({ playlist in
-                playlist.title.contains(self?.ibvnType.hashTag ?? "") ||
-                playlist.description.contains(self?.ibvnType.hashTag ?? "")
-            }) ?? []
+//            self?.cloudPlaylists = self?.cloudPlaylists.filter({ playlist in
+//                playlist.title.contains(self?.ibvnType.hashTag ?? "") ||
+//                playlist.description.contains(self?.ibvnType.hashTag ?? "")
+//            }) ?? []
         }
     }
     

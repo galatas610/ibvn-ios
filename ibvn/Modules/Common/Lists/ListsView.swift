@@ -135,5 +135,5 @@ struct ListsView: View {
 }
 
 #Preview {
-    ListsView(viewModel: ListsViewModel(ibvnType: .elRestoDeHoy))
+    ListsView(viewModel: ListsViewModel(ibvnType: .elRetoDeHoy))
 }

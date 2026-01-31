@@ -59,13 +59,13 @@ struct LiveView: View {
             
             HStack {
                 gradientButton(text: "WhatsApp", icon: "whatsApp") {
-                    viewModel.openWhatsApp(phone: "79100309", message: "Hola vengo de la App y quería saber lo siguiente:")
+                    viewModel.openWhatsApp(phone: "25228106", message: "¡Hola! Quiero más información de la iglesia.")
                 }
                 
                 Spacer()
                 
                 gradientButton(text: "+ Vida Nueva", icon: "linkTree") {
-                    openSafari(url: "https://ibvn.org")
+                    openSafari(url: "https://linktr.ee/ibvidanueva")
                 }
                 
                 Spacer()
@@ -113,7 +113,7 @@ struct LiveView: View {
     private var donateButton: some View {
         HStack {
             Button {
-                openSafari(url: "https://ibvn.org")
+                openSafari(url: "https://donaciones.ibvn.org/")
             } label: {
                 HStack(spacing: 10) {
                     Text("Formas de donar")

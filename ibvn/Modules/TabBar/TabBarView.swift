@@ -10,17 +10,17 @@ import SwiftUI
 struct TabBarView: View {
     var body: some View {
         TabView {
-            ListsView(viewModel: ListsViewModel(ibvnType: .series))
-                .tabItem {
-                    Label("Series", image: "bookOpen")
-                }
-                .tag("1")
-            
             LiveView(viewModel: LiveViewModel(ibvnType: .live))
                 .tabItem {
                     Label("Inicio", image: "home")
                 }
                 .tag("0")
+            
+            ListsView(viewModel: ListsViewModel(ibvnType: .series))
+                .tabItem {
+                    Label("Series", image: "bookOpen")
+                }
+                .tag("1")
             
             ListsView(viewModel: ListsViewModel(ibvnType: .podcast))
                 .tabItem {

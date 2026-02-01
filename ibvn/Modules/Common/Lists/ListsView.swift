@@ -23,21 +23,7 @@ struct ListsView: View {
     var body: some View {
         NavigationView {
             VStack {
-                HStack {
-                    Text(viewModel.ibvnType.viewTitle)
-                        .appFont(.moldin, .regular, size: 48)
-                        .padding(.leading)
-                        .padding(.bottom, 8)
-                    
-                    Spacer()
-                }
-                
-                CustomSearchBar(text: $searchText)
-                    .padding(.bottom, 8)
-                
-                sortSegmentedControl
-                
-                seriesFilterSegmentedControl
+                content
                 
                 listSection(searchResults)
             }
@@ -77,6 +63,29 @@ struct ListsView: View {
                     $0.description.localizedCaseInsensitiveContains(searchText)
                 }
             }
+        }
+    }
+    
+    @ViewBuilder
+    var content: some View {
+        title
+        
+        CustomSearchBar(text: $searchText)
+            .padding(.bottom, 8)
+        
+        sortSegmentedControl
+        
+        seriesFilterSegmentedControl
+    }
+    
+    var title: some View {
+        HStack {
+            Text(viewModel.ibvnType.viewTitle)
+                .appFont(.moldin, .regular, size: 48)
+                .padding(.leading)
+                .padding(.bottom, 8)
+            
+            Spacer()
         }
     }
     

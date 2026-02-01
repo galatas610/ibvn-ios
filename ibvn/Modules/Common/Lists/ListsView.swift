@@ -33,36 +33,9 @@ struct ListsView: View {
             .toolbarBackground(.hidden, for: .navigationBar)
             .toolbar(.visible, for: .navigationBar)
             .navigationBarTitleDisplayMode(.inline)
-            .onChange(of: selectedSort) { newSort in
-                withAnimation(.easeInOut) {
-                    switch newSort {
-                    case .mostRecent:
-                        viewModel.sortVisibleListByMostRecent()
-                    case .alphabetical:
-                        viewModel.sortVisibleListAlphabetical()
-                    }
-                }
-            }
-            .onChange(of: selectedSeriesFilter) { newFilter in
-                withAnimation(.easeInOut) {
-                    switch newFilter {
-                    case .allSeries:
-                        viewModel.showAllSeries()
-                    case .ndvn:
-                        viewModel.showNDVNLists()
-                    }
-                }
-            }
-            .onChange(of: selectedFilter) { filter in
-                withAnimation(.easeInOut) {
-                    switch filter {
-                    case .allPodcast:
-                        viewModel.showPodcastAndRetoLists()
-                    case .erdh:
-                        viewModel.showRetoDeHoyLists()
-                    }
-                }
-            }
+            .onChange(of: selectedSort, perform: handleSortChange)
+            .onChange(of: selectedSeriesFilter, perform: handleSeriesFilterChange)
+            .onChange(of: selectedFilter, perform: handlePodcastFilterChange)
         }
         
         var searchResults: [CloudPlaylist] {
@@ -176,6 +149,39 @@ struct ListsView: View {
                 Text(item.publishedAt.formatDate())
                     .font(.caption2)
                     .foregroundColor(Constants.secondary)
+            }
+        }
+    }
+    
+    private func handleSortChange(_ newSort: PlaylistSortType) {
+        withAnimation(.easeInOut) {
+            switch newSort {
+            case .mostRecent:
+                viewModel.sortVisibleListByMostRecent()
+            case .alphabetical:
+                viewModel.sortVisibleListAlphabetical()
+            }
+        }
+    }
+    
+    private func handleSeriesFilterChange(_ newFilter: SeriesFilterType) {
+        withAnimation(.easeInOut) {
+            switch newFilter {
+            case .allSeries:
+                viewModel.showAllSeries()
+            case .ndvn:
+                viewModel.showNDVNLists()
+            }
+        }
+    }
+    
+    private func handlePodcastFilterChange(_ filter: PodcastFilterType) {
+        withAnimation(.easeInOut) {
+            switch filter {
+            case .allPodcast:
+                viewModel.showPodcastAndRetoLists()
+            case .erdh:
+                viewModel.showRetoDeHoyLists()
             }
         }
     }

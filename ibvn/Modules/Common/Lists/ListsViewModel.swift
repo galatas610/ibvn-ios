@@ -56,24 +56,33 @@ final class ListsViewModel: ObservableObject, PresentAlertType {
             guard let self else { return }
         
             visiblePlaylists = filterPlaylists(allPlaylists, for: ibvnType)
+            
             visiblePlaylists = sortPlaylists(visiblePlaylists, by: .mostRecent)
         }
     }
     
     func sortVisibleListAlphabetical() {
         visiblePlaylists = sortPlaylists(visiblePlaylists, by: .alphabetical)
+        
+        DLog("sortVisibleListAlphabetical → count:", visiblePlaylists.count)
     }
     
     func sortVisibleListByMostRecent() {
         visiblePlaylists = sortPlaylists(visiblePlaylists, by: .mostRecent)
+        
+        DLog("sortVisibleListByMostRecent → count:", visiblePlaylists.count)
     }
     
     func showNDVNLists() {
         visiblePlaylists = filterPlaylists(allPlaylists, for: .nocheDeViernes)
+        
+        DLog("showNDVNLists → count:", visiblePlaylists.count)
     }
     
     func showAllSeries() {
         visiblePlaylists = filterPlaylists(allPlaylists, for: .series)
+        
+        DLog("Series count:", visiblePlaylists.count)
     }
     
     func setupAlertInfo(_ alert: AlertInfo) {

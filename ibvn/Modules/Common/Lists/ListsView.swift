@@ -12,6 +12,7 @@ struct ListsView: View {
     @StateObject private var viewModel: ListsViewModel
     @State private var searchText = ""
     @State private var selectedSort: PlaylistSortType = .mostRecent
+    @State private var selectedSeriesFilter: SeriesFilterType = .allSeries
     
     // MARK: Initialization
     init(viewModel: ListsViewModel) {
@@ -36,6 +37,8 @@ struct ListsView: View {
                 
                 sortSegmentedControl
                 
+                seriesFilterSegmentedControl
+                
                 listSection(searchResults)
             }
             .background(Constants.fondoOscuro)
@@ -50,6 +53,16 @@ struct ListsView: View {
                         viewModel.sortVisibleListByMostRecent()
                     case .alphabetical:
                         viewModel.sortVisibleListAlphabetical()
+                    }
+                }
+            }
+            .onChange(of: selectedSeriesFilter) { newFilter in
+                withAnimation(.easeInOut) {
+                    switch newFilter {
+                    case .allSeries:
+                        viewModel.showAllSeries()
+                    case .ndvn:
+                        viewModel.showNDVNLists()
                     }
                 }
             }
@@ -95,6 +108,16 @@ struct ListsView: View {
         .padding(.horizontal)
     }
     
+    var seriesFilterSegmentedControl: some View {
+        Picker("Filtrar series", selection: $selectedSeriesFilter) {
+            ForEach(SeriesFilterType.allCases, id: \.self) { filter in
+                Text(filter.rawValue).tag(filter)
+            }
+        }
+        .pickerStyle(.segmented)
+        .padding(.horizontal)
+    }
+    
     // MARK: Functions
     func labelContent(with item: CloudPlaylist) -> some View {
         HStack {
@@ -125,4 +148,9 @@ struct ListsView: View {
 enum PlaylistSortType: String, CaseIterable {
     case mostRecent = "Más reciente"
     case alphabetical = "A–Z"
+}
+
+enum SeriesFilterType: String, CaseIterable {
+    case allSeries = "Todas las Series"
+    case ndvn = "NDVN"
 }

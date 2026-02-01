@@ -73,6 +73,7 @@
 		83BC51E52BE3216400C26C85 /* CampusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BC51E42BE3216400C26C85 /* CampusView.swift */; };
 		83BC51E72BE321B800C26C85 /* Campus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BC51E62BE321B800C26C85 /* Campus.swift */; };
 		83BC51E92BE3229200C26C85 /* CampusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BC51E82BE3229200C26C85 /* CampusViewModel.swift */; };
+		83C334582F2EE9BD00EB65D0 /* DLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C334572F2EE9BD00EB65D0 /* DLog.swift */; };
 		83D182C72BB5576F0097A4D9 /* YoutubePlaylist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D182C62BB5576F0097A4D9 /* YoutubePlaylist.swift */; };
 		83D182CA2BB55EA90097A4D9 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D182C92BB55EA90097A4D9 /* TabBarView.swift */; };
 		83D1F4472BB1C30400A611A5 /* IbvnApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D1F4462BB1C30400A611A5 /* IbvnApp.swift */; };
@@ -159,6 +160,7 @@
 		83BC51E42BE3216400C26C85 /* CampusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampusView.swift; sourceTree = "<group>"; };
 		83BC51E62BE321B800C26C85 /* Campus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Campus.swift; sourceTree = "<group>"; };
 		83BC51E82BE3229200C26C85 /* CampusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampusViewModel.swift; sourceTree = "<group>"; };
+		83C334572F2EE9BD00EB65D0 /* DLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DLog.swift; sourceTree = "<group>"; };
 		83D182C62BB5576F0097A4D9 /* YoutubePlaylist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubePlaylist.swift; sourceTree = "<group>"; };
 		83D182C92BB55EA90097A4D9 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		83D1F4432BB1C30400A611A5 /* ibvn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ibvn.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -399,6 +401,14 @@
 			path = Campus;
 			sourceTree = "<group>";
 		};
+		83C334562F2EE9A400EB65D0 /* Debug */ = {
+			isa = PBXGroup;
+			children = (
+				83C334572F2EE9BD00EB65D0 /* DLog.swift */,
+			);
+			path = Debug;
+			sourceTree = "<group>";
+		};
 		83D182C22BB553F40097A4D9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -450,6 +460,7 @@
 		83D1F4452BB1C30400A611A5 /* ibvn */ = {
 			isa = PBXGroup;
 			children = (
+				83C334562F2EE9A400EB65D0 /* Debug */,
 				83D1F44A2BB1C30600A611A5 /* Assets.xcassets */,
 				8385016D2D4B1AB9008A49E2 /* Helper */,
 				83D1F4462BB1C30400A611A5 /* IbvnApp.swift */,
@@ -721,6 +732,7 @@
 				83BC51E72BE321B800C26C85 /* Campus.swift in Sources */,
 				83A8D46A2BC315F300EFAD3B /* YoutubeLive.swift in Sources */,
 				83A8D4682BC3125900EFAD3B /* YoutubeVideo.swift in Sources */,
+				83C334582F2EE9BD00EB65D0 /* DLog.swift in Sources */,
 				838801812BC0DEE900FC31BC /* LiveView.swift in Sources */,
 				83E5F4892BC1C884001C23EF /* AlertInfo.swift in Sources */,
 				83D1F4472BB1C30400A611A5 /* IbvnApp.swift in Sources */,

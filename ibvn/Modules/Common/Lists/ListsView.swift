@@ -13,6 +13,7 @@ struct ListsView: View {
     @State private var searchText = ""
     @State private var selectedSort: PlaylistSortType = .mostRecent
     @State private var selectedSeriesFilter: SeriesFilterType = .allSeries
+    @State private var selectedFilter: PodcastFilterType = .allPodcast
     
     // MARK: Initialization
     init(viewModel: ListsViewModel) {
@@ -49,6 +50,16 @@ struct ListsView: View {
                         viewModel.showAllSeries()
                     case .ndvn:
                         viewModel.showNDVNLists()
+                    }
+                }
+            }
+            .onChange(of: selectedFilter) { filter in
+                withAnimation(.easeInOut) {
+                    switch filter {
+                    case .allPodcast:
+                        viewModel.showPodcastAndRetoLists()
+                    case .erdh:
+                        viewModel.showRetoDeHoyLists()
                     }
                 }
             }
@@ -118,9 +129,25 @@ struct ListsView: View {
     }
     
     var seriesFilterSegmentedControl: some View {
+        viewModel.ibvnType == .podcast
+        ? AnyView(podcastSegmentedControl)
+        : AnyView(seriesSegmentedControl)
+    }
+    
+    var seriesSegmentedControl: some View {
         Picker("Filtrar series", selection: $selectedSeriesFilter) {
             ForEach(SeriesFilterType.allCases, id: \.self) { filter in
                 Text(filter.rawValue).tag(filter)
+            }
+        }
+        .pickerStyle(.segmented)
+        .padding(.horizontal)
+    }
+    
+    var podcastSegmentedControl: some View {
+        Picker("Filtrar", selection: $selectedFilter) {
+            ForEach(PodcastFilterType.allCases, id: \.self) {
+                Text($0.rawValue)
             }
         }
         .pickerStyle(.segmented)
@@ -162,4 +189,9 @@ enum PlaylistSortType: String, CaseIterable {
 enum SeriesFilterType: String, CaseIterable {
     case allSeries = "Todas las Series"
     case ndvn = "NDVN"
+}
+
+enum PodcastFilterType: String, CaseIterable {
+    case allPodcast = "Todas los Podcast"
+    case erdh = "ERDH"
 }

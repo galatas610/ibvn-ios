@@ -73,19 +73,19 @@ struct LiveView: View {
                 .foregroundStyle(Constants.acentoVerde)
             
             HStack {
-                gradientButton(text: "WhatsApp", icon: "whatsApp") {
+                GradientButton(text: "WhatsApp", image: "whatsApp") {
                     viewModel.openWhatsApp(phone: "25228106", message: "¡Hola! Quiero más información de la iglesia.")
                 }
                 
                 Spacer()
                 
-                gradientButton(text: "+ Vida Nueva", icon: "linkTree") {
+                GradientButton(text: "+ Vida Nueva", image: "linkTree") {
                     openSafari(url: "https://linktr.ee/ibvidanueva")
                 }
                 
                 Spacer()
                 
-                gradientButton(text: "Campus", icon: "location") {
+                GradientButton(text: "Campus", image: "location") {
                     openSafari(url: "https://ibvn.org")
                 }
             }
@@ -93,58 +93,10 @@ struct LiveView: View {
         .padding()
     }
     
-    private func gradientButton(
-        text: String,
-        icon: String,
-        action: @escaping () -> Void
-    ) -> some View {
-        Button {
-            action()
-        } label: {
-            HStack {
-                Image(icon)
-                    .resizable()
-                    .frame(width: 24, height: 24)
-                
-                Text(text)
-                    .appFont(.dmSans, .bold, size: 12)
-            }
-            .padding(8)
-            .foregroundColor(Constants.fondoOscuro)
-            .background(
-                LinearGradient(
-                    colors: [
-                        Constants.greenGradienteBase1,
-                        Constants.greenGradienteBase2
-                    ],
-                    startPoint: .topLeading,
-                    endPoint: .bottomTrailing
-                )
-            )
-            .cornerRadius(1000)
-        }
-    }
-    
     private var donateButton: some View {
         HStack {
-            Button {
+            OutlineButton(text: "Formas de donar", image: "donate") {
                 openSafari(url: "https://donaciones.ibvn.org/")
-            } label: {
-                HStack(spacing: 10) {
-                    Text("Formas de donar")
-                        .appFont(.dmSans, .medium, size: 16)
-                    
-                    Image("donate")
-                        .resizable()
-                        .frame(width: 24, height: 24)
-                }
-                .frame(maxWidth: .infinity)
-                .padding(.vertical, 12)
-                .foregroundColor(Constants.textoPrincipal)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 1000)
-                        .stroke(Color.white, lineWidth: 1)
-                )
             }
         }
         .padding(.horizontal, 8)

@@ -11,6 +11,8 @@ struct ListsView: View {
     // MARK: Property Wrappers
     @StateObject private var viewModel: ListsViewModel
     @State private var searchText = ""
+    @State private var selectedSort: PlaylistSortType = .mostRecent
+    @State private var selectedSeriesFilter: SeriesFilterType = .allSeries
     
     // MARK: Initialization
     init(viewModel: ListsViewModel) {
@@ -20,32 +22,100 @@ struct ListsView: View {
     // MARK: Body
     var body: some View {
         NavigationView {
-            List {
-                ForEach(searchResults, id: \.id) { playlist in
-                    NavigationLink {
-                        ListVideosView(viewModel: ListVideosViewModel(playlist: playlist))
-                    } label: {
-                        labelContent(with: playlist)
+            VStack {
+                HStack {
+                    Text(viewModel.ibvnType.viewTitle)
+                        .appFont(.moldin, .regular, size: 48)
+                        .padding(.leading)
+                        .padding(.bottom, 8)
+                    
+                    Spacer()
+                }
+                
+                CustomSearchBar(text: $searchText)
+                    .padding(.bottom, 8)
+                
+                sortSegmentedControl
+                
+                seriesFilterSegmentedControl
+                
+                listSection(searchResults)
+            }
+            .background(Constants.fondoOscuro)
+            .modifier(TopBar())
+            .toolbarBackground(.hidden, for: .navigationBar)
+            .toolbar(.visible, for: .navigationBar)
+            .navigationBarTitleDisplayMode(.inline)
+            .onChange(of: selectedSort) { newSort in
+                withAnimation(.easeInOut) {
+                    switch newSort {
+                    case .mostRecent:
+                        viewModel.sortVisibleListByMostRecent()
+                    case .alphabetical:
+                        viewModel.sortVisibleListAlphabetical()
                     }
                 }
             }
-            .padding(.top, 16)
-            .padding(.horizontal, -16)
-            .navigationTitle(viewModel.ibvnType.viewTitle)
-            .modifier(TopBar())
-            .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
+            .onChange(of: selectedSeriesFilter) { newFilter in
+                withAnimation(.easeInOut) {
+                    switch newFilter {
+                    case .allSeries:
+                        viewModel.showAllSeries()
+                    case .ndvn:
+                        viewModel.showNDVNLists()
+                    }
+                }
+            }
         }
         
         var searchResults: [CloudPlaylist] {
             if searchText.isEmpty {
-                return viewModel.cloudPlaylists
+                return viewModel.visiblePlaylists
             } else {
-                return viewModel.cloudPlaylists.filter {
+                return viewModel.visiblePlaylists.filter {
                     $0.title.localizedCaseInsensitiveContains(searchText) ||
                     $0.description.localizedCaseInsensitiveContains(searchText)
                 }
             }
         }
+    }
+    
+    func listSection(_ searchResults: [CloudPlaylist]) -> some View {
+        List {
+            ForEach(searchResults, id: \.id) { playlist in
+                NavigationLink {
+                    ListVideosView(viewModel: ListVideosViewModel(playlist: playlist))
+                } label: {
+                    labelContent(with: playlist)
+                }
+                .listRowBackground(Color.clear)
+            }
+        }
+        .listStyle(.plain)
+        .scrollContentBackground(.hidden)
+        .background(Constants.fondoOscuro)
+    }
+    
+    private var sortSegmentedControl: some View {
+        Picker("Ordenar", selection: $selectedSort) {
+            ForEach(PlaylistSortType.allCases, id: \.self) { sort in
+                Text(sort.rawValue).tag(sort)
+            }
+        }
+        .pickerStyle(.segmented)
+        .background(Constants.fondoOscuro)
+        .tint(Constants.acentoVerde)
+        .padding(.horizontal)
+    }
+    
+    var seriesFilterSegmentedControl: some View {
+        Picker("Filtrar series", selection: $selectedSeriesFilter) {
+            ForEach(SeriesFilterType.allCases, id: \.self) { filter in
+                Text(filter.rawValue).tag(filter)
+            }
+        }
+        .pickerStyle(.segmented)
+        .padding(.horizontal)
     }
     
     // MARK: Functions
@@ -75,6 +145,12 @@ struct ListsView: View {
     }
 }
 
-#Preview {
-    ListsView(viewModel: ListsViewModel(ibvnType: .elRestoDeHoy))
+enum PlaylistSortType: String, CaseIterable {
+    case mostRecent = "Más reciente"
+    case alphabetical = "A–Z"
+}
+
+enum SeriesFilterType: String, CaseIterable {
+    case allSeries = "Todas las Series"
+    case ndvn = "NDVN"
 }

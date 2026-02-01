@@ -8,50 +8,61 @@
 import Foundation
 
 enum IbvnType {
-    case elRestoDeHoy
+    case series
+    case podcast
+    case recommended
+    case recommendedSunday
+    case recommendedNDVN
+    case elRetoDeHoy
     case nocheDeViernes
     case preaches
     case live
     case liveOff
-    
+}
+
+extension IbvnType {
     var viewTitle: String {
-        switch self {
-        case .elRestoDeHoy:
-            "El Reto de Hoy"
-        case .nocheDeViernes:
-            "Noche de Viernes"
-        case .preaches:
-            "Mensajes"
-        case .live:
-            "En Vivo"
-        case .liveOff:
-            "En Vivo OFF"
-        }
-    }
+           switch self {
+           case .series:
+               return "Series de Mensajes"
+           case .podcast:
+               return "Podcast"
+           case .recommended,
+                .recommendedSunday,
+                .recommendedNDVN:
+               return "Recomendados"
+           case .live:
+               return "En Vivo"
+           case .liveOff:
+               return "En Vivo OFF"
+           default:
+               return ""
+           }
+       }
     
-    var localDataFileName: String {
-        switch self {
-        case .elRestoDeHoy:
-            "ERDHLists"
-        case .nocheDeViernes:
-            "NDVLists"
-        case .preaches:
-            "PreachesLists"
-        case .live:
-            "Live"
-        case .liveOff:
-            "LiveOff"
+    var includeTags: [String] {
+            switch self {
+            case .podcast:
+                return ["#Podcast", "#ElRetoDeHoy"]
+            case .recommended:
+                return ["#Recomendada"]
+            case .recommendedSunday:
+                return ["#RecomendadaDomingo"]
+            case .recommendedNDVN:
+                return ["#RecomendadaNDVN"]
+            case .nocheDeViernes:
+                return ["#NDV"]
+            default:
+                return []
+            }
         }
-    }
-    
-    var hashTag: String {
-        switch self {
-        case .elRestoDeHoy:
-            "#ElRetoDeHoy"
-        case .nocheDeViernes:
-            "#NDV"
-        case .preaches, .live, .liveOff:
-            ""
+
+        var excludeTags: [String] {
+            switch self {
+            case .series:
+                return ["#Podcast", "#ElRetoDeHoy"]
+            default:
+                return []
+            }
         }
-    }
 }

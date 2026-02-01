@@ -8,73 +8,61 @@
 import Foundation
 
 enum IbvnType {
-    case elRetoDeHoy
-    case nocheDeViernes
-    case preaches
-    case live
-    case liveOff
     case series
     case podcast
     case recommended
     case recommendedSunday
     case recommendedNDVN
-    
+    case elRetoDeHoy
+    case nocheDeViernes
+    case preaches
+    case live
+    case liveOff
+}
+
+extension IbvnType {
     var viewTitle: String {
-        switch self {
-        case .live:
-            "En Vivo"
-        case .liveOff:
-            "En Vivo OFF"
-        case .series, .preaches, .nocheDeViernes:
-            "Series de Mensajes"
-        case .podcast, .elRetoDeHoy:
-            "Podcast"
-        case .recommended, .recommendedSunday, .recommendedNDVN:
-            "Recomendados"
-        }
-    }
+           switch self {
+           case .series:
+               return "Series de Mensajes"
+           case .podcast:
+               return "Podcast"
+           case .recommended,
+                .recommendedSunday,
+                .recommendedNDVN:
+               return "Recomendados"
+           case .live:
+               return "En Vivo"
+           case .liveOff:
+               return "En Vivo OFF"
+           default:
+               return ""
+           }
+       }
     
-    var localDataFileName: String {
-        switch self {
-        case .elRetoDeHoy:
-            "ERDHLists"
-        case .nocheDeViernes:
-            "NDVLists"
-        case .preaches:
-            "PreachesLists"
-        case .live:
-            "Live"
-        case .liveOff:
-            "LiveOff"
-        case .series:
-            "SeriesLists"
-        case .podcast:
-            "PodcastLists"
-        case .recommended:
-            "RecommendedList"
-        case .recommendedSunday:
-            "RecommendedSundayList"
-        case .recommendedNDVN:
-            "RecommendedNDVNLists"
+    var includeTags: [String] {
+            switch self {
+            case .podcast:
+                return ["#Podcast", "#ElRetoDeHoy"]
+            case .recommended:
+                return ["#Recomendada"]
+            case .recommendedSunday:
+                return ["#RecomendadaDomingo"]
+            case .recommendedNDVN:
+                return ["#RecomendadaNDVN"]
+            case .nocheDeViernes:
+                return ["#NDVN"]
+            default:
+                return []
+            }
         }
-    }
-    
-    var hashTag: String {
-        switch self {
-        case .elRetoDeHoy:
-            "#ElRetoDeHoy"
-        case .nocheDeViernes:
-            "#NDV"
-        case .podcast:
-            "#Podcast"
-        case .recommendedSunday:
-            "#RecomendadaDomingo"
-        case .recommendedNDVN:
-            "#RecomendadaNDVN"
-        case .recommended:
-            "#Recomendada"
-        case .preaches, .live, .liveOff, .series:
-            ""
+
+        var excludeTags: [String] {
+            switch self {
+            case .series:
+                return ["#Podcast", "#ElRetoDeHoy"]
+            default:
+                return []
+            }
         }
-    }
 }

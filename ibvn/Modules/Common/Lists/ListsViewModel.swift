@@ -10,10 +10,12 @@ import FirebaseFirestore
 
 final class ListsViewModel: ObservableObject, PresentAlertType {
    // MARK: Property Wrappers
-    @Published var cloudPlaylists: [CloudPlaylist] = []
+    @Published var visiblePlaylists: [CloudPlaylist] = []
     @Published var alertInfo: AlertInfo?
     
     // MARK: Properties
+    private var allPlaylists: [CloudPlaylist] = []
+    
     let ibvnType: IbvnType
     
     var alertIsPresenting: Bool = false
@@ -39,48 +41,84 @@ final class ListsViewModel: ObservableObject, PresentAlertType {
                 return
             }
             
-            self?.cloudPlaylists = data.enumerated().map({ playlist in
-                return CloudPlaylist(
-                    id: playlist.element["id"] as? String ?? "",
-                    publishedAt: playlist.element["publishedAt"] as? String ?? "",
-                    title: playlist.element["title"] as? String ?? "",
-                    description: playlist.element["description"] as? String ?? "",
-                    thumbnailUrl: playlist.element["thumbnailUrl"] as? String ?? "",
-                    thumbnailWidth: playlist.element["thumbnailWidth"] as? Int ?? 0,
-                    thumbnailHeight: playlist.element["thumbnailHeight"] as? Int ?? 0
+            self?.allPlaylists = data.map { document in
+                CloudPlaylist(
+                    id: document.documentID,
+                    publishedAt: document["publishedAt"] as? String ?? "",
+                    title: document["title"] as? String ?? "",
+                    description: document["description"] as? String ?? "",
+                    thumbnailUrl: document["thumbnailUrl"] as? String ?? "",
+                    thumbnailWidth: document["thumbnailWidth"] as? Int ?? 0,
+                    thumbnailHeight: document["thumbnailHeight"] as? Int ?? 0
                 )
-            })
-            
-//            guard
-//                self?.ibvnType == .podcast ||
-//                self?.ibvnType == .recommended
-//            else {
-//                return
-//            }
-            
-            switch self?.ibvnType {
-// /           case .series:
-            case .podcast:
-                
-                self?.cloudPlaylists = self?.cloudPlaylists.filter({ playlist in
-                    playlist.title.contains(IbvnType.podcast.hashTag) ||
-                    playlist.description.contains(IbvnType.podcast.hashTag) ||
-                    playlist.title.contains(IbvnType.elRetoDeHoy.hashTag) ||
-                    playlist.description.contains(IbvnType.elRetoDeHoy.hashTag)
-                }) ?? []
-//            case .recommended:
-            
-            default: break
             }
             
-//            self?.cloudPlaylists = self?.cloudPlaylists.filter({ playlist in
-//                playlist.title.contains(self?.ibvnType.hashTag ?? "") ||
-//                playlist.description.contains(self?.ibvnType.hashTag ?? "")
-//            }) ?? []
+            guard let self else { return }
+        
+            visiblePlaylists = filterPlaylists(allPlaylists, for: ibvnType)
+            visiblePlaylists = sortPlaylists(visiblePlaylists, by: .mostRecent)
         }
+    }
+    
+    func sortVisibleListAlphabetical() {
+        visiblePlaylists = sortPlaylists(visiblePlaylists, by: .alphabetical)
+    }
+    
+    func sortVisibleListByMostRecent() {
+        visiblePlaylists = sortPlaylists(visiblePlaylists, by: .mostRecent)
+    }
+    
+    func showNDVNLists() {
+        visiblePlaylists = filterPlaylists(allPlaylists, for: .nocheDeViernes)
+    }
+    
+    func showAllSeries() {
+        visiblePlaylists = filterPlaylists(allPlaylists, for: .series)
     }
     
     func setupAlertInfo(_ alert: AlertInfo) {
         presentAlert(alert)
+    }
+    
+    func filterPlaylists(
+        _ playlists: [CloudPlaylist],
+        for type: IbvnType
+    ) -> [CloudPlaylist] {
+
+        playlists.filter { playlist in
+            let text = (playlist.title + playlist.description)
+
+            // INCLUDE
+            let includeCheck: Bool = {
+                guard !type.includeTags.isEmpty else { return true }
+                return type.includeTags.contains { text.contains($0) }
+            }()
+
+            // EXCLUDE
+            let excludeCheck: Bool = {
+                guard !type.excludeTags.isEmpty else { return true }
+                return !type.excludeTags.contains { text.contains($0) }
+            }()
+
+            return includeCheck && excludeCheck
+        }
+    }
+    
+    func sortPlaylists(
+        _ playlists: [CloudPlaylist],
+        by sortType: PlaylistSortType
+    ) -> [CloudPlaylist] {
+
+        switch sortType {
+        case .mostRecent:
+            return playlists.sorted {
+                $0.publishedDate > $1.publishedDate
+            }
+
+        case .alphabetical:
+            return playlists.sorted {
+                $0.title.localizedCaseInsensitiveCompare($1.title) == .orderedAscending
+            }
+        }
     }
 }

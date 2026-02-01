@@ -22,13 +22,13 @@ struct TabBarView: View {
                 }
                 .tag("0")
             
-            ListsView(viewModel: ListsViewModel(ibvnType: .elRetoDeHoy))
+            ListsView(viewModel: ListsViewModel(ibvnType: .podcast))
                 .tabItem {
                     Label("Podcast", image: "microphone")
                 }
                 .tag("2")
             
-            ListsView(viewModel: ListsViewModel(ibvnType: .nocheDeViernes))
+            ListsView(viewModel: ListsViewModel(ibvnType: .recommended))
                 .tabItem {
                     Label("Recomendados", image: "bookmarkStar")
                 }

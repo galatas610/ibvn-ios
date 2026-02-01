@@ -11,6 +11,7 @@ struct ListsView: View {
     // MARK: Property Wrappers
     @StateObject private var viewModel: ListsViewModel
     @State private var searchText = ""
+    @State private var selectedSort: PlaylistSortType = .mostRecent
     
     // MARK: Initialization
     init(viewModel: ListsViewModel) {
@@ -33,7 +34,7 @@ struct ListsView: View {
                 CustomSearchBar(text: $searchText)
                     .padding(.bottom, 8)
                 
-                buttonsSection
+                sortSegmentedControl
                 
                 listSection(searchResults)
             }
@@ -42,13 +43,23 @@ struct ListsView: View {
             .toolbarBackground(.hidden, for: .navigationBar)
             .toolbar(.visible, for: .navigationBar)
             .navigationBarTitleDisplayMode(.inline)
+            .onChange(of: selectedSort) { newSort in
+                withAnimation(.easeInOut) {
+                    switch newSort {
+                    case .mostRecent:
+                        viewModel.sortVisibleListByMostRecent()
+                    case .alphabetical:
+                        viewModel.sortVisibleListAlphabetical()
+                    }
+                }
+            }
         }
         
         var searchResults: [CloudPlaylist] {
             if searchText.isEmpty {
-                return viewModel.cloudPlaylists
+                return viewModel.visiblePlaylists
             } else {
-                return viewModel.cloudPlaylists.filter {
+                return viewModel.visiblePlaylists.filter {
                     $0.title.localizedCaseInsensitiveContains(searchText) ||
                     $0.description.localizedCaseInsensitiveContains(searchText)
                 }
@@ -68,43 +79,20 @@ struct ListsView: View {
             }
         }
         .listStyle(.plain)
-//        .padding(.horizontal, -16)
         .scrollContentBackground(.hidden)
         .background(Constants.fondoOscuro)
     }
     
-    var buttonsSection: some View {
-        VStack(spacing: 16) {
-            Rectangle()
-                .fill(Color.gray.opacity(0.8))
-                .frame(height: 1)
-                .frame(maxWidth: .infinity)
-            
-            HStack {
-                Text("Ordenar por:")
-                    .appFont(.dmSans, .medium, size: 16)
-                    .foregroundStyle(.white)
-                
-                GradientButton(text: "Más reciente", showImage: false) {
-                    print("Mas reciente")
-                }
-                
-                OutlineButton(text: "NDVN", showImage: false, fullWidth: false) {
-                    print("Noches de Vida Nueva")
-                }
-                
-                OutlineButton(text: "A-Z", showImage: false, fullWidth: false) {
-                    print("A-Z")
-                }
-                
+    private var sortSegmentedControl: some View {
+        Picker("Ordenar", selection: $selectedSort) {
+            ForEach(PlaylistSortType.allCases, id: \.self) { sort in
+                Text(sort.rawValue).tag(sort)
             }
-            .padding(.horizontal)
-            
-            Rectangle()
-                .fill(Color.gray.opacity(0.8))
-                .frame(height: 1)
-                .frame(maxWidth: .infinity)
         }
+        .pickerStyle(.segmented)
+        .background(Constants.fondoOscuro)
+        .tint(Constants.acentoVerde)
+        .padding(.horizontal)
     }
     
     // MARK: Functions
@@ -134,6 +122,7 @@ struct ListsView: View {
     }
 }
 
-#Preview {
-    ListsView(viewModel: ListsViewModel(ibvnType: .elRetoDeHoy))
+enum PlaylistSortType: String, CaseIterable {
+    case mostRecent = "Más reciente"
+    case alphabetical = "A–Z"
 }

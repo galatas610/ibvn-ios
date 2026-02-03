@@ -13,6 +13,7 @@ struct ListsView: View {
     @State private var searchText = ""
     @State private var selectedSort: PlaylistSortType = .mostRecent
     @State private var selectedSeriesFilter: SeriesFilterType = .allSeries
+    @State private var selectedFilter: PodcastFilterType = .allPodcast
     
     // MARK: Initialization
     init(viewModel: ListsViewModel) {
@@ -23,21 +24,7 @@ struct ListsView: View {
     var body: some View {
         NavigationView {
             VStack {
-                HStack {
-                    Text(viewModel.ibvnType.viewTitle)
-                        .appFont(.moldin, .regular, size: 48)
-                        .padding(.leading)
-                        .padding(.bottom, 8)
-                    
-                    Spacer()
-                }
-                
-                CustomSearchBar(text: $searchText)
-                    .padding(.bottom, 8)
-                
-                sortSegmentedControl
-                
-                seriesFilterSegmentedControl
+                content
                 
                 listSection(searchResults)
             }
@@ -46,26 +33,9 @@ struct ListsView: View {
             .toolbarBackground(.hidden, for: .navigationBar)
             .toolbar(.visible, for: .navigationBar)
             .navigationBarTitleDisplayMode(.inline)
-            .onChange(of: selectedSort) { newSort in
-                withAnimation(.easeInOut) {
-                    switch newSort {
-                    case .mostRecent:
-                        viewModel.sortVisibleListByMostRecent()
-                    case .alphabetical:
-                        viewModel.sortVisibleListAlphabetical()
-                    }
-                }
-            }
-            .onChange(of: selectedSeriesFilter) { newFilter in
-                withAnimation(.easeInOut) {
-                    switch newFilter {
-                    case .allSeries:
-                        viewModel.showAllSeries()
-                    case .ndvn:
-                        viewModel.showNDVNLists()
-                    }
-                }
-            }
+            .onChange(of: selectedSort, perform: handleSortChange)
+            .onChange(of: selectedSeriesFilter, perform: handleSeriesFilterChange)
+            .onChange(of: selectedFilter, perform: handlePodcastFilterChange)
         }
         
         var searchResults: [CloudPlaylist] {
@@ -77,6 +47,29 @@ struct ListsView: View {
                     $0.description.localizedCaseInsensitiveContains(searchText)
                 }
             }
+        }
+    }
+    
+    @ViewBuilder
+    var content: some View {
+        title
+        
+        CustomSearchBar(text: $searchText)
+            .padding(.bottom, 8)
+        
+        sortSegmentedControl
+        
+        seriesFilterSegmentedControl
+    }
+    
+    var title: some View {
+        HStack {
+            Text(viewModel.ibvnType.viewTitle)
+                .appFont(.moldin, .regular, size: 48)
+                .padding(.leading)
+                .padding(.bottom, 8)
+            
+            Spacer()
         }
     }
     
@@ -109,9 +102,25 @@ struct ListsView: View {
     }
     
     var seriesFilterSegmentedControl: some View {
+        viewModel.ibvnType == .podcast
+        ? AnyView(podcastSegmentedControl)
+        : AnyView(seriesSegmentedControl)
+    }
+    
+    var seriesSegmentedControl: some View {
         Picker("Filtrar series", selection: $selectedSeriesFilter) {
             ForEach(SeriesFilterType.allCases, id: \.self) { filter in
                 Text(filter.rawValue).tag(filter)
+            }
+        }
+        .pickerStyle(.segmented)
+        .padding(.horizontal)
+    }
+    
+    var podcastSegmentedControl: some View {
+        Picker("Filtrar", selection: $selectedFilter) {
+            ForEach(PodcastFilterType.allCases, id: \.self) {
+                Text($0.rawValue)
             }
         }
         .pickerStyle(.segmented)
@@ -143,6 +152,39 @@ struct ListsView: View {
             }
         }
     }
+    
+    private func handleSortChange(_ newSort: PlaylistSortType) {
+        withAnimation(.easeInOut) {
+            switch newSort {
+            case .mostRecent:
+                viewModel.sortVisibleListByMostRecent()
+            case .alphabetical:
+                viewModel.sortVisibleListAlphabetical()
+            }
+        }
+    }
+    
+    private func handleSeriesFilterChange(_ newFilter: SeriesFilterType) {
+        withAnimation(.easeInOut) {
+            switch newFilter {
+            case .allSeries:
+                viewModel.showAllSeries()
+            case .ndvn:
+                viewModel.showNDVNLists()
+            }
+        }
+    }
+    
+    private func handlePodcastFilterChange(_ filter: PodcastFilterType) {
+        withAnimation(.easeInOut) {
+            switch filter {
+            case .allPodcast:
+                viewModel.showPodcastAndRetoLists()
+            case .erdh:
+                viewModel.showRetoDeHoyLists()
+            }
+        }
+    }
 }
 
 enum PlaylistSortType: String, CaseIterable {
@@ -153,4 +195,9 @@ enum PlaylistSortType: String, CaseIterable {
 enum SeriesFilterType: String, CaseIterable {
     case allSeries = "Todas las Series"
     case ndvn = "NDVN"
+}
+
+enum PodcastFilterType: String, CaseIterable {
+    case allPodcast = "Todas los Podcast"
+    case erdh = "ERDH"
 }

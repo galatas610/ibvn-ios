@@ -52,6 +52,8 @@ extension IbvnType {
                 return ["#RecomendadaNDVN"]
             case .nocheDeViernes:
                 return ["#NDV"]
+            case .elRetoDeHoy:
+                return ["#ElRetoDeHoy"]
             default:
                 return []
             }

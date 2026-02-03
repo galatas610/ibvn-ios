@@ -79,6 +79,21 @@ final class ListsViewModel: ObservableObject, PresentAlertType {
         DLog("showNDVNLists → count:", visiblePlaylists.count)
     }
     
+    func showRetoDeHoyLists() {
+        visiblePlaylists = filterPlaylists(allPlaylists, for: .elRetoDeHoy)
+        
+        DLog("showRetoDeHoyLists → count:", visiblePlaylists.count)
+    }
+    
+    func showPodcastAndRetoLists() {
+        visiblePlaylists = allPlaylists.filter { playlist in
+            let text = playlist.title + playlist.description
+            return text.contains("#Podcast") || text.contains("#ElRetoDeHoy")
+        }
+
+        DLog("showPodcastAndRetoLists → count:", visiblePlaylists.count)
+    }
+    
     func showAllSeries() {
         visiblePlaylists = filterPlaylists(allPlaylists, for: .series)
         

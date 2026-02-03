@@ -74,7 +74,11 @@ class LiveViewModel: ObservableObject, PresentAlertType {
             }
             
             guard httpResponse.statusCode == 200 else {
-                print("🚩 fail httpResponde StatusCode: \(httpResponse.statusCode)")
+                DHTTPError(
+                    data: data,
+                    response: response
+                )
+                
                 return
             }
             

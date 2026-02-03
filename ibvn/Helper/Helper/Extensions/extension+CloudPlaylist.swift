@@ -14,7 +14,7 @@ extension CloudPlaylist {
             .withInternetDateTime,
             .withFractionalSeconds
         ]
-
+        
         return formatter.date(from: publishedAt) ?? .distantPast
     }
 }

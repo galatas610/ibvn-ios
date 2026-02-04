@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RecommendedView: View {
     @StateObject private var viewModel = RecommendedViewModel()
-
+    
     var body: some View {
         NavigationView {
             ScrollView {
@@ -21,28 +21,16 @@ struct RecommendedView: View {
                         playlists: viewModel.sundayPlaylists
                     )
                     .padding(.bottom, 8)
+                    .padding(.top, -16)
                     
                     carouselSection(
                         title: "NOCHES DE VIDA NUEVA",
                         playlists: viewModel.ndvnPlaylists
                     )
                     
-                    List {
-                        ForEach(viewModel.pastSeriesPlaylists, id: \.id) { playlist in
-                            NavigationLink {
-                                ListVideosView(viewModel: ListVideosViewModel(playlist: playlist))
-                            } label: {
-                                labelContent(with: playlist)
-                            }
-                            .listRowBackground(Color.clear)
-                        }
-                    }
-                    .listStyle(.plain)
-                    .scrollContentBackground(.hidden)
-                    .background(Constants.fondoOscuro)
+                    recommendedList
                 }
                 .padding(.bottom, 24)
-               
             }
             .scrollIndicators(.hidden)
             .background(Constants.fondoOscuro)
@@ -78,13 +66,55 @@ struct RecommendedView: View {
             
             VStack(alignment: .leading) {
                 Text(item.title)
-                    .font(.caption)
-                    .foregroundColor(Constants.primary)
+                    .multilineTextAlignment(.leading)
+                    .appFont(.dmSans, .medium, size: 16)
+                    .foregroundColor(.white)
                 
                 Text(item.publishedAt.formatDate())
-                    .font(.caption2)
+                    .appFont(.dmSans, .regular, size: 12)
                     .foregroundColor(Constants.secondary)
             }
         }
+    }
+    
+    @ViewBuilder
+    private var recommendedList: some View {
+        HStack {
+            Text("SERIES PASADAS")
+                .appFont(.dmSans, .semiBold, size: 16)
+                .foregroundColor(.white)
+                .padding(.leading)
+            
+            Spacer()
+        }
+        .padding(.vertical, 8)
+        .frame(maxWidth: .infinity)
+        .background(Constants.fondo)
+        .cornerRadius(20)
+        .padding(.horizontal)
+        
+        LazyVStack(alignment: .leading) {
+            ForEach(viewModel.pastSeriesPlaylists, id: \.id) { playlist in
+                NavigationLink {
+                    ListVideosView(viewModel: ListVideosViewModel(playlist: playlist))
+                } label: {
+                    labelContent(with: playlist)
+                }
+                .listRowBackground(Color.clear)
+                
+                let isLast = playlist.id == viewModel.pastSeriesPlaylists.last?.id
+                
+                if !isLast {
+                    Divider()
+                        .frame(height: 1)
+                        .background(Color.white)
+                        .opacity(0.3)
+                }
+            }
+            .listStyle(.plain)
+            .background(Constants.fondoOscuro)
+        }
+        .padding(.horizontal)
+        .padding(.top, -8)
     }
 }

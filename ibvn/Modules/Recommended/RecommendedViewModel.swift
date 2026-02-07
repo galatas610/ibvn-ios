@@ -20,9 +20,9 @@ final class RecommendedViewModel: ObservableObject {
     }
 
     private func fetchPlaylists() {
-        let db = Firestore.firestore()
+        let remoteDataBase = Firestore.firestore()
 
-        db.collection("playlists").addSnapshotListener { [weak self] snapshot, error in
+        remoteDataBase.collection("playlists").addSnapshotListener { [weak self] snapshot, error in
             guard let documents = snapshot?.documents, error == nil else {
                 DLog("🔥 Error fetching playlists")
                 return

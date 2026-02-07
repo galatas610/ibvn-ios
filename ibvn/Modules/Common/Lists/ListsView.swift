@@ -36,6 +36,7 @@ struct ListsView: View {
             .onChange(of: selectedSort, perform: handleSortChange)
             .onChange(of: selectedSeriesFilter, perform: handleSeriesFilterChange)
             .onChange(of: selectedFilter, perform: handlePodcastFilterChange)
+            .showAlert(viewModel.alertInfo, when: $viewModel.alertIsPresenting)
         }
         
         var searchResults: [CloudPlaylist] {

@@ -19,26 +19,31 @@ struct ListVideosView: View {
     
     // MARK: Body
     var body: some View {
-        ScrollView {
-            PlaylistCover(playlist: viewModel.cloudPlaylist)
+        VStack {
+            CustomSearchBar(text: $searchText)
+                .padding(.bottom, 8)
             
-            ForEach(searchResults, id: \.id) { item in
-                if viewModel.showPreview {
-                    NavigationLink {
+            ScrollView {
+                PlaylistCover(playlist: viewModel.cloudPlaylist)
+                    .padding(.horizontal)
+                
+                ForEach(searchResults, id: \.id) { item in
+                    if viewModel.showPreview {
+                        NavigationLink {
+                            VideoView(item: item, showPreview: viewModel.showPreview)
+                        } label: {
+                            labelContent(with: item)
+                        }
+                    } else {
                         VideoView(item: item, showPreview: viewModel.showPreview)
-                    } label: {
-                        labelContent(with: item)
                     }
-                } else {
-                    VideoView(item: item, showPreview: viewModel.showPreview)
                 }
             }
         }
-        .padding(.top, 16)
-        .navigationBarTitleDisplayMode(.inline)
+        .background(Constants.fondoOscuro)
         .modifier(TopBar())
-        .modifier(BackButtonTitleHiddenModifier())
-        .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
+        .toolbarBackground(.hidden, for: .navigationBar)
+        .navigationBarTitleDisplayMode(.inline)
         .showAlert(viewModel.alertInfo, when: $viewModel.alertIsPresenting)
     }
     

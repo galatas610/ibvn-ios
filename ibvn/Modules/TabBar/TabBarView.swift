@@ -10,12 +10,6 @@ import SwiftUI
 struct TabBarView: View {
     var body: some View {
         TabView {
-            RecommendedView()
-                .tabItem {
-                    Label("Recomendados", image: "bookmarkStar")
-                }
-                .tag("3")
-            
             LiveView(viewModel: LiveViewModel(ibvnType: .live))
                 .tabItem {
                     Label("Inicio", image: "home")
@@ -33,6 +27,12 @@ struct TabBarView: View {
                     Label("Podcast", image: "microphone")
                 }
                 .tag("2")
+            
+            RecommendedView()
+                .tabItem {
+                    Label("Recomendados", image: "bookmarkStar")
+                }
+                .tag("3")
         }
     }
 }

@@ -12,3 +12,13 @@ extension String {
         String(self.prefix(10))
     }
 }
+
+extension String {
+    func normalizedForSearch() -> String {
+        self
+            .lowercased()
+            .folding(options: .diacriticInsensitive, locale: .current)
+            .components(separatedBy: CharacterSet.alphanumerics.inverted)
+            .joined(separator: " ")
+    }
+}

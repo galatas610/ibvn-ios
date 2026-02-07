@@ -39,13 +39,35 @@ struct ListsView: View {
             .showAlert(viewModel.alertInfo, when: $viewModel.alertIsPresenting)
         }
         
+        //        var searchResults: [CloudPlaylist] {
+        //            if searchText.isEmpty {
+        //                return viewModel.visiblePlaylists
+        //            } else {
+        //                return viewModel.visiblePlaylists.filter {
+        //                    $0.title.localizedCaseInsensitiveContains(searchText) ||
+        //                    $0.description.localizedCaseInsensitiveContains(searchText)
+        //                }
+        //            }
+        //        }
         var searchResults: [CloudPlaylist] {
-            if searchText.isEmpty {
+            guard !searchText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
                 return viewModel.visiblePlaylists
-            } else {
-                return viewModel.visiblePlaylists.filter {
-                    $0.title.localizedCaseInsensitiveContains(searchText) ||
-                    $0.description.localizedCaseInsensitiveContains(searchText)
+            }
+
+            let tokens = searchText
+                .normalizedForSearch()
+                .split(separator: " ")
+                .map(String.init)
+
+            return viewModel.visiblePlaylists.filter { playlist in
+                let words = (playlist.title + " " + playlist.description)
+                    .normalizedForSearch()
+                    .split(separator: " ")
+
+                return tokens.allSatisfy { token in
+                    words.contains { word in
+                        String(word).starts(with: token)
+                    }
                 }
             }
         }

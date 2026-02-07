@@ -42,8 +42,8 @@ struct VideoView: View {
     func date(with item: ListVideosItem) -> some View {
         HStack {
             Text(item.snippet.publishedAt.formatDate())
-                .font(.caption)
-                .foregroundColor(Constants.secondary)
+                .appFont(.dmSans, .regular, size: 12)
+                .foregroundColor(.white)
             
             Spacer()
         }
@@ -53,32 +53,24 @@ struct VideoView: View {
     func title(with item: ListVideosItem) -> some View {
         HStack {
             Text(item.snippet.title)
-                .foregroundColor(Constants.primary)
+                .appFont(.dmSans, .bold, size: 14)
+                .foregroundColor(.white)
             
             Spacer()
         }
         .padding(.horizontal, 8)
-    }
-    
-    func description(with item: ListVideosItem) -> some View {
-        HStack {
-            Text(item.snippet.description)
-                .font(.caption)
-                .foregroundColor(Constants.secondary)
-            
-            Spacer()
-        }
-        .padding(.horizontal, 8)
-        .padding(.bottom, 16)
     }
     
     @ViewBuilder
     var viewContent: some View {
-        youTubePlayerView(with: item)
-        date(with: item)
-        title(with: item)
-        description(with: item)
-        
-        Spacer()
+        VStack {
+            youTubePlayerView(with: item)
+            title(with: item)
+            date(with: item)
+            
+            Spacer()
+        }
+        .padding(.horizontal, 16)
+        .padding(.bottom, 16)
     }
 }

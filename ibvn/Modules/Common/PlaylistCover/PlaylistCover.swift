@@ -14,36 +14,38 @@ struct PlaylistCover: View {
         VStack {
             VStack {
                 AsyncImage(url: URL(string: playlist.thumbnailUrl)) { image in
-                    image.resizable().centerCropped()
+                    image
+                        .resizable()
+                        .scaledToFill()
                 } placeholder: {
                     ProgressView()
                 }
-                .scaledToFit()
-                .cornerRadius(8)
+                .frame(maxWidth: .infinity)
+                .frame(height: 154)
+                .clipped()
+                .cornerRadius(20)
                 
                 Text(playlist.title)
-                    .bold()
-                    .foregroundColor(Constants.primaryDark)
+                    .appFont(.moldin, .medium, size: 40)
+                    .foregroundColor(.white)
                     .padding(.bottom, 8)
                 
                 Text(playlist.description)
-                    .foregroundColor(Constants.secondaryDark)
-                    .font(.caption)
-                
-                HStack {
-                    Spacer()
-                    
-                    Text(playlist.publishedAt.formatDate())
-                        .foregroundColor(Constants.secondaryDark)
-                        .font(.caption2)
-                }
-                .padding(.vertical, 8)
+                    .appFont(.dmSans, .light, size: 14)
+                    .foregroundColor(Constants.textoPrincipal)
             }
             .padding()
         }
-        .background(Constants.primary)
+        .background(
+            LinearGradient(
+                colors: [
+                    Constants.fondo,
+                    Constants.fondo.opacity(0.0)
+                ],
+                startPoint: .top,
+                endPoint: .bottom
+            )
+        )
         .cornerRadius(20)
-        .padding(.horizontal, 8)
-        .padding(.vertical, 8)
     }
 }

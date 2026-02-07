@@ -43,9 +43,8 @@ extension View {
 }
 
 extension AppFontFamily {
-
+    
     func fontName(style: AppFontStyle) -> String {
-        // Lookup tables per family to reduce branching complexity
         let moldinMap: [AppFontStyle: String] = [
             .black: "Moldin-Black",
             .extraBold: "Moldin-ExtraBold",
@@ -54,7 +53,7 @@ extension AppFontFamily {
             .medium: "Moldin-Medium",
             .regular: "Moldin-Regular"
         ]
-
+        
         let dmSansMap: [AppFontStyle: String] = [
             .black: "DMSans-Black",
             .blackItalic: "DMSans-BlackItalic",
@@ -73,7 +72,7 @@ extension AppFontFamily {
             .thin: "DMSans-Thin",
             .thinItalic: "DMSans-ThinItalic"
         ]
-
+        
         let map: [AppFontStyle: String]
         
         switch self {
@@ -82,18 +81,18 @@ extension AppFontFamily {
         case .dmSans:
             map = dmSansMap
         }
-
+        
         if let name = map[style] {
             return name
         }
-
+        
         // Preserve previous fatalError behavior for unsupported combinations
         fatalError("❌ \(self) no soporta el estilo \(style)")
     }
 }
 
 extension View {
-
+    
     func appFont(
         _ family: AppFontFamily,
         _ style: AppFontStyle = .regular,

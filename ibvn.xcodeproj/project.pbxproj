@@ -10,6 +10,10 @@
 		1026607C2F2E67BA00F7DCA7 /* GradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1026607B2F2E67BA00F7DCA7 /* GradientButton.swift */; };
 		1026607E2F2E6A1200F7DCA7 /* OutlineButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1026607D2F2E6A1200F7DCA7 /* OutlineButton.swift */; };
 		104430312F2DBA3400A3B570 /* CampusMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104430302F2DBA3400A3B570 /* CampusMap.swift */; };
+		1051EF6D2F322E6A001CAD72 /* RecommendedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1051EF6C2F322E6A001CAD72 /* RecommendedViewModel.swift */; };
+		1051EF6F2F322EBE001CAD72 /* RecommendedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1051EF6E2F322EBE001CAD72 /* RecommendedView.swift */; };
+		1051EF712F322EFC001CAD72 /* CarouselSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1051EF702F322EFC001CAD72 /* CarouselSection.swift */; };
+		1051EF742F322F7B001CAD72 /* RecommendedCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1051EF732F322F7B001CAD72 /* RecommendedCardView.swift */; };
 		10E4589E2F2994A60002A8FC /* Moldin-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 10E458982F2994A60002A8FC /* Moldin-Black.otf */; };
 		10E4589F2F2994A60002A8FC /* Moldin-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 10E4589C2F2994A60002A8FC /* Moldin-Regular.otf */; };
 		10E458A02F2994A60002A8FC /* Moldin-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 10E4589D2F2994A60002A8FC /* Moldin-SemiBold.otf */; };
@@ -110,6 +114,10 @@
 		1026607B2F2E67BA00F7DCA7 /* GradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientButton.swift; sourceTree = "<group>"; };
 		1026607D2F2E6A1200F7DCA7 /* OutlineButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlineButton.swift; sourceTree = "<group>"; };
 		104430302F2DBA3400A3B570 /* CampusMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampusMap.swift; sourceTree = "<group>"; };
+		1051EF6C2F322E6A001CAD72 /* RecommendedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedViewModel.swift; sourceTree = "<group>"; };
+		1051EF6E2F322EBE001CAD72 /* RecommendedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedView.swift; sourceTree = "<group>"; };
+		1051EF702F322EFC001CAD72 /* CarouselSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselSection.swift; sourceTree = "<group>"; };
+		1051EF732F322F7B001CAD72 /* RecommendedCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedCardView.swift; sourceTree = "<group>"; };
 		10E458982F2994A60002A8FC /* Moldin-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Moldin-Black.otf"; sourceTree = "<group>"; };
 		10E458992F2994A60002A8FC /* Moldin-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Moldin-Bold.otf"; sourceTree = "<group>"; };
 		10E4589A2F2994A60002A8FC /* Moldin-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Moldin-ExtraBold.otf"; sourceTree = "<group>"; };
@@ -230,6 +238,24 @@
 			path = Buttons;
 			sourceTree = "<group>";
 		};
+		1051EF6B2F322E5A001CAD72 /* Recommended */ = {
+			isa = PBXGroup;
+			children = (
+				1051EF6C2F322E6A001CAD72 /* RecommendedViewModel.swift */,
+				1051EF6E2F322EBE001CAD72 /* RecommendedView.swift */,
+			);
+			path = Recommended;
+			sourceTree = "<group>";
+		};
+		1051EF722F322F5A001CAD72 /* CarouselSection */ = {
+			isa = PBXGroup;
+			children = (
+				1051EF702F322EFC001CAD72 /* CarouselSection.swift */,
+				1051EF732F322F7B001CAD72 /* RecommendedCardView.swift */,
+			);
+			path = CarouselSection;
+			sourceTree = "<group>";
+		};
 		10E458A42F2994B30002A8FC /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -272,6 +298,7 @@
 		8315C8472BBCCD6E002186E9 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				1051EF722F322F5A001CAD72 /* CarouselSection */,
 				1026607A2F2E679B00F7DCA7 /* Buttons */,
 				831159842F2DE50400169FFF /* CustomSearchBar */,
 				8344D6AD2BE3097200BC0AB3 /* PlaylistCover */,
@@ -373,6 +400,7 @@
 		839BDCCC2BBD3B3600DE4442 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				1051EF6B2F322E5A001CAD72 /* Recommended */,
 				8385015F2D4B110C008A49E2 /* SignIn */,
 				83BC51E32BE3215100C26C85 /* Campus */,
 				83EBBDE12BC6A956003AD08B /* Settings */,
@@ -715,6 +743,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1051EF6F2F322EBE001CAD72 /* RecommendedView.swift in Sources */,
 				83D182CA2BB55EA90097A4D9 /* TabBarView.swift in Sources */,
 				83D182C72BB5576F0097A4D9 /* YoutubePlaylist.swift in Sources */,
 				83389A3B2BC093A1001B6171 /* ListVideosViewModel.swift in Sources */,
@@ -723,6 +752,7 @@
 				83E5F48C2BC1C8E9001C23EF /* PresentAlertType.swift in Sources */,
 				83081A702BCC58130015A8F4 /* CloudPlaylist.swift in Sources */,
 				83BC51E92BE3229200C26C85 /* CampusViewModel.swift in Sources */,
+				1051EF712F322EFC001CAD72 /* CarouselSection.swift in Sources */,
 				83EBBDE72BC6B704003AD08B /* CloudLive.swift in Sources */,
 				8388813E2E0C6FDC00B017D1 /* Pastor.swift in Sources */,
 				83081A722BCC59150015A8F4 /* YoutubePlaylists.swift in Sources */,
@@ -733,10 +763,12 @@
 				83A8D46A2BC315F300EFAD3B /* YoutubeLive.swift in Sources */,
 				83A8D4682BC3125900EFAD3B /* YoutubeVideo.swift in Sources */,
 				83C334582F2EE9BD00EB65D0 /* DLog.swift in Sources */,
+				1051EF742F322F7B001CAD72 /* RecommendedCardView.swift in Sources */,
 				838801812BC0DEE900FC31BC /* LiveView.swift in Sources */,
 				83E5F4892BC1C884001C23EF /* AlertInfo.swift in Sources */,
 				83D1F4472BB1C30400A611A5 /* IbvnApp.swift in Sources */,
 				83A8D4662BC3094000EFAD3B /* VideoLiveView.swift in Sources */,
+				1051EF6D2F322E6A001CAD72 /* RecommendedViewModel.swift in Sources */,
 				83EBBDE32BC6A965003AD08B /* SettingsView.swift in Sources */,
 				83618C2D2F29A8E000D426F5 /* AppFont.swift in Sources */,
 				83891C3A2BB6229F002CBE99 /* YoutubePlayer.swift in Sources */,

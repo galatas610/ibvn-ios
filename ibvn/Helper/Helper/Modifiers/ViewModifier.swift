@@ -58,7 +58,7 @@ struct BackButtonTitleHiddenModifier: ViewModifier {
         } label: {
             Image(systemName: "chevron.left")
                 .foregroundColor(.accentColor)
-            .imageScale(.large)
+                .imageScale(.large)
         }
     }
 }

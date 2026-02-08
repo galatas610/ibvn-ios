@@ -9,7 +9,7 @@ import Foundation
 import FirebaseFirestore
 
 final class ListsViewModel: ObservableObject, PresentAlertType {
-   // MARK: Property Wrappers
+    // MARK: Property Wrappers
     @Published var visiblePlaylists: [CloudPlaylist] = []
     @Published var alertInfo: AlertInfo?
     
@@ -23,7 +23,7 @@ final class ListsViewModel: ObservableObject, PresentAlertType {
     // MARK: Initialization
     init(ibvnType: IbvnType) {
         self.ibvnType = ibvnType
-       
+        
         fetchCloudPlaylists()
     }
     
@@ -54,50 +54,49 @@ final class ListsViewModel: ObservableObject, PresentAlertType {
             }
             
             guard let self else { return }
-        
-            visiblePlaylists = filterPlaylists(allPlaylists, for: ibvnType)
             
-            visiblePlaylists = sortPlaylists(visiblePlaylists, by: .mostRecent)
+            applyFiltersAndSort(
+                ibvnType: ibvnType,
+                seriesFilter: .allSeries,
+                podcastFilter: .allPodcast,
+                sort: .mostRecent
+            )
         }
     }
     
-    func sortVisibleListAlphabetical() {
-        visiblePlaylists = sortPlaylists(visiblePlaylists, by: .alphabetical)
+    func applyFiltersAndSort(
+        ibvnType: IbvnType,
+        seriesFilter: SeriesFilterType,
+        podcastFilter: PodcastFilterType,
+        sort: PlaylistSortType
+    ) {
+        var result = filterPlaylists(allPlaylists, for: ibvnType)
         
-        DLog("sortVisibleListAlphabetical → count:", visiblePlaylists.count)
-    }
-    
-    func sortVisibleListByMostRecent() {
-        visiblePlaylists = sortPlaylists(visiblePlaylists, by: .mostRecent)
-        
-        DLog("sortVisibleListByMostRecent → count:", visiblePlaylists.count)
-    }
-    
-    func showNDVNLists() {
-        visiblePlaylists = filterPlaylists(allPlaylists, for: .nocheDeViernes)
-        
-        DLog("showNDVNLists → count:", visiblePlaylists.count)
-    }
-    
-    func showRetoDeHoyLists() {
-        visiblePlaylists = filterPlaylists(allPlaylists, for: .elRetoDeHoy)
-        
-        DLog("showRetoDeHoyLists → count:", visiblePlaylists.count)
-    }
-    
-    func showPodcastAndRetoLists() {
-        visiblePlaylists = allPlaylists.filter { playlist in
-            let text = playlist.title + playlist.description
-            return text.contains("#Podcast") || text.contains("#ElRetoDeHoy")
+        // Filtro secundario
+        if ibvnType == .podcast {
+            switch podcastFilter {
+            case .allPodcast:
+                break
+            case .erdh:
+                result = result.filter {
+                    ($0.title + $0.description).contains(IbvnType.elRetoDeHoy.includeTags.first ?? "")
+                }
+            }
+        } else {
+            switch seriesFilter {
+            case .allSeries:
+                break
+            case .ndvn:
+                result = result.filter {
+                    ($0.title + $0.description).contains(IbvnType.nocheDeViernes.includeTags.first ?? "")
+                }
+            }
         }
-
-        DLog("showPodcastAndRetoLists → count:", visiblePlaylists.count)
-    }
-    
-    func showAllSeries() {
-        visiblePlaylists = filterPlaylists(allPlaylists, for: .series)
         
-        DLog("Series count:", visiblePlaylists.count)
+        // Sort FINAL
+        visiblePlaylists = sortPlaylists(result, by: sort)
+        
+        DLog("applyFiltersAndSort → count:", visiblePlaylists.count)
     }
     
     func setupAlertInfo(_ alert: AlertInfo) {
@@ -108,22 +107,22 @@ final class ListsViewModel: ObservableObject, PresentAlertType {
         _ playlists: [CloudPlaylist],
         for type: IbvnType
     ) -> [CloudPlaylist] {
-
+        
         playlists.filter { playlist in
             let text = (playlist.title + playlist.description)
-
+            
             // INCLUDE
             let includeCheck: Bool = {
                 guard !type.includeTags.isEmpty else { return true }
                 return type.includeTags.contains { text.contains($0) }
             }()
-
+            
             // EXCLUDE
             let excludeCheck: Bool = {
                 guard !type.excludeTags.isEmpty else { return true }
                 return !type.excludeTags.contains { text.contains($0) }
             }()
-
+            
             return includeCheck && excludeCheck
         }
     }
@@ -132,13 +131,13 @@ final class ListsViewModel: ObservableObject, PresentAlertType {
         _ playlists: [CloudPlaylist],
         by sortType: PlaylistSortType
     ) -> [CloudPlaylist] {
-
+        
         switch sortType {
         case .mostRecent:
             return playlists.sorted {
                 $0.publishedDate > $1.publishedDate
             }
-
+            
         case .alphabetical:
             return playlists.sorted {
                 $0.title.localizedCaseInsensitiveCompare($1.title) == .orderedAscending

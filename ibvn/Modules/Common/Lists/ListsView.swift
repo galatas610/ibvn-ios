@@ -33,22 +33,18 @@ struct ListsView: View {
             .toolbarBackground(.hidden, for: .navigationBar)
             .toolbar(.visible, for: .navigationBar)
             .navigationBarTitleDisplayMode(.inline)
-            .onChange(of: selectedSort, perform: handleSortChange)
-            .onChange(of: selectedSeriesFilter, perform: handleSeriesFilterChange)
-            .onChange(of: selectedFilter, perform: handlePodcastFilterChange)
+            .onChange(of: selectedSort) { _ in
+                apply()
+            }
+            .onChange(of: selectedSeriesFilter) { _ in
+                apply()
+            }
+            .onChange(of: selectedFilter) { _ in
+                apply()
+            }
             .showAlert(viewModel.alertInfo, when: $viewModel.alertIsPresenting)
         }
         
-        //        var searchResults: [CloudPlaylist] {
-        //            if searchText.isEmpty {
-        //                return viewModel.visiblePlaylists
-        //            } else {
-        //                return viewModel.visiblePlaylists.filter {
-        //                    $0.title.localizedCaseInsensitiveContains(searchText) ||
-        //                    $0.description.localizedCaseInsensitiveContains(searchText)
-        //                }
-        //            }
-        //        }
         var searchResults: [CloudPlaylist] {
             guard !searchText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
                 return viewModel.visiblePlaylists
@@ -93,6 +89,17 @@ struct ListsView: View {
                 .padding(.bottom, 8)
             
             Spacer()
+        }
+    }
+    
+    private func apply() {
+        withAnimation(.easeInOut) {
+            viewModel.applyFiltersAndSort(
+                ibvnType: viewModel.ibvnType,
+                seriesFilter: selectedSeriesFilter,
+                podcastFilter: selectedFilter,
+                sort: selectedSort
+            )
         }
     }
     
@@ -172,39 +179,6 @@ struct ListsView: View {
                 Text(item.publishedAt.formatDate())
                     .font(.caption2)
                     .foregroundColor(Constants.secondary)
-            }
-        }
-    }
-    
-    private func handleSortChange(_ newSort: PlaylistSortType) {
-        withAnimation(.easeInOut) {
-            switch newSort {
-            case .mostRecent:
-                viewModel.sortVisibleListByMostRecent()
-            case .alphabetical:
-                viewModel.sortVisibleListAlphabetical()
-            }
-        }
-    }
-    
-    private func handleSeriesFilterChange(_ newFilter: SeriesFilterType) {
-        withAnimation(.easeInOut) {
-            switch newFilter {
-            case .allSeries:
-                viewModel.showAllSeries()
-            case .ndvn:
-                viewModel.showNDVNLists()
-            }
-        }
-    }
-    
-    private func handlePodcastFilterChange(_ filter: PodcastFilterType) {
-        withAnimation(.easeInOut) {
-            switch filter {
-            case .allPodcast:
-                viewModel.showPodcastAndRetoLists()
-            case .erdh:
-                viewModel.showRetoDeHoyLists()
             }
         }
     }

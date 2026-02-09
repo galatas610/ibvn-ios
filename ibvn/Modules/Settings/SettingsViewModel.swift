@@ -9,135 +9,175 @@ import Foundation
 import FirebaseFirestore
 import Moya
 
-class SettingsViewModel: ObservableObject, PresentAlertType {
-    // MARK: Property Wrappers
+final class SettingsViewModel: ObservableObject, PresentAlertType {
+
+    // MARK: - Published
     @Published var youtubeLive: YoutubeLive = .init()
     @Published var viewMessage: String = ""
     @Published var alertInfo: AlertInfo?
     @Published var youtubePlaylists: YoutubePlaylists = .init()
-    @Published var cloudPlaylists: [CloudPlaylist] = .init()
-    
-    // MARK: Properties
+    @Published var cloudPlaylists: [CloudPlaylist] = []
+
+    // MARK: - Properties
     let provider = MoyaProvider<YoutubeApiManager>()
-    
     var alertIsPresenting: Bool = false
-    
-    // MARK: Initialization
-    init() { }
-    
-    // MARK: Functions
+
+    // MARK: - Init
+    init() {}
+
+    // MARK: - Sync Playlists
     func syncPlaylist(pageToken: String = "") {
-        viewMessage = pageToken.isEmpty ? "" : viewMessage
-        cloudPlaylists = pageToken.isEmpty ? .init() : cloudPlaylists
-        
-        provider.request(.playlist(pageToken: pageToken)) {[weak self] result in
+        resetStateIfNeeded(pageToken)
+
+        provider.request(.playlist(pageToken: pageToken)) { [weak self] result in
+            guard let self else { return }
+
             switch result {
-            case let .success(response):
-                do {
-                    self?.youtubePlaylists = try JSONDecoder().decode(YoutubePlaylists.self, from: response.data)
-                    _ = self?.youtubePlaylists.items.map { [weak self] playlist in
-                        self?.cloudPlaylists.append(CloudPlaylist(id: playlist.id,
-                                                                  publishedAt: playlist.snippet.publishedAt,
-                                                                  title: playlist.snippet.title,
-                                                                  description: playlist.snippet.description,
-                                                                  thumbnailUrl: playlist.snippet.thumbnails.medium.url,
-                                                                  thumbnailWidth: playlist.snippet.thumbnails.high.width,
-                                                                  thumbnailHeight: playlist.snippet.thumbnails.high.height)
-                        )
-                    }
-                    self?.viewMessage += "\n🔄 \(self?.cloudPlaylists.count ?? 0) Listas descargadas."
-                    
-                    guard let nextPageToken = self?.youtubePlaylists.nextPageToken, !nextPageToken.isEmpty else {
-                        self?.viewMessage += "\n✅ \(self?.cloudPlaylists.count ?? 0) Listas descargadas en total."
-                        
-                        self?.saveListsOnCloud(cloudPlaylist: self?.cloudPlaylists ?? [])
-                        
-                        return
-                    }
-                    
-                    self?.syncPlaylist(pageToken: nextPageToken)
-                } catch {
-                    self?.displayError(error)
-                }
-            case let .failure(error):
-                self?.displayError(error)
-            }
-        }
-    }
-    
-    // MARK: Sync Live
-    func syncLive(eventType: String = "upcoming") {
-        viewMessage = eventType == "upcoming" ? "" : viewMessage
-        
-        provider.request(.search(eventType: eventType)) { result in
-            switch result {
-            case let .success(response):
-                do {
-                    self.youtubeLive = try JSONDecoder().decode(YoutubeLive.self, from: response.data)
-                    
-                    if self.youtubeLive.items.isEmpty {
-                        self.viewMessage += "\n 🚫 \(eventType), no disponible."
-                        if eventType == "upcoming" {
-                            self.syncLive(eventType: "live")
-                        } else if eventType == "live" {
-                            self.syncLive(eventType: "completed")
-                        }
-                    } else {
-                        self.viewMessage += "\n ✅ \(eventType) en vivo, disponible."
-                       
-                        if let newLive = self.youtubeLive.items.first?.id.videoId {
-                            self.viewMessage += "\n ⬆️ Subiendo \(eventType) a la nube."
-                            
-                            self.saveLiveOnCloud(liveVideoId: newLive)
-                        } else {
-                            self.viewMessage += "\n 🚫 No disponible, \(eventType) id."
-                        }
-                    }
-                } catch {
-                    self.displayError(error)
-                }
-            case let .failure(error):
+            case .success(let response):
+                self.handlePlaylistSuccess(response, pageToken: pageToken)
+
+            case .failure(let error):
                 self.displayError(error)
             }
         }
     }
-    
-    private func saveListsOnCloud(cloudPlaylist: [CloudPlaylist]) {
-        viewMessage += "\n⬆️ Subiendo \(cloudPlaylist.count) Listas a la nube."
-        
-        let dataBase = Firestore.firestore()
-        
-        for playlist in cloudPlaylist {
-            dataBase.collection("playlists")
-                .document(playlist.id)
-                .setData(playlist.asDictionary()) { [weak self] error in
-                    guard error == nil else {
-                        self?.displayError(error)
-                        
-                        return
-                    }
-                }
+
+    // MARK: - Playlist Handlers
+    private func handlePlaylistSuccess(_ response: Response, pageToken: String) {
+        do {
+            let decoded = try JSONDecoder().decode(YoutubePlaylists.self, from: response.data)
+            
+            youtubePlaylists = decoded
+            
+            appendPlaylists(decoded.items)
+            updateProgressMessage()
+            handleNextPage(decoded.nextPageToken)
+        } catch {
+            displayError(error)
+        }
+    }
+
+    private func appendPlaylists(_ items: [ItemResponse]) {
+        items
+            .map(makeCloudPlaylist)
+            .forEach { cloudPlaylists.append($0) }
+    }
+
+    private func makeCloudPlaylist(from item: ItemResponse) -> CloudPlaylist {
+        let thumbnails = item.snippet.thumbnails
+
+        return CloudPlaylist(
+            id: item.id,
+            publishedAt: item.snippet.publishedAt,
+            title: item.snippet.title,
+            description: item.snippet.description,
+            thumbnailUrl: resolveThumbnailURL(from: thumbnails) ?? "",
+            thumbnailWidth: thumbnails.high?.width ?? 0,
+            thumbnailHeight: thumbnails.high?.height ?? 0
+        )
+    }
+
+    private func resolveThumbnailURL(from thumbnails: ThumbnailsResponse) -> String? {
+        return thumbnails.maxres?.url
+            ?? thumbnails.standard?.url
+            ?? thumbnails.high?.url
+            ?? thumbnails.medium?.url
+            ?? thumbnails.default?.url
+    }
+
+    private func handleNextPage(_ token: String?) {
+        guard let token, !token.isEmpty else {
+            finalizePlaylistSync()
+            return
         }
         
+        syncPlaylist(pageToken: token)
+    }
+
+    private func finalizePlaylistSync() {
+        viewMessage += "\n✅ \(cloudPlaylists.count) Listas descargadas en total."
+        saveListsOnCloud(cloudPlaylist: cloudPlaylists)
+    }
+
+    private func updateProgressMessage() {
+        viewMessage += "\n🔄 \(cloudPlaylists.count) Listas descargadas."
+    }
+
+    private func resetStateIfNeeded(_ pageToken: String) {
+        if pageToken.isEmpty {
+            viewMessage = ""
+            cloudPlaylists = []
+        }
+    }
+
+    // MARK: - Sync Live
+    func syncLive(eventType: String = "upcoming") {
+        if eventType == "upcoming" { viewMessage = "" }
+
+        provider.request(.search(eventType: eventType)) { [weak self] result in
+            guard let self else { return }
+
+            switch result {
+            case .success(let response):
+                self.handleLiveSuccess(response, eventType: eventType)
+
+            case .failure(let error):
+                self.displayError(error)
+            }
+        }
+    }
+
+    private func handleLiveSuccess(_ response: Response, eventType: String) {
+        do {
+            youtubeLive = try JSONDecoder().decode(YoutubeLive.self, from: response.data)
+
+            guard let videoId = youtubeLive.items.first?.id.videoId else {
+                handleNextLiveState(eventType)
+                return
+            }
+
+            viewMessage += "\n ✅ \(eventType) disponible."
+            saveLiveOnCloud(liveVideoId: videoId)
+
+        } catch {
+            displayError(error)
+        }
+    }
+
+    private func handleNextLiveState(_ eventType: String) {
+        viewMessage += "\n 🚫 \(eventType) no disponible."
+
+        switch eventType {
+        case "upcoming": syncLive(eventType: "live")
+        case "live": syncLive(eventType: "completed")
+        default: break
+        }
+    }
+
+    // MARK: - Firestore
+    private func saveListsOnCloud(cloudPlaylist: [CloudPlaylist]) {
+        viewMessage += "\n⬆️ Subiendo \(cloudPlaylist.count) Listas a la nube."
+
+        let remoteDataBase = Firestore.firestore()
+        cloudPlaylist.forEach {
+            remoteDataBase.collection("playlists")
+                .document($0.id)
+                .setData($0.asDictionary())
+        }
+
         viewMessage += "\n🆗 \(cloudPlaylist.count) Listas en la Nube"
     }
-    
+
     private func saveLiveOnCloud(liveVideoId: String) {
         let liveCloud = CloudLive(videoId: liveVideoId)
-        
-        let dataBase = Firestore.firestore()
-        
-        dataBase.collection("live")
+        let remoteDataBase = Firestore.firestore()
+
+        remoteDataBase.collection("live")
             .document("lastLive")
             .setData(liveCloud.asDictionary()) { [weak self] error in
-                guard error == nil else {
-                    self?.displayError(error)
-                    
-                    return
+                if error == nil {
+                    self?.viewMessage += "\n🆗 En vivo en la nube"
                 }
-                
-                self?.viewMessage += "\n 🆗 En vivo en la nube"
             }
-        
     }
 }

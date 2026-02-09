@@ -81,23 +81,31 @@ struct LocalizedResponse: Codable {
 
 // MARK: - Thumbnails
 struct ThumbnailsResponse: Codable {
-    let `default`: Thumbnails
-    let medium: Thumbnails
-    let high: Thumbnails
-    
+    let `default`: Thumbnails?
+    let medium: Thumbnails?
+    let high: Thumbnails?
+    let standard: Thumbnails?
+    let maxres: Thumbnails?
+
     enum CodingKeys: String, CodingKey {
         case `default`
         case medium
         case high
+        case standard
+        case maxres
     }
-    
+
     init(
-        `default`: Thumbnails = .init(),
-        medium: Thumbnails = .init(),
-        high: Thumbnails = .init()
+        `default`: Thumbnails? = nil,
+        medium: Thumbnails? = nil,
+        high: Thumbnails? = nil,
+        standard: Thumbnails? = nil,
+        maxres: Thumbnails? = nil
     ) {
+        self.default = `default`
         self.medium = medium
         self.high = high
-        self.default = `default`
+        self.standard = standard
+        self.maxres = maxres
     }
 }

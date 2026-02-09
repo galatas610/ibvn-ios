@@ -15,6 +15,7 @@ final class ListsViewModel: ObservableObject, PresentAlertType {
     
     // MARK: Properties
     private var allPlaylists: [CloudPlaylist] = []
+    private var playlistsListener: ListenerRegistration?
     
     let ibvnType: IbvnType
     
@@ -29,37 +30,53 @@ final class ListsViewModel: ObservableObject, PresentAlertType {
     
     // MARK: Functions
     func fetchCloudPlaylists() {
+        playlistsListener?.remove()
+        
         let dataBase = Firestore.firestore()
         
-        dataBase.collection("playlists").addSnapshotListener { [weak self] snapshot, error in
-            guard let data = snapshot?.documents, error == nil else {
-                self?.setupAlertInfo(AlertInfo(title: "Firebase Error",
-                                               message: "No se ha logrado recuperar datos.",
-                                               type: .error,
-                                               leftButtonConfiguration: .okConfiguration))
+        playlistsListener = dataBase
+            .collection("playlists")
+            .addSnapshotListener { [weak self] snapshot, error in
                 
-                return
-            }
-            
-            self?.allPlaylists = data.map { document in
-                CloudPlaylist(
-                    id: document.documentID,
-                    publishedAt: document["publishedAt"] as? String ?? "",
-                    title: document["title"] as? String ?? "",
-                    description: document["description"] as? String ?? "",
-                    thumbnailUrl: document["thumbnailUrl"] as? String ?? "",
-                    thumbnailWidth: document["thumbnailWidth"] as? Int ?? 0,
-                    thumbnailHeight: document["thumbnailHeight"] as? Int ?? 0
+                guard let self,
+                      let data = snapshot?.documents,
+                      error == nil else {
+                    self?.setupAlertInfo(
+                        AlertInfo(
+                            title: "Firebase Error",
+                            message: "No se ha logrado recuperar datos.",
+                            type: .error,
+                            leftButtonConfiguration: .okConfiguration
+                        )
+                    )
+                    return
+                }
+                
+                let newPlaylists = newPlaylistsMap(data)
+                
+                guard newPlaylists != self.allPlaylists else { return }
+                
+                self.allPlaylists = newPlaylists
+                
+                self.applyFiltersAndSort(
+                    ibvnType: self.ibvnType,
+                    seriesFilter: .allSeries,
+                    podcastFilter: .allPodcast,
+                    sort: .mostRecent
                 )
             }
-            
-            guard let self else { return }
-            
-            applyFiltersAndSort(
-                ibvnType: ibvnType,
-                seriesFilter: .allSeries,
-                podcastFilter: .allPodcast,
-                sort: .mostRecent
+    }
+    
+    private func newPlaylistsMap(_ data: [QueryDocumentSnapshot]) -> [CloudPlaylist] {
+        data.map {
+            CloudPlaylist(
+                id: $0.documentID,
+                publishedAt: $0["publishedAt"] as? String ?? "",
+                title: $0["title"] as? String ?? "",
+                description: $0["description"] as? String ?? "",
+                thumbnailUrl: $0["thumbnailUrl"] as? String ?? "",
+                thumbnailWidth: $0["thumbnailWidth"] as? Int ?? 0,
+                thumbnailHeight: $0["thumbnailHeight"] as? Int ?? 0
             )
         }
     }

@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - Item
-struct CloudPlaylist: Codable {
+struct CloudPlaylist: Codable, Hashable {
     let id: String
     let publishedAt: String
     let title: String
@@ -16,6 +16,7 @@ struct CloudPlaylist: Codable {
     let thumbnailUrl: String
     let thumbnailWidth: Int
     let thumbnailHeight: Int
+    let updatedAt: TimeInterval
     
     init(
         id: String = "",
@@ -24,7 +25,8 @@ struct CloudPlaylist: Codable {
         description: String = "",
         thumbnailUrl: String = "",
         thumbnailWidth: Int = 0,
-        thumbnailHeight: Int = 0
+        thumbnailHeight: Int = 0,
+        updatedAt: TimeInterval = 0
     ) {
         self.id = id
         self.publishedAt = publishedAt
@@ -33,5 +35,6 @@ struct CloudPlaylist: Codable {
         self.thumbnailUrl = thumbnailUrl
         self.thumbnailWidth = thumbnailWidth
         self.thumbnailHeight = thumbnailHeight
+        self.updatedAt = updatedAt
     }
 }

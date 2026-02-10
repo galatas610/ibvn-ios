@@ -17,9 +17,9 @@ final class ListVideosViewModel: ObservableObject, PresentAlertType {
     @Published var alertInfo: AlertInfo?
     @Published var alertIsPresenting: Bool = false
     
-    private var hasLoaded = false
     private var isLoading: Bool = false
-    private var isLoaded = false
+    private var accumulatedItems: [YoutubeVideo] = []
+    private var isLoaded: Bool = false
     
     // MARK: Variables
     var showPreview: Bool {
@@ -30,6 +30,8 @@ final class ListVideosViewModel: ObservableObject, PresentAlertType {
     // MARK: Initialization
     init(playlist: CloudPlaylist) {
         self.cloudPlaylist = playlist
+        
+        DLog("🧠 VM INIT →", cloudPlaylist.id)
 
         NotificationCenter.default.addObserver(
             forName: .youtubeDataDidSync,
@@ -38,71 +40,89 @@ final class ListVideosViewModel: ObservableObject, PresentAlertType {
         ) { [weak self] _ in
             self?.forceReload()
         }
-
-        loadIfNeeded()
     }
     
     // MARK: Functions
     func loadIfNeeded() {
-        guard !isLoaded else {
-            DLog("⏭️ YT LOAD SKIPPED → already loaded", cloudPlaylist.id)
+        guard !isLoaded, !isLoading else {
+            DLog("⏭️ YT LOAD SKIPPED → already loading/loaded", cloudPlaylist.id)
             return
         }
 
-        isLoaded = true
-
-        if let cached =
-            YoutubePlaylistCache.shared.get(
-                for: cloudPlaylist.id,
-                updatedAt: cloudPlaylist.updatedAt
-            ) {
-
+        // ✅ 1️⃣ CACHE FIRST
+        if let cached = YoutubePlaylistCache.shared.get(
+            for: cloudPlaylist.id,
+            updatedAt: cloudPlaylist.updatedAt
+        ) {
             youtubePlaylist = cached
+            isLoaded = true
+            DLog("📦 YT PLAYLIST LOADED FROM CACHE →", cloudPlaylist.id)
             return
         }
 
-        DLog("🌐 YT FETCH → playlist:", cloudPlaylist.id)
-        fetchYoutubePlaylistItems()
+        // 🌐 2️⃣ FETCH
+        isLoading = true
+        youtubePlaylist = .init()
+
+        fetchYoutubePlaylistItems(
+            playlistId: cloudPlaylist.id,
+            pageToken: nil
+        )
     }
     
-    private func fetchYoutubePlaylistItems(playlistId: String, pageToken: String = "") {
-        youtubePlaylist = pageToken.isEmpty ? .init() : youtubePlaylist
-        
-        DLog("🌐 YT REQUEST → playlist:", playlistId, "pageToken:", pageToken)
-        
+    private func fetchYoutubePlaylistItems(
+        playlistId: String,
+        pageToken: String? = nil
+    ) {
+        let token = pageToken ?? ""
+
+        DLog("🌐 YT REQUEST → playlist:", playlistId, "pageToken:", token)
+
         let provider = MoyaProvider<YoutubeApiManager>()
-        
-        provider.request(.playlistItems(playlistId: playlistId, pageToken: pageToken)) {[weak self] result in
+
+        provider.request(.playlistItems(playlistId: playlistId, pageToken: token)) { [weak self] result in
+            guard let self else { return }
+
             switch result {
             case let .success(response):
                 do {
-                    let youtubePlaylistPage = try JSONDecoder().decode(YoutubePlaylist.self, from: response.data)
-                    _ = youtubePlaylistPage.items.map { [weak self] playlist in
-                        self?.youtubePlaylist.items.append(
-                            ListVideosItem(kind: playlist.kind, etag: playlist.etag, id: playlist.id, snippet: playlist.snippet)
+                    let page = try JSONDecoder().decode(YoutubePlaylist.self, from: response.data)
+
+                    self.youtubePlaylist.items.append(contentsOf: page.items)
+
+                    if let next = page.nextPageToken, !next.isEmpty {
+                        // ✅ PAGINACIÓN REAL
+                        self.fetchYoutubePlaylistItems(
+                            playlistId: playlistId,
+                            pageToken: next
                         )
-                    }
-
-                    guard let nextPageToken = youtubePlaylistPage.nextPageToken,
-                          !nextPageToken.isEmpty else {
-
-                        YoutubePlaylistCache.shared.set(
-                            self?.youtubePlaylist ?? YoutubePlaylist(),
-                            for: playlistId
-                        )
-                        
-                        DLog("💾 YT CACHE SAVED → playlist:", playlistId,
-                             "items:", self?.youtubePlaylist.items.count ?? 0)
-
                         return
                     }
-                    
-                    self?.fetchYoutubePlaylistItems(playlistId: playlistId, pageToken: nextPageToken)
+
+                    // ✅ FETCH COMPLETO
+                    YoutubePlaylistCache.shared.set(
+                        self.youtubePlaylist,
+                        for: playlistId
+                    )
+
+                    self.isLoaded = true
+                    self.isLoading = false
+
+                    DLog(
+                        "✅ YT FETCH COMPLETE → playlist:",
+                        playlistId,
+                        "items:",
+                        self.youtubePlaylist.items.count
+                    )
+
                 } catch {
-                    self?.displayError(error)
+                    self.isLoading = false
+                    self.displayError(error)
                 }
+
             case let .failure(error):
-                self?.displayError(error)
+                self.isLoading = false
+                self.displayError(error)
             }
         }
     }
@@ -113,7 +133,9 @@ final class ListVideosViewModel: ObservableObject, PresentAlertType {
     
     func forceReload() {
         isLoaded = false
+        isLoading = false
         youtubePlaylist = .init()
+
         DLog("🔄 YT FORCE RELOAD → playlist:", cloudPlaylist.id)
     }
 }

@@ -84,9 +84,7 @@ final class SettingsViewModel: ObservableObject, PresentAlertType {
             thumbnailUrl: resolveThumbnailURL(from: thumbnails) ?? "",
             thumbnailWidth: thumbnails.high?.width ?? 0,
             thumbnailHeight: thumbnails.high?.height ?? 0,
-            updatedAt: TimeInterval(
-                abs(item.etag.hashValue)
-            )
+            updatedAt: Date().timeIntervalSince1970
         )
     }
     

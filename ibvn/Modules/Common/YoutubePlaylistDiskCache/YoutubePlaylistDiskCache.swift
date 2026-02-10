@@ -11,6 +11,13 @@ final class YoutubePlaylistDiskCache {
 
     static let shared = YoutubePlaylistDiskCache()
 
+    // MARK: - Disk Entry
+
+    struct DiskEntry: Codable {
+        let playlist: YoutubePlaylist
+        let cachedAt: TimeInterval
+    }
+
     private let folderURL: URL
 
     private init() {
@@ -34,13 +41,23 @@ final class YoutubePlaylistDiskCache {
 
     // MARK: - Save
 
-    func save(_ playlist: YoutubePlaylist, for playlistId: String) {
+    func save(
+        playlist: YoutubePlaylist,
+        cachedAt: TimeInterval,
+        for playlistId: String
+    ) {
+
+        let entry = DiskEntry(
+            playlist: playlist,
+            cachedAt: cachedAt
+        )
+
         let fileURL = fileURLForPlaylist(id: playlistId)
 
         do {
-            let data = try JSONEncoder().encode(playlist)
+            let data = try JSONEncoder().encode(entry)
             try data.write(to: fileURL, options: .atomic)
-            DLog("💽 YT DISK SAVED → playlist:", playlistId)
+            DLog("💽 YT DISK SAVED →", playlistId)
         } catch {
             DLog("❌ YT DISK SAVE ERROR →", error.localizedDescription)
         }
@@ -48,7 +65,7 @@ final class YoutubePlaylistDiskCache {
 
     // MARK: - Load
 
-    func load(for playlistId: String) -> YoutubePlaylist? {
+    func load(for playlistId: String) -> DiskEntry? {
         let fileURL = fileURLForPlaylist(id: playlistId)
 
         guard FileManager.default.fileExists(atPath: fileURL.path) else {
@@ -57,19 +74,24 @@ final class YoutubePlaylistDiskCache {
 
         do {
             let data = try Data(contentsOf: fileURL)
-            let playlist = try JSONDecoder().decode(
-                YoutubePlaylist.self,
-                from: data
-            )
-            DLog("💽 YT DISK HIT → playlist:", playlistId)
-            return playlist
+            let entry = try JSONDecoder().decode(DiskEntry.self, from: data)
+            DLog("💽 YT DISK HIT →", playlistId)
+            return entry
         } catch {
             DLog("❌ YT DISK LOAD ERROR →", error.localizedDescription)
             return nil
         }
     }
 
-    // MARK: - Clear
+    // MARK: - Remove single
+
+    func remove(for playlistId: String) {
+        let fileURL = fileURLForPlaylist(id: playlistId)
+        try? FileManager.default.removeItem(at: fileURL)
+        DLog("🗑️ YT DISK REMOVED →", playlistId)
+    }
+
+    // MARK: - Clear all
 
     func clearAll() {
         do {

@@ -22,7 +22,7 @@ struct ListsView: View {
     
     // MARK: Body
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack {
                 content
                 
@@ -43,7 +43,11 @@ struct ListsView: View {
                 apply()
             }
             .showAlert(viewModel.alertInfo, when: $viewModel.alertIsPresenting)
+            .navigationDestination(for: CloudPlaylist.self) { playlist in
+                ListVideosView(playlist: playlist)
+            }
         }
+        
         
         var searchResults: [CloudPlaylist] {
             guard !searchText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
@@ -106,9 +110,7 @@ struct ListsView: View {
     func listSection(_ searchResults: [CloudPlaylist]) -> some View {
         List {
             ForEach(searchResults, id: \.id) { playlist in
-                NavigationLink {
-                    ListVideosView(viewModel: ListVideosViewModel(playlist: playlist))
-                } label: {
+                NavigationLink(value: playlist) {
                     labelContent(with: playlist)
                 }
                 .listRowBackground(Color.clear)

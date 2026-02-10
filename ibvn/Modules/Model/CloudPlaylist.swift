@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - Item
-struct CloudPlaylist: Codable {
+struct CloudPlaylist: Codable, Hashable {
     let id: String
     let publishedAt: String
     let title: String

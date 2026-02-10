@@ -63,6 +63,8 @@ extension IbvnType {
             switch self {
             case .series:
                 return ["#Podcast", "#ElRetoDeHoy"]
+            case .recommended:
+                return ["#RecomendadaDomingo", "#RecomendadaNDVN"]
             default:
                 return []
             }

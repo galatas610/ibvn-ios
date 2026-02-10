@@ -17,6 +17,9 @@ final class ListVideosViewModel: ObservableObject, PresentAlertType {
     @Published var alertInfo: AlertInfo?
     @Published var alertIsPresenting: Bool = false
     
+    private var hasLoaded = false
+    private var isLoading: Bool = false
+    
     // MARK: Variables
     var showPreview: Bool {
         cloudPlaylist.title.contains("#Preview") ||
@@ -26,13 +29,32 @@ final class ListVideosViewModel: ObservableObject, PresentAlertType {
     // MARK: Initialization
     init(playlist: CloudPlaylist) {
         self.cloudPlaylist = playlist
-        
-        fetchYoutubePlaylistItems()
     }
     
     // MARK: Functions
+    func loadIfNeeded() {
+        // 🔁 Siempre revisa cache primero
+        if let cached = YoutubePlaylistCache.shared.get(
+            for: cloudPlaylist.id,
+            updatedAt: cloudPlaylist.updatedAt
+        ) {
+            youtubePlaylist = cached
+            hasLoaded = true
+            return
+        }
+
+        // 🚫 Cache vacío o inválido → sí fetch
+        guard !isLoading else { return }
+
+        DLog("🌐 YT FETCH → playlist:", cloudPlaylist.id)
+        isLoading = true
+        fetchYoutubePlaylistItems()
+    }
+    
     private func fetchYoutubePlaylistItems(playlistId: String, pageToken: String = "") {
         youtubePlaylist = pageToken.isEmpty ? .init() : youtubePlaylist
+        
+        DLog("🌐 YT REQUEST → playlist:", playlistId, "pageToken:", pageToken)
         
         let provider = MoyaProvider<YoutubeApiManager>()
         
@@ -47,7 +69,17 @@ final class ListVideosViewModel: ObservableObject, PresentAlertType {
                         )
                     }
 
-                    guard let nextPageToken = youtubePlaylistPage.nextPageToken, !nextPageToken.isEmpty else {
+                    guard let nextPageToken = youtubePlaylistPage.nextPageToken,
+                          !nextPageToken.isEmpty else {
+
+                        YoutubePlaylistCache.shared.set(
+                            self?.youtubePlaylist ?? YoutubePlaylist(),
+                            for: playlistId
+                        )
+                        
+                        DLog("💾 YT CACHE SAVED → playlist:", playlistId,
+                             "items:", self?.youtubePlaylist.items.count ?? 0)
+
                         return
                     }
                     

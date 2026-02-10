@@ -45,6 +45,9 @@ struct ListVideosView: View {
         .toolbarBackground(.hidden, for: .navigationBar)
         .navigationBarTitleDisplayMode(.inline)
         .showAlert(viewModel.alertInfo, when: $viewModel.alertIsPresenting)
+        .onAppear {
+            viewModel.loadIfNeeded()
+        }
     }
     
     var searchResults: [ListVideosItem] {

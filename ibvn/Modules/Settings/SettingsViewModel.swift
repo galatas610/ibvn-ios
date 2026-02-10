@@ -18,6 +18,9 @@ final class SettingsViewModel: ObservableObject, PresentAlertType {
     @Published var cloudPlaylists: [CloudPlaylist] = []
     
     // MARK: - Properties
+    private var isSyncingPlaylists = false
+    private var tempPlaylists: [CloudPlaylist] = []
+    
     let provider = MoyaProvider<YoutubeApiManager>()
     
     var alertIsPresenting: Bool = false
@@ -27,16 +30,24 @@ final class SettingsViewModel: ObservableObject, PresentAlertType {
     
     // MARK: - Sync Playlists
     func syncPlaylist(pageToken: String = "") {
-        resetStateIfNeeded(pageToken)
-        
+        // 🔒 Evita reentradas
+        if pageToken.isEmpty {
+            guard !isSyncingPlaylists else { return }
+            isSyncingPlaylists = true
+            tempPlaylists = []
+            viewMessage = "🔄 Iniciando sincronización..."
+            YoutubePlaylistCache.shared.invalidateAll()
+        }
+
         provider.request(.playlist(pageToken: pageToken)) { [weak self] result in
             guard let self else { return }
-            
+
             switch result {
             case .success(let response):
                 self.handlePlaylistSuccess(response, pageToken: pageToken)
-                
+
             case .failure(let error):
+                self.isSyncingPlaylists = false
                 self.displayError(error)
             }
         }
@@ -46,13 +57,13 @@ final class SettingsViewModel: ObservableObject, PresentAlertType {
     private func handlePlaylistSuccess(_ response: Response, pageToken: String) {
         do {
             let decoded = try JSONDecoder().decode(YoutubePlaylists.self, from: response.data)
-            
-            youtubePlaylists = decoded
-            
+
+            // ⚠️ NO publiques nada aquí
             appendPlaylists(decoded.items)
-            updateProgressMessage()
+
             handleNextPage(decoded.nextPageToken)
         } catch {
+            isSyncingPlaylists = false
             displayError(error)
         }
     }
@@ -60,7 +71,7 @@ final class SettingsViewModel: ObservableObject, PresentAlertType {
     private func appendPlaylists(_ items: [ItemResponse]) {
         items
             .map(makeCloudPlaylist)
-            .forEach { cloudPlaylists.append($0) }
+            .forEach { tempPlaylists.append($0) }
     }
     
     private func makeCloudPlaylist(from item: ItemResponse) -> CloudPlaylist {
@@ -73,7 +84,10 @@ final class SettingsViewModel: ObservableObject, PresentAlertType {
             description: item.snippet.description,
             thumbnailUrl: resolveThumbnailURL(from: thumbnails) ?? "",
             thumbnailWidth: thumbnails.high?.width ?? 0,
-            thumbnailHeight: thumbnails.high?.height ?? 0
+            thumbnailHeight: thumbnails.high?.height ?? 0,
+            updatedAt: ISO8601DateFormatter()
+                .date(from: item.snippet.publishedAt)?
+                .timeIntervalSince1970 ?? 0
         )
     }
     
@@ -96,7 +110,11 @@ final class SettingsViewModel: ObservableObject, PresentAlertType {
     }
     
     private func finalizePlaylistSync() {
-        viewMessage += "\n✅ \(cloudPlaylists.count) Listas descargadas en total."
+        isSyncingPlaylists = false
+
+        cloudPlaylists = tempPlaylists
+        viewMessage = "✅ \(cloudPlaylists.count) Listas descargadas."
+
         saveListsOnCloud(cloudPlaylist: cloudPlaylists)
     }
     
@@ -174,15 +192,20 @@ final class SettingsViewModel: ObservableObject, PresentAlertType {
     // MARK: - Firestore
     private func saveListsOnCloud(cloudPlaylist: [CloudPlaylist]) {
         viewMessage += "\n⬆️ Subiendo \(cloudPlaylist.count) Listas a la nube."
-        
+
         let remoteDataBase = Firestore.firestore()
+        let batch = remoteDataBase.batch()
+
         cloudPlaylist.forEach {
-            remoteDataBase.collection("playlists")
-                .document($0.id)
-                .setData($0.asDictionary())
+            let ref = remoteDataBase.collection("playlists").document($0.id)
+            batch.setData($0.asDictionary(), forDocument: ref)
         }
-        
-        viewMessage += "\n🆗 \(cloudPlaylist.count) Listas en la Nube"
+
+        batch.commit { [weak self] error in
+            if error == nil {
+                self?.viewMessage += "\n🆗 \(cloudPlaylist.count) Listas en la nube"
+            }
+        }
     }
     
     private func saveLiveOnCloud(_ cloudLive: CloudLive) {

@@ -19,21 +19,35 @@ final class YoutubePlaylistDiskCache {
     private let folderURL: URL
     
     private init() {
-        let baseURL = FileManager.default.urls(
+        let fileManager = FileManager.default
+
+        if let cachesURL = fileManager.urls(
             for: .cachesDirectory,
             in: .userDomainMask
-        ).first!
-        
-        folderURL = baseURL.appendingPathComponent(
-            "youtube-playlists",
-            isDirectory: true
-        )
-        
-        if !FileManager.default.fileExists(atPath: folderURL.path) {
-            try? FileManager.default.createDirectory(
-                at: folderURL,
-                withIntermediateDirectories: true
+        ).first {
+
+            folderURL = cachesURL.appendingPathComponent(
+                "youtube-playlists",
+                isDirectory: true
             )
+        } else {
+            // Fallback ultra defensivo (no debería pasar nunca)
+            folderURL = fileManager.temporaryDirectory.appendingPathComponent(
+                "youtube-playlists",
+                isDirectory: true
+            )
+            DLog("⚠️ YT DISK CACHE → using temporaryDirectory fallback")
+        }
+
+        do {
+            if !fileManager.fileExists(atPath: folderURL.path) {
+                try fileManager.createDirectory(
+                    at: folderURL,
+                    withIntermediateDirectories: true
+                )
+            }
+        } catch {
+            DLog("❌ YT DISK CACHE INIT ERROR →", error.localizedDescription)
         }
     }
     

@@ -9,26 +9,22 @@ import SwiftUI
 
 struct VideoLiveView: View {
     // MARK: Variables
-    var item: VideoItem
+    let live: CloudLive
     
     // MARK: Body
     var body: some View {
         VStack {
-            youTubePlayerView(with: item)
+            youTubePlayerView(with: live)
                 .padding(.bottom, 4)
             
-            date(with: item)
+            date(with: live)
                 .padding(.leading)
             
             VStack {
-                title(with: item)
-                    .lineLimit(nil)
-                    .fixedSize(horizontal: false, vertical: true)
+                title(with: live)
                     .padding(.bottom, 4)
                 
-                description(with: item)
-                    .lineLimit(nil)
-                    .fixedSize(horizontal: false, vertical: true)
+                description(with: live)
             }
             .padding()
             .background(Constants.fondo)
@@ -37,15 +33,15 @@ struct VideoLiveView: View {
     }
     
     // MARK: Functions
-    func youTubePlayerView(with item: VideoItem) -> some View {
-        YoutubePlayer(videoId: item.id)
+    func youTubePlayerView(with live: CloudLive) -> some View {
+        YoutubePlayer(videoId: live.videoId)
             .cornerRadius(16)
             .frame(height: 200)
     }
     
-    func date(with item: VideoItem) -> some View {
+    func date(with live: CloudLive) -> some View {
         HStack {
-            Text(item.snippet.publishedAt.formatDate())
+            Text(live.publishedAt.formatDate())
                 .appFont(.dmSans, .medium, size: 16)
                 .foregroundStyle(Constants.textoPrincipal)
             
@@ -53,9 +49,9 @@ struct VideoLiveView: View {
         }
     }
     
-    func title(with item: VideoItem) -> some View {
+    func title(with live: CloudLive) -> some View {
         HStack {
-            Text(item.snippet.title)
+            Text(live.title)
                 .appFont(.dmSans, .bold, size: 18)
                 .foregroundColor(.white)
             
@@ -63,9 +59,9 @@ struct VideoLiveView: View {
         }
     }
     
-    func description(with item: VideoItem) -> some View {
+    func description(with live: CloudLive) -> some View {
         HStack {
-            Text(item.snippet.description)
+            Text(live.description)
                 .appFont(.dmSans, .medium, size: 14)
                 .foregroundStyle(Constants.textoPrincipal)
             

@@ -10,7 +10,6 @@ import FirebaseFirestore
 import Moya
 
 final class SettingsViewModel: ObservableObject, PresentAlertType {
-    
     // MARK: - Published
     @Published var youtubeLive: YoutubeLive = .init()
     @Published var viewMessage: String = ""
@@ -20,6 +19,7 @@ final class SettingsViewModel: ObservableObject, PresentAlertType {
     
     // MARK: - Properties
     let provider = MoyaProvider<YoutubeApiManager>()
+    
     var alertIsPresenting: Bool = false
     
     // MARK: - Init
@@ -88,6 +88,7 @@ final class SettingsViewModel: ObservableObject, PresentAlertType {
     private func handleNextPage(_ token: String?) {
         guard let token, !token.isEmpty else {
             finalizePlaylistSync()
+            
             return
         }
         
@@ -142,13 +143,14 @@ final class SettingsViewModel: ObservableObject, PresentAlertType {
                 thumbnail: item.snippet.thumbnails.high.url,
                 state: {
                     switch item.snippet.liveBroadcastContent {
-                    case "live": return "live"
-                    case "upcoming": return "upcoming"
-                    default: return "last"
+                    case "live": return .live
+                    case "upcoming": return .upcoming
+                    default: return .last
                     }
                 }(),
                 isLive: item.snippet.liveBroadcastContent == "live",
-                publishedAt: item.snippet.publishedAt
+                publishedAt: item.snippet.publishedAt,
+                description: item.snippet.description
             )
             
             viewMessage += "\n ✅ \(cloudLive.state) disponible."

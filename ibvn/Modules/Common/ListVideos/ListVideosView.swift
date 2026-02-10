@@ -13,8 +13,10 @@ struct ListVideosView: View {
     @State private var searchText = ""
     
     // MARK: Initialization
-    init(viewModel: ListVideosViewModel) {
-        self._viewModel = StateObject(wrappedValue: viewModel)
+    init(playlist: CloudPlaylist) {
+        _viewModel = StateObject(
+            wrappedValue: ListVideosViewModel(playlist: playlist)
+        )
     }
     
     // MARK: Body
@@ -45,6 +47,9 @@ struct ListVideosView: View {
         .toolbarBackground(.hidden, for: .navigationBar)
         .navigationBarTitleDisplayMode(.inline)
         .showAlert(viewModel.alertInfo, when: $viewModel.alertIsPresenting)
+        .onAppear {
+            viewModel.loadIfNeeded()
+        }
     }
     
     var searchResults: [ListVideosItem] {

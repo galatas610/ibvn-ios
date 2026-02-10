@@ -96,7 +96,7 @@ struct RecommendedView: View {
         LazyVStack(alignment: .leading) {
             ForEach(viewModel.pastSeriesPlaylists, id: \.id) { playlist in
                 NavigationLink {
-                    ListVideosView(viewModel: ListVideosViewModel(playlist: playlist))
+                    ListVideosView(playlist: playlist)
                 } label: {
                     labelContent(with: playlist)
                 }

@@ -34,18 +34,9 @@ struct LiveView: View {
             } else {
                 ScrollView {
                     VStack(alignment: .leading) {
-                        Text(viewModel.youtubeVideo.items.first?.snippet.liveBroadcastContent.title ?? "")
-                            .appFont(.moldin, .regular, size: 48)
-                            .padding(.leading)
-                            .padding(.bottom, -2)
-                        
-                        if let lastLive = viewModel.youtubeVideo.items.first {
-                            VideoLiveView(item: lastLive)
-                                .padding(.horizontal)
-                        }
-                        
+                        liveHeader
+                        liveContent
                         quickLinks
-                        
                         donateButton
                         
                         Spacer()
@@ -57,12 +48,50 @@ struct LiveView: View {
                 .background(Constants.fondoOscuro)
             }
         }
-        .onAppear {
-            viewModel.fetchCloudLive()
-        }
         .sheet(item: $safariItem) { item in
             SafariView(url: item.url)
                 .ignoresSafeArea()
+        }
+    }
+    
+    private var liveHeader: some View {
+        Group {
+            switch viewModel.cloudLive.state {
+            case .live:
+                Text("EN VIVO")
+            case .upcoming:
+                Text("Próximo en vivo")
+            case .last:
+                Text("Última transmisión")
+            }
+        }
+        .appFont(.moldin, .regular, size: 48)
+        .foregroundStyle(.white)
+        .padding(.leading)
+        .padding(.bottom, -8)
+        .transition(.move(edge: .top).combined(with: .opacity))
+        .animation(
+            .spring(response: 0.4, dampingFraction: 0.8),
+            value: viewModel.cloudLive.state
+        )
+    }
+    
+    private var liveContent: some View {
+        ZStack {
+            VideoLiveView(live: viewModel.cloudLive)
+                .padding(.horizontal)
+                .opacity(viewModel.cloudLive.videoId.isEmpty ? 0 : 1)
+                .animation(
+                    .easeInOut(duration: 0.35),
+                    value: viewModel.cloudLive.videoId
+                )
+            
+            if viewModel.cloudLive.videoId.isEmpty {
+                Text("No hay transmisión disponible")
+                    .appFont(.dmSans, .medium, size: 16)
+                    .foregroundStyle(.secondary)
+                    .transition(.opacity)
+            }
         }
     }
     

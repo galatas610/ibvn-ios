@@ -62,15 +62,16 @@ final class RecommendedViewModel: ObservableObject {
         _ playlists: [CloudPlaylist],
         for type: IbvnType
     ) -> [CloudPlaylist] {
-
         playlists.filter { playlist in
-            let text = playlist.title + playlist.description
+            let text = (playlist.title + playlist.description)
 
+            // INCLUDE
             let includeCheck: Bool = {
                 guard !type.includeTags.isEmpty else { return true }
                 return type.includeTags.contains { text.contains($0) }
             }()
 
+            // EXCLUDE
             let excludeCheck: Bool = {
                 guard !type.excludeTags.isEmpty else { return true }
                 return !type.excludeTags.contains { text.contains($0) }

@@ -55,6 +55,8 @@
 		8371D6A92BCAF2910010EB85 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 8371D6A82BCAF2910010EB85 /* Moya */; };
 		8371D6AB2BCAF2910010EB85 /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 8371D6AA2BCAF2910010EB85 /* ReactiveMoya */; };
 		8371D6AD2BCAF2910010EB85 /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 8371D6AC2BCAF2910010EB85 /* RxMoya */; };
+		8377E33E2F3AF7360091626C /* YoutubePlaylistCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8377E33D2F3AF7360091626C /* YoutubePlaylistCache.swift */; };
+		8377E3432F3B0C310091626C /* YoutubePlaylistDiskCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8377E3422F3B0C310091626C /* YoutubePlaylistDiskCache.swift */; };
 		838501612D4B113A008A49E2 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838501602D4B113A008A49E2 /* SignInView.swift */; };
 		838501632D4B119B008A49E2 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838501622D4B119B008A49E2 /* SignInViewModel.swift */; };
 		838501662D4B179E008A49E2 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 838501652D4B179E008A49E2 /* FirebaseAuth */; };
@@ -154,6 +156,8 @@
 		83389A3D2BC09C3A001B6171 /* IbvnType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IbvnType.swift; sourceTree = "<group>"; };
 		8338F0772BCB43C4008598F4 /* YoutubeApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeApiManager.swift; sourceTree = "<group>"; };
 		83618C2C2F29A8E000D426F5 /* AppFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFont.swift; sourceTree = "<group>"; };
+		8377E33D2F3AF7360091626C /* YoutubePlaylistCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubePlaylistCache.swift; sourceTree = "<group>"; };
+		8377E3422F3B0C310091626C /* YoutubePlaylistDiskCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubePlaylistDiskCache.swift; sourceTree = "<group>"; };
 		838501602D4B113A008A49E2 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		838501622D4B119B008A49E2 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		8388016C2BC0B35E00FC31BC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -298,6 +302,8 @@
 		8315C8472BBCCD6E002186E9 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				8377E3412F3B0C1D0091626C /* YoutubePlaylistDiskCache */,
+				8377E3402F3AFF270091626C /* YoutubePlaylistCache */,
 				1051EF722F322F5A001CAD72 /* CarouselSection */,
 				1026607A2F2E679B00F7DCA7 /* Buttons */,
 				831159842F2DE50400169FFF /* CustomSearchBar */,
@@ -377,6 +383,22 @@
 				8338F0772BCB43C4008598F4 /* YoutubeApiManager.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		8377E3402F3AFF270091626C /* YoutubePlaylistCache */ = {
+			isa = PBXGroup;
+			children = (
+				8377E33D2F3AF7360091626C /* YoutubePlaylistCache.swift */,
+			);
+			path = YoutubePlaylistCache;
+			sourceTree = "<group>";
+		};
+		8377E3412F3B0C1D0091626C /* YoutubePlaylistDiskCache */ = {
+			isa = PBXGroup;
+			children = (
+				8377E3422F3B0C310091626C /* YoutubePlaylistDiskCache.swift */,
+			);
+			path = YoutubePlaylistDiskCache;
 			sourceTree = "<group>";
 		};
 		8385015F2D4B110C008A49E2 /* SignIn */ = {
@@ -771,9 +793,11 @@
 				1051EF6D2F322E6A001CAD72 /* RecommendedViewModel.swift in Sources */,
 				83EBBDE32BC6A965003AD08B /* SettingsView.swift in Sources */,
 				83618C2D2F29A8E000D426F5 /* AppFont.swift in Sources */,
+				8377E33E2F3AF7360091626C /* YoutubePlaylistCache.swift in Sources */,
 				83891C3A2BB6229F002CBE99 /* YoutubePlayer.swift in Sources */,
 				8315C84C2BBCD004002186E9 /* VideoView.swift in Sources */,
 				838801832BC0E12900FC31BC /* LiveViewModel.swift in Sources */,
+				8377E3432F3B0C310091626C /* YoutubePlaylistDiskCache.swift in Sources */,
 				838501612D4B113A008A49E2 /* SignInView.swift in Sources */,
 				83389A312BC09315001B6171 /* ListsView.swift in Sources */,
 				104430312F2DBA3400A3B570 /* CampusMap.swift in Sources */,

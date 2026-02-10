@@ -22,7 +22,7 @@ struct ListsView: View {
     
     // MARK: Body
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack {
                 content
                 
@@ -43,23 +43,26 @@ struct ListsView: View {
                 apply()
             }
             .showAlert(viewModel.alertInfo, when: $viewModel.alertIsPresenting)
+            .navigationDestination(for: CloudPlaylist.self) { playlist in
+                ListVideosView(playlist: playlist)
+            }
         }
         
         var searchResults: [CloudPlaylist] {
             guard !searchText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
                 return viewModel.visiblePlaylists
             }
-
+            
             let tokens = searchText
                 .normalizedForSearch()
                 .split(separator: " ")
                 .map(String.init)
-
+            
             return viewModel.visiblePlaylists.filter { playlist in
                 let words = (playlist.title + " " + playlist.description)
                     .normalizedForSearch()
                     .split(separator: " ")
-
+                
                 return tokens.allSatisfy { token in
                     words.contains { word in
                         String(word).starts(with: token)
@@ -106,9 +109,7 @@ struct ListsView: View {
     func listSection(_ searchResults: [CloudPlaylist]) -> some View {
         List {
             ForEach(searchResults, id: \.id) { playlist in
-                NavigationLink {
-                    ListVideosView(viewModel: ListVideosViewModel(playlist: playlist))
-                } label: {
+                NavigationLink(value: playlist) {
                     labelContent(with: playlist)
                 }
                 .listRowBackground(Color.clear)

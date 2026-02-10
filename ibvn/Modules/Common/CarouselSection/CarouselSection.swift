@@ -33,7 +33,7 @@ func carouselSection(
                 ForEach(playlists, id: \.id) { playlist in
                     NavigationLink {
                         ListVideosView(
-                            viewModel: ListVideosViewModel(playlist: playlist)
+                            playlist: playlist
                         )
                     } label: {
                         RecommendedCardView(playlist: playlist)

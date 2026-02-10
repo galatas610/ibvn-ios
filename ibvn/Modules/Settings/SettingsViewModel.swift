@@ -115,6 +115,16 @@ final class SettingsViewModel: ObservableObject, PresentAlertType {
         cloudPlaylists = tempPlaylists
         viewMessage = "✅ \(cloudPlaylists.count) Listas descargadas."
 
+        // 🔥 1️⃣ Invalidar cache SOLO cuando ya hay data nueva
+        YoutubePlaylistCache.shared.invalidateAll()
+
+        // 🔔 2️⃣ Avisar a todos los ViewModels
+        NotificationCenter.default.post(
+            name: .youtubeDataDidSync,
+            object: nil
+        )
+
+        // ☁️ 3️⃣ Subir a Firebase
         saveListsOnCloud(cloudPlaylist: cloudPlaylists)
     }
     

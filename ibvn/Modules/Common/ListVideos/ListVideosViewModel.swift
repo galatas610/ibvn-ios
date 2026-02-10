@@ -19,6 +19,7 @@ final class ListVideosViewModel: ObservableObject, PresentAlertType {
     
     private var hasLoaded = false
     private var isLoading: Bool = false
+    private var isLoaded = false
     
     // MARK: Variables
     var showPreview: Bool {
@@ -29,25 +30,38 @@ final class ListVideosViewModel: ObservableObject, PresentAlertType {
     // MARK: Initialization
     init(playlist: CloudPlaylist) {
         self.cloudPlaylist = playlist
+
+        NotificationCenter.default.addObserver(
+            forName: .youtubeDataDidSync,
+            object: nil,
+            queue: .main
+        ) { [weak self] _ in
+            self?.forceReload()
+        }
+
+        loadIfNeeded()
     }
     
     // MARK: Functions
     func loadIfNeeded() {
-        // 🔁 Siempre revisa cache primero
-        if let cached = YoutubePlaylistCache.shared.get(
-            for: cloudPlaylist.id,
-            updatedAt: cloudPlaylist.updatedAt
-        ) {
-            youtubePlaylist = cached
-            hasLoaded = true
+        guard !isLoaded else {
+            DLog("⏭️ YT LOAD SKIPPED → already loaded", cloudPlaylist.id)
             return
         }
 
-        // 🚫 Cache vacío o inválido → sí fetch
-        guard !isLoading else { return }
+        isLoaded = true
+
+        if let cached =
+            YoutubePlaylistCache.shared.get(
+                for: cloudPlaylist.id,
+                updatedAt: cloudPlaylist.updatedAt
+            ) {
+
+            youtubePlaylist = cached
+            return
+        }
 
         DLog("🌐 YT FETCH → playlist:", cloudPlaylist.id)
-        isLoading = true
         fetchYoutubePlaylistItems()
     }
     
@@ -95,5 +109,11 @@ final class ListVideosViewModel: ObservableObject, PresentAlertType {
     
     func fetchYoutubePlaylistItems() {
         fetchYoutubePlaylistItems(playlistId: cloudPlaylist.id)
+    }
+    
+    func forceReload() {
+        isLoaded = false
+        youtubePlaylist = .init()
+        DLog("🔄 YT FORCE RELOAD → playlist:", cloudPlaylist.id)
     }
 }

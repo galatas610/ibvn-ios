@@ -16,32 +16,71 @@ final class YoutubePlaylistCache {
         let cachedAt: TimeInterval
     }
 
-    private var cache: [String: CacheEntry] = [:]
+    private var memoryCache: [String: CacheEntry] = [:]
 
-    func get(for playlistId: String, updatedAt: TimeInterval) -> YoutubePlaylist? {
-        guard let entry = cache[playlistId] else { return nil }
+    // MARK: - Get
 
-        if entry.cachedAt >= updatedAt {
-            DLog("📦 YT CACHE HIT → playlist:", playlistId)
-            return entry.playlist
-        } else {
-            DLog("♻️ YT CACHE INVALID → playlist:", playlistId)
-            cache.removeValue(forKey: playlistId)
-            return nil
+    func get(
+        for playlistId: String,
+        updatedAt: TimeInterval
+    ) -> YoutubePlaylist? {
+
+        // 1️⃣ Memory cache
+        if let entry = memoryCache[playlistId] {
+            if entry.cachedAt >= updatedAt {
+                DLog("📦 YT CACHE HIT (memory) →", playlistId)
+                return entry.playlist
+            } else {
+                DLog("♻️ YT CACHE INVALID (memory) →", playlistId)
+                memoryCache.removeValue(forKey: playlistId)
+            }
         }
+
+        // 2️⃣ Disk cache
+        if let diskPlaylist =
+            YoutubePlaylistDiskCache.shared.load(for: playlistId) {
+
+            let now = Date().timeIntervalSince1970
+            memoryCache[playlistId] = CacheEntry(
+                playlist: diskPlaylist,
+                cachedAt: now
+            )
+
+            DLog("📦 YT CACHE HIT (disk → memory) →", playlistId)
+            return diskPlaylist
+        }
+
+        return nil
     }
+
+    // MARK: - Set
 
     func set(_ playlist: YoutubePlaylist, for playlistId: String) {
-        cache[playlistId] = CacheEntry(
+        let now = Date().timeIntervalSince1970
+
+        memoryCache[playlistId] = CacheEntry(
             playlist: playlist,
-            cachedAt: Date().timeIntervalSince1970
+            cachedAt: now
         )
 
-        DLog("💾 YT CACHE SAVED → playlist:", playlistId, "items:", playlist.items.count)
+        YoutubePlaylistDiskCache.shared.save(
+            playlist,
+            for: playlistId
+        )
+
+        DLog(
+            "💾 YT CACHE SAVED →",
+            playlistId,
+            "items:",
+            playlist.items.count
+        )
     }
-    
+
+    // MARK: - Invalidate (used by Settings sync)
+
     func invalidateAll() {
-        cache.removeAll()
-        DLog("🧹 YT CACHE CLEARED (manual sync)")
+        memoryCache.removeAll()
+        YoutubePlaylistDiskCache.shared.clearAll()
+        DLog("🧹 YT CACHE CLEARED (mem + disk)")
     }
 }

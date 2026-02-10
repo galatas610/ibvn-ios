@@ -48,22 +48,21 @@ struct ListsView: View {
             }
         }
         
-        
         var searchResults: [CloudPlaylist] {
             guard !searchText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
                 return viewModel.visiblePlaylists
             }
-
+            
             let tokens = searchText
                 .normalizedForSearch()
                 .split(separator: " ")
                 .map(String.init)
-
+            
             return viewModel.visiblePlaylists.filter { playlist in
                 let words = (playlist.title + " " + playlist.description)
                     .normalizedForSearch()
                     .split(separator: " ")
-
+                
                 return tokens.allSatisfy { token in
                     words.contains { word in
                         String(word).starts(with: token)

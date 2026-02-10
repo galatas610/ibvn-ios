@@ -14,10 +14,10 @@ struct ListVideosView: View {
     
     // MARK: Initialization
     init(playlist: CloudPlaylist) {
-           _viewModel = StateObject(
-               wrappedValue: ListVideosViewModel(playlist: playlist)
-           )
-       }
+        _viewModel = StateObject(
+            wrappedValue: ListVideosViewModel(playlist: playlist)
+        )
+    }
     
     // MARK: Body
     var body: some View {

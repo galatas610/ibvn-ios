@@ -32,7 +32,7 @@ final class ListVideosViewModel: ObservableObject, PresentAlertType {
         self.cloudPlaylist = playlist
         
         DLog("🧠 VM INIT →", cloudPlaylist.id)
-
+        
         NotificationCenter.default.addObserver(
             forName: .youtubeDataDidSync,
             object: nil,
@@ -48,7 +48,7 @@ final class ListVideosViewModel: ObservableObject, PresentAlertType {
             DLog("⏭️ YT LOAD SKIPPED → already loading/loaded", cloudPlaylist.id)
             return
         }
-
+        
         // ✅ 1️⃣ CACHE FIRST
         if let cached = YoutubePlaylistCache.shared.get(
             for: cloudPlaylist.id,
@@ -59,11 +59,11 @@ final class ListVideosViewModel: ObservableObject, PresentAlertType {
             DLog("📦 YT PLAYLIST LOADED FROM CACHE →", cloudPlaylist.id)
             return
         }
-
+        
         // 🌐 2️⃣ FETCH
         isLoading = true
         youtubePlaylist = .init()
-
+        
         fetchYoutubePlaylistItems(
             playlistId: cloudPlaylist.id,
             pageToken: nil
@@ -75,21 +75,21 @@ final class ListVideosViewModel: ObservableObject, PresentAlertType {
         pageToken: String? = nil
     ) {
         let token = pageToken ?? ""
-
+        
         DLog("🌐 YT REQUEST → playlist:", playlistId, "pageToken:", token)
-
+        
         let provider = MoyaProvider<YoutubeApiManager>()
-
+        
         provider.request(.playlistItems(playlistId: playlistId, pageToken: token)) { [weak self] result in
             guard let self else { return }
-
+            
             switch result {
             case let .success(response):
                 do {
                     let page = try JSONDecoder().decode(YoutubePlaylist.self, from: response.data)
-
+                    
                     self.youtubePlaylist.items.append(contentsOf: page.items)
-
+                    
                     if let next = page.nextPageToken, !next.isEmpty {
                         // ✅ PAGINACIÓN REAL
                         self.fetchYoutubePlaylistItems(
@@ -98,28 +98,28 @@ final class ListVideosViewModel: ObservableObject, PresentAlertType {
                         )
                         return
                     }
-
+                    
                     // ✅ FETCH COMPLETO
                     YoutubePlaylistCache.shared.set(
                         self.youtubePlaylist,
                         for: playlistId
                     )
-
+                    
                     self.isLoaded = true
                     self.isLoading = false
-
+                    
                     DLog(
                         "✅ YT FETCH COMPLETE → playlist:",
                         playlistId,
                         "items:",
                         self.youtubePlaylist.items.count
                     )
-
+                    
                 } catch {
                     self.isLoading = false
                     self.displayError(error)
                 }
-
+                
             case let .failure(error):
                 self.isLoading = false
                 self.displayError(error)
@@ -135,7 +135,7 @@ final class ListVideosViewModel: ObservableObject, PresentAlertType {
         isLoaded = false
         isLoading = false
         youtubePlaylist = .init()
-
+        
         DLog("🔄 YT FORCE RELOAD → playlist:", cloudPlaylist.id)
     }
 }

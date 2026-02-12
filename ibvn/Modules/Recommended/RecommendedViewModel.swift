@@ -63,18 +63,24 @@ final class RecommendedViewModel: ObservableObject {
         for type: IbvnType
     ) -> [CloudPlaylist] {
         playlists.filter { playlist in
-            let text = (playlist.title + playlist.description)
+            // Normalize playlist text (case/diacritics insensitive)
+            let rawText = (playlist.title + playlist.description)
+            let normText = rawText.folding(options: .diacriticInsensitive, locale: .current).lowercased()
+
+            // Normalize include/exclude tags similarly
+            let includeTags = type.includeTags.map { $0.folding(options: .diacriticInsensitive, locale: .current).lowercased() }
+            let excludeTags = type.excludeTags.map { $0.folding(options: .diacriticInsensitive, locale: .current).lowercased() }
 
             // INCLUDE
             let includeCheck: Bool = {
-                guard !type.includeTags.isEmpty else { return true }
-                return type.includeTags.contains { text.contains($0) }
+                guard !includeTags.isEmpty else { return true }
+                return includeTags.contains { normText.contains($0) }
             }()
 
             // EXCLUDE
             let excludeCheck: Bool = {
-                guard !type.excludeTags.isEmpty else { return true }
-                return !type.excludeTags.contains { text.contains($0) }
+                guard !excludeTags.isEmpty else { return true }
+                return !excludeTags.contains { normText.contains($0) }
             }()
 
             return includeCheck && excludeCheck

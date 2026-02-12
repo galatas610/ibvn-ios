@@ -174,12 +174,12 @@ struct ListsView: View {
             
             VStack(alignment: .leading) {
                 Text(item.title)
-                    .font(.caption)
-                    .foregroundColor(Constants.primary)
+                    .appFont(.dmSans, .semiBold, size: 16)
+                    .foregroundColor(.white)
                 
                 Text(item.publishedAt.formatDate())
-                    .font(.caption2)
-                    .foregroundColor(Constants.secondary)
+                    .appFont(.dmSans, .regular, size: 12)
+                    .foregroundColor(.white)
             }
         }
     }

@@ -126,20 +126,30 @@ final class ListsViewModel: ObservableObject, PresentAlertType {
     ) -> [CloudPlaylist] {
         
         playlists.filter { playlist in
+            // Normaliza el texto de la playlist
             let text = (playlist.title + playlist.description)
+            let normText = text.folding(options: .diacriticInsensitive, locale: .current).lowercased()
             
+            // Pre-normaliza los tags de include/exclude
+            let includeTags = type.includeTags.map {
+                $0.folding(options: .diacriticInsensitive, locale: .current).lowercased()
+            }
+            let excludeTags = type.excludeTags.map {
+                $0.folding(options: .diacriticInsensitive, locale: .current).lowercased()
+            }
+
             // INCLUDE
             let includeCheck: Bool = {
-                guard !type.includeTags.isEmpty else { return true }
-                return type.includeTags.contains { text.contains($0) }
+                guard !includeTags.isEmpty else { return true }
+                return includeTags.contains { normText.contains($0) }
             }()
-            
+
             // EXCLUDE
             let excludeCheck: Bool = {
-                guard !type.excludeTags.isEmpty else { return true }
-                return !type.excludeTags.contains { text.contains($0) }
+                guard !excludeTags.isEmpty else { return true }
+                return !excludeTags.contains { normText.contains($0) }
             }()
-            
+
             return includeCheck && excludeCheck
         }
     }

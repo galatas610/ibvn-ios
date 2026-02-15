@@ -65,7 +65,7 @@ struct LiveView: View {
                 Text("Última transmisión")
             }
         }
-        .appFont(.moldin, .regular, size: 48)
+        .appFont(.dmSans, .black, size: 32).tracking(-2)
         .foregroundStyle(.white)
         .padding(.leading)
         .padding(.bottom, -8)

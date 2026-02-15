@@ -10,12 +10,6 @@
 	<dict/>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Moldin-Black.otf</string>
-		<string>Moldin-Bold.otf</string>
-		<string>Moldin-ExtraBold.otf</string>
-		<string>Moldin-Medium.otf</string>
-		<string>Moldin-Regular.otf</string>
-		<string>Moldin-SemiBold.otf</string>
 		<string>DMSans-Black.ttf</string>
 		<string>DMSans-BlackItalic.ttf</string>
 		<string>DMSans-Bold.ttf</string>

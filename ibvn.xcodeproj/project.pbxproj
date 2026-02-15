@@ -14,12 +14,6 @@
 		1051EF6F2F322EBE001CAD72 /* RecommendedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1051EF6E2F322EBE001CAD72 /* RecommendedView.swift */; };
 		1051EF712F322EFC001CAD72 /* CarouselSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1051EF702F322EFC001CAD72 /* CarouselSection.swift */; };
 		1051EF742F322F7B001CAD72 /* RecommendedCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1051EF732F322F7B001CAD72 /* RecommendedCardView.swift */; };
-		10E4589E2F2994A60002A8FC /* Moldin-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 10E458982F2994A60002A8FC /* Moldin-Black.otf */; };
-		10E4589F2F2994A60002A8FC /* Moldin-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 10E4589C2F2994A60002A8FC /* Moldin-Regular.otf */; };
-		10E458A02F2994A60002A8FC /* Moldin-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 10E4589D2F2994A60002A8FC /* Moldin-SemiBold.otf */; };
-		10E458A12F2994A60002A8FC /* Moldin-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 10E4589B2F2994A60002A8FC /* Moldin-Medium.otf */; };
-		10E458A22F2994A60002A8FC /* Moldin-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 10E4589A2F2994A60002A8FC /* Moldin-ExtraBold.otf */; };
-		10E458A32F2994A60002A8FC /* Moldin-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 10E458992F2994A60002A8FC /* Moldin-Bold.otf */; };
 		10E458B92F299B400002A8FC /* DMSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10E458A82F299B400002A8FC /* DMSans-BoldItalic.ttf */; };
 		10E458BA2F299B400002A8FC /* DMSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10E458AD2F299B400002A8FC /* DMSans-Italic.ttf */; };
 		10E458BB2F299B400002A8FC /* DMSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10E458B02F299B400002A8FC /* DMSans-LightItalic.ttf */; };
@@ -120,12 +114,6 @@
 		1051EF6E2F322EBE001CAD72 /* RecommendedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedView.swift; sourceTree = "<group>"; };
 		1051EF702F322EFC001CAD72 /* CarouselSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselSection.swift; sourceTree = "<group>"; };
 		1051EF732F322F7B001CAD72 /* RecommendedCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedCardView.swift; sourceTree = "<group>"; };
-		10E458982F2994A60002A8FC /* Moldin-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Moldin-Black.otf"; sourceTree = "<group>"; };
-		10E458992F2994A60002A8FC /* Moldin-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Moldin-Bold.otf"; sourceTree = "<group>"; };
-		10E4589A2F2994A60002A8FC /* Moldin-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Moldin-ExtraBold.otf"; sourceTree = "<group>"; };
-		10E4589B2F2994A60002A8FC /* Moldin-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Moldin-Medium.otf"; sourceTree = "<group>"; };
-		10E4589C2F2994A60002A8FC /* Moldin-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Moldin-Regular.otf"; sourceTree = "<group>"; };
-		10E4589D2F2994A60002A8FC /* Moldin-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Moldin-SemiBold.otf"; sourceTree = "<group>"; };
 		10E458A52F299B400002A8FC /* DMSans-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-Black.ttf"; sourceTree = "<group>"; };
 		10E458A62F299B400002A8FC /* DMSans-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-BlackItalic.ttf"; sourceTree = "<group>"; };
 		10E458A72F299B400002A8FC /* DMSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-Bold.ttf"; sourceTree = "<group>"; };
@@ -263,12 +251,6 @@
 		10E458A42F2994B30002A8FC /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				10E458982F2994A60002A8FC /* Moldin-Black.otf */,
-				10E458992F2994A60002A8FC /* Moldin-Bold.otf */,
-				10E4589A2F2994A60002A8FC /* Moldin-ExtraBold.otf */,
-				10E4589B2F2994A60002A8FC /* Moldin-Medium.otf */,
-				10E4589C2F2994A60002A8FC /* Moldin-Regular.otf */,
-				10E4589D2F2994A60002A8FC /* Moldin-SemiBold.otf */,
 				10E458A52F299B400002A8FC /* DMSans-Black.ttf */,
 				10E458A62F299B400002A8FC /* DMSans-BlackItalic.ttf */,
 				10E458A72F299B400002A8FC /* DMSans-Bold.ttf */,
@@ -693,7 +675,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				10E4589E2F2994A60002A8FC /* Moldin-Black.otf in Resources */,
 				10E458B92F299B400002A8FC /* DMSans-BoldItalic.ttf in Resources */,
 				10E458BA2F299B400002A8FC /* DMSans-Italic.ttf in Resources */,
 				10E458BB2F299B400002A8FC /* DMSans-LightItalic.ttf in Resources */,
@@ -712,11 +693,6 @@
 				10E458CA2F299B400002A8FC /* DMSans-ExtraLight.ttf in Resources */,
 				10E458CB2F299B400002A8FC /* DMSans-Medium.ttf in Resources */,
 				10E458CC2F299B400002A8FC /* DMSans-ExtraLightItalic.ttf in Resources */,
-				10E4589F2F2994A60002A8FC /* Moldin-Regular.otf in Resources */,
-				10E458A02F2994A60002A8FC /* Moldin-SemiBold.otf in Resources */,
-				10E458A12F2994A60002A8FC /* Moldin-Medium.otf in Resources */,
-				10E458A22F2994A60002A8FC /* Moldin-ExtraBold.otf in Resources */,
-				10E458A32F2994A60002A8FC /* Moldin-Bold.otf in Resources */,
 				83D1F44E2BB1C30600A611A5 /* Preview Assets.xcassets in Resources */,
 				83D1F44B2BB1C30600A611A5 /* Assets.xcassets in Resources */,
 				8388016D2BC0B35E00FC31BC /* GoogleService-Info.plist in Resources */,

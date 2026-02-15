@@ -193,20 +193,32 @@ final class SettingsViewModel: ObservableObject, PresentAlertType {
     
     // MARK: - Firestore
     private func saveListsOnCloud(cloudPlaylist: [CloudPlaylist]) {
-        viewMessage += "\n⬆️ Subiendo \(cloudPlaylist.count) Listas a la nube."
-        
-        let remoteDataBase = Firestore.firestore()
-        let batch = remoteDataBase.batch()
-        
-        cloudPlaylist.forEach {
-            let ref = remoteDataBase.collection("playlists").document($0.id)
-            batch.setData($0.asDictionary(), forDocument: ref)
-        }
-        
-        batch.commit { [weak self] error in
-            if error == nil {
-                self?.viewMessage += "\n🆗 \(cloudPlaylist.count) Listas en la nube"
+
+        let cloudDatabase = Firestore.firestore()
+        let batch = cloudDatabase.batch()
+
+        cloudDatabase.collection("playlists").getDocuments { snapshot, error in
+            
+            guard let documents = snapshot?.documents else { return }
+
+            let currentIds = Set(cloudPlaylist.map { $0.id })
+            let firestoreIds = Set(documents.map { $0.documentID })
+
+            let idsToDelete = firestoreIds.subtracting(currentIds)
+
+            // 🗑 Delete removed playlists
+            idsToDelete.forEach { id in
+                let ref = cloudDatabase.collection("playlists").document(id)
+                batch.deleteDocument(ref)
             }
+
+            // ⬆️ Upsert current playlists
+            cloudPlaylist.forEach {
+                let ref = cloudDatabase.collection("playlists").document($0.id)
+                batch.setData($0.asDictionary(), forDocument: ref)
+            }
+
+            batch.commit()
         }
     }
     

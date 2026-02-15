@@ -26,7 +26,7 @@ struct PlaylistCover: View {
                 .cornerRadius(20)
                 
                 Text(playlist.title)
-                    .appFont(.moldin, .medium, size: 40)
+                    .appFont(.dmSans, .black, size: 32).tracking(-2)
                     .foregroundColor(.white)
                     .padding(.bottom, 8)
                 

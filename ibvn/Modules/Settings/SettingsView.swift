@@ -24,6 +24,7 @@ struct SettingsView: View {
                     viewModel.syncLive()
                 } label: {
                     Text("Sincronizar en vivo")
+                        .appFont(.dmSans, .semiBold, size: 16)
                 }
                 .buttonStyle(.bordered)
                 .padding()
@@ -32,6 +33,7 @@ struct SettingsView: View {
                     viewModel.syncPlaylist()
                 } label: {
                     Text("Sincronizar listas")
+                        .appFont(.dmSans, .semiBold, size: 16)
                 }
                 .buttonStyle(.bordered)
                 .padding()
@@ -40,7 +42,7 @@ struct SettingsView: View {
                 
                 HStack {
                     Text(viewModel.viewMessage)
-                        .font(.caption)
+                        .appFont(.dmSans, .semiBold, size: 16)
                         .foregroundColor(.secondary)
                         .padding()
                     

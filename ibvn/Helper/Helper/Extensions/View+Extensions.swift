@@ -45,15 +45,6 @@ extension View {
 extension AppFontFamily {
     
     func fontName(style: AppFontStyle) -> String {
-        let moldinMap: [AppFontStyle: String] = [
-            .black: "Moldin-Black",
-            .extraBold: "Moldin-ExtraBold",
-            .bold: "Moldin-Bold",
-            .semiBold: "Moldin-SemiBold",
-            .medium: "Moldin-Medium",
-            .regular: "Moldin-Regular"
-        ]
-        
         let dmSansMap: [AppFontStyle: String] = [
             .black: "DMSans-Black",
             .blackItalic: "DMSans-BlackItalic",
@@ -76,8 +67,6 @@ extension AppFontFamily {
         let map: [AppFontStyle: String]
         
         switch self {
-        case .moldin:
-            map = moldinMap
         case .dmSans:
             map = dmSansMap
         }

@@ -91,12 +91,28 @@ final class ListsViewModel: ObservableObject, PresentAlertType {
         
         // Filtro secundario
         if ibvnType == .podcast {
+            
             switch podcastFilter {
+                
             case .allPodcast:
-                break
+                // #Podcast PERO SIN #ElRetoDeHoy
+                result = result.filter { playlist in
+                    let text = (playlist.title + playlist.description)
+                        .folding(options: .diacriticInsensitive, locale: .current)
+                        .lowercased()
+                    
+                    return text.contains("#podcast") &&
+                           !text.contains("#elretodehoy")
+                }
+                
             case .erdh:
-                result = result.filter {
-                    ($0.title + $0.description).contains(IbvnType.elRetoDeHoy.includeTags.first ?? "")
+                // SOLO los que tengan #ElRetoDeHoy
+                result = result.filter { playlist in
+                    let text = (playlist.title + playlist.description)
+                        .folding(options: .diacriticInsensitive, locale: .current)
+                        .lowercased()
+                    
+                    return text.contains("#elretodehoy")
                 }
             }
         } else {

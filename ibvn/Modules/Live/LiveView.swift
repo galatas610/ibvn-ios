@@ -68,7 +68,7 @@ struct LiveView: View {
         .appFont(.dmSans, .black, size: 32).tracking(-2)
         .foregroundStyle(.white)
         .padding(.leading)
-        .padding(.bottom, -8)
+        .padding(.bottom, -4)
         .transition(.move(edge: .top).combined(with: .opacity))
         .animation(
             .spring(response: 0.4, dampingFraction: 0.8),

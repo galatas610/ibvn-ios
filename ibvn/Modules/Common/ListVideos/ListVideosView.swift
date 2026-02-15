@@ -79,13 +79,13 @@ struct ListVideosView: View {
             
             VStack(alignment: .leading) {
                 Text(item.snippet.title)
-                    .font(.caption)
-                    .foregroundColor(Constants.primary)
+                    .appFont(.dmSans, .semiBold, size: 16)
+                    .foregroundColor(.white)
                     .multilineTextAlignment(.leading)
                 
                 Text(item.snippet.publishedAt.formatDate())
-                    .font(.caption2)
-                    .foregroundColor(Constants.secondary)
+                    .appFont(.dmSans, .regular, size: 12)
+                    .foregroundColor(.white)
             }
             
             Spacer()

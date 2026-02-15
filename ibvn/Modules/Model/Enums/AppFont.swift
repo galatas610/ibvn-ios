@@ -8,7 +8,6 @@
 import Foundation
 
 enum AppFontFamily {
-    case moldin
     case dmSans
 }
 

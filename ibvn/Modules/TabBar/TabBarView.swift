@@ -30,7 +30,7 @@ struct TabBarView: View {
             
             RecommendedView()
                 .tabItem {
-                    Label("Recomendados", image: "bookmarkStar")
+                    Label("Recomendadas", image: "bookmarkStar")
                 }
                 .tag("3")
         }

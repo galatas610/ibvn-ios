@@ -197,7 +197,7 @@ final class SettingsViewModel: ObservableObject, PresentAlertType {
         let cloudDatabase = Firestore.firestore()
         let batch = cloudDatabase.batch()
 
-        cloudDatabase.collection("playlists").getDocuments { snapshot, error in
+        cloudDatabase.collection("playlists").getDocuments { snapshot, _ in
             
             guard let documents = snapshot?.documents else { return }
 

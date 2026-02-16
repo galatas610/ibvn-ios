@@ -196,6 +196,6 @@ enum SeriesFilterType: String, CaseIterable {
 }
 
 enum PodcastFilterType: String, CaseIterable {
-    case allPodcast = "Todas los Podcast"
+    case allPodcast = "Todos los Podcast"
     case erdh = "ERDH"
 }

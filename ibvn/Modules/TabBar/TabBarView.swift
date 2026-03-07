@@ -4,6 +4,12 @@
 //
 //  Created by Jose Letona on 28/3/24.
 //
+//
+//  TabBarView.swift
+//  ibvn
+//
+//  Created by Jose Letona on 28/3/24.
+//
 
 import SwiftUI
 
@@ -16,23 +22,45 @@ struct TabBarView: View {
                 }
                 .tag("0")
             
-            ListsView(viewModel: ListsViewModel(ibvnType: .series))
-                .tabItem {
-                    Label("Series", image: "bookOpen")
-                }
-                .tag("1")
+           series
+            .tabItem {
+                Label("Series", image: "bookOpen")
+            }
+            .tag("1")
             
-            ListsView(viewModel: ListsViewModel(ibvnType: .podcast))
-                .tabItem {
-                    Label("Podcast", image: "microphone")
-                }
-                .tag("2")
+           podcast
+            .tabItem {
+                Label("Podcast", image: "microphone")
+            }
+            .tag("2")
             
             RecommendedView()
                 .tabItem {
                     Label("Recomendadas", image: "bookmarkStar")
                 }
                 .tag("3")
+        }
+    }
+    
+    var series: some View {
+        NavigationStack {
+            ListsView(
+                viewModel: ListsViewModel(ibvnType: .series)
+            )
+            .navigationDestination(for: CloudPlaylist.self) { playlist in
+                ListVideosView(playlist: playlist)
+            }
+        }
+    }
+    
+    var podcast: some View {
+        NavigationStack {
+            ListsView(
+                viewModel: ListsViewModel(ibvnType: .podcast)
+            )
+            .navigationDestination(for: CloudPlaylist.self) { playlist in
+                ListVideosView(playlist: playlist)
+            }
         }
     }
 }

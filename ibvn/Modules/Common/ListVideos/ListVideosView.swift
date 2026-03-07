@@ -11,6 +11,7 @@ struct ListVideosView: View {
     // MARK: Property Wrappers
     @StateObject private var viewModel: ListVideosViewModel
     @State private var searchText = ""
+    @FocusState private var isKeyboardFocused: Bool
     
     // MARK: Initialization
     init(playlist: CloudPlaylist) {
@@ -22,7 +23,7 @@ struct ListVideosView: View {
     // MARK: Body
     var body: some View {
         VStack {
-            CustomSearchBar(text: $searchText)
+            searchBar
                 .padding(.bottom, 8)
             
             ScrollView {
@@ -50,6 +51,42 @@ struct ListVideosView: View {
         .onAppear {
             viewModel.loadIfNeeded()
         }
+        .toolbar {
+            ToolbarItemGroup(placement: .keyboard) {
+                Spacer()
+                
+                Button {
+                    isKeyboardFocused = false
+                } label: {
+                    Image(systemName: "keyboard.chevron.compact.down")
+                }
+            }
+        }
+    }
+    
+    var searchBar: some View {
+        HStack {
+            Image(systemName: "magnifyingglass")
+                .foregroundColor(Constants.textoPrincipal)
+
+            KeyboardSearchField(text: $searchText, placeholder: "Buscar")
+                .frame(height: 20)
+
+            if !searchText.isEmpty {
+                Button {
+                    searchText = ""
+                } label: {
+                    Image(systemName: "xmark.circle.fill")
+                        .foregroundColor(Constants.textoPrincipal)
+                }
+            }
+        }
+        .padding(10)
+        .background(
+            RoundedRectangle(cornerRadius: 12)
+                .fill(Constants.acentoVerde)
+        )
+        .padding(.horizontal)
     }
     
     var searchResults: [ListVideosItem] {

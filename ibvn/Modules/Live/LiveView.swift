@@ -29,7 +29,7 @@ struct LiveView: View {
                     Image("IbvnLogo")
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 120, height: 31)
+                        .frame(width: 120, height: 36) 
                 }
             } else {
                 ScrollView {

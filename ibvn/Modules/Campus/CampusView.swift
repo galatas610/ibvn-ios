@@ -62,7 +62,7 @@ struct CampusView: View {
     private var logo: some View {
         Image("IbvnLogo")
             .resizable()
-            .frame(width: 120, height: 31)
+            .frame(width: 120, height: 36) 
             .padding(.vertical, 16)
     }
     

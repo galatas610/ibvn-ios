@@ -42,7 +42,7 @@ struct ListsView: View {
             ToolbarItem(placement: .principal) {
                 Image("IbvnLogo")
                     .resizable()
-                    .frame(width: 120, height: 31)
+                    .frame(width: 120, height: 36) 
             }
 
             ToolbarItemGroup(placement: .keyboard) {

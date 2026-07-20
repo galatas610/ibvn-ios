@@ -11,8 +11,9 @@ import CombineMoya
 import Moya
 
 enum YoutubeApiManager {
-    static private let privateKey = "AIzaSyCTkfyhNMgKcDTlZsNZ2IT57ztfXySdl5c"
+    static private let privateKey = "AIzaSyBdhDslKWp0s5OG0aNcopUurrgqUiJJfZ4"
     static private let channelId = "UCoNq7HF7vnqalfg-lTaxrDQ"
+    static private let bundleId = "jmletona.ibvn.videos"
     
     case playlistItems(playlistId: String, pageToken: String)
     case search(eventType: String)
@@ -87,7 +88,10 @@ extension YoutubeApiManager: TargetType {
     }
 
   public var headers: [String: String]? {
-    return ["Content-Type": "application/json"]
+    return [
+        "Content-Type": "application/json",
+        "X-Ios-Bundle-Identifier": YoutubeApiManager.bundleId
+    ]
   }
 
   public var validationType: ValidationType {

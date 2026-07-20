@@ -21,24 +21,33 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 
 @main
 struct IbvnApp: App {
-    
+
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
-    
+
     @State private var isShowingSplash = true
-    
+    @StateObject private var forceUpdate = ForceUpdateService.shared
+
     var body: some Scene {
         WindowGroup {
             ZStack {
-                
-                // 🔥 Main App
-                TabBarView()
-                    .preferredColorScheme(.dark)
-                
-                // 🔥 Splash Overlay
-                if isShowingSplash {
-                    SplashView()
-                        .transition(.opacity)
+
+                if forceUpdate.isUpdateRequired {
+                    ForceUpdateView(storeUrl: forceUpdate.storeUrl)
+                        .preferredColorScheme(.dark)
+                } else {
+                    // 🔥 Main App
+                    TabBarView()
+                        .preferredColorScheme(.dark)
+
+                    // 🔥 Splash Overlay
+                    if isShowingSplash {
+                        SplashView()
+                            .transition(.opacity)
+                    }
                 }
+            }
+            .task {
+                await forceUpdate.check()
             }
             .onAppear {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
@@ -66,7 +75,7 @@ struct SplashView: View {
             Image("IbvnLogo")
                 .resizable()
                 .scaledToFit()
-                .frame(width: 180)
+                .frame(width: 277)
                 .opacity(logoOpacity)
         }
         .onAppear {
